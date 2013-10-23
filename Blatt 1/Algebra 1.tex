@@ -30,6 +30,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\dt}{\,\text{d}t}
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\id}{\operatorname{id}}
 \newcommand{\ord}{\operatorname{ord}}
 \newcommand{\inn}{\operatorname{inn}}
 \newcommand{\sgn}{\operatorname{sgn}}
@@ -41,7 +42,7 @@
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
-\newcommand{\erz}[1]{\left\langle#1\right\rangle}
+\newcommand{\gen}[1]{\left\langle#1\right\rangle}
 
 \newenvironment{lgs}[1][c]{\left\{\setlength{\arraycolsep}{1pt}\begin{array}{#1}}{\end{array}\right.}
 
@@ -57,7 +58,7 @@
 % \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 \parindent0pt
 
-\title{Einführung in die Algebre — Blatt 1}
+\title{Einführung in die Algebra — Blatt 1}
 \author{Jendrik Stelzner}
 \date{\today}
 
@@ -70,11 +71,46 @@
 
 \section{}
 
+\begin{bem}
+ Sei $G$ eine Gruppe und $H \subset G$ ein Untergruppe mit $(G : H) = 2$. Dann ist $H$ ein Normalteiler in $G$.
+\end{bem}
+\begin{proof}[Beweis der Bemerkung]
+ Da $(G : H) = 2$ zerfällt in $G$ in zwei Links- bzw. Rechtsnebenklassen, nämlich je $H$ und $H^c$. Für alle $g \in H$ ist damit $gH = H = Hg$ und für alle $g \in H^c$ ist $gH = H^c = Hg$.
+\end{proof}
+
+Es ist $S_3 = \{\id, \sigma, \sigma^2, \tau_{12}, \tau_{13}, \tau_{23} \}$, wobei $\sigma = (1,2,3)$, $\sigma^2 = (3,2,1)$, $\tau_{12} = (1,2)$, $\tau_{13} = (1,3)$ und $\tau_{23} = (2,3)$.
+
+Da $\ord S_3 = 3! = 6$ folgt aus dem Satz von Lagrange, dass $\ord H \in \{1,2,3,6\}$ für jede Untergruppe $H \subseteq G$ von $G$. Neben den beiden trivialen Untergruppen $\{\id\}$ und $S_3$ kann $S_3$ also nur zwei- oder dreielementige Untegruppen enthalten.
+
+Offenbar sind $\gen{\tau_{12}} = \{\id,\tau_{12}\}$, $\gen{\tau_{13}} = \{\id, \tau_{13}\}$ und $\gen{\tau_{23}} = \{\id, \tau_{23}\}$ Untergruppen der Ordnung $2$ . Dies sind auch die einzigen Untergruppen dieser Ordnung: Ist $H = \{\id, a\}$ eine Untergruppe mit $\ord H = 2$, so muss $a^2 = \id$, also $a$ selbstinvers sein. Die einzigen selbstinversen Elemente in $S_3$ sind aber $\tau_{12}$, $\tau_{13}$ und $\tau_{23}$.
+
+Offenbar ist $\gen{\sigma} = \{\id, \sigma, \sigma^2\}$ eine Untergruppe der Ordnung $3$. Es ist auch die einzige Untergruppe dieser Ordnung: Ist $H = \{\id, a, b\}$ eine Untergruppe mit $\ord H = 3$, so ist, wie aus der Vorlesung bekannt, $H$ zyklisch und von $a$ und $b$ erzeugt. Insbesondere muss daher $\ord a = \ord b = \ord H = 3$. Die einzigen beiden Elemente in $S_3$ mit Ordnung $3$ sind jedoch $\sigma$ und $\sigma^2$.
+
+Die Untergruppen von $S_3$ sind also $\{\id\}$, $\gen{\tau_{12}}$, $\gen{\tau_{13}}$, $\gen{\tau{23}}$, $\gen{\sigma}$ und $S_3$.
+
+$\{id\}$ und $S_3$ sind trivialerweise Nullteiler in $S_3$. Aus der Bemerkung folgt, dass auch $\gen{\sigma}$ ein Normalteiler in $S_3$ ist, da $(S_3 : \gen{\sigma}) = 2$. $\gen{\tau_{12}}$, $\gen{\tau_{13}}$ und $\gen{\tau{23}}$ sind keine Normalteiler in $S_3$, denn
+\begin{align*}
+ \tau_{23} \{ \id, \tau_{12}\}
+ = \{ \tau_{23}, \sigma^2 \}
+ \neq \{ \tau_{23}, \sigma \}
+ &= \{\id, \tau_{12}\} \tau_{23},\\
+ \tau_{12} \{ \id, \tau_{13}\}
+ = \{ \tau_{12}, \sigma^2 \}
+ \neq \{ \tau_{12}, \sigma \}
+ &= \{ \id, \tau_{13} \} \tau_{12} \text{ und}\\
+ \tau_{12} \{ \id, \tau_{23} \}
+ = \{ \tau_{12}, \sigma \}
+ \neq  \{ \tau_{12}, \sigma^2 \}
+ &= \{ \id, \tau_{23} \} \tau_{12}.
+\end{align*}
+
 
 
 
 
 \section{}
+
+
 
 
 
@@ -119,7 +155,7 @@ Es ist also $\ord \pi(F)$ auch ein Teiler von $\ord H$. Da $\ord H$ und $(G : H)
 
 
 \subsection{}
-Da, wie aus der Vorlesung bekannt, $\erz{g}$ für alle $g \in G$ eine Untergruppe von $G$ ist, ist nach dem Satz von Lagrange $\ord g = \ord \erz{g}$ für alle $g \in G$ ein Teiler von $\ord G$, und somit ebenfalls ungerade.
+Da, wie aus der Vorlesung bekannt, $\gen{g}$ für alle $g \in G$ eine Untergruppe von $G$ ist, ist nach dem Satz von Lagrange $\ord g = \ord \gen{g}$ für alle $g \in G$ ein Teiler von $\ord G$, und somit ebenfalls ungerade.
 
 Da $aba = b \Leftrightarrow b = a^{-1} b a^{-1}$ ist für alle $n \in \N$
 \[
@@ -129,7 +165,7 @@ Da $\ord b$ ungerade ist, ist damit insbesondere
 \[
  e = b^{\ord b} = ab^{\ord b}a = aea = a^2,
 \]
-also $a$ selbstinvers. Da damit $\erz{a} = \{e, a\}$, aber $\ord a$ ungerade ist, muss $a = e$.
+also $a$ selbstinvers. Da damit $\gen{a} = \{e, a\}$, aber $\ord a$ ungerade ist, muss $a = e$.
 
 
 
