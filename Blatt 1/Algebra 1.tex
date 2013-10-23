@@ -30,6 +30,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\dt}{\,\text{d}t}
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\ord}{\operatorname{ord}}
 \newcommand{\sgn}{\operatorname{sgn}}
 \newcommand{\kchar}{\operatorname{char}}
 \newcommand{\Id}{\operatorname{Id}}
@@ -39,6 +40,7 @@
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\erz}[1]{\left\langle#1\right\rangle}
 
 \newenvironment{lgs}[1][c]{\left\{\setlength{\arraycolsep}{1pt}\begin{array}{#1}}{\end{array}\right.}
 
@@ -60,6 +62,54 @@
 
 \begin{document}
 \maketitle
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Da, wie aus der Vorlesung bekannt, $\erz{g}$ für alle $g \in G$ eine Untergruppe von $G$ ist, ist nach dem Satz von Lagrange $\ord g = \ord \erz{g}$ für alle $g \in G$ ein Teiler von $\ord G$, und somit ebenfalls ungerade.
+
+Da $aba = b \Leftrightarrow b = a^{-1} b a^{-1}$ ist für alle $n \in \N$
+\[
+ b^{2n+1} = a (b a a^{-1} b a^{-1} a)^n ba = ab^{2n+1}a.
+\]
+Da $\ord b$ ungerade ist, ist damit insbesondere
+\[
+ e = b^{\ord b} = ab^{\ord b}a = aea = a^2,
+\]
+also $a$ selbstinvers. Da damit $\erz{a} = \{e, a\}$, aber $\ord a$ ungerade ist, muss $a = e$.
+
+
+
+\subsection{}
+Da $c = abcba$ ist $cb = abcbab = ab \cdot cb \cdot ab$, nach Aufgabenteil \textbf{(i)} ist daher $ab = e$.
+
+
+
+
+\section{}
 
 
 
