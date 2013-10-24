@@ -78,17 +78,17 @@
  Da $(G : H) = 2$ zerfällt in $G$ in zwei Links- bzw. Rechtsnebenklassen, nämlich je $H$ und $H^c$. Für alle $g \in H$ ist damit $gH = H = Hg$ und für alle $g \in H^c$ ist $gH = H^c = Hg$.
 \end{proof}
 
-Es ist $S_3 = \{\id, \sigma, \sigma^2, \tau_{12}, \tau_{13}, \tau_{23} \}$, wobei $\sigma = (1,2,3)$, $\sigma^2 = (3,2,1)$, $\tau_{12} = (1,2)$, $\tau_{13} = (1,3)$ und $\tau_{23} = (2,3)$.
+Es ist $S_3 = \{\id, \sigma, \sigma^2, \tau_{12}, \tau_{13}, \tau_{23} \}$, wobei in Zykelschreibweise $\sigma = (1,2,3)$, $\sigma^2 = (3,2,1)$, $\tau_{12} = (1,2)$, $\tau_{13} = (1,3)$ und $\tau_{23} = (2,3)$.
 
-Da $\ord S_3 = 3! = 6$ folgt aus dem Satz von Lagrange, dass $\ord H \in \{1,2,3,6\}$ für jede Untergruppe $H \subseteq G$ von $G$. Neben den beiden trivialen Untergruppen $\{\id\}$ und $S_3$ kann $S_3$ also nur zwei- oder dreielementige Untegruppen enthalten.
+Da $\ord S_3 = 3! = 6$ folgt aus dem Satz von Lagrange, dass $\ord H \in \{1,2,3,6\}$ für jede Untergruppe $H \subseteq G$. Neben den beiden trivialen Untergruppen $\{\id\}$ und $S_3$ kann $S_3$ also nur zwei- oder dreielementige Untergruppen enthalten.
 
-Offenbar sind $\gen{\tau_{12}} = \{\id,\tau_{12}\}$, $\gen{\tau_{13}} = \{\id, \tau_{13}\}$ und $\gen{\tau_{23}} = \{\id, \tau_{23}\}$ Untergruppen der Ordnung $2$ . Dies sind auch die einzigen Untergruppen dieser Ordnung: Ist $H = \{\id, a\}$ eine Untergruppe mit $\ord H = 2$, so muss $a^2 = \id$, also $a$ selbstinvers sein. Die einzigen selbstinversen Elemente in $S_3$ sind aber $\tau_{12}$, $\tau_{13}$ und $\tau_{23}$.
+Offenbar sind $\gen{\tau_{12}} = \{\id,\tau_{12}\}$, $\gen{\tau_{13}} = \{\id, \tau_{13}\}$ und $\gen{\tau_{23}} = \{\id, \tau_{23}\}$ Untergruppen der Ordnung $2$ . Dies sind auch die einzigen Untergruppen dieser Ordnung: Ist $H = \{\id, a\}$ eine Untergruppe mit $\ord H = 2$, so muss $a^2 = \id$, also $a$ selbstinvers sein. Die einzigen selbstinversen Elemente in $S_3$ sind aber $e$, $\tau_{12}$, $\tau_{13}$ und $\tau_{23}$ (da $\sigma \sigma^2 = \sigma^2 \sigma = \sigma^3 = \id$).
 
 Offenbar ist $\gen{\sigma} = \{\id, \sigma, \sigma^2\}$ eine Untergruppe der Ordnung $3$. Es ist auch die einzige Untergruppe dieser Ordnung: Ist $H = \{\id, a, b\}$ eine Untergruppe mit $\ord H = 3$, so ist, wie aus der Vorlesung bekannt, $H$ zyklisch und von $a$ und $b$ erzeugt. Insbesondere muss daher $\ord a = \ord b = \ord H = 3$. Die einzigen beiden Elemente in $S_3$ mit Ordnung $3$ sind jedoch $\sigma$ und $\sigma^2$.
 
 Die Untergruppen von $S_3$ sind also $\{\id\}$, $\gen{\tau_{12}}$, $\gen{\tau_{13}}$, $\gen{\tau{23}}$, $\gen{\sigma}$ und $S_3$.
 
-$\{id\}$ und $S_3$ sind trivialerweise Nullteiler in $S_3$. Aus der Bemerkung folgt, dass auch $\gen{\sigma}$ ein Normalteiler in $S_3$ ist, da $(S_3 : \gen{\sigma}) = 2$. $\gen{\tau_{12}}$, $\gen{\tau_{13}}$ und $\gen{\tau{23}}$ sind keine Normalteiler in $S_3$, denn
+$\{\id\}$ und $S_3$ sind trivialerweise Nullteiler in $S_3$. Aus der Bemerkung folgt, dass auch $\gen{\sigma}$ ein Normalteiler in $S_3$ ist, da $(S_3 : \gen{\sigma}) = 2$. $\gen{\tau_{12}}$, $\gen{\tau_{13}}$ und $\gen{\tau_{23}}$ sind keine Normalteiler in $S_3$, denn
 \begin{align*}
  \tau_{23} \{ \id, \tau_{12}\}
  = \{ \tau_{23}, \sigma^2 \}
@@ -109,8 +109,137 @@ $\{id\}$ und $S_3$ sind trivialerweise Nullteiler in $S_3$. Aus der Bemerkung fo
 
 
 \section{}
+Im Folgenden sei $Q := \{E,-E,I,-I,J,-J,K,-K\}$, wobei für die multiplikative Struktur $(Q,\cdot)$ (die sich als Gruppe herausstellen wird), ebenfalls $Q$ geschrieben wird.
+
+\subsection{}
+Wie die Multiplikationstabelle verrät, ist für $A,B \in \{E, I, J, K\}$ auch $AB \in Q$, folglich ist sogar für alle $A,B \in Q$ auch $AB \in Q$, $Q$ ist also abgeschlossen bezüglich der Multiplikation.
+\begin{center}
+ \begin{tabular}{c|cccc} 
+  $\cdot$ & $E$ & $ I$ & $ J$ & $ K$  \\\hline 
+      $E$ & $E$ & $ I$ & $ J$ & $ K$  \\ 
+      $I$ & $I$ & $-E$ & $-K$ & $ J$  \\
+      $J$ & $J$ & $ K$ & $-E$ & $-I$ \\
+      $K$ & $K$ & $-J$ & $ I$ & $-E$
+ \end{tabular}
+\end{center}
+Die Assoziativität der Multiplikation vererbt sich direkt von $M(2 \times 2, \C)$ auf $Q$.
+Da $E \in Q$ die Einheitsmatrix ist, gibt es in $Q$ ein neutrales Element. Wie mit Aufgabenteil \textbf{(ii)} folgt, ist $E^{-1} = E, (-E)^{-1} = -E, I^{-1} = -I, J^{-1} = -J$ und $K^{-1} = -K$, also gibt es für alle $A \in Q$ ein $A^{-1} \in Q$. Damit ist $Q$ eine Gruppe.
 
 
+\subsection{}
+Stupides Nachrechnen ergibt, dass
+\begin{align*}
+ I^2
+ &=
+ \begin{pmatrix}
+   0 & 1\\
+  -1 & 0
+ \end{pmatrix}^2
+ =
+ \begin{pmatrix}
+  -1 &  0\\
+   0 & -1
+ \end{pmatrix}
+ = -
+ \begin{pmatrix}
+  1 & 0\\
+  0 & 1
+ \end{pmatrix}
+ = -E,\\
+ J^2
+ &=
+ \begin{pmatrix}
+  0 & i\\
+  i & 0
+ \end{pmatrix}^2
+ =
+ \begin{pmatrix}
+  -1 &  0\\
+   0 & -1
+ \end{pmatrix}
+ = -
+ \begin{pmatrix}
+  1 & 0\\
+  0 & 1
+ \end{pmatrix}
+ = -E,\\
+ K^2
+ &=
+ \begin{pmatrix}
+  -i & 0\\
+   0 & i
+ \end{pmatrix}^2
+ =
+ \begin{pmatrix}
+  -1 &  0\\
+   0 & -1
+ \end{pmatrix}
+ = -
+ \begin{pmatrix}
+  1 & 0\\
+  0 & 1
+ \end{pmatrix}
+ = -E,
+\intertext{sowie, entgegen der falschen Angabe in der Aufgabenstellung,}
+ IJK
+ &=
+ \begin{pmatrix}
+   0 & 1\\
+  -1 & 0
+ \end{pmatrix}
+ \begin{pmatrix}
+  0 & i\\
+  i & 0
+ \end{pmatrix}
+ \begin{pmatrix}
+  -i & 0\\
+   0 & i
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  i &  0\\
+  0 & -i
+ \end{pmatrix}
+ \begin{pmatrix}
+  -i & 0\\
+   0 & i
+ \end{pmatrix}\\
+ &= -K^2 = E, \text{ dafür aber} \\
+ KJI
+ &=
+ \begin{pmatrix}
+  -i & 0\\
+   0 & i
+ \end{pmatrix}
+ \begin{pmatrix}
+  0 & i\\
+  i & 0
+ \end{pmatrix}
+ \begin{pmatrix}
+   0 & 1\\
+  -1 & 0
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+   0 & 1\\
+  -1 & 0
+ \end{pmatrix}
+ \begin{pmatrix}
+   0 & 1\\
+  -1 & 0
+ \end{pmatrix} \\
+ &= I^2 = -E.
+\end{align*}
+
+
+\subsection{}
+Da $\ord Q = 8$ ist nach dem Satz von Lagrange $\ord H \in \{1,2,4,8\}$ für jede Untergruppe $H \subseteq Q$. Neben den trivialen Untergruppen $\{E\}$ und $Q$ kann $Q$ also nur Untergruppen der Ordnung $2$ und $4$ haben.
+
+Offenbar ist $\{E,-E\}$ eine Untergruppe der Ordnung $2$ von $Q$; dies ist auch die einzige Untergruppe dieser Ordung: Ist $H = \{E, A\} \subseteq Q$ eine Untergruppe mit $\ord H = 2$, so muss $A^2 = E$, also $A$ selbstinvers sein. Aus \textbf{Aufgabenteil (ii)} folgt jedoch, dass $E$ und $-E$ die einzige selbstinverse Elemente in $Q$ sind, weshalb $A = -E$ gelten muss.
+
+Für alle $A \in \{I,J,K\}$ ist $\{E,-E,A,-A\}$ offenbar eine Untergruppe der Ordnung $4$ von $Q$. Dies sind auch die einzigen Untergruppen dieser Ordung: Ist $H \subset Q$ eine Untergruppe mit $\ord H = 4$, so gibt es ein $A \in H$ mit $A \not \in \{E,-E\}$. Es muss dann auch $E \in H$, $-E = A^2 \in H$, und $A^{-1} = -A \in H$. Also muss bereits $H = \{E,-E,A,-A\}$.
+
+Die Untergruppen von $Q$ sind also $\{E\}$, $\{E,-E\}$, $\{E,-E,I,-I\}$, $\{E,-E,J,-J\}$, $\{E,-E,K,-K\}$ und $Q$. Diese Untergruppen sind sogar alle normal in $Q$: Für $\{E\}$ und $Q$ ist dies offensichtlich, für die Untergruppen der Ordnung $4$, und damit Index $2$, folgt es aus der Bemerkung in \textbf{Aufgabe 1.1}, und für $\{E,-E\}$ folgt es daraus, dass $A\{E,-E\} = \{A,-A\} = \{E,-E\}A$ für alle $A \in Q$, da $E$ und $-E$ mit allen Matrizen in $M(2 \times 2, \C)$ kommutieren.
 
 
 
@@ -120,7 +249,7 @@ $\{id\}$ und $S_3$ sind trivialerweise Nullteiler in $S_3$. Aus der Bemerkung fo
 
 
 \subsection{}
-Wie aus der Vorlesung bekannt reicht es zu zeigen, dass $gHg^{-1} = H$ für alle $g \in G$. Sei hierzu $g \in G$ beliebig aber fest. Es sei $\inn_g : G \rightarrow G, h \mapsto ghg^{-1}$; wie aus Lineare Algebra I bekannt ist $\inn_g$ ein Gruppenautomorphismus von $G$. Daher ist insbesondere $\ord H = \ord \inn_g(H)$. Da aber $H$ nach Annahme die einzige Untergruppe von $G$ mit Ordung $\ord H$ ist, muss $gHg^{-1} = \inn_g(H) = H$. Aus der Beliebigkeit von $g$ folgt damit die zu zeigende Aussage.
+Wie aus der Vorlesung bekannt genügt es zu zeigen, dass $gHg^{-1} = H$ für alle $g \in G$. Sei hierzu $g \in G$ beliebig aber fest. Wie aus Lineare Algebra I bekannt ist $\inn_g : G \rightarrow G, h \mapsto ghg^{-1}$ ein Gruppenautomorphismus von $G$. Daher ist insbesondere $\ord H = \ord \inn_g(H)$. Da aber $H$ nach Annahme die einzige Untergruppe von $G$ mit Ordung $\ord H$ ist, muss $gHg^{-1} = \inn_g(H) = H$. Aus der Beliebigkeit von $g$ folgt damit die zu zeigende Aussage.
 
 
 \subsection{}
@@ -128,7 +257,7 @@ Wie aus der Vorlesung bekannt reicht es zu zeigen, dass $gHg^{-1} = H$ für alle
  Seien $G$ und $G'$ Gruppen, $G$ endlich, und $\varphi : G \rightarrow G'$ ein Gruppenhomomorphismus. Dann ist $\ord G = \ord \Ker \varphi \cdot \ord \Img \varphi$.
 \end{bem}
 \begin{proof}[Beweis der Bemerkung]
- Wie aus der Vorlesung bekannt, ist $G/\Ker \varphi \cong \Img \varphi$, also insbesondere $(G : \Ker \varphi) = \ord G/\Ker \varphi = \ord \Img \varphi$. Da nach dem Satz von Lagrange $\ord G = \ord \Ker \varphi \cdot (G : \Ker \varphi)$ ist $(G : \Ker \varphi) = \frac{\ord G}{\ord \Ker \varphi}$. Gleichsetzen ergibt nun, dass $\frac{\ord G}{\ord \Ker \varphi} = \ord \Img \varphi$, also $\ord G = \ord \Ker \varphi \cdot \ord \Img \varphi$.
+ Wie aus der Vorlesung bekannt ist $G/\Ker \varphi \cong \Img \varphi$, also insbesondere $(G : \Ker \varphi) = \ord G/\Ker \varphi = \ord \Img \varphi$. Nach dem Satz von Lagrange gilt $\ord G = \ord \Ker \varphi \cdot (G : \Ker \varphi)$. Einsetzen ergibt, dass \mbox{$\ord G = \ord \Ker \varphi \cdot \ord \Img \varphi$}.
 \end{proof}
 
 Sei $F$ eine Untergruppe von $G$ mit $\ord F = \ord H$. Es gilt zu zeigen, dass $F = H$.
@@ -137,11 +266,11 @@ Hierzu betrachte man die kanonische Abbildung $\pi : G \rightarrow G/H$. Da $F$ 
 \[
  \varphi: F \hookrightarrow G \xrightarrow{\pi} G/H
 \]
-so ist $\Ker \varphi = F \cap H$ und $\Img \varphi = \pi(F)$, nach der Bemerkung also
+so ist diese ein Homomorphismus mit $\Ker \varphi = F \cap H$ und $\Img \varphi = \pi(F)$, nach der Bemerkung also
 \[
- \ord H = \ord F = \ord \pi(F) \cdot \ord F \cap H.
+ \ord H = \ord F = \ord F \cap H \cdot \ord \pi(F).
 \]
-Es ist also $\ord \pi(F)$ auch ein Teiler von $\ord H$. Da $\ord H$ und $(G : H)$ teilerfremd sind, muss $\ord \pi(F) = 1$, also $\pi(F) = \{1\}$ und daher $F \subseteq \Ker \pi = H$. Da $\ord F = \ord H$ gilt daher $F = H$.
+Es ist also $\ord \pi(F)$ auch ein Teiler von $\ord H$. Da $\ord H$ und $(G : H)$ teilerfremd sind, muss $\ord \pi(F) = 1$, also $\pi(F) = \{1\}$ und daher $F \subseteq \Ker \pi = H$. Da $\ord F = \ord H$ gilt schon $F = H$.
 
 
 
@@ -170,7 +299,7 @@ also $a$ selbstinvers. Da damit $\gen{a} = \{e, a\}$, aber $\ord a$ ungerade ist
 
 
 \subsection{}
-Da $c = abcba$ ist $cb = abcbab = ab \cdot cb \cdot ab$, nach Aufgabenteil \textbf{(i)} ist daher $ab = e$.
+Da $c = abcba$ ist $cb = abcbab = ab \cdot cb \cdot ab$, nach Aufgabenteil \textbf{(i)} also $ab = e$.
 
 
 
@@ -180,11 +309,11 @@ Es ist
 \[
  U \cong U / \{1\} = U / (U \cap N) \cong UN/N,
 \]
-wobei die letzte Isomorphie aus dem ersten Isomorphiesatz folgt. Analog ergibt sich, dass $V \cong VN/N$. Für $U \cong V$ ist es daher hinreichend, dass $UN = VN = G$. Dies ergibt sich durch Fallunterscheidung:
+wobei die letzte Isomorphie aus dem ersten Isomorphiesatz folgt. Analog ergibt sich, dass $V \cong VN/N$. Um zu zeigen, dass $U \cong V$ genügt es daher zu zeigen, dass \mbox{$UN = VN = G$}. Dies ergibt sich durch Fallunterscheidung:
 
-Ist $N = \{1\}$, so ist $N \subset U$ und $N \subset V$, also $U=V=G$ und damit insbesondere $UN=VN=G$.
+Ist $N = \{1\}$, so ist $N \subset U$ und $N \subset V$, wegen der Maximalitätseigenschaft von $N$ daher $U=V=G$ und damit insbesondere $UN=VN=G$.
 
-Ist $N \neq \{1\}$, so ist gibt es wegen $U \cap N = \{1\}$ ein $u \in U$ mit $u \not \in N$. Es ist dann $uN \subseteq{UN}$ aber $uN \cap N = \emptyset$, da $aN = N \Leftrightarrow a \in N$ für alle $a \in G$. Daher ist $UN \neq N$, also $N \subset UN$ und damit $UN = G$. Analog ergibt sich, dass auch $VN = G$.
+Ist $N \neq \{1\}$, so ist gibt es wegen $U \cap N = \{1\}$ ein $u \in U$ mit $u \not \in N$. Es ist dann $uN \subseteq{UN}$ aber $uN \cap N = \emptyset$, da $aN \in N \Leftrightarrow a \in N$ für alle $a \in G$. Daher ist $UN \neq N$, also $N \subset UN$ und damit $UN = G$. Analog ergibt sich, dass auch $VN = G$.
 
 
 
