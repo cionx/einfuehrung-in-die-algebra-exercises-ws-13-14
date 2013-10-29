@@ -19,7 +19,7 @@
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
 
-\renewcommand{\thesection}{Aufgabe 1.\arabic{section}.}
+\renewcommand{\thesection}{Aufgabe 2.\arabic{section}.}
 \renewcommand{\thesubsection}{(\roman{subsection})}
 \renewcommand{\thesubsubsection}{}
 
@@ -64,6 +64,113 @@
 
 \begin{document}
 \maketitle
+
+
+
+
+
+\section{}
+Auf $X'$ sei eine $G$-Aktion definiert als
+\[
+ G \times X' \rightarrow X', (g,H(\tilde{g},x)) \mapsto g * H(\tilde{g},x) := H(g \tilde{g}, x),
+\]
+wobei $H(\tilde{g},x) \in X'$ die Bahn von $(\tilde{g},x) \in G \times X$ bezeichnet. Es handelt sich bei $*$ um ein $G$-Aktion, da für alle $H(g,x) \in X'$
+\[
+ 1 * H(g,x) = H(1 \cdot g, x) = H(g,x)
+\]
+und für $g_1, g_2 \in G$ und $H(\tilde{g},x) \in X'$
+\[
+ g_1 * (g_1 * H(\tilde{g},x))
+ = g_1 * H(g_2 \tilde{g}, x)
+ = H(g_1 g_2 \tilde{g}, x)
+ = (g_1 g_2) * H(\tilde{g},x).
+\]
+Weiter sei die $H$-Abbildung $\Phi$ definiert als
+\[
+ \Phi : X \mapsto X', x \mapsto H(1,x).
+\]
+$\Phi$ ist eine $H$-Abbildung, da für alle $h \in H$ und $x \in X$
+\[
+ \Phi(hx) = H(1,hx) = H(h,x) = h * H(1,x) = h * \Phi(x).
+\]
+Dabei gilt des zu bemerken, dass $H(1,hx) = H(h,x)$, da
+\[
+ H(1,hx) = (H h^{-1}) (1,hx) = H (h^{-1}(1,hx)) = H(h,x),
+\]
+wobei die Multiplikation die in der Aufgabe gegebene $H$-Aktion auf $G \times X$ ist.
+
+Es gilt nun zu zeigen, dass $f \mapsto f \circ \Phi$ eine Bijektion zwischen der Menge der $G$-Abbildungen von $X'$ nach $Y$ und der Menge der $H$-Abbildungen von $X$ nach $Y$ definiert.
+
+Es gilt zunächst die Wohldefiniertheit der induzierten Abbildung zu überprüfen, d.h. dass für eine $G$-Abbildung $f : X' \rightarrow Y$ die Komposition $f \circ \Phi$ eine $H$-Abbildung von $X$ nach $Y$ ist. Dies ist aber der Fall, da offenbar $f \circ \Phi : X \rightarrow Y$, und für alle $h \in H$ und $x \in X$.
+\begin{align*}
+ (f \circ \Phi)(hx)
+ &= f( H(1,hx) )
+ = f( H(h,x) ) \\
+ &= f(h * H(1,x) )
+ = h f( H(1,x) )
+ = h (f \circ \Phi)(x).
+\end{align*}
+
+Die Injektivität ergibt sich daraus, dass für $G$-Abbildungen $f, f' : X \rightarrow Y$ mit $f \circ \Phi = f' \circ \Phi$ für alle $H(g,x) \in X'$
+\begin{align*}
+ f( H(g,x) )
+ &= f( g * H(1,x) )
+ = g * f( H(1,x) )
+ = g * (f \circ \Phi)(x) \\
+ &= g * (f' \circ \Phi)(x)
+ = g * f'( H(1,x) )
+ = f'( g * H(1,x) )
+ = f'( H(g,x) ),
+\end{align*}
+also $f = f'$.
+
+Die Surjektivität der Abbildung ergibt sich daraus, dass sich für jede $H$-Abbildung $\psi : X \rightarrow Y$ eine $G$-Abbildung $f : X' \rightarrow Y$ konstruieren lässt, so dass $\psi = f \circ \Phi$: Für $H(g,x) \in X'$ sei $f(H(g,x)) :=  g \psi(x)$. Dieser Ausdruck ist wohldefiniert, denn ist $H(g,x) = H(g',x')$, so ist $(g',x') = h(g,x) = (gh^{-1},hx)$ für ein $h \in H$ und somit
+\[
+ g \psi(x) = g h^{-1} h \psi(x) = g h^{-1} \psi(hx) = g' \psi(x').
+\]
+$f$ ist eine $G$-Abbildung, da für alle $g \in G$ und $H(\tilde{g},x)$
+\[
+ f( g * H(\tilde{g},x) )
+ = f( H(g\tilde{g}, x) )
+ = g \tilde{g} \psi(x)
+ = g f( H(\tilde{g},x) ).
+\]
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+Da das Zentrum $Z$ von $G$ ein Teiler von $\ord G = p^3$ ist, muss $\ord Z \in \{1, p, p^2, p^3\}$. Es ergibt sich jedoch, dass $\ord Z = p$ sein muss:
+
+Da $Z$ abelsch ist, $G$ jedoch nicht, muss $Z \neq G$ und somit $\ord Z \neq p^3$.
+
+Wäre $\ord Z = p^2$, so wäre $\ord G/Z = \frac{\ord G}{\ord Z} = p$, also $G/Z$ zyklisch, und $G$ daher, wie aus der Vorlesung bekannt, abelsch.
+
+Auch ist aus der Vorlesung bekannt, dass $Z \neq \{1\}$, da $G$ eine nichttriviale $p$-Gruppe ist.
+
+Es muss also $\ord Z = p$.
+
+
+
 
 
 
