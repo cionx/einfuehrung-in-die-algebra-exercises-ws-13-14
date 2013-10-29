@@ -141,6 +141,32 @@ $f$ ist eine $G$-Abbildung, da für alle $g \in G$ und $H(\tilde{g},x)$
 
 
 \section{}
+Angenommen, es ist $\ord Z = 1$, also $Z = \{1\}$, aber die Anzahl der Konjugationsklassen in $G$ ist echt größer als $\frac{\ord G}{p}$. Sei dann $x_1, \ldots, x_n$ ein Repräsentantensystem der Konjugationsklassen von $G-\{1\}$; nach Annahme ist dabei $n \geq \frac{\ord G}{p}$. Es ist nun $(G : Z_{x_i}) \neq 1$ für $i=1,\ldots,n$, da sonst $Z_{x_i} = G$, also $1 \neq x_i \in Z$, im Widerspruch zur Annahme dass $Z = \{1\}$. Da $(G : Z_{x_i})$ ein Teiler von $\ord G$ ist, muss daher $(G : Z_{x_i}) \geq p$ für $i=1,\ldots,n$. Es ist daher
+\[
+ \ord G = \ord Z + \sum_{i=1}^n (G : Z_{x_i}) \geq 1 + \frac{\ord G}{p} p = 1 + \ord G,
+\]
+also $0 = 1$, was offensichtlich falsch ist. Also muss, wenn die Anzahl den Konjugationsklassen in $G$ echt größer als $\frac{\ord G}{p}$ ist, $\ord Z \geq 2$.
+
+
+
+
+
+\section{}
+Zunächst gilt es zu bemerken, dass $x \in X$ genau dann ein Fixpunkt von $G$, falls $gx = x$ für alle $g \in G$, also $G_x = G$, bzw. $(G : G_x) = 1$. Da $Gx = x$ ist $x$ auch der einzige Repräsentant der Bahn von $x$.
+
+Sei $x_1, \ldots, x_n$ ein Respräsentantensystem der Bahnen auf $X$. Dann ist nach der Bahnengleichung
+\[
+ 17 = \ord X = \sum_{i=1}^n (G : G_{x_i}),
+\]
+wobei für je $i=1, \ldots, n$ der Index $(G : G_{x_i})$ ein Teiler von $\ord G$ ist, und daher $(G : G_{x_i}) \in \{1,7,11,77\}$. Betrachtet man nun alle Möglichkeiten, $17$ als Summen aus diesen Zahlen darzustellen, so ergibt sich, dass
+\[
+ 17
+ = 11 + 6 \cdot 1
+ = 2 \cdot 7 + 3 \cdot 1
+ = 7 + 10 \cdot 1
+ = 17 \cdot 1.
+\]
+Es gibt also in jedem möglichen Fall paarweise verschiedene $i_1, i_2, i_3 \in \{1, \ldots, n\}$ mit $(G : G_{x_{i_j}}) = 1$. Also sind $x_{i_1}, x_{i_2}$ und $x_{i_3}$ drei (paarweise verschiedene) Fixpunkte von $G$.
 
 
 
@@ -148,11 +174,18 @@ $f$ ist eine $G$-Abbildung, da für alle $g \in G$ und $H(\tilde{g},x)$
 
 \section{}
 
+\subsection{}
+Es sei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen auf $X$. Für $i=1,\ldots,n$ gilt: Da $(G : G_{x_i})$ ein Teiler von $\ord G = p^k$ ist, ist $(G : G_{x_i}) = p^{l_i}$ für ein $l_i \in \{0, 1, \ldots, k\}$. Durch passende Durchnummerierung der $x_i$ kann davon ausgegangen werden, dass es ein $j \in \{1,\ldots,n\}$ gibt, so dass $(G : G_{x_i}) = 1$, also $l_i = 0$, für $i=1,\ldots,j$, und $(G : G_{x_i}) \geq p$, also $l_i \geq 1$ für $i > j$. Insbesondere sind $x_1, \ldots, x_j$ die Fixpunkte von $G$ (vergleiche anfänglich Bemerkung in \textbf{Aufgabe 2.3}).
 
+Nach der Bahnengleichung ist nun
+\[
+ \ord X
+ = \sum_{i=1}^n (G : G_{x_i})
+ = j + \sum_{i=j+1}^n p^{l_i}
+ = j + p \sum_{i=j+1}^n \underbrace{p^{l_i - 1}}_{\in \N},
+\]
+also insbesondere $\ord X \equiv j\ (\textrm{mod}\ p)$. Da $j$ gerade die Anzahl der Fixpunkte von $G$ ist, ist dies die zu zeigende Aussage.
 
-
-
-\section{}
 
 
 
