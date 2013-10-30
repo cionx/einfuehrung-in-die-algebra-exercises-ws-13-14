@@ -187,6 +187,26 @@ Nach der Bahnengleichung ist nun
 also insbesondere $\ord X \equiv j\ (\textrm{mod}\ p)$. Da $j$ gerade die Anzahl der Fixpunkte von $G$ ist, ist dies die zu zeigende Aussage.
 
 
+\subsection{}
+Zunächst gilt es zu bemerken, dass die zu zeigende Aussage für $N = \{1\}$ nicht gilt. Im Folgenden wird daher die Aussage unter der zusätzlichen Annahme $N \neq \{1\}$ gezeigt.
+
+Da $N$ ein Normalteiler ist, ist $gNg^{-1} = N$ für alle $g \in G$. Also ist $h \in Gh \subseteq N$ für alle $h \in N$, wobei $Gh = \{ghg^{-1} : g \in G\}$ die Bahn von $h$ unter der Konjugationsaktion ist. Es folgt, dass $N$ die disjunkte Vereinigung von Bahnen ist. Angenommen $N \cap Z = \{1\}$. Da $Z = \{g \in G : Gg = \{g\}\}$ ist dann $1$ das einzige Element $h \in N$ mit $Gh = \{h\}$. Nach der Klassengleichung ist daher
+\[
+ \ord N = 1 + \sum_{i=1}^n (G : Z_{x_i}),
+\]
+wobei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen in $N-\{1\}$ ist. Da $\ord N$ sowie jedes $(G : Z_{x_i})$ als Teiler von $\ord G = p^k$ eine Potenz von $p$ ist, ergibt sich, dass
+\[
+ p^n = 1 + n_1 p + \ldots + n_m p^m
+\]
+für passende $n,m, n_1, \ldots, n_m \in \N$, wobei $n \geq 1$ wegen der Annahme $N \neq \{1\}$. Es folgt, dass
+\[
+ 1 = p^n - n_m p^m - \ldots - n_1 p = p ( p^{n-1} - n_m p^{m-1} - \ldots - n_1 ).
+\]
+Also ist $p$ ein Teiler von $1$, was offensichtlich nicht stimmt. Also muss $N \cap Z \supsetneq \{1\}$.
+
+
+
+
 
 
 
