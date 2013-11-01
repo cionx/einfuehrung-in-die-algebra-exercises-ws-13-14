@@ -80,7 +80,7 @@ wobei $H(\tilde{g},x) \in X'$ die Bahn von $(\tilde{g},x) \in G \times X$ bezeic
 \]
 und für $g_1, g_2 \in G$ und $H(\tilde{g},x) \in X'$
 \[
- g_1 * (g_1 * H(\tilde{g},x))
+ g_1 * (g_2 * H(\tilde{g},x))
  = g_1 * H(g_2 \tilde{g}, x)
  = H(g_1 g_2 \tilde{g}, x)
  = (g_1 g_2) * H(\tilde{g},x).
@@ -128,7 +128,7 @@ Die Surjektivität der Abbildung ergibt sich daraus, dass sich für jede $H$-Abb
 \[
  g \psi(x) = g h^{-1} h \psi(x) = g h^{-1} \psi(hx) = g' \psi(x').
 \]
-$f$ ist eine $G$-Abbildung, da für alle $g \in G$ und $H(\tilde{g},x)$
+$f$ ist eine $G$-Abbildung, da für alle $g \in G$ und $H(\tilde{g},x) \in X'$
 \[
  f( g * H(\tilde{g},x) )
  = f( H(g\tilde{g}, x) )
@@ -152,13 +152,13 @@ also $0 = 1$, was offensichtlich falsch ist. Also muss, wenn die Anzahl den Konj
 
 
 \section{}
-Zunächst gilt es zu bemerken, dass $x \in X$ genau dann ein Fixpunkt von $G$, falls $gx = x$ für alle $g \in G$, also $G_x = G$, bzw. $(G : G_x) = 1$. Da $Gx = x$ ist $x$ auch der einzige Repräsentant der Bahn von $x$.
+Zunächst gilt es zu bemerken, dass $x \in X$ genau dann ein Fixpunkt von $G$ ist, falls $gx = x$ für alle $g \in G$, also $G_x = G$, und somit $(G : G_x) = 1$. Da $Gx = \{x\}$ ist $x$ auch der einzige Repräsentant der Bahn von $x$.
 
 Sei $x_1, \ldots, x_n$ ein Respräsentantensystem der Bahnen auf $X$. Dann ist nach der Bahnengleichung
 \[
  17 = \ord X = \sum_{i=1}^n (G : G_{x_i}),
 \]
-wobei für je $i=1, \ldots, n$ der Index $(G : G_{x_i})$ ein Teiler von $\ord G$ ist, und daher $(G : G_{x_i}) \in \{1,7,11,77\}$. Betrachtet man nun alle Möglichkeiten, $17$ als Summen aus diesen Zahlen darzustellen, so ergibt sich, dass
+wobei für je $i=1, \ldots, n$ der Index $(G : G_{x_i})$ ein Teiler von $\ord G$ ist, und daher $(G : G_{x_i}) \in \{1,7,11,77\}$. Betrachtet man nun alle Möglichkeiten, $17$ als Summe aus diesen Zahlen darzustellen, so ergibt sich, dass
 \[
  17
  = 11 + 6 \cdot 1
@@ -188,7 +188,7 @@ also insbesondere $\ord X \equiv j\ (\textrm{mod}\ p)$. Da $j$ gerade die Anzahl
 
 
 \subsection{}
-Zunächst gilt es zu bemerken, dass die zu zeigende Aussage für $N = \{1\}$ nicht gilt. Im Folgenden wird daher die Aussage unter der zusätzlichen Annahme $N \neq \{1\}$ gezeigt.
+Zunächst gilt es zu bemerken, dass die zu zeigende Aussage für $N = \{1\}$ nicht gilt. Im Folgenden wird sie daher unter der zusätzlichen Annahme $N \neq \{1\}$ gezeigt.
 
 Da $N$ ein Normalteiler ist, ist $gNg^{-1} = N$ für alle $g \in G$. Also ist $h \in Gh \subseteq N$ für alle $h \in N$, wobei $Gh = \{ghg^{-1} : g \in G\}$ die Bahn von $h$ unter der Konjugationsaktion ist. Es folgt, dass $N$ die disjunkte Vereinigung von Bahnen ist. Angenommen $N \cap Z = \{1\}$. Da $Z = \{g \in G : Gg = \{g\}\}$ ist dann $1$ das einzige Element $h \in N$ mit $Gh = \{h\}$. Nach der Klassengleichung ist daher
 \[
@@ -202,7 +202,7 @@ für passende $n,m, n_1, \ldots, n_m \in \N$, wobei $n \geq 1$ wegen der Annahme
 \[
  1 = p^n - n_m p^m - \ldots - n_1 p = p ( p^{n-1} - n_m p^{m-1} - \ldots - n_1 ).
 \]
-Also ist $p$ ein Teiler von $1$, was offensichtlich nicht stimmt. Also muss $N \cap Z \supsetneq \{1\}$.
+Also ist $p$ ein Teiler von $1$, was offensichtlich nicht stimmt. Daher muss $N \cap Z \supsetneq \{1\}$.
 
 
 
