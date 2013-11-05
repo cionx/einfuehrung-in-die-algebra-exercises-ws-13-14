@@ -28,6 +28,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Sn}{\mathfrak{S}}
 \newcommand{\dt}{\,\text{d}t}
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
 \newcommand{\id}{\operatorname{id}}
@@ -64,6 +65,29 @@
 
 \begin{document}
 \maketitle
+
+
+
+
+
+\section{}
+Für $n = \{1,2\}$ ist $\Sn_n$ kommutativ, also $Z(\Sn_1) = \Sn_1$ und $Z(\Sn_2) = \Sn_2$. Für $n \geq 3$ ist $Z(\Sn_n) = \{1\}$ die triviale Untergruppe:\\
+Sei $\pi \in Z(\Sn_n)$ und $\sigma := \vect{1&2&\ldots&n-1&n} \in \Sn_n$ die Rotation mit $\sigma(1)=2$. Es gibt dann $s \in \{0,\ldots,n-1\}$ mit $\pi(1) = \sigma^s(1)$. Da $\pi$ mit allen Elementen in $\Sn_n$ kommutiert, ist damit für alle $m \in \{1,\ldots,n\}$
+\[
+ \pi(m)
+ = \pi(\sigma^m(1))
+ = \sigma^m(\pi(1))
+ = \sigma^m(\sigma^s(1))
+ \underset{(*)}{=} \sigma^s(\sigma^m(1))
+ = \sigma^s(m),
+\]
+also $\sigma^s = \pi$, wobei bei $(*)$ die Kommutativität von $\gen{\sigma}$ genutzt wird. Da wegen der Kommutativität von $\sigma^s = \pi$
+\[
+ \tau_{12} = \sigma^s\ \tau_{12}\ (\sigma^s)^{-1} = \tau_{(1+s)(2+s)},
+\]
+wobei $\tau_{kl}$ die Transposition von $k \bmod n$ und $l \bmod n$ bezeichnet, muss $s = 0$, also $\pi = \sigma^s = \id$. Dass $\id \in Z(\Sn_n)$ ist allerdings klar, da $Z(\Sn_n) \subseteq \Sn_n$ eine Untergruppe ist.
+
+
 
 
 
