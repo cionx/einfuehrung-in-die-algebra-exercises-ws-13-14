@@ -12,9 +12,9 @@
 \usepackage{leftidx}
 
 \theoremstyle{definition}
-\newtheorem*{beh}{Behauptung}
-\newtheorem*{bem}{Bemerkung}
-\newtheorem*{lem}{Lemma}
+\newtheorem{beh}{Behauptung}
+\newtheorem{bem}[beh]{Bemerkung}
+\newtheorem{lem}[beh]{Lemma}
 \newtheorem*{anm}{Anmerkung}
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
@@ -92,6 +92,71 @@ wobei $\tau_{kl}$ die Transposition von $k \bmod n$ und $l \bmod n$ bezeichnet, 
 
 
 \section{}
+Es sei $G$ eine Gruppe der Ordnung $\ord G = 5929 = 11^2 \cdot 7^2$. Zum Lösen dieser Aufgabe hilft das folgende Lemma:
+
+\begin{lem}\label{lem:normalprodukt}
+ Sei $G$ eine endliche Gruppe, und seien $N_1, N_2 \subseteq G$ Normalteiler in $G$ mit $\ord G = \ord N_1 \cdot \ord N_2$ und $N_1 \cap N_2 = \{1\}$. Dann ist $G \cong N_1 \times N_2$.
+\end{lem}
+\begin{proof}[Beweis des Lemmas:]
+ Für $n_1 \in N_1$ und $n_2 \in N_2$ ist $n_1 n_2 = n_2 n_1$, denn $N_1$ und $N_2$ sind als Normalteiler invariant bezüglich Konjugation, weshalb
+ \[
+  n_1 \cdot n_2 n_1^{-1} n_2^{-1} \in N_1 \text{ und }
+  n_1 n_2 n_1^{-1} \cdot n_2^{-1} \in N_2.
+ \]
+ Aus $N_1 \cap N_2 = \{1\}$ folgt $n_1 n_2 n_1^{-1} n_2^{-1} = 1$, also $n_1 n_2 = n_2 n_1$. Es sei nun
+ \[
+  \varphi : N_1 \times N_2 \rightarrow G, (n_1, n_2) \mapsto n_1 n_2.
+ \]
+ Aus der eben gezeigten Kommutativität folgt, dass $\varphi$ ein Gruppenhomomorphismus ist, da für alle $(n_1,n_2), (n'_1, n'_2) \in N_1 \times N_2$
+ \begin{align*}
+  \varphi( (n_1,n_2) (n'_1, n'_2) )
+  = \varphi( (n_1 n'_1, n_2 n'_2) )
+  &= n_1 n'_1 n_2 n'_2 \\
+  &= n_1 n_2 n'_1 n'_2
+  = \varphi(n_1, n_2) \varphi(n'_1, n'_2).
+ \end{align*}
+ $\varphi$ ist injektiv, da für $(n_1, n_2) \in \Ker \varphi$
+ \[
+  1 = \varphi(n_1, n_2) = n_1 n_2,
+ \]
+ also $N_2 \ni n_2 = n_1^{-1} \in N_1$ und daher $n_1 = n_2 = 1$. Da
+ \[
+  \ord N_1 \times N_2 = \ord N_1 \times \ord N_2 = \ord G < \infty
+ \]
+ ist $\varphi$ daher bijektiv. Da $\varphi$ ein Gruppenisomorphismus ist, ist $G \cong N_1 \times N_2$.
+\end{proof}
+
+\begin{bem}\label{bem:primschnitt}
+ Sind $p$ und $q$ verschiedene Primzahlen und ist $G$ ein $p$-Gruppe und $H$ eine $q$-Gruppe, so ist $G \cap H = \{1\}$: Nach dem Satz von Lagrange ist $\ord G \cap H$ ein Teiler von $\ord G$ und $\ord H$, aus der Teilerfremdheit von $p$ und $q$ folgt daher, dass $\ord G \cap H = 1$, also $G \cap H = \{1\}$.
+\end{bem}
+
+
+Es sei $s$ die Anzahl der $11$-Sylowgruppen in $G$. Nach den Sylowsätzen ist
+\[
+ s \mid \ord G = 11^2 \cdot 7^2, \qquad s \equiv 1 \mod 11.
+\]
+Da $s \equiv 1 \bmod 11$ darf $s$ kein Vielfaches von $11$ sein, zusammen mit $s \mid 11^2 \cdot 7^2$ ergibt sich daraus $s \in \{1,7,49\}$. Da jedoch
+\[
+ 7 \not\equiv 1 \not\equiv 49 \mod 11
+\]
+muss $s = 1$. Insbesondere ist die eindeutige $11$-Sylowgruppe $S_{11} \subseteq G$, die nach den Sylowsätzen existiert, daher ein Normalteiler in $G$.
+Analoges ergibt sich für die Anzahl $r$ der $7$-Sylowgruppen in $G$: Es muss
+\[
+ r \mid \ord G = 11^2 \cdot 7^2, \qquad r \equiv 1 \mod 7,
+\]
+also $r \in \{1,11,121\}$, und wegen
+\[
+ 11 \not\equiv 1 \not\equiv 121 \mod 7
+\]
+daher $r = 1$. Also ist auch die eindeutige, nach den Sylowsätzen existierende $7$-Sylowgruppe $S_7 \subseteq G$ ein Normalteiler in $G$.
+
+Da $\ord S_{11} = 11^2$ und $\ord S_7 = 7^2$ ist $\ord G = \ord S_{11} \cdot \ord S_7$. Nach Bemerkung \ref{bem:primschnitt} ist auch $S_{11} \cap S_7 = \{1\}$. Nach Lemma \ref{lem:normalprodukt} ist ist also $G \cong S_{11} \times S_7$. Da $\ord S_{11}$ und $\ord S_7$ Quadrate von Primzahlen sind, sind $S_{11}$ und $S_7$, wie aus der Vorlesung bekannt, abelsch. Also ist $G$ als Produkt abelscher Gruppen ebenfalls abelsch.
+
+
+
+
+
+
 
 
 
@@ -142,12 +207,20 @@ Sei $S \trianglelefteq G$ eine normale $p$-Sylowgruppe in $G$. Sei $T := S \cap 
 
 
 \subsection{}
-Sei $S \subseteq H$ eine $p$-Sylowgruppe; eine solche existiert nach den Sylowsätzen. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine $p$-Sylowgruppe $T' \subseteq G$ mit $S = T' \cap H$. Da $T$ und $T'$ $p$-Sylowgruppen in $G$ sind, sind sie konjugiert zueinander, d.h. es gibt ein $g \in G$ mit $T' = g\, T g^{-1}$. Da $H$ normal in $G$ ist, ist auch $gHg^{-1} = H$. Es ist daher
+Sei $S \subseteq H$ eine $p$-Sylowgruppe; eine solche existiert nach den Sylowsätzen. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine $p$-Sylowgruppe $T' \subseteq G$ mit $S = T' \cap H$. Da $T$ und $T'$ $p$-Sylowgruppen in $G$ sind, sind sie konjugiert zueinander, d.h. es gibt ein $g \in G$ mit $T' = g\, T g^{-1}$. Da $H$ normal in $G$ ist, ist $gHg^{-1} = H$ sowie
 \[
- S = T' \cap H = g\, T g^{-1} \cap g H g^{-1} = g(T \cap H)g^{-1},
+ g^{-1}Sg \subseteq g^{-1}Hg = H.
 \]
-wobei genutzt wird, dass $\inn_g$ als Automorphismus bijektiv ist. Da $S$ und $T \cap H$ konjugiert zueinder sind, und $S$ eine $p$-Sylowgruppe in $H$ ist, ist auch $T \cap H$ eine $p$-Sylowgruppe in $H$.
-
+Insbesondere ist $g^{-1}Sg$ wieder eine Untergruppe von $H$ mit $\ord g^{-1}Sg = \ord S$ (da $\inn_g$ ein Automorphismus ist), also eine $p$-Sylowgruppe in $H$. Da nun
+\begin{align*}
+ T \cap H
+ &= g^{-1}g(T \cap H)g^{-1}g
+ = g^{-1} \left( g(T \cap H)g^{-1} \right) g \\
+ &= g^{-1} \left( \left(g\,Tg^{-1}\right) \cap \left(gHg^{-1}\right) \right) g
+ = g^{-1} (T' \cap H) g
+ = g^{-1} S g
+\end{align*}
+ist diese $p$-Sylowgruppe gerade $T \cap H$.
 
 
 
