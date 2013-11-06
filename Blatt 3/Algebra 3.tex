@@ -91,6 +91,56 @@ wobei $\tau_{kl}$ die Transposition von $k \bmod n$ und $l \bmod n$ bezeichnet, 
 
 
 
+\section{}
+
+
+
+
+
+\section{}
+
+
+\subsection{}\label{ssec:fak}
+Durch
+\[
+ G \times G/H \rightarrow G/H, (g,aH) \mapsto gaH
+\]
+wird eine Aktion von $G$ auf der Menge der Linksnebenklassen $G/H$ definiert. Diese Aktion entspricht dem Gruppenhomomorphismus
+\[
+ \varphi : G \rightarrow S(G/H), g \mapsto (aH \mapsto gaH).
+\]
+Es ist daher
+\[
+ \ord G
+ = \ord \Ker \varphi \cdot \ord \Img \varphi.
+\]
+Da $\ord \Img \varphi$ ein Teiler von $\ord S(G/H) = (G:H)!$ ist, $\ord G$ jedoch kein Teiler von $(G : H)!$, muss $\ord \Ker \varphi \neq 1$, also $\Ker \varphi$ nichttrivial sein. $\Ker \varphi$ ist als Kern eines Gruppenhomomorphismus normal in $G$. Es ist $\Ker \varphi \subseteq H$, denn für alle $n \in \Ker \varphi$ ist $nH = H$, da $H$ eine Linksnebenklasse in $G/H$ ist, also $n \in H$. Damit ist $\Ker \varphi \subseteq H$ ein nichttrivialer Normalteiler von $G$.
+
+
+\subsection{}
+Es gilt zu bemerken, dass die Aussage nur unter der zusätzlichen Bedingung $k > 0$ gilt: Ansonsten ist die triviale Gruppe mit $p=2$, $k=0$ und $m=1$ ein Gegenbeispiel. Es wird daher die Aussage unter der zusätzlichen Annahme $k > 0$ gezeigt:
+
+Nach den Sylowsätzen gibt es eine $p$-Sylowgruppe $S \subseteq G$. Da $S$ eine maximale $p$-Untergruppe ist, ist $\ord S = p^k$, also $(G : S) = m$. Wegen den Annahmen $k > 0$ und $p > m$ ist daher
+\[
+\ord G = p^k m \nmid m! = (G : S)!.
+\]
+Nach Aufgabenteil \textbf{\ref{ssec:fak}} gibt es daher einen nicht trivialen Normalteiler $N \subseteq S \subseteq G$ von $G$ in $S$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
