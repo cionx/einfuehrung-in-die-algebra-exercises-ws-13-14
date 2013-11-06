@@ -130,6 +130,23 @@ Nach Aufgabenteil \textbf{\ref{ssec:fak}} gibt es daher einen nicht trivialen No
 
 
 
+\section{}
+
+
+\subsection{}\label{ssc:Sylowschnitt}
+Da $S \subseteq H$ ein $p$-Sylowgruppe in $H$ ist, ist $S \subseteq G$ eine $p$-Gruppe in $G$. Nach den Sylowsätzen gibt es daher eine $p$-Sylowgruppe $T \subseteq G$ mit $S \subseteq T$. Da $S \subseteq H$ und $S \subseteq T$ ist $S \subseteq T \cap H$. Da $T \cap H \subseteq T$ eine $p$-Gruppe in $H$ ist, und $S$ als Sylowgruppe in $H$ bereits eine in $H$ maximale $p$-Gruppe ist, muss bereits $S = T \cap H$.
+
+
+\subsection{}
+Sei $S \trianglelefteq G$ eine normale $p$-Sylowgruppe in $G$. Sei $T := S \cap H$. Als Untergruppe ist $T \subseteq S$ eine $p$-Gruppe. Wie aus der Vorlesunge bekannt ist $T$ normal in $H$. Nach den Sylowsätzen gibt es eine Sylowgruppe $T' \subseteq H$ mit $T \subseteq T'$. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es daher eine Sylowgruppe $S' \subseteq G$ mit $T' = S' \cap H$. Da $S$ normal ist, ist $S$, wie aus der Vorlesung bekannt, die einzige $p$-Sylowgruppe in $G$. Also muss $S = S'$, und damit $T = T'$. Also ist $T$ eine normale $p$-Sylowgruppen $H$.
+
+
+\subsection{}
+Sei $S \subseteq H$ eine $p$-Sylowgruppe; eine solche existiert nach den Sylowsätzen. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine $p$-Sylowgruppe $T' \subseteq G$ mit $S = T' \cap H$. Da $T$ und $T'$ $p$-Sylowgruppen in $G$ sind, sind sie konjugiert zueinander, d.h. es gibt ein $g \in G$ mit $T' = g\, T g^{-1}$. Da $H$ normal in $G$ ist, ist auch $gHg^{-1} = H$. Es ist daher
+\[
+ S = T' \cap H = g\, T g^{-1} \cap g H g^{-1} = g(T \cap H)g^{-1},
+\]
+wobei genutzt wird, dass $\inn_g$ als Automorphismus bijektiv ist. Da $S$ und $T \cap H$ konjugiert zueinder sind, und $S$ eine $p$-Sylowgruppe in $H$ ist, ist auch $T \cap H$ eine $p$-Sylowgruppe in $H$.
 
 
 
