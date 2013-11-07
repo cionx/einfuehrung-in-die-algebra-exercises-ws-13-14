@@ -71,7 +71,7 @@
 
 
 \section{}
-Für $n = \{1,2\}$ ist $\Sn_n$ kommutativ, also $Z(\Sn_1) = \Sn_1$ und $Z(\Sn_2) = \Sn_2$. Für $n \geq 3$ ist $Z(\Sn_n) = \{1\}$ die triviale Untergruppe:\\
+Für $n \in \{1,2\}$ ist $\Sn_n$ kommutativ, also $Z(\Sn_1) = \Sn_1$ und $Z(\Sn_2) = \Sn_2$. Für $n \geq 3$ ist $Z(\Sn_n) = \{1\}$ die triviale Gruppe:\\
 Sei $\pi \in Z(\Sn_n)$ und $\sigma := \vect{1&2&\ldots&n-1&n} \in \Sn_n$ die Rotation mit $\sigma(1)=2$. Es gibt dann $s \in \{0,\ldots,n-1\}$ mit $\pi(1) = \sigma^s(1)$. Da $\pi$ mit allen Elementen in $\Sn_n$ kommutiert, ist damit für alle $m \in \{1,\ldots,n\}$
 \[
  \pi(m)
@@ -85,23 +85,21 @@ also $\sigma^s = \pi$, wobei bei $(*)$ die Kommutativität von $\gen{\sigma}$ ge
 \[
  \tau_{12} = \sigma^s\ \tau_{12}\ (\sigma^s)^{-1} = \tau_{(1+s)(2+s)},
 \]
-wobei $\tau_{kl}$ die Transposition von $k \bmod n$ und $l \bmod n$ bezeichnet, muss $s = 0$, also $\pi = \sigma^s = \id$. Dass $\id \in Z(\Sn_n)$ ist allerdings klar, da $Z(\Sn_n) \subseteq \Sn_n$ eine Untergruppe ist.
+wobei $\tau_{kl}$ die Transposition von $k \bmod n$ und $l \bmod n$ bezeichnet, muss $s = 0$, also $\pi = \sigma^s = \id$. Dass $\id \in Z(\Sn_n)$ ist klar, da $Z(\Sn_n) \subseteq \Sn_n$ eine Untergruppe ist.
 
 
 
 
 
 \section{}
-Es sei $G$ eine Gruppe der Ordnung $\ord G = 5929 = 11^2 \cdot 7^2$. Zum Lösen dieser Aufgabe hilft das folgende Lemma:
-
 \begin{lem}\label{lem:normalprodukt}
  Sei $G$ eine endliche Gruppe, und seien $N_1, N_2 \subseteq G$ Normalteiler in $G$ mit $\ord G = \ord N_1 \cdot \ord N_2$ und $N_1 \cap N_2 = \{1\}$. Dann ist $G \cong N_1 \times N_2$.
 \end{lem}
 \begin{proof}[Beweis des Lemmas:]
  Für $n_1 \in N_1$ und $n_2 \in N_2$ ist $n_1 n_2 = n_2 n_1$, denn $N_1$ und $N_2$ sind als Normalteiler invariant bezüglich Konjugation, weshalb
  \[
-  n_1 \cdot n_2 n_1^{-1} n_2^{-1} \in N_1 \text{ und }
-  n_1 n_2 n_1^{-1} \cdot n_2^{-1} \in N_2.
+  n_1 \cdot \underbrace{n_2 n_1^{-1} n_2^{-1}}_{\in N_1} \in N_1 \text{ und }
+  \underbrace{n_1 n_2 n_1^{-1}}_{\in N_2} \cdot n_2^{-1} \in N_2.
  \]
  Aus $N_1 \cap N_2 = \{1\}$ folgt $n_1 n_2 n_1^{-1} n_2^{-1} = 1$, also $n_1 n_2 = n_2 n_1$. Es sei nun
  \[
@@ -117,25 +115,24 @@ Es sei $G$ eine Gruppe der Ordnung $\ord G = 5929 = 11^2 \cdot 7^2$. Zum Lösen 
  \end{align*}
  $\varphi$ ist injektiv, da für $(n_1, n_2) \in \Ker \varphi$
  \[
-  1 = \varphi(n_1, n_2) = n_1 n_2,
+  1 = \varphi(n_1, n_2) = n_1 n_2, \text{ also } N_2 \ni n_2 = n_1^{-1} \in N_1,
  \]
- also $N_2 \ni n_2 = n_1^{-1} \in N_1$ und daher $n_1 = n_2 = 1$. Da
+und daher $n_1 = n_2 = 1$. Da
  \[
-  \ord N_1 \times N_2 = \ord N_1 \times \ord N_2 = \ord G < \infty
+  \ord N_1 \times N_2 = \ord N_1 \cdot \ord N_2 = \ord G < \infty
  \]
- ist $\varphi$ daher bijektiv. Da $\varphi$ ein Gruppenisomorphismus ist, ist $G \cong N_1 \times N_2$.
+ folgt aus der Injektivität von $\varphi$ direkt die Bijektivität. Da $\varphi$ ein Gruppenisomorphismus ist, ist $G \cong N_1 \times N_2$.
 \end{proof}
 
 \begin{bem}\label{bem:primschnitt}
  Sind $p$ und $q$ verschiedene Primzahlen und ist $G$ ein $p$-Gruppe und $H$ eine $q$-Gruppe, so ist $G \cap H = \{1\}$: Nach dem Satz von Lagrange ist $\ord G \cap H$ ein Teiler von $\ord G$ und $\ord H$, aus der Teilerfremdheit von $p$ und $q$ folgt daher, dass $\ord G \cap H = 1$, also $G \cap H = \{1\}$.
 \end{bem}
 
-
-Es sei $s$ die Anzahl der $11$-Sylowgruppen in $G$. Nach den Sylowsätzen ist
+Es sei $G$ eine Gruppe der Ordnung $\ord G = 5929 = 11^2 \cdot 7^2$. Es sei $s$ die Anzahl der $11$-Sylowgruppen in $G$. Nach den Sylowsätzen ist
 \[
  s \mid \ord G = 11^2 \cdot 7^2, \qquad s \equiv 1 \mod 11.
 \]
-Da $s \equiv 1 \bmod 11$ darf $s$ kein Vielfaches von $11$ sein, zusammen mit $s \mid 11^2 \cdot 7^2$ ergibt sich daraus $s \in \{1,7,49\}$. Da jedoch
+Da $s \equiv 1 \bmod 11$ ist $s$ kein Vielfaches von $11$. Zusammen mit $s \mid 11^2 \cdot 7^2$ ergibt sich daraus, dass $s \in \{1,7,49\}$. Da jedoch
 \[
  7 \not\equiv 1 \not\equiv 49 \mod 11
 \]
@@ -164,7 +161,7 @@ Durch
 \[
  G \times G/H \rightarrow G/H, (g,aH) \mapsto gaH
 \]
-wird eine Aktion von $G$ auf der Menge der Linksnebenklassen $G/H$ definiert. Diese Aktion entspricht dem Gruppenhomomorphismus
+wird eine Aktion von $G$ auf der Menge der Linksnebenklassen $G/H$ definiert (die Wohldefiniertheit ist klar). Diese Aktion entspricht dem Gruppenhomomorphismus
 \[
  \varphi : G \rightarrow S(G/H), g \mapsto (aH \mapsto gaH).
 \]
@@ -173,13 +170,14 @@ Es ist daher
  \ord G
  = \ord \Ker \varphi \cdot \ord \Img \varphi.
 \]
-Da $\ord \Img \varphi$ ein Teiler von $\ord S(G/H) = (G:H)!$ ist, $\ord G$ jedoch kein Teiler von $(G : H)!$, muss $\ord \Ker \varphi \neq 1$, also $\Ker \varphi$ nichttrivial sein. $\Ker \varphi$ ist als Kern eines Gruppenhomomorphismus normal in $G$. Es ist $\Ker \varphi \subseteq H$, denn für alle $n \in \Ker \varphi$ ist $nH = H$, da $H$ eine Linksnebenklasse in $G/H$ ist, also $n \in H$. Damit ist $\Ker \varphi \subseteq H$ ein nichttrivialer Normalteiler von $G$.
+Da $\ord \Img \varphi$ nach dem Satz von Lagrange ein Teiler von $
+\ord S(G/H) = (G:H)!$ ist, $\ord G$ jedoch kein Teiler von $(G : H)!$, muss $\ord \Ker \varphi \neq 1$, also $\Ker \varphi$ nichttrivial sein. $\Ker \varphi$ ist als Kern eines Gruppenhomomorphismus normal in $G$. Auch ist $\Ker \varphi \subseteq H$, denn für alle $n \in \Ker \varphi$ ist $nH = H$, da $H \in G/H$, also $n \in H$. Damit ist $\Ker \varphi \subseteq H$ ein nichttrivialer Normalteiler von $G$.
 
 
 \subsection{}
 Es gilt zu bemerken, dass die Aussage nur unter der zusätzlichen Bedingung $k > 0$ gilt: Ansonsten ist die triviale Gruppe mit $p=2$, $k=0$ und $m=1$ ein Gegenbeispiel. Es wird daher die Aussage unter der zusätzlichen Annahme $k > 0$ gezeigt:
 
-Nach den Sylowsätzen gibt es eine $p$-Sylowgruppe $S \subseteq G$. Da $S$ eine maximale $p$-Untergruppe ist, ist $\ord S = p^k$, also $(G : S) = m$. Wegen den Annahmen $k > 0$ und $p > m$ ist daher
+Nach den Sylowsätzen gibt es eine $p$-Sylowgruppe $S \subseteq G$. Da $p \nmid m$ ist $\ord S = p^k$, also $(G : S) = m$. Wegen den Annahmen $k > 0$ und $p > m$ ist daher
 \[
 \ord G = p^k m \nmid m! = (G : S)!.
 \]
@@ -197,15 +195,15 @@ Da $S \subseteq H$ ein $p$-Sylowgruppe in $H$ ist, ist $S \subseteq G$ eine $p$-
 
 
 \subsection{}
-Sei $S \trianglelefteq G$ eine normale $p$-Sylowgruppe in $G$. Sei $T := S \cap H$. Als Untergruppe ist $T \subseteq S$ eine $p$-Gruppe. Wie aus der Vorlesunge bekannt ist $T$ normal in $H$. Nach den Sylowsätzen gibt es eine Sylowgruppe $T' \subseteq H$ mit $T \subseteq T'$. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es daher eine Sylowgruppe $S' \subseteq G$ mit $T' = S' \cap H$. Da $S$ normal ist, ist $S$, wie aus der Vorlesung bekannt, die einzige $p$-Sylowgruppe in $G$. Also muss $S = S'$, und damit $T = T'$. Also ist $T$ eine normale $p$-Sylowgruppen $H$.
+Sei $S \subseteq G$ eine normale $p$-Sylowgruppe in $G$. Sei $T := S \cap H$. Als Untergruppe $T \subseteq S$ ist $T$ eine $p$-Gruppe. Wie aus der Vorlesung bekannt ist $T$ normal in $H$. Nach den Sylowsätzen gibt es eine Sylowgruppe $T' \subseteq H$ mit $T \subseteq T'$. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine Sylowgruppe $S' \subseteq G$ mit $T' = S' \cap H$. Da $S$ normal ist, ist $S$, wie aus der Vorlesung bekannt, die einzige $p$-Sylowgruppe in $G$. Also muss $S = S'$, und damit $T = T'$. Also ist $T$ eine normale $p$-Sylowgruppen $H$.
 
 
 \subsection{}
-Sei $S \subseteq H$ eine $p$-Sylowgruppe; eine solche existiert nach den Sylowsätzen. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine $p$-Sylowgruppe $T' \subseteq G$ mit $S = T' \cap H$. Da $T$ und $T'$ $p$-Sylowgruppen in $G$ sind, sind sie konjugiert zueinander, d.h. es gibt ein $g \in G$ mit $T' = g\, T g^{-1}$. Da $H$ normal in $G$ ist, ist $gHg^{-1} = H$ sowie
+Sei $S \subseteq H$ eine $p$-Sylowgruppe; eine solche existiert nach den Sylowsätzen. Nach Aufgabenteil \textbf{\ref{ssc:Sylowschnitt}} gibt es eine $p$-Sylowgruppe $T' \subseteq G$ mit $S = T' \cap H$. Da $T$ und $T'$ $p$-Sylowgruppen in $G$ sind, sind sie konjugiert zueinander, d.h. es gibt ein $g \in G$ mit $T' = g\, T g^{-1}$. Da $H$ normal in $G$ ist, ist $gHg^{-1} = H$, sowie
 \[
  g^{-1}Sg \subseteq g^{-1}Hg = H.
 \]
-Insbesondere ist $g^{-1}Sg$ wieder eine Untergruppe von $H$ mit $\ord g^{-1}Sg = \ord S$ (da $\inn_g$ ein Automorphismus ist), also eine $p$-Sylowgruppe in $H$. Da nun
+Insbesondere ist $g^{-1}Sg$ wieder eine Untergruppe von $H$ mit $\ord g^{-1}Sg = \ord S$ (da $\inn_{g^{-1}}$ ein Automorphismus ist), also eine $p$-Sylowgruppe in $H$. Da nun
 \begin{align*}
  T \cap H
  &= g^{-1}g(T \cap H)g^{-1}g
@@ -221,7 +219,7 @@ ist diese $p$-Sylowgruppe gerade $T \cap H$.
 
 
 \section{}
-Es ist $\ord G = 132 = 2^2 \cdot 3 \cdot 11$.  Für $p \in \{2,3,11\}$ bezeichne sei $s_p$ die Anzahl der $p$-Sylowgruppen in $G$. Nach den Sylowsätzen ist für alle $p \in \{2,3,11\}$
+Es ist $\ord G = 132 = 2^2 \cdot 3 \cdot 11$.  Für $p \in \{2,3,11\}$ sei $s_p$ die Anzahl der $p$-Sylowgruppen in $G$. Nach den Sylowsätzen ist für alle $p \in \{2,3,11\}$
 \[
  s_p \mid \ord G = 2^2 \cdot 3 \cdot 11, \qquad s_p \equiv 1 \mod p.
 \]
@@ -230,15 +228,15 @@ Aus diesen Bedingungen ergibt sich direkt, dass $s_2 \in \{1,3,11,33\}$, $s_3 \i
 Angenommen, $G$ besitzt keine normale $p$-Sylowgruppe. Dann muss $s_2 \geq 3$, $s_3 \geq 4$ und $s_{11} = 12$. Es ergeben sich dann die folgenden Beobachtungen:
 \begin{itemize}
  \item Die $2$-Sylowgruppen haben Ordung $2^2=4$, die $3$-Sylowgruppen Ordnung $3$ und die $11$-Sylowgruppen Ordnung $11$.
- \item Sylowgruppen zu verschiedenen Primzahlen nach Bemerkung \ref{bem:primschnitt} triviale Schnitte.
- \item $p$-Sylowgruppen gleicher Primzahlen haben für $p = 2$ oder $p = 3$ ebenfalls nur trivale Schnitte, da für zwei solche $p$-Sylowgruppen $S_p$ und $S'_p$ für den Schnitt $S_p \cup S'_p$ die Ordnung $\ord S_p \cap S'_p$ ein Teiler von $\ord S_p = \ord S'_p = p$ ist, also im Falle $\ord S_p \cap S'_p \neq 1$ bereits $\ord S_p \cap S'_p = p$ und damit $S_p = S_p \cap S'_p = S'_p$.
- \item Der Schnitt zweier verschiedener $2$-Sylowgruppen ist entweder trivial oder von Ordnung $2$. Drei solche Gruppen verfügen zusammen über mindestens $5$ verschiedene Elemente (das neutrale Element nur einmal gezählt).
+ \item Sylowgruppen zu verschiedenen Primzahlen haben nach Bemerkung \ref{bem:primschnitt} triviale Schnitte.
+ \item $p$-Sylowgruppen gleicher Primzahlen haben für $p = 2$ oder $p = 3$ ebenfalls nur trivale Schnitte, da für zwei solche $p$-Sylowgruppen $S_p$ und $S'_p$ für den Schnitt $S_p \cap S'_p$ die Ordnung $\ord S_p \cap S'_p$ ein Teiler von $\ord S_p = \ord S'_p = p$ ist, also im Falle $\ord S_p \cap S'_p \neq 1$ bereits $\ord S_p \cap S'_p = p$ und damit $S_p = S_p \cap S'_p = S'_p$.
+ \item Der Schnitt zweier verschiedener $2$-Sylowgruppen ist entweder trivial oder von Ordnung $2$. Drei solche Gruppen verfügen zusammen über mindestens $5$ verschiedene Elemente.
 \end{itemize}
 Zusammen ergibt sich damit, dass $G$ mindestens
 \[
  12 \cdot 11 - 12 + 4 \cdot 3 - 3 + 5 = 135
 \]
-verschiedene Elemente hat. Da aber $\ord = 132$ kann dies nicht sein. Also ist $s_p = 1$ für ein $p \in \{2,3,11\}$, so dass $G$ ein normale $p$-Sylowgruppe besitzt.
+verschiedene Elemente hat. Da aber $\ord = 132$ kann dies nicht sein. Also ist $s_p = 1$ für ein $p \in \{2,3,11\}$, weshalb $G$ ein normale $p$-Sylowgruppe besitzt.
 
 
  
