@@ -156,12 +156,6 @@ Da $\ord S_{11} = 11^2$ und $\ord S_7 = 7^2$ ist $\ord G = \ord S_{11} \cdot \or
 
 
 
-
-
-
-
-
-
 \section{}
 
 
@@ -225,6 +219,29 @@ ist diese $p$-Sylowgruppe gerade $T \cap H$.
 
 
 
+
+\section{}
+Es ist $\ord G = 132 = 2^2 \cdot 3 \cdot 11$.  Für $p \in \{2,3,11\}$ bezeichne sei $s_p$ die Anzahl der $p$-Sylowgruppen in $G$. Nach den Sylowsätzen ist für alle $p \in \{2,3,11\}$
+\[
+ s_p \mid \ord G = 2^2 \cdot 3 \cdot 11, \qquad s_p \equiv 1 \mod p.
+\]
+Aus diesen Bedingungen ergibt sich direkt, dass $s_2 \in \{1,3,11,33\}$, $s_3 \in \{1,4,22\}$ und $s_{11} \in \{1,12\}$ (vgl. \textbf{Aufgabe 3.2.}). Dabei besitzt $G$ für $p \in \{2,3,11\}$ genau dann eine normale $p$-Sylowgruppe, wenn $s_p = 1$.
+
+Angenommen, $G$ besitzt keine normale $p$-Sylowgruppe. Dann muss $s_2 \geq 3$, $s_3 \geq 4$ und $s_{11} = 12$. Es ergeben sich dann die folgenden Beobachtungen:
+\begin{itemize}
+ \item Die $2$-Sylowgruppen haben Ordung $2^2=4$, die $3$-Sylowgruppen Ordnung $3$ und die $11$-Sylowgruppen Ordnung $11$.
+ \item Sylowgruppen zu verschiedenen Primzahlen nach Bemerkung \ref{bem:primschnitt} triviale Schnitte.
+ \item $p$-Sylowgruppen gleicher Primzahlen haben für $p = 2$ oder $p = 3$ ebenfalls nur trivale Schnitte, da für zwei solche $p$-Sylowgruppen $S_p$ und $S'_p$ für den Schnitt $S_p \cup S'_p$ die Ordnung $\ord S_p \cap S'_p$ ein Teiler von $\ord S_p = \ord S'_p = p$ ist, also im Falle $\ord S_p \cap S'_p \neq 1$ bereits $\ord S_p \cap S'_p = p$ und damit $S_p = S_p \cap S'_p = S'_p$.
+ \item Der Schnitt zweier verschiedener $2$-Sylowgruppen ist entweder trivial oder von Ordnung $2$. Drei solche Gruppen verfügen zusammen über mindestens $5$ verschiedene Elemente (das neutrale Element nur einmal gezählt).
+\end{itemize}
+Zusammen ergibt sich damit, dass $G$ mindestens
+\[
+ 12 \cdot 11 - 12 + 4 \cdot 3 - 3 + 5 = 135
+\]
+verschiedene Elemente hat. Da aber $\ord = 132$ kann dies nicht sein. Also ist $s_p = 1$ für ein $p \in \{2,3,11\}$, so dass $G$ ein normale $p$-Sylowgruppe besitzt.
+
+
+ 
 
 
 
