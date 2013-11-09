@@ -36,6 +36,7 @@
 \newcommand{\inn}{\operatorname{inn}}
 \newcommand{\sgn}{\operatorname{sgn}}
 \newcommand{\kchar}{\operatorname{char}}
+\newcommand{\kgV}{\operatorname{kgV}}
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\GL}[2]{\operatorname{GL}(#1,#2)}
 \newcommand{\Img}{\operatorname{Im}}
@@ -66,6 +67,112 @@
 \begin{document}
 \maketitle
 
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+\subsection{}\label{ssc: zykelordnung}
+Es ist nach Definition
+\begin{equation}\label{eq: orddef}
+ \ord \pi = \min\{n \in \N, n \geq 1 : \pi^n = \id \}.
+\end{equation}
+Nun sind die $x_i$ paarweise verschieden, und $\pi(x_i) = x_{i+1}$ für $i=1,\ldots,r-1$ und $\pi(x_r) = x_1$. Daher ist für $n=1,\ldots,r-1$
+\[
+ \pi^n(x_1) = x_{1+n} \neq x_1,
+\]
+also $\pi^n \neq \id$. Da allerdings für $i=1,\ldots,n$
+\[
+ \pi^r(x_i) = x_i 
+\]
+ist $\ord \pi = r$ nach \eqref{eq: orddef}. Analog ergibt sich, dass $\ord \tau = s$.
+
+Da $\pi$ und $\tau$ fremd sind, kommutieren sie miteinander (aus der Vorlesung bekannt). Es kommutieren daher $\pi^n$ und $\tau^m$ ist daher für alle $n,m \in \N$, da
+\begin{align*}
+ \pi^n \tau^m
+ &= \prod_{i=1}^n \pi \cdot \prod_{i=1}^m \tau
+ = \tau \cdot \prod_{i=1}^n \pi \cdot \prod_{i=1}^{m-1} \tau
+ = \tau^2 \cdot \prod_{i=1}^n \pi \cdot \prod_{i=1}^{m-2} \tau \\
+ &= \ldots
+ = \prod_{i=1}^{m-1} \tau \cdot \prod_{i=1}^n \pi \cdot \tau
+ = \prod_{i=1}^m \tau \cdot \prod_{i=1}^n \pi
+ = \tau^m \pi^n.
+\end{align*}
+Auch folgt aus der Fremdheit von $\pi$ und $\tau$, dass $\gen{\pi} \cap \gen{\tau} = \{1\}$: Für $\sigma \in \gen{\pi} \cap \gen{\tau}$ ist $\pi^n = \sigma = \tau^m$ für passende $n,m \in \N$ mit $0 \leq n \leq r-1$ und $0 \leq m \leq s-1$. Es ist dann für $i=1,\ldots,r$
+\[
+ x_i = \pi^{r}(x_i) = \pi^{r-n}(\pi^n(x_i)) = \pi^{r-n}(\tau^m(x_i)) = \pi^{r-n}(x_i),
+\]
+weshalb $r-n$ ein Teiler von $r$ sein muss; wegen $r-n \leq r$ muss also $r-n = r$ und daher $n=0$ und $\sigma = \pi^n = \id$.
+
+Für alle $t \in \N, t \geq 1$ mit $(\pi \tau)^t = \id$ ist
+\[
+ \pi^t \tau^t = (\pi \tau)^t = \id,
+\]
+also $\pi^t = (\tau^t)^{-1} = \tau^{s-t} \in \gen{\tau}$. Wie oben bemerkt ist daher $\pi^t = \id$, also $t$ ein Vielfaches von $\ord \pi = r$. Analog ergibt sich, dass $t$ auch ein Vielfaches von $\ord \tau = s$ ist. Also ist $t \geq \kgV(r,s)$. Andererseits ist
+\[
+ (\pi \tau)^{\kgV(r,s)} = \pi^{\kgV(r,s)} \tau^{\kgV(r,s)} = \id^2 = \id.
+\]
+Also ist $\ord \pi\tau = \kgV(r,s)$.
+
+
+
+
+
+
+\subsection{}
+Es ist
+\begin{align*}
+ \sigma :&=
+ \begin{pmatrix}[ccccccccccc]
+  1 & 2 &  3 &  4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\
+  4 & 1 & 10 & 11 & 8 & 9 & 7 & 2 & 3 &  6 & 5
+ \end{pmatrix} \\
+ &= \underbrace{\vect{1 & 4 & 11 & 5 & 8 & 2}}_{=: \pi} \underbrace{\vect{3 & 10 & 6 & 9}}_{=: \tau}.
+\end{align*}
+Nach Aufgabenteil \ref{ssc: zykelordnung} ist $\ord \pi = 6$ und $\ord \tau = 4$.
+Da $\pi$ und $\tau$ fremde Zykeln sind ist daher
+\begin{align*}
+ \sigma^{2013}
+ &= (\pi \tau)^{2013}
+ = \pi^{2013}\ \tau^{2013}
+ = \pi^3 \tau \\
+ &= \vect{1 & 4 & 11 & 5 & 8 & 2}^3 \vect{3 & 10 & 6 & 9} \\
+ &= \vect{1 & 5} \vect{2 & 11} \vect{4 & 8} \vect{3 & 10 & 6 & 9} \\
+ &=
+ \begin{pmatrix}[ccccccccccc]
+  1 &  2 &  3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\
+  5 & 11 & 10 & 8 & 1 & 9 & 7 & 4 & 3 &  6 &  2
+ \end{pmatrix}.
+\end{align*}
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
 
 
 
