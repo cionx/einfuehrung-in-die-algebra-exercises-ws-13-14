@@ -159,9 +159,6 @@ Da $\pi$ und $\tau$ fremde Zykeln sind ist daher
 
 
 
-
-
-
 \section{}
 
 
@@ -169,6 +166,47 @@ Da $\pi$ und $\tau$ fremde Zykeln sind ist daher
 
 
 \section{}
+Sei $n \in \N$ beliebig aber fest. Da $[G,G]$ eine Untergruppe von $G$ ist, ist $1 \in [G,G]$, also $1 \in G_n$, da $1^n = 1 \in [G,G]$. Für alle $g \in G_n$ ist wegen $g^n \in [G,G]$ auch $(g^{-1})^n = (g^n)^{-1} \in [G,G]$, also $g^{-1} \in G_n$. Dass für $g,h \in G_n$ auch $gh \in G_n$ ergibt sich mithilfe der folgenden Bemerkung.
+
+\begin{bem}
+ Sei $G$ eine Gruppe und seien $g,h \in G$. Dann ist für alle $n \in \N$
+ \[
+  (gh)^n = g^n h^n c \text{ mit } c \in [G,G].
+ \]
+\end{bem}
+\begin{proof}
+ Der Beweis verläuft per Induktion über $n$.
+ \begin{ia}
+  Sei $n=0$. Dann ist
+  \[
+   (gh)^n = (gh)^0 = 1 = 1 \cdot 1 \cdot 1 = g^0 g^0 \cdot 1 = g^n h^n \cdot 1.
+  \]
+ \end{ia}
+ \begin{is}
+  Sei $n \geq 1$ und gelte die Aussage für $n-1$. Nach Induktionsvoraussetzung gibt es ein $c \in [G,G]$ mit $(gh)^{n-1} = g^{n-1} h^{n-1} c$. Es ist daher
+  \begin{align*}
+   (gh)^n
+   &= gh (gh)^{n-1}
+   = gh g^{n-1} h^{n-1} c \\
+   &= g^n h \left[h^{-1},g^{1-n}\right] h^{n-1} c
+   = g^n h^n \left[h^{-1},g^{1-n}\right] \left[\left[h^{-1},g^{1-n}\right]^{-1}, h^{1-n}\right] c.
+  \end{align*}
+  Da $[G,G]$ eine Untergruppe von $G$ ist, ist
+  \[
+   \left[h^{-1},g^{1-n}\right] \left[\left[h^{-1},g^{1-n}\right]^{-1}, h^{1-n}\right] c \in [G,G]. \qedhere
+  \]
+ \end{is}
+\end{proof}
+
+Da $[G,G]$ ein Untergruppe von $G$ ist, und $g^n, h^n \in [G,G]$, ist mit $c \in [G,G]$ mit $(gh)^n = g^n h^n c$ auch $(gh)^n = g^n h^n c \in [G,G]$.
+
+Es gilt noch zu zeigen, dass $G_n$ normal in $G$ ist, dass also für $g \in G_n$ und $h \in G$ auch $hgh^{-1} \in G_n$. Da $g^n \in [G,G]$ und $[G,G]$ normal in $G$ ist, gilt
+\[
+ (hgh^{-1})^n = h(g^n)h^{-1} \in [G,G],
+\]
+also auch $hgh^{-1} \in G_n$.
+
+
 
 
 
@@ -204,10 +242,10 @@ Da $Z = \Ker \inn$ folgt daraus, dass $\inn_g^2 = \inn_{g^2} = \id$ für alle $g
 
 \begin{bem}
  Sei $G$ eine nichttriviale Gruppe, so dass alle $g \in G$ selbstinvers sind. Dann ist $\ord G$ gerade.
- \begin{proof}
-  Da $G$ nichttrivial ist, gibt es ein $g \in G-1$. Da $g \neq 1$ selbstinvers ist, ist $\ord g = 2$. Da $\ord g$ ein Teiler von $\ord G$ ist, ist $\ord G$ gerade.
- \end{proof}
 \end{bem}
+\begin{proof}
+ Da $G$ nichttrivial ist, gibt es ein $g \in G-1$. Da $g \neq 1$ selbstinvers ist, ist $\ord g = 2$. Da $\ord g$ ein Teiler von $\ord G$ ist, ist $\ord G$ gerade.
+\end{proof}
 
 Dass $\Inn(G)$ nichttrival ist, ergibt sich daraus, dass $\Inn(G) \cong G/Z$. Wäre $\Inn(G)$ trivial, so wäre $G = Z$, also $G$ abelsch.
 
