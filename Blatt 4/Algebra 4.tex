@@ -43,6 +43,8 @@
 \newcommand{\Ker}{\operatorname{Ker}}
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\End}{\operatorname{End}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Inn}{\operatorname{Inn}}
 \newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \newcommand{\gen}[1]{\left\langle#1\right\rangle}
 
@@ -85,7 +87,7 @@ Es ist nach Definition
 \begin{equation}\label{eq: orddef}
  \ord \pi = \min\{n \in \N, n \geq 1 : \pi^n = \id \}.
 \end{equation}
-Nun sind die $x_i$ paarweise verschieden, und $\pi(x_i) = x_{i+1}$ für $i=1,\ldots,r-1$ und $\pi(x_r) = x_1$. Daher ist für $n=1,\ldots,r-1$
+Die $x_i$ paarweise verschieden, und $\pi(x_i) = x_{i+1}$ für $i=1,\ldots,r-1$ und $\pi(x_r) = x_1$. Daher ist für $n=1,\ldots,r-1$
 \[
  \pi^n(x_1) = x_{1+n} \neq x_1,
 \]
@@ -173,6 +175,59 @@ Da $\pi$ und $\tau$ fremde Zykeln sind ist daher
 
 
 \section{}
+Da $\ord [G,G] = 2$ ist $[G,G] = \{1, \sigma\}$ für ein selbstinverses $\sigma \in G$. $G$ ist nicht abelsch, denn sonst wäre $[G,G] = 1$. $G$ ist insbesondere nichttrivial.
+
+Für alle $g \in G$ ist $g^2 \in Z$, wobei $Z$ das Zentrum von $G$ bezeichnet: Es ist für alle $h \in G$
+\begin{equation}\label{eq: g und h kommutieren}
+ \begin{aligned}
+  g^2 h
+  &= g h g \left[g^{-1},h^{-1}\right]
+  = h g \left[g^{-1},h^{-1}\right] g \left[g^{-1},h^{-1}\right] \\
+  &= h g \left[g^{-1},h^{-1}\right] \left[h^{-1},g\right] g,
+ \end{aligned}
+\end{equation}
+da
+\[
+ g \left[g^{-1},h^{-1}\right]
+ = g g^{-1} h^{-1} g h = h^{-1} g h = h^{-1} g h g^{-1} g = \left[h^{-1},g\right] g.
+\]
+Es ist nun
+\[
+ \left[g^{-1},h^{-1}\right] = 1
+ \Leftrightarrow g^{-1}  \in Z_{\{h^{-1}\}}
+ \Leftrightarrow g \in Z_{\{h^{-1}\}}
+ \Leftrightarrow \left[h^{-1},g\right] = 1,
+\]
+da $Z_{\{h^{-1}\}}$ eine Untergruppe von $G$ ist. Da $\ord [G,G] = 2$ und $\left[g^{-1},h^{-1}\right], \left[g,h^{-1}\right] \in [G,G]$ folgt daraus, dass $\left[g^{-1},h^{-1}\right] = \left[g,h^{-1}\right]$, und da jedes Element in $[G,G]$ selbstinvers ist, auch $\left[g^{-1},h^{-1}\right] \left[g,h^{-1}\right] = 1$. Aus \eqref{eq: g und h kommutieren} folgt daher, dass $g^2h = hg^2$. Aus der Beliebigkeit von $h$ folgt damit $g^2 \in Z$.
+
+Da $Z = \Ker \inn$ folgt daraus, dass $\inn_g^2 = \inn_{g^2} = \id$ für alle $g \in G$, dass also alle $\varphi \in \Inn(G)$ selbstinvers sind. Dies hat zwei wichtige Konsequenzen: Zum einen folgt aus der folgenden Bemerkung, dass $\ord \Inn(G)$ gerade ist.
+
+\begin{bem}
+ Sei $G$ eine nichttriviale Gruppe, so dass alle $g \in G$ selbstinvers sind. Dann ist $\ord G$ gerade.
+ \begin{proof}
+  Da $G$ nichttrivial ist, gibt es ein $g \in G-1$. Da $g \neq 1$ selbstinvers ist, ist $\ord g = 2$. Da $\ord g$ ein Teiler von $\ord G$ ist, ist $\ord G$ gerade.
+ \end{proof}
+\end{bem}
+
+Dass $\Inn(G)$ nichttrival ist, ergibt sich daraus, dass $\Inn(G) \cong G/Z$. Wäre $\Inn(G)$ trivial, so wäre $G = Z$, also $G$ abelsch.
+
+Zum anderen folgt, da jedes $\varphi \in \Inn(G)$ selbstinvers ist, dass $\Inn(G) \cong G/Z$ abelsch ist. Wegen der entsprechenden Minimalitätseigenschaft von $[G,G]$ folgt daraus, dass $[G,G] \subseteq Z$ eine Untergruppe ist. Da $[G,G]$ normal in $G$ ist, ist $[G,G]$ auch normal $Z$. (Dies folgt auch aus der Kommutativität von $Z$.)
+
+Aus dem zweiten Isomorphiesatz folgt nun, dass
+\[
+ G/Z \cong (G/[G,G])/(Z/[G,G]).
+\]
+Insbesondere ist
+\[
+ \ord G/Z = \frac{\ord G/[G,G]}{\ord Z/[G,G]}.
+\]
+Da $\ord G/Z = \ord \Inn(G)$ gerade ist, ist also auch $(G : [G,G]) = \ord G/[G,G]$ gerade.
+
+
+
+
+
+
 
 
 
