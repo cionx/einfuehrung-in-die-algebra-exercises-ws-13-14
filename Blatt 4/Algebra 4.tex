@@ -78,21 +78,21 @@ Sei $G$ eine Gruppe der Ordnung $8$. Gibt es ein $g \in G$ mit $\ord g = 8$, so 
 
 Zunächst wird der Fall untersucht, dass $G$ abelsch ist ($G$ wird hierfür additiv geschrieben): Durch eine Reihe von Fallunterscheidungen finden wir eine Untergruppe $H \subseteq G$ der Ordnung $4$ und ein Element $g \in G-H$ der Ordnung 2:
 
-Da $G$ eine $2$-Gruppe der Ordnung $8$ ist, gibt es, wie aus der Vorlesung bekannt, eine Untergruppe $H' \subseteq G$ mit $\ord H' = 4$. Sei $g' \in G-H$. Ist $\ord g' = 2$, so sei $H = H'$ und $g := g'$.
-Ist $\ord g' = 4$, so wird zwischen zwei Fällen unterschieden: Ist $2g' \not\in H'$, so sei $H := H'$ und $g := 2g'$. Ist $\ord g = 4$, so wird erneut zwischen zwei Fällen unterschieden: Bekanntermaßen ist entweder $H' \cong \Z/4\Z$ oder $H' \cong \Z/2\Z$. Ist $H' \cong \Z/4\Z$, so ist $H' = \gen{a}$ für ein $a \in H'$. Da $2g' \in H$ mit $\ord 2g' = 2$ muss $2g' = 2a$. Es sei in diesem Fall $H := H'$ und $g := a+g'$. Ist $H' \cong \Z/2\Z \times \Z/2\Z$, so gibt es neben $2g'$ noch ein weiteres $a \in H'$ mit $\ord a = 2$. Es sei dann $H := \gen{g'}$ und $g := a$.
+Da $G$ eine $2$-Gruppe der Ordnung $8$ ist, gibt es, wie aus der Vorlesung bekannt, eine Untergruppe $H' \subseteq G$ mit $\ord H' = 4$. Sei $g' \in G-H$. Ist $\ord g' = 2$, so sei $H := H'$ und $g := g'$.
+Ist $\ord g' = 4$, so wird zwischen zwei Fällen unterschieden: Ist $2g' \not\in H'$, so sei $H := H'$ und $g := 2g'$. Ist $\ord g = 4$, so wird erneut zwischen zwei Fällen unterschieden: Bekanntermaßen ist entweder $H' \cong \Z/4\Z$ oder $H' \cong (\Z/2\Z)^2$. Ist $H' \cong \Z/4\Z$, so ist $H' = \gen{a}$ für ein $a \in H'$. Da $2g' \in H$ mit $\ord 2g' = 2$ muss $2g' = 2a$. Es sei in diesem Fall $H := H'$ und $g := a+g'$. Ist $H' \cong (\Z/2\Z)^2$, so gibt es neben $2g'$ noch ein weiteres $a \in H'$ mit $\ord a = 2$. Es sei dann $H := \gen{g'}$ und $g := a$.
 
-Es ist nun $\ord G = \ord H \cdot \ord \gen{g}$ sowie $H \cap \gen{g} = 1$, wobei $1$ die triviale Gruppe bezeichnet. Da $G$ kommutativ ist, sind $H$ und $\gen{g}$ beide normal in $G$. Es ist daher (wie bereits letzte Woche gezeigt), dass
+Es ist nun $\ord G = \ord H \cdot \ord \gen{g}$ sowie $H \cap \gen{g} = 1$, wobei $1$ die triviale Gruppe bezeichnet. Da $G$ kommutativ ist, sind $H$ und $\gen{g}$ beide normal in $G$. Es ist daher (wie bereits letzte Woche gezeigt)
 \[
  G \cong H \times \gen{g} \cong H \times \Z/2\Z.
 \]
-Da $\ord H = 4$ ist $H \cong \Z/4\Z$ oder $H \cong \Z/2\Z \times \Z/2\Z$, und folgt daraus, dass
+Da $\ord H = 4$ ist $H \cong \Z/4\Z$ oder $H \cong (\Z/2\Z)^2$, und daher
 \[
  G \cong \Z/4\Z \times \Z/2\Z \text{ oder } G \cong (\Z/2\Z)^3.
 \]
 
-Es wird nun der Fall untersucht, dass $G$ nicht abelsch ist: Da $G$ nicht abelsch ist, gibt es ein $a \in G$ mit $a^2 \neq 1$. Da $\ord a$ ein Teiler von $\ord G = 8$ ist, muss dabei $\ord a = 4$. Es ist also $\gen{a} = \{1, a, a^2, a^3\}$. Da $(G : \gen{a}) = 2$ ist $\gen{a}$ normal in $G$. Sei $b \in G-\gen{a}$. Da $\gen{a} \subsetneq \gen{a,b} \subseteq G$ muss $G = \gen{a,b}$, da $\ord \gen{a,b} > \ord \gen{a} = 4$, also $\ord \gen{a,b} = 8$. Es ist also
+Es wird nun der Fall untersucht, dass $G$ nicht abelsch ist: Da $G$ nicht abelsch ist, gibt es ein $a \in G$ mit $a^2 \neq 1$. Da $\ord a$ ein Teiler von $\ord G = 8$ ist, muss dabei $\ord a = 4$. Es ist also $\gen{a} = \{1, a, a^2, a^3\}$. Da $(G : \gen{a}) = 2$ ist $\gen{a}$ normal in $G$. Sei $b \in G-\gen{a}$. Da $\gen{a} \subsetneq \gen{a,b} \subseteq G$ ist $\ord \gen{a,b} > \ord \gen{a} = 4$, also $\ord \gen{a,b} = 8$, und deswegen $G = \gen{a,b}$. Es ist also
 \[
- G = \{1, a, a^2, a^3, b, ab, a^2 b, a^3 b\}.
+ G = \{1, b, a, ab, a^2, a^2 b, a^3, a^3 b\}.
 \]
 Insbesondere kommutieren $a$ und $b$ nicht miteinander, da $G$ sonst abelsch wäre. Da $\gen{a}$ normal in G ist, ist $bab^{-1} \in \gen{a}$. Da $\ord bab^{-1}  = \ord a$ muss $bab^{-1} = a$ oder $bab^{-1} = a^3$. Da aber $bab^{-1} = a \Leftrightarrow ba = ab$ muss $bab^{-1} = a^3$, also $ba = a^3 b$. Für $b+\gen{a} \in G/\!\gen{a}$ ist $b+\gen{a} \neq 1+\gen{a}$, da $b \not\in \gen{a}$, wegen $\ord G/\!\gen{a} = 2$ jedoch $b^2 + \gen{a} = (b+\gen{a})^2 = 1+\gen{a}$, also $b^2 \in \gen{a}$. Da $\ord b = 2$ oder $\ord b = 4$ ist $\ord b^2 = 1$ oder $\ord b^2 = 2$. Also muss $b^2 = 1$ oder $b^2 = a^2$. Es wird nun zwischen diesen beiden Fällen unterschieden:
 
@@ -100,7 +100,7 @@ Ist $b^2 = 1$, so ist die $G$ durch die Eigenschaften
 \begin{equation}\label{eq: isomorphie1}
  \ord{a} = 4, \quad \ord{b} = 2, \quad G = \gen{a,b}, \quad ba = a^3 b
 \end{equation}
-bereits eindeutig charakterisiert: Aus diesen Bedingungen ergibt sich für $G$ durch direktes Ausrechnen die Verknüpfüngstabelle
+bereits eindeutig charakterisiert: Aus diesen Bedingungen ergibt sich für $G$ durch direktes Ausrechnen die Verknüpfungstabelle
 \begin{equation*}\renewcommand*{\arraystretch}{1.5}
  \begin{matrix}[|c|c|c|c|c|c|c|c|c|]\hline
       \cdot &     1 &     b & a     &   a b & a^2   & a^2 b & a^3   & a^3 b \\\hline
@@ -114,11 +114,11 @@ bereits eindeutig charakterisiert: Aus diesen Bedingungen ergibt sich für $G$ d
       a^3 b & a^3 b & a^3   & a^2 b & a^2   & a   b & a     &     b &     1 \\\hline
  \end{matrix}
 \end{equation*}
-Insbesondere ist $G$ durch diese Bedingungen bis auf Isomorphie eindeutig bestimmt, d.h. für jede Gruppe $H$, in der es Element $g,h$ gibt, die \eqref{eq: isomorphie1} erfüllen, ist zu $G$ isomorph. Daraus ergibt sich, dass $G \cong D_4$: Für $\sigma, \tau \in \Sn_4$ mit
+Insbesondere ist $G$ durch diese Bedingungen bis auf Isomorphie eindeutig bestimmt, d.h. jede Gruppe $H$, in der es Element $g,h$ gibt, die \eqref{eq: isomorphie1} erfüllen, ist zu $G$ isomorph. Daraus ergibt sich, dass $G \cong D_4$: Für $\sigma, \tau \in D_4$ mit
 \[
  \sigma = \vect{1 & 2 & 3 & 4} \text{ und } \tau = \vect{1 & 2}\vect{3 & 4}
 \]
-ist $\sigma^4 = \tau^2 = \id$, $G = \gen{\sigma,\tau}$ sowie $\tau \sigma = \sigma^3 \tau$. Also ist $G \cong  D_4$.
+ist $\sigma^4 = \tau^2 = \id$, $D_4 = \gen{\sigma,\tau}$ sowie $\tau \sigma = \sigma^3 \tau$. Also ist $G \cong  D_4$.
 
 Im Fall $b^2 = a^2$ geht man analog vor: Durch die Bedingungen
 \begin{equation}\label{eq: isomorphie2}
@@ -138,7 +138,7 @@ ergibt sich die Verknüpfungstabelle
       a^3 b & a^3 b & a     & a^2 b &     1 & a   b & a^3   &     b & a^2   \\\hline
  \end{matrix}
 \end{equation*}
-In diesem Fall ergibt sich, dass $G \cong Q_8$, wobei $Q_8$ die Quaternionengruppe bezeichnet (in der Form in der sie auf dem ersten Übungszettel angegeben war), da $Q_8$ die Bedingungen \eqref{eq: isomorphie2} erfüllt: Für $I,J \in Q_8$ ist $\ord I = 4$, $I^2 = -E = J^2$ sowie $JI = -IJ = I^3J$. 
+In diesem Fall ergibt sich, dass $G \cong Q_8$, wobei $Q_8$ die Quaternionengruppe bezeichnet (in der Form in der sie auf dem ersten Übungszettel angegeben war), da $I,J \in Q_8$ die Bedingungen \eqref{eq: isomorphie2} erfüllen: Es ist $\ord I = 4$, $I^2 = -E = J^2$ sowie $JI = -IJ = I^3J$. 
 
 
 
@@ -152,7 +152,7 @@ Es ist nach Definition
 \begin{equation}\label{eq: orddef}
  \ord \pi = \min\{n \in \N, n \geq 1 : \pi^n = \id \}.
 \end{equation}
-Die $x_i$ paarweise verschieden, und $\pi(x_i) = x_{i+1}$ für $i=1,\ldots,r-1$ und $\pi(x_r) = x_1$. Daher ist für $n=1,\ldots,r-1$
+Die $x_i$ sind paarweise verschieden, und es ist $\pi(x_i) = x_{i+1}$ für $i=1,\ldots,r-1$ und $\pi(x_r) = x_1$. Daher ist für $n=1,\ldots,r-1$
 \[
  \pi^n(x_1) = x_{1+n} \neq x_1,
 \]
@@ -164,6 +164,16 @@ ist $\ord \pi = r$ nach \eqref{eq: orddef}. Analog ergibt sich, dass $\ord \tau 
 
 Da $\pi$ und $\tau$ fremd sind, kommutieren sie miteinander (aus der Vorlesung bekannt). Es kommutieren daher $\pi^n$ und $\tau^m$ ist daher für alle $n,m \in \N$, da
 \begin{align*}
+ \pi^n \tau
+ = \prod_{i=1}^n \pi \cdot \tau
+ = \prod_{i=1}^{n-1} \pi \cdot \tau \pi
+ = \prod_{i=1}^{n-2} \pi \cdot \tau \pi^2
+ = \ldots
+ = \pi \tau \prod_{i=1}^{n-1} \pi
+ = \tau \pi^n
+\end{align*}
+und deshalb
+\begin{align*}
  \pi^n \tau^m
  &= \prod_{i=1}^n \pi \cdot \prod_{i=1}^m \tau
  = \tau \cdot \prod_{i=1}^n \pi \cdot \prod_{i=1}^{m-1} \tau
@@ -173,11 +183,11 @@ Da $\pi$ und $\tau$ fremd sind, kommutieren sie miteinander (aus der Vorlesung b
  = \prod_{i=1}^m \tau \cdot \prod_{i=1}^n \pi
  = \tau^m \pi^n.
 \end{align*}
-Auch folgt aus der Fremdheit von $\pi$ und $\tau$, dass $\gen{\pi} \cap \gen{\tau} = 1$: Für $\sigma \in \gen{\pi} \cap \gen{\tau}$ ist $\pi^n = \sigma = \tau^m$ für passende $n,m \in \N$ mit $0 \leq n \leq r-1$ und $0 \leq m \leq s-1$. Es ist dann für $i=1,\ldots,r$
+Auch folgt aus der Fremdheit von $\pi$ und $\tau$, dass $\gen{\pi} \cap \gen{\tau} = 1$: Für $\sigma \in \gen{\pi} \cap \gen{\tau}$ ist $\pi^n = \sigma = \tau^m$ für passende $n,m \in \N$ mit $0 \leq n < r$ und $0 \leq m < s$. Es ist dann für $i=1,\ldots,r$
 \[
  x_i = \pi^{r}(x_i) = \pi^{r-n}(\pi^n(x_i)) = \pi^{r-n}(\tau^m(x_i)) = \pi^{r-n}(x_i),
 \]
-weshalb $r-n$ ein Teiler von $r$ sein muss; wegen $r-n \leq r$ muss also $r-n = r$ und daher $n=0$ und $\sigma = \pi^n = \id$.
+weshalb $r-n$ ein Vielfaches von $\ord \pi = r$ sein muss; wegen $r-n \leq r$ muss also $r-n = r$ und daher $n=0$ und $\sigma = \pi^n = \id$.
 
 Für alle $t \in \N, t \geq 1$ mit $(\pi \tau)^t = \id$ ist
 \[
@@ -201,7 +211,7 @@ Es ist
  &= \underbrace{\vect{1 & 4 & 11 & 5 & 8 & 2}}_{=: \pi} \underbrace{\vect{3 & 10 & 6 & 9}}_{=: \tau}.
 \end{align*}
 Nach Aufgabenteil \ref{ssc: zykelordnung} ist $\ord \pi = 6$ und $\ord \tau = 4$.
-Da $\pi$ und $\tau$ fremde Zykeln sind ist daher
+Da $\pi$ und $\tau$ fremde Zykeln sind, ist daher
 \begin{align*}
  \sigma^{2013}
  &= (\pi \tau)^{2013}
@@ -246,24 +256,24 @@ so ist
 \]
 wegen der Injektivität von $\varphi$ also $\tau_m \tau_{m'} = \tau_{m'} \tau_m$ und daher $m = m'$.
 
-Für $m \in \N$ seien $a_m, b_m \in \{1,\ldots,n\}$ so dass $\varphi(\tau_m) = \vect{a_m & b_m}$. Da die $\tau_m$ paarweise verschieden sowie nicht fremd sind, gibt es wegen der Injektivität von $\varphi$ für alle $m, m' \in \{2, \ldots, m\}$ genau ein $i \in \{a_m, b_m\}$ genau ein $j \in \{a_{m'}, b_{m'}\}$ mit $i = j$.
+Für $m \in \N$ seien $a_m, b_m \in \{1,\ldots,n\}$ so dass $\varphi(\tau_m) = \vect{a_m & b_m}$. Da die $\tau_m$ paarweise verschieden sowie nicht fremd sind, gibt es wegen der Injektivität von $\varphi$ für alle $m, m' \in \{2, \ldots, m\}$ genau ein $i \in \{a_m, b_m\}$ und genau ein $j \in \{a_{m'}, b_{m'}\}$ mit $i = j$.
 
 \begin{beh}\label{beh: transpositionen gemeinsames element}
  Es ist $\bigcap_{m=2}^n \{a_m, b_m\} \neq \emptyset$.
 \end{beh}
 \begin{proof}
- Für $n \in \{2,3\}$ ist nichts zu zeigen. Sei daher $n \geq 4$. Angenommen, die Behauptung gilt nicht. Sei $m_0 := \min \left\{k \in \{2,\ldots,n\right\} : \bigcap_{m=2}^k \{a_m,b_m\}\}$. Da $\tau_2$ und $\tau_3$ nicht fremd sind, ist $m_0 \geq 4$. Wegen der Minimalität von $m_0$ gibt ein $a \in \{1,\ldots,n\}$, so dass $a \in \{a_m,b_m\}$ für alle $m \in \{2,\ldots,m_0-1\}$. Da die $\tau_m$ paarweise verschieden sind gibt es auch $c_2, \ldots, c_{m_0-1} \in \{1,\ldots,n\}$ mit $\{a_m, b_m\} = \{a, c_m\}$ für alle $m \in \{2, \ldots, m_0 -1\}$. Nach Definition von $m_0$ muss $a \not \in \{a_{m_0}, b_{m_0}\}$. Da jedoch $\tau_{m_0}$ nicht fremd zu $t_2$ und $\tau_3$ ist, muss $c_2, c_3 \in \{a_{m_0},b_{m_0}\}$, da $c_2$ und $c_3$ verschieden sind also $\{a_{m_0}, b_{m_0}\} = \{c_2, c_3\}$.
- Es ist also
+ Für $n \in \{2,3\}$ ist nichts zu zeigen. Sei daher $n \geq 4$. Angenommen, die Behauptung gilt nicht. Sei $m_0 := \min \left\{k \in \{2,\ldots,n\right\} : \bigcap_{m=2}^k \{a_m,b_m\}\}$. Da $\tau_2$ und $\tau_3$ nicht fremd sind, ist $m_0 \geq 4$. Wegen der Minimalität von $m_0$ gibt es ein \mbox{$a \in \{1,\ldots,n\}$}, so dass $a \in \{a_m,b_m\}$ für alle $m \in \{2,\ldots,m_0-1\}$. Da die $\tau_m$ paarweise verschieden sind gibt es auch $c_2, \ldots, c_{m_0-1} \in \{1,\ldots,n\}$ mit $\{a_m, b_m\} = \{a, c_m\}$ für alle $m \in \{2, \ldots, m_0 -1\}$. Nach Definition von $m_0$ muss $a \not \in \{a_{m_0}, b_{m_0}\}$. Da jedoch $\tau_{m_0}$ nicht fremd zu $\tau_2$ und $\tau_3$ ist, muss $c_2, c_3 \in \{a_{m_0},b_{m_0}\}$, da $c_2$ und $c_3$ verschieden sind, ist also $\{a_{m_0}, b_{m_0}\} = \{c_2, c_3\}$.
+ Es ist daher
  \begin{align*}
   \varphi(\tau_{m_0})
   &= \vect{a_{m_0} &  b_{m_0}} = \vect{c_2 & c_3} = \vect{a & c_2} \vect{a & c_3} \vect{a & c_2} \\
   &= \varphi(\tau_2)\varphi(\tau_3)\varphi(\tau_2) = \varphi(\tau_2 \tau_3 \tau_2),
  \end{align*}
- wegen der Injektivität von $\varphi$ deshalb
+ wegen der Injektivität von $\varphi$ also
  \[
   \vect{1 & m_0} = \tau_{m_0} = \tau_2 \tau_3 \tau_2 = \vect{1 & 2} \vect{1 & 3} \vect{1 & 2} = \vect{2 & 3}.
  \]
- Dies ist offenbar ein Widerspruch, was die Behauptung zeigt.
+ Dies ist offenbar ein Widerspruch.
 \end{proof}
 
 Seien $c_1, \ldots, c_n \in \{1,\ldots,n\}$ paarweise verschieden, so dass $\{a_m, b_m\} = \{c_1, c_m\}$ für alle $m \in \{2,\ldots,m\}$; die Existenz entsprechender Elemente folgt aus der Behauptung \ref{beh: transpositionen gemeinsames element} und der Fremdheit der $\tau_m$. $\pi \in \Sn_n$ sei definiert als
@@ -271,7 +281,7 @@ Seien $c_1, \ldots, c_n \in \{1,\ldots,n\}$ paarweise verschieden, so dass $\{a_
  \pi(c_1) := 1 \text{ und } \pi(c_m) := m \text{ für alle } m \in \{2,\ldots,n\}.
 \]
 
-Durch direktes Nachrechen ergibt sich nun, dass $\varphi = \inn_\pi$, also $\varphi(x) = \pi^{-1} \cdot x \cdot \pi$ für alle $x \in \Sn_n$. Wie zu Beginn bemerkt genügt es dies für die $\tau_m$ zu zeigen. Da für alle $m \in \{2, \ldots, n\}$
+Durch direktes Nachrechen ergibt sich nun, dass $\varphi = \inn_\pi$, also $\varphi(x) = \pi^{-1} \cdot x \cdot \pi$ für alle $x \in \Sn_n$: Wie zu Beginn bemerkt genügt es dies für die $\tau_m$ zu zeigen. Da für alle $m \in \{2, \ldots, n\}$
 \[
  \varphi(\vect{1 & m}) = \vect{c_1 & c_m} = \pi^{-1} \vect{1 & m} \pi
 \]
@@ -281,24 +291,13 @@ ist dies der Fall. Es ist also $\varphi = \inn_\pi$.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 \section{}
 Sei $n \in \N$ beliebig aber fest. Da $[G,G]$ eine Untergruppe von $G$ ist, ist $1 \in [G,G]$, also $1 \in G_n$, da $1^n = 1 \in [G,G]$. Für alle $g \in G_n$ ist wegen $g^n \in [G,G]$ auch $(g^{-1})^n = (g^n)^{-1} \in [G,G]$, also $g^{-1} \in G_n$. Dass für $g,h \in G_n$ auch $gh \in G_n$ ergibt sich mithilfe der folgenden Bemerkung.
 
 \begin{bem}
- Sei $G$ eine Gruppe und seien $g,h \in G$. Dann ist für alle $n \in \N$
+ Sei $G$ eine Gruppe und seien $g,h \in G$. Dann gibt es für alle $n \in \N$ ein $c \in [G,G]$ mit
  \[
-  (gh)^n = g^n h^n c \text{ mit } c \in [G,G].
+  (gh)^n = g^n h^n c.
  \]
 \end{bem}
 \begin{proof}
@@ -306,7 +305,7 @@ Sei $n \in \N$ beliebig aber fest. Da $[G,G]$ eine Untergruppe von $G$ ist, ist 
  \begin{ia}
   Sei $n=0$. Dann ist
   \[
-   (gh)^n = (gh)^0 = 1 = 1 \cdot 1 \cdot 1 = g^0 g^0 \cdot 1 = g^n h^n \cdot 1.
+   (gh)^n = (gh)^0 = 1 = 1 \cdot 1 \cdot 1 = g^0 h^0 \cdot 1 = g^n h^n \cdot 1.
   \]
  \end{ia}
  \begin{is}
@@ -325,7 +324,7 @@ Sei $n \in \N$ beliebig aber fest. Da $[G,G]$ eine Untergruppe von $G$ ist, ist 
  \end{is}
 \end{proof}
 
-Da $[G,G]$ ein Untergruppe von $G$ ist, und $g^n, h^n \in [G,G]$, ist mit $c \in [G,G]$ mit $(gh)^n = g^n h^n c$ auch $(gh)^n = g^n h^n c \in [G,G]$.
+Da $[G,G]$ ein Untergruppe von $G$ ist, und $g^n, h^n \in [G,G]$, ist für $c \in [G,G]$ mit $(gh)^n = g^n h^n c$ auch $(gh)^n = g^n h^n c \in [G,G]$.
 
 Es gilt noch zu zeigen, dass $G_n$ normal in $G$ ist, dass also für $g \in G_n$ und $h \in G$ auch $hgh^{-1} \in G_n$. Da $g^n \in [G,G]$ und $[G,G]$ normal in $G$ ist, gilt
 \[
@@ -337,10 +336,8 @@ also auch $hgh^{-1} \in G_n$.
 
 
 
-
-
 \section{}
-Da $\ord [G,G] = 2$ ist $[G,G] = \{1, \sigma\}$ für ein selbstinverses $\sigma \in G$. $G$ ist nicht abelsch, denn sonst wäre $[G,G] = 1$. $G$ ist insbesondere nichttrivial.
+Da $\ord\,[G,G] = 2$ ist $[G,G] = \{1, \sigma\}$ für ein selbstinverses Element $\sigma \in G$. $G$ ist nicht abelsch, denn sonst wäre $[G,G] = 1$. $G$ ist insbesondere nichttrivial.
 
 Für alle $g \in G$ ist $g^2 \in Z$, wobei $Z$ das Zentrum von $G$ bezeichnet: Es ist für alle $h \in G$
 \begin{equation}\label{eq: g und h kommutieren}
@@ -363,9 +360,9 @@ Es ist nun
  \Leftrightarrow g \in Z_{\{h^{-1}\}}
  \Leftrightarrow \left[h^{-1},g\right] = 1,
 \]
-da $Z_{\{h^{-1}\}}$ eine Untergruppe von $G$ ist. Da $\ord [G,G] = 2$ und $\left[g^{-1},h^{-1}\right], \left[g,h^{-1}\right] \in [G,G]$ folgt daraus, dass $\left[g^{-1},h^{-1}\right] = \left[g,h^{-1}\right]$, und da jedes Element in $[G,G]$ selbstinvers ist, auch $\left[g^{-1},h^{-1}\right] \left[g,h^{-1}\right] = 1$. Aus \eqref{eq: g und h kommutieren} folgt daher, dass $g^2h = hg^2$. Aus der Beliebigkeit von $h$ folgt damit $g^2 \in Z$.
+da $Z_{\{h^{-1}\}}$ eine Untergruppe von $G$ ist. Da $\ord\,[G,G] = 2$ und $\left[g^{-1},h^{-1}\right], \left[h^{-1},g\right] \in [G,G]$ folgt daraus, dass $\left[g^{-1},h^{-1}\right] = \left[h^{-1},g\right]$, und da jedes Element in $[G,G]$ selbstinvers ist, daher auch $\left[g^{-1},h^{-1}\right] \left[h^{-1},g\right] = 1$. Aus \eqref{eq: g und h kommutieren} folgt daher, dass $g^2h = hg^2$. Aus der Beliebigkeit von $h \in G$ folgt damit $g^2 \in Z$.
 
-Da $Z = \Ker \inn$ folgt daraus, dass $\inn_g^2 = \inn_{g^2} = \id$ für alle $g \in G$, dass also alle $\varphi \in \Inn(G)$ selbstinvers sind. Dies hat zwei wichtige Konsequenzen: Zum einen folgt aus der folgenden Bemerkung, dass $\ord \Inn(G)$ gerade ist.
+Da $Z = \Ker \inn$ bedeutet dies, dass $\inn_g^2 = \inn_{g^2} = \id$ für alle $g \in G$, dass also alle $\varphi \in \Inn(G)$ selbstinvers sind. Dies hat zwei wichtige Konsequenzen: Zum einen folgt aus der folgenden Bemerkung, dass $\ord \Inn(G)$ gerade ist.
 
 \begin{bem}
  Sei $G$ eine nichttriviale Gruppe, so dass alle $g \in G$ selbstinvers sind. Dann ist $\ord G$ gerade.
