@@ -91,17 +91,30 @@
 \section{}
 
 \begin{bem}\label{bem: 0 neq 1}
- Sei $R$ ein Ring mit mindestens zwei Elementen. Dann ist $0 \neq 1$ in $R$.
+ Sei $R$ ein Ring mit mindestens zwei Elementen. Dann ist sind Null- und Einselement in $R$ verschieden.
 \end{bem}
 \begin{proof}
- Da $R$ mindestens zwei Elemente hat, gibt es ein $a \in R$ mit $a \neq 0$. Für $1 \in R$ ist
+ Da $R$ mindestens zwei Elemente besitzt, gibt es ein $a \in R$ mit $a \neq 0$. Es ist
  \[
   1 \cdot a = a \neq 0 = 0 \cdot a,
  \]
  also $0 \neq 1$.
 \end{proof}
 
+\begin{bem}\label{bem: ideal ring ohne null}
+ Sei $R$ ein kommutativer Ring und $a \in R$. Dann ist das von $a$ erzeugte Ideal $\mf{a} := (a)$ ein Ring ohne Eins (d.h. es ist möglich, aber nicht notwendig, dass $1 \in \mf{a}$).
+\end{bem}
+\begin{proof}
+ Als Ideal ist $\mf{a}$ eine additive Untergruppe der additiven Gruppe von $R$. Da $rs \in \mf{a}$ für alle $r \in R$ und $s \in \mf{a}$ ist $\mf{a}$ inbesondere abgeschlossen bezüglich der Multiplikation. Die Assoziativität sowie Distributivität der Multiplikation vererben sich aus $R$.
+\end{proof}
 
+Es gilt zunächst zu bemerken, dass ein Ring, wie er in der Aufgabenstellung beschrieben ist, nicht existiert: Da $R$ mindestens zwei Elemente besitzt, folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Jedoch muss $0 \subseteq R$ nach Aufgabenstellung das Einselement von $R$ beinhalten, also $0 = 1$. Im Folgenden wird daher davon ausgegangen, dass die entsprechende Aussage für diesen Sonderfall ausgeschlossen wird.
+
+Nach Aufgabenstellung ist $R$ bereits ein kommutativer Ring mit $1$. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass es für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses Element $b \in R$ mit $ab = 1$ gibt.
+
+Sei $a \in R$ mit $a \neq 0$ beliebig aber fest. Es sei $\mf{a} := (a)$ das von $a$ erzeugte Ideal. Aus der Nullteilerfreiheit von $R$ folgt, dass $\mf{a} \neq 0$. Es ist $\mf{a} = R$: Ist $\mf{a} \neq R$, so folgt aus Bemerkung \ref{bem: ideal ring ohne null} und der Aufgabenstellung, dass $1 \in \mf{a}$. Da $\mf{a}$ ein Ideal ist, ist daher $r = r \cdot 1 \in \mf{a}$ für alle $r \in R$. Da $aR = \mf{a} = R$ gibt es insbesondere ein $b \in R$ mit $ab = 1$.
+
+Man bemerke, dass die für den Beweis die aus der Aufgabenstellung ebenfalls folgende Endlichkeit von $\mf{a} = R$ nicht benötigt wird: Ich kann nur vermuten, dass ursprünglich, d.h. bevor die Aufgabenstellung geändert wurde, die Nullteilerfreiheit in Kombination mit der Endlichkeit einer entsprechenden Teilmenge dazu genutzt werde sollte, aus der folgenden Injektivität der Linksmultiplikation mit $a$ auch deren Surjektivität zu folgern, und damit dann analog zu oben die Existenz eines multiplikativ Inversen. In der jetzigen Version folgt aus der aus der Endlichkeit allerdings, dass $\mf{a} = R$ endlich ist.
 
 
 
