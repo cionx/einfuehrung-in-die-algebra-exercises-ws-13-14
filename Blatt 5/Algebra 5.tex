@@ -29,6 +29,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Sn}{\mathfrak{S}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
 \newcommand{\dt}{\,\text{d}t}
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
 \newcommand{\id}{\operatorname{id}}
@@ -69,6 +70,51 @@
 \begin{document}
 \maketitle
 
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Da $\mf{a}$ ein Ideal in $R$ ist, ist $ar \in \mf{a}$ für alle $a \in \mf{a}$ und $r \in R$. Es ist nun
+\begin{align}
+ \mf{b} = (\mathfrak{a}) \nonumber
+ &= \sum_{a \in \mf{a}} a R[X]
+ = \sum_{a \in \mf{a}} \left\{ a \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in R \right\} \nonumber \\
+ &= \sum_{a \in \mf{a}} \left\{ \sum_{i=0}^n a a_i X^i : n \geq 0, a_i \in R \right\}
+ = \left\{ \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \mf{a} \right\} \label{eq: polynome ideal}.
+\end{align}
+Dabei ergibt sich die Gleichheit bei \eqref{eq: polynome ideal} wie folgt:
+
+Für alle $f = \sum_{i=0}^n a a_i X^i \in a R[X]$ ist $a a_i \in \mf{a}$, da $a \in \mf{a}$ und $\mf{a}$ ein Ideal in $R$ ist, also $f$ ein Polynom mit Koeffizienten in $\mf{a}$.
+
+Andererseits ist jedes Polynom $f = \sum_{i=0}^n a_i X^i$ mit Koeffizienten $a_0, \ldots, a_n \in \mf{a}$ die Summe der Monome $f_i := a_i X^i \in a_i R[X]$. Also ist $f \in \sum_{i=1}^n a_i R[X]$.
 
 
 
