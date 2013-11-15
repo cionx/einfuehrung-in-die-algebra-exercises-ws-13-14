@@ -51,6 +51,8 @@
 
 \newenvironment{lgs}[1][c]{\left\{\setlength{\arraycolsep}{1pt}\begin{array}{#1}}{\end{array}\right.}
 
+\renewcommand*{\arraystretch}{1.5}
+
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
   \hskip -\arraycolsep
@@ -88,11 +90,71 @@
 
 \section{}
 
+\begin{bem}\label{bem: 0 neq 1}
+ Sei $R$ ein Ring mit mindestens zwei Elementen. Dann ist $0 \neq 1$ in $R$.
+\end{bem}
+\begin{proof}
+ Da $R$ mindestens zwei Elemente hat, gibt es ein $a \in R$ mit $a \neq 0$. Für $1 \in R$ ist
+ \[
+  1 \cdot a = a \neq 0 = 0 \cdot a,
+ \]
+ also $0 \neq 1$.
+\end{proof}
+
+
+
 
 
 
 
 \section{}
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+Für alle $a \in R$ ist
+\[
+ a^2 + 1 = a+1 = (a+1)^2 = a^2 + 2a + 1,
+\]
+also $2a = 0$. Insbesondere ist $a = -a$.
+
+
+\addtocounter{subsection}{-2}
+\subsection{}
+Für alle $a,b \in R$ ist
+\[
+ ab-ba = ab + ba = (a+b)^2 - a^2 - b^2 = a+b-a-b = 0,
+\]
+also $ab = ba$, und daher $R$ kommutativ.
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+Seien $a,b \in R$ mit $a \neq b$. Es ist
+\[
+ (a-b)ab = a^2 b - ab^2 = ab-ab = 0.
+\]
+Da $a \neq b$ ist $a-b \neq 0$, wegen der Nullteilerfreiheit von $R$ also $ab = 0$. Wegen der Nullteilerfreiheit ist also $a = 0$ oder $b = 0$. Aus der Beliebigkeit von $a$ und $b$ folgt, dass es neben $0$ nur ein weiters Element in $R$ gibt. Also ist $R = \{0,1\}$.
+Betrachtet man die Verknüpfungstabellen von R,
+\begin{equation*}
+ \begin{matrix}[|c|c|c|]\hline
+  + & 0 & 1 \\\hline
+  0 & 0 & 1 \\\hline
+  1 & 1 & 0 \\\hline
+ \end{matrix}
+ \quad
+ \text{ und }
+ \quad
+ \begin{matrix}[|c|c|c|]\hline
+  \cdot & 0 & 1 \\\hline
+      0 & 0 & 0 \\\hline
+      1 & 0 & 1 \\\hline
+ \end{matrix}
+\end{equation*}
+so ist $R$ offenbar isomorph zu $\F{2}$.
+
+
+
 
 
 
