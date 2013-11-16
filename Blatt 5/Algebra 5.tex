@@ -164,21 +164,17 @@ Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\m
  also $0 \neq 1$.
 \end{proof}
 
-\begin{bem}\label{bem: ideal ring ohne null}
- Sei $R$ ein kommutativer Ring und $a \in R$. Dann ist das von $a$ erzeugte Ideal $\mf{a} := (a)$ ein Ring ohne Eins (d.h. es ist möglich, aber nicht notwendig, dass $1 \in \mf{a}$).
+\begin{bem}\label{bem: 1 ohne nullteiler eindeutig}
+ Sei $R$ ein Integritätsring. Gibt es für $b \in R$ ein $a \in R$ mit $a \neq 0$ und $ab = a$ oder $ba = a$, so ist bereits $b = 1$. Insbesondere gilt für jede Ringerweiterung $R' \subseteq R$ mit $R' \neq 0$, dass $R'$ genau dann ein Einselement beinhaltet, wenn $1 \in R'$.
+ \begin{proof}
+  Da $a \neq 0$ impliziert die Nullteilerfreiheit von $R$ direkt die Injektivität der Links-, bzw. Rechtsmultiplikation mit $a$. Da $1 \cdot a = a = a \cdot 1$ ist daher $b = 1$.
+ \end{proof}
 \end{bem}
-\begin{proof}
- Als Ideal ist $\mf{a}$ eine additive Untergruppe der additiven Gruppe von $R$. Da $rs \in \mf{a}$ für alle $r \in R$ und $s \in \mf{a}$ ist $\mf{a}$ inbesondere abgeschlossen bezüglich der Multiplikation. Die Assoziativität sowie Distributivität der Multiplikation vererben sich aus $R$.
-\end{proof}
 
-Es gilt zunächst zu bemerken, dass ein Ring, wie er in der Aufgabenstellung beschrieben ist, nicht existiert: Da $R$ mindestens zwei Elemente besitzt, folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Jedoch muss $0 \subseteq R$ nach Aufgabenstellung das Einselement von $R$ beinhalten, also $0 = 1$. Im Folgenden wird daher davon ausgegangen, dass die entsprechende Aussage für diesen Sonderfall ausgeschlossen wird.
 
-Nach Aufgabenstellung ist $R$ bereits ein kommutativer Ring mit $1$. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass es für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses Element $b \in R$ mit $ab = 1$ gibt.
+Nach Aufgabenstellung ist $R$ ein kommutativer Ring mit Einselement. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass es für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses $b \in R$ mit $ab = 1$ gibt.
 
-Sei $a \in R$ mit $a \neq 0$ beliebig aber fest. Es sei $\mf{a} := (a)$ das von $a$ erzeugte Ideal. Aus der Nullteilerfreiheit von $R$ folgt, dass $\mf{a} \neq 0$. Es ist $\mf{a} = R$: Ist $\mf{a} \neq R$, so folgt aus Bemerkung \ref{bem: ideal ring ohne null} und der Aufgabenstellung, dass $1 \in \mf{a}$. Da $\mf{a}$ ein Ideal ist, ist daher $r = r \cdot 1 \in \mf{a}$ für alle $r \in R$. Da $aR = \mf{a} = R$ gibt es insbesondere ein $b \in R$ mit $ab = 1$.
-
-Man bemerke, dass die für den Beweis die aus der Aufgabenstellung ebenfalls folgende Endlichkeit von $\mf{a} = R$ nicht benötigt wird: Ich kann nur vermuten, dass ursprünglich, d.h. bevor die Aufgabenstellung geändert wurde, die Nullteilerfreiheit in Kombination mit der Endlichkeit einer entsprechenden Teilmenge dazu genutzt werde sollte, aus der folgenden Injektivität der Linksmultiplikation mit $a$ auch deren Surjektivität zu folgern, und damit dann analog zu oben die Existenz eines multiplikativ Inversen. In der jetzigen Version folgt aus der aus der Endlichkeit allerdings, dass $\mf{a} = R$ endlich ist.
-
+Sei $a \in R$ mit $a \neq 0$ beliebig aber fest und $\mf{a} := (a)$ das von $a$ erzeugte Ideal in $R$. Da $a \in \mf{a}$ ist $\mf{a} \neq 0$, und es gilt bereits $\mf{a} = R$: Als Ideal ist $\mf{a}$ eine additive Untergruppe von $R$ sowie unter der Multiplikation abgeschlossen, wobei sich Assoziativität, Kommutativität und Distributivität der Multiplikation von $R$ auf $\mf{a}$ vererben. Aus der entsprechenden Eigenschaft von $R$ folgt, dass $\mf{a}$ ein Ring mit Einselement bildet. Aus Bemerkung \ref{bem: 1 ohne nullteiler eindeutig} folgt damit, dass $1 \in \mf{a}$, und daher bereits $\mf{a} = R$. Da $aR = \mf{a} = R$ gibt es insbesondere ein $b \in R$ mit $ab = 1$.
 
 
 
