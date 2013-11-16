@@ -111,6 +111,20 @@ eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren ist. Das steht aber im Wi
 \section{}
 
 \subsection{}
+
+\begin{bem}\label{bem: index A_n}
+ Sei $n \geq 2$. Dann ist $(\Sn_n : \mf{A}_n) = 2$. Insbesondere ist $\mf{A}_n$ normal in $\Sn_n$ (dies folgt auch aus $\mf{A}_n = \Ker \sgn$).
+\end{bem}
+\begin{proof}
+ Sei $\tau = \vect{1 & 2} \in \Sn_n$ und $\varphi$ die Linkstranslation mit $\tau$. Aufgrund der Injektivität von $\varphi$ induziert $\varphi$ eine injektive Abbildung von der Menge aller gerader Permutation $\mf{A}$ in die Menge aller ungerader Permutationen $\Sn_n - \mf{A}$, sowie auch eine injektive Abbildung von $\Sn_n-\mf{A}$ nach $\mf{A}$. Es ist daher
+ \[
+  \ord \mf{A}_n \leq |\Sn_n - \mf{A}_n| \leq \ord \mf{A}_n,
+ \]
+ also $\ord \mf{A}_n = |\Sn_n - \mf{A}_n|$ und somit $\ord \Sn_n = 2 \ord \mf{A}_n$.
+\end{proof}
+
+
+
 Sei $\sigma \in H$ eine ungerade Permutation.
 Es ist $H \mf{A}_n = \Sn_n$: Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A}$ alle geraden Permutationen. Jede ungerade Permutation $\pi \in \Sn_n$ lässt sich als
 \[
@@ -118,7 +132,7 @@ Es ist $H \mf{A}_n = \Sn_n$: Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A
 \]
 schreiben, wobei $\sigma \in H$ und $\sigma \pi$ als Produkt zweier ungerader Permutationen gerade ist, also in $\mf{A}_n$ ist. Also ist $\pi \in H \mf{A}_n$.
 
-Wie aus der Vorlesung bekannt ist $\mf{A}_n$ normal in $\Sn_n$ mit $(\Sn_n : \mf{A}_n) = 2$. Also ist $\mf{A}_n \cap H$ normal in $H$ mit
+Nach Bemerkung \ref{bem: index A_n} ist $\mf{A}_n$ normal in $\Sn_n$ mit $(\Sn_n : \mf{A}_n) = 2$. Also ist $\mf{A}_n \cap H$ normal in $H$ mit
 \[
  H / \mf{A}_n \cap H \cong H\mf{A}_n / \mf{A_n} = \Sn_n / \mf{A}_n.
 \]
