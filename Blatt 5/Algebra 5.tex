@@ -174,19 +174,91 @@ so ist $R$ offenbar isomorph zu $\F{2}$.
 
 
 \subsection{}
-Da $\mf{a}$ ein Ideal in $R$ ist, ist $ar \in \mf{a}$ für alle $a \in \mf{a}$ und $r \in R$. Es ist nun
+Da $\mf{a}$ ein Ideal in $R$ ist, ist $ar \in \mf{a}$ für alle $a \in \mf{a}$ und $r \in R$. Es ist daher
 \begin{align}
  \mf{b} = (\mathfrak{a}) \nonumber
- &= \sum_{a \in \mf{a}} a R[X]
+ &= \sum_{a \in \mf{a}} a\,R[X]
  = \sum_{a \in \mf{a}} \left\{ a \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in R \right\} \nonumber \\
  &= \sum_{a \in \mf{a}} \left\{ \sum_{i=0}^n a a_i X^i : n \geq 0, a_i \in R \right\}
- = \left\{ \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \mf{a} \right\} \label{eq: polynome ideal}.
+ = \left\{ \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \mf{a} \right\} \label{eq: ideal im polynomring}.
 \end{align}
-Dabei ergibt sich die Gleichheit bei \eqref{eq: polynome ideal} wie folgt:
+Dabei ergibt sich die Gleichheit bei \eqref{eq: ideal im polynomring} wie folgt:
 
 Für alle $f = \sum_{i=0}^n a a_i X^i \in a R[X]$ ist $a a_i \in \mf{a}$, da $a \in \mf{a}$ und $\mf{a}$ ein Ideal in $R$ ist, also $f$ ein Polynom mit Koeffizienten in $\mf{a}$.
 
 Andererseits ist jedes Polynom $f = \sum_{i=0}^n a_i X^i$ mit Koeffizienten $a_0, \ldots, a_n \in \mf{a}$ die Summe der Monome $f_i := a_i X^i \in a_i R[X]$. Also ist $f \in \sum_{i=1}^n a_i R[X]$.
+
+
+\subsection{}
+
+\begin{lem} \label{lem: ringhomo polynom}
+ Seien $R, R'$ Ringe und $\phi: R \rightarrow R'$ ein Ringhomomorphismus. Dann induziert $\phi$ einen Ringhomomorphismus $\psi: R[X] \rightarrow R'[X]$ mit
+  \[
+   \psi\left( \sum_{i=0}^n a_i X^i \right) := \sum_{i=0}^n \phi(a_i) X^i.
+  \]
+  Dabei ist
+  \[
+   \Ker \psi = \left\{f \in R[X] : f = \sum_{i=0}^n a_i X^i \text{ mit } n \geq 0 \text{ und } a_i \in \Ker \phi \text{ für alle }i\right\}
+  \]
+  und
+  \[
+   \Img \psi = \left\{g \in R'[X] : g = \sum_{i=0}^n b_i X^i \text{ mit } n \geq 0 \text{ und } b_i \in \Img \phi \text{ für alle }i\right\}.
+  \]
+  Insbesondere ist $\psi$ genau dann injektiv, wenn $\phi$ injektiv ist, und $\psi$ genau dann surjektiv, wenn $\phi$ surjektiv ist.
+\end{lem}
+\begin{proof}
+ Es gilt zunächst zu zeigen, dass $\psi$ ein Ringhomomorphismus ist. Es seien $f,g \in R[X]$ mit $f=\sum_{i=0}^n a_i X^i$ und $g=\sum_{i=0}^n b_i X^i$. Es ist
+ \begin{align*}
+  \psi(f+g)
+  &= \psi\left( \sum_{i=0}^n (a_i+b_i) X^i \right)
+  = \sum_{i=0}^n \phi(a_i+b_i) X^i \\
+  &= \sum_{i=0}^n (\phi(a_i) + \phi(b_i)) X^i
+  = \sum_{i=0}^n \phi(a_i) X^i  +  \sum_{i=0}^n \phi(b_i) X^i \\
+  &= \psi\left( \sum_{i=0}^n a_i X^i \right) + \psi\left( \sum_{i=0}^n b_i X^i \right)
+  = \psi(f) + \psi(g),
+ \end{align*}
+ sowie
+ \begin{align*}
+  \psi(f g)
+  &= \psi\left( \sum_{i=0}^{2n} \left(\sum_{\mu+\nu=i} a_\mu b_\nu \right) X^i \right)
+  = \sum_{i=0}^{2n} \phi \left(\sum_{\mu+\nu=i} a_\mu b_\nu \right) X^i \\
+  &= \sum_{i=0}^{2n} \left(\sum_{\mu+\nu=i} \phi(a_\mu) \phi(b_\nu) \right) X^i
+  = \left( \sum_{i=0}^n \phi(a_i) X^i \right)\left( \sum_{i=0}^n \phi(b_i) X^i \right)\\
+  &= \psi \left( \sum_{i=0}^n a_i X^i \right) \psi \left( \sum_{i=0}^n b_i X^i \right)
+  = \psi(f)\ \psi(g).
+ \end{align*}
+ $\psi$ ist auch unitär, da
+ \[
+  \psi(1) = \psi(1 \cdot X^0) = \phi(1) \cdot X^0 = 1 \cdot X^0 = 1.
+ \]
+ Dies zeigt, dass $\psi$ ein Ringhomomorphismus ist.
+ 
+ Es ist $f = \sum_{i=0}^n a_i X^i \in R[X]$ genau dann in $\Ker \psi$, wenn $\psi(f) = 0$, also $\phi(a_i) = 0$ für alle $i$, also $a_i \in \Ker \phi$ für alle $i$.
+ 
+ Andererseits ist $g = \sum_{i=0}^n b_i X^i \in R'[X]$ genau dann in $\Img \psi$, wenn es ein $f = \sum_{i=0}^n a_i X^i \in R[X]$ mit $\psi(f) = g$ gibt, also $\phi(a_i) = b_i$ für alle $i$, also $b_i \in \Img \phi$ für alle $i$.
+\end{proof}
+
+\begin{bem}
+  Betrachtet man $R[X]$ als abzählbare direkte Summe der additiven Gruppe von $R$ mit sich selbst, so folgt das obige Lemma fast direkt daraus, dass dann $\psi = \bigoplus_{n \in \N} \phi$. Nur dass $\psi$ bezüglich $\cdot$ ein Monoidhomomorphismus ist, folgt dann nicht direkt, da die Multiplikation in $R[X]$ nicht komponentenweise ist.
+\end{bem}
+
+Es sei $\pi : R \twoheadrightarrow R/\mf{a}$ die kanonische Projektion. Da $\pi$ ein Ringepimorphismus ist, folgt aus Lemma \ref{lem: ringhomo polynom}, dass $\pi$ einen Ringepimorphismus $\psi: R[X] \twoheadrightarrow (R/\mf{a})[X]$ induziert. Auch folgt wegen $\Ker \pi = \mf{a}$ aus dem Lemma, dass $\Ker \psi$ genau aus den Polynomen besteht, deren Koeffizienten alle in $\mf{a}$ liegen; wie im vorherigen Aufgabenteil gezeigt, ist dies gerade $\mf{b}$. Es ist daher
+\[
+ R[X]/\mf{b} = R[X]/\Ker\psi \cong \Img\psi = (R/\mf{a})[X].
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
