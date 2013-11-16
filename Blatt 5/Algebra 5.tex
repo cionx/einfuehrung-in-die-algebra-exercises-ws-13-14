@@ -108,14 +108,33 @@ mit abelschen Faktoren. Es folgt nun, dass
 eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren ist. Das steht aber im Widerspruch zur Maximalität von $H$, da $H$ eine echte Untergruppe von $\gen{x}H$ ist. Also ist bereits $N_H = H$.
 
 
-
-
-
-
-
-
-
 \section{}
+
+\subsection{}
+Sei $\sigma \in H$ eine ungerade Permutation.
+Es ist $H \mf{A}_n = \Sn_n$: Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A}$ alle geraden Permutationen. Jede ungerade Permutation $\pi \in \Sn_n$ lässt sich als
+\[
+ \pi = \sigma \cdot \sigma \pi
+\]
+schreiben, wobei $\sigma \in H$ und $\sigma \pi$ als Produkt zweier ungerader Permutationen gerade ist, also in $\mf{A}_n$ ist. Also ist $\pi \in H \mf{A}_n$.
+
+Wie aus der Vorlesung bekannt ist $\mf{A}_n$ normal in $\Sn_n$ mit $(\Sn_n : \mf{A}_n) = 2$. Also ist $\mf{A}_n \cap H$ normal in $H$ mit
+\[
+ H / \mf{A}_n \cap H \cong H\mf{A}_n / \mf{A_n} = \Sn_n / \mf{A}_n.
+\]
+Insbesondere ist daher
+\[
+ (H : \mf{A} \cap H) = \ord H / \mf{A}_n \cap H = \ord \Sn_n / \mf{A}_n = (\Sn_n : \mf{A}_n) = 2.
+\]
+
+
+\subsection{}
+Da $\ord H > 2$ enthält $H$ eine $\pi \neq \id$ gerader Ordnung: Da $H$ nichttrivial ist, gibt es ein $\sigma \in H$ mit $\sigma \neq \id$. Ist $\sigma$ gerade, so sei $\pi := \sigma$. Ist $\sigma$ ungerade so wird zwischen zwei Fällen unterschieden: Ist $\sigma$ nicht selbstinvers, so sei $\pi := \sigma^2$. Ist $\sigma$ selbstinvers, so muss $H$ wegen $\ord H > 2$ noch ein weiteres Element $\tau \in H-\{\id,\sigma\}$ beinhalten. Wiederholt man die oberen Schritte für $\tau$, so findet man entweder ein entsprechendes Element $\pi$ oder auch $\tau$ ist selbstinvers. Sind $\sigma$ und $\tau$ selbstinvers, so sei $\pi := \sigma \tau$.
+
+Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\mf{A}_n$ normal in $\Sn_n$ ist, ist $H \cap \mf{A}_n$ normal in $H$. Da $H$ einfach ist, folgt, dass $H \cap \mf{A}_n = H$ ist. Also ist $H \subseteq \mf{A}_n$ eine Untergruppe.
+
+
+
 
 
 
