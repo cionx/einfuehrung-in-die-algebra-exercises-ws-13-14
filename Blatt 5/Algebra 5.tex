@@ -233,19 +233,18 @@ so ist $R$ offenbar isomorph zu $\F{2}$.
 
 
 \subsection{}
-Da $\mf{a}$ ein Ideal in $R$ ist, ist $ar \in \mf{a}$ für alle $a \in \mf{a}$ und $r \in R$. Es ist daher
-\begin{align}
- \mf{b} = (\mathfrak{a}) \nonumber
- &= \sum_{a \in \mf{a}} a\,R[X]
- = \sum_{a \in \mf{a}} \left\{ a \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in R \right\} \nonumber \\
- &= \sum_{a \in \mf{a}} \left\{ \sum_{i=0}^n a a_i X^i : n \geq 0, a_i \in R \right\}
- = \left\{ \sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \mf{a} \right\} \label{eq: ideal im polynomring}.
-\end{align}
-Dabei ergibt sich die Gleichheit bei \eqref{eq: ideal im polynomring} wie folgt:
+Es bezeichne
+\[
+ \mf{a}[X] := \left\{f \in R[X] : f = \sum_{i=0}^n a_i X^i \text{ mit } n \geq 0, a_i \in \mf{a} \text{ für alle } i\right\}
+\]
+die Menge aller Polynome in $R[X]$ mit Koeffizienten in $\mf{a}$. Da $\mf{a}$ als Ideal abgeschlossen unter Addition ist, ist es auch $\mf{a}[X]$. Das von $\mf{a}$ in $R[X]$ erzeugte Ideal $\mf{b}$ hat die Form
+\begin{align*}
+ \mf{b} = \sum_{a \in \mf{a}} aR[X] = \sum_{a \in \mf{a}} \{af : f \in R[X] \}
+\end{align*}
 
-Für alle $f = \sum_{i=0}^n a a_i X^i \in a R[X]$ ist $a a_i \in \mf{a}$, da $a \in \mf{a}$ und $\mf{a}$ ein Ideal in $R$ ist, also $f$ ein Polynom mit Koeffizienten in $\mf{a}$.
+Sei $f \in \mf{a}[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n a_i X^i$ mit $a_i \in \mf{a}$ für alle $i$. Es ist $a_i X^i \in a_i R[X]$ für alle $i$, und daher $f \in \sum_{i=0}^n a_i R[X] \subseteq \mf{b}$. Also ist $\mf{a}[X] \subseteq \mf{b}$.
 
-Andererseits ist jedes Polynom $f = \sum_{i=0}^n a_i X^i$ mit Koeffizienten $a_0, \ldots, a_n \in \mf{a}$ die Summe der Monome $f_i := a_i X^i \in a_i R[X]$. Also ist $f \in \sum_{i=1}^n a_i R[X]$.
+Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a a_i) X^i$ mit $a_i \in R$ für alle $i$. Da $a \in \mf{a}$ und $\mf{a}$ ein Ideal ist, ist $a a_i \in \mf{a}$ für alle $i$. Es ist daher $f \in \mf{a}[X]$. Also ist $aR[X] \subseteq \mf{a}[X]$ für alle $a \in \mf{a}$. Da $\mf{a}[X]$ abgeschlossen unter Addition ist, ist daher auch $\mf{b} = \sum_{a \in \mf{a}} aR[X] \subseteq \mf{a}[X]$.
 
 
 \subsection{}
