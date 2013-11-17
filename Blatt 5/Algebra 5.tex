@@ -108,7 +108,11 @@ mit abelschen Faktoren. Da $\gen{x}H/H$ abelsch ist, ist daher
 eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren. Das steht aber im Widerspruch zur maximalen Auflösbarkeit von $H$, da $H$ eine echte Untergruppe von $\gen{x}H$ ist. Also ist bereits $N_H = H$.
 
 
+
+
+
 \section{}
+
 
 \subsection{}
 
@@ -116,17 +120,14 @@ eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren. Das steht aber im Widers
  Sei $n \geq 2$. Dann ist $(\Sn_n : \mf{A}_n) = 2$. Insbesondere ist $\mf{A}_n$ normal in $\Sn_n$ (dies folgt auch aus $\mf{A}_n = \Ker \sgn$).
 \end{bem}
 \begin{proof}
- Sei $\tau = \vect{1 & 2} \in \Sn_n$ und $\varphi$ die Linkstranslation mit $\tau$. Aufgrund der Injektivität von $\varphi$ induziert $\varphi$ eine injektive Abbildung von der Menge aller gerader Permutation $\mf{A}$ in die Menge aller ungerader Permutationen $\Sn_n - \mf{A}$, sowie auch eine injektive Abbildung von $\Sn_n-\mf{A}$ nach $\mf{A}$. Es ist daher
+ Sei $\tau = (1 \; 2) \in \Sn_n$ und $\varphi$ die Linkstranslation mit $\tau$. Aufgrund der Injektivität von $\varphi$ induziert $\varphi$ eine injektive Abbildung von der Menge aller gerader Permutation $\mf{A}$ in die Menge aller ungerader Permutationen $\Sn_n - \mf{A}_n$, sowie eine injektive Abbildung von $\Sn_n-\mf{A}_n$ nach $\mf{A}$. Da $\varphi$ involutiv ist, ist es auch die induzierte Abbildung, also 
  \[
-  \ord \mf{A}_n \leq |\Sn_n - \mf{A}_n| \leq \ord \mf{A}_n,
+  \ord \mf{A}_n = |\Sn_n - \mf{A}_n| = \ord \Sn_n - \ord \mf{A}_n,
  \]
- also $\ord \mf{A}_n = |\Sn_n - \mf{A}_n|$ und somit $\ord \Sn_n = 2 \ord \mf{A}_n$.
+ da $\Sn_n$ endlich ist, und somit $\ord \Sn_n = 2 \ord \mf{A}_n$.
 \end{proof}
 
-
-
-Sei $\sigma \in H$ eine ungerade Permutation.
-Es ist $H \mf{A}_n = \Sn_n$: Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A}$ alle geraden Permutationen. Jede ungerade Permutation $\pi \in \Sn_n$ lässt sich als
+Es ist $H \mf{A}_n = \Sn_n$: Sei $\sigma \in H$ eine ungerade Permutation. Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A}_n$ alle geraden Permutationen. Jede ungerade Permutation $\pi \in \Sn_n$ lässt sich als
 \[
  \pi = \sigma \cdot \sigma \pi
 \]
@@ -143,7 +144,7 @@ Insbesondere ist daher
 
 
 \subsection{}
-Da $\ord H > 2$ enthält $H$ eine $\pi \neq \id$ gerader Ordnung: Da $H$ nichttrivial ist, gibt es ein $\sigma \in H$ mit $\sigma \neq \id$. Ist $\sigma$ gerade, so sei $\pi := \sigma$. Ist $\sigma$ ungerade so wird zwischen zwei Fällen unterschieden: Ist $\sigma$ nicht selbstinvers, so sei $\pi := \sigma^2$. Ist $\sigma$ selbstinvers, so muss $H$ wegen $\ord H > 2$ noch ein weiteres Element $\tau \in H-\{\id,\sigma\}$ beinhalten. Wiederholt man die oberen Schritte für $\tau$, so findet man entweder ein entsprechendes Element $\pi$ oder auch $\tau$ ist selbstinvers. Sind $\sigma$ und $\tau$ selbstinvers, so sei $\pi := \sigma \tau$.
+Da $\ord H > 2$ enthält $H$ ein $\pi \neq \id$ gerader Ordnung: Da $H$ nichttrivial ist, gibt es ein $\sigma \in H$ mit $\sigma \neq \id$. Ist $\sigma$ gerade, so sei $\pi := \sigma$. Ist $\sigma$ ungerade so wird zwischen zwei Fällen unterschieden: Ist $\sigma$ nicht selbstinvers, so sei $\pi := \sigma^2$. Ist $\sigma$ selbstinvers, so muss $H$ wegen $\ord H > 2$ noch ein weiteres Element $\tau \in H-\{\id,\sigma\}$ beinhalten. Wiederholt man die oberen Schritte für $\tau$, so findet man entweder ein entsprechendes Element $\pi$ oder auch $\tau$ ist selbstinvers. Sind $\sigma$ und $\tau$ beide ungerade und selbstinvers, so sei $\pi := \sigma \tau$.
 
 Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\mf{A}_n$ normal in $\Sn_n$ ist, ist $H \cap \mf{A}_n$ normal in $H$. Da $H$ einfach ist, folgt, dass $H \cap \mf{A}_n = H$ ist. Also ist $H \subseteq \mf{A}_n$ eine Untergruppe.
 
