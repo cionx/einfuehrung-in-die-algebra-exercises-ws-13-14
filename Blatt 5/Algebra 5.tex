@@ -80,7 +80,7 @@
 
 
 \subsection{}
-Nach Definition von $N_H$ ist $gH = Hg$ für alle $g \in N_H$. Da $x \in N_H$, ist $\gen{x} \subseteq N_H$ eine Untergruppe, und insbesondere $\gen{x}H = H\gen{x}$.
+Nach Definition von $N_H$ ist $gH = Hg$ für alle $g \in N_H$. Da $x \in N_H$, ist $\gen{x} \subseteq N_H$ eine Untergruppe, und daher $\gen{x}H = H\gen{x}$.
 Es ist
 \[
  1 = 1 \cdot 1 \in \gen{x}H,
@@ -265,30 +265,27 @@ Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a
   Insbesondere ist $\psi$ genau dann injektiv, wenn $\phi$ injektiv ist, und $\psi$ genau dann surjektiv, wenn $\phi$ surjektiv ist.
 \end{lem}
 \begin{proof}
- Es gilt zunächst zu zeigen, dass $\psi$ ein Ringhomomorphismus ist. Es seien $f,g \in R[X]$ mit $f=\sum_{i=0}^n a_i X^i$ und $g=\sum_{i=0}^n b_i X^i$. Es ist
- \begin{align*}
-  \psi(f+g)
-  &= \psi\left( \sum_{i=0}^n (a_i+b_i) X^i \right)
-  = \sum_{i=0}^n \phi(a_i+b_i) X^i \\
-  &= \sum_{i=0}^n (\phi(a_i) + \phi(b_i)) X^i
-  = \sum_{i=0}^n \phi(a_i) X^i  +  \sum_{i=0}^n \phi(b_i) X^i \\
-  &= \psi\left( \sum_{i=0}^n a_i X^i \right) + \psi\left( \sum_{i=0}^n b_i X^i \right)
-  = \psi(f) + \psi(g),
- \end{align*}
- sowie
- \begin{align*}
-  \psi(f g)
-  &= \psi\left( \sum_{i=0}^{2n} \left(\sum_{\mu+\nu=i} a_\mu b_\nu \right) X^i \right)
-  = \sum_{i=0}^{2n} \phi \left(\sum_{\mu+\nu=i} a_\mu b_\nu \right) X^i \\
-  &= \sum_{i=0}^{2n} \left(\sum_{\mu+\nu=i} \phi(a_\mu) \phi(b_\nu) \right) X^i
-  = \left( \sum_{i=0}^n \phi(a_i) X^i \right)\left( \sum_{i=0}^n \phi(b_i) X^i \right)\\
-  &= \psi \left( \sum_{i=0}^n a_i X^i \right) \psi \left( \sum_{i=0}^n b_i X^i \right)
-  = \psi(f)\ \psi(g).
- \end{align*}
- $\psi$ ist auch unitär, da
+ Es gilt zunächst zu zeigen, dass $\psi$ ein Ringhomomorphismus ist. Hierfür bemerken wir, dass sich $\psi$ auch als
  \[
-  \psi(1) = \psi(1 \cdot X^0) = \phi(1) \cdot X^0 = 1 \cdot X^0 = 1.
+  \psi: R[X] \rightarrow R'[X], f \mapsto \phi \circ f = \phi f
  \]
+ schreiben lässt, indem $f \in R[X]$ als Abbildung $f: \N \rightarrow R$ gesehen wird. Da $\phi$ ein Ringhomomorphismus ist und die Addition in $R[X]$ komponentenweise verläuft, ist für alle $f,g \in R[X]$ 
+ \[
+  \psi(f+g) = \phi (f+g) = \phi f + \phi g = \psi(f) + \psi(g).
+ \]
+ Auch ist für alle $i \in \N$
+ \begin{align*}
+  \psi(f \cdot g)(i)
+  &= \phi(f \cdot g)(i)
+  = \phi\left( \sum_{\mu+\nu=i} f(\mu) \cdot g(\nu) \right) \\
+  &= \sum_{\mu+\nu=i} (\phi f)(\mu) \cdot (\phi g)(\nu)
+  = ((\phi f) \cdot (\phi g))(i)
+  = (\psi(f) \cdot \psi(g))(i),
+ \end{align*}
+ also $\psi(f \cdot g) = \psi(f) \cdot \psi(g)$. $\psi$ ist auch unitär, da
+  \[
+   \psi(1) = \psi\left(1 \cdot X^0\right) = \phi(1) \cdot X^0 = 1 \cdot X^0 = 1.
+  \]
  Dies zeigt, dass $\psi$ ein Ringhomomorphismus ist.
  
  Es ist $f = \sum_{i=0}^n a_i X^i \in R[X]$ genau dann in $\Ker \psi$, wenn $\psi(f) = 0$, also $\phi(a_i) = 0$ für alle $i$, also $a_i \in \Ker \phi$ für alle $i$.
@@ -296,11 +293,7 @@ Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a
  Andererseits ist $g = \sum_{i=0}^n b_i X^i \in R'[X]$ genau dann in $\Img \psi$, wenn es ein $f = \sum_{i=0}^n a_i X^i \in R[X]$ mit $\psi(f) = g$ gibt, also $\phi(a_i) = b_i$ für alle $i$, also $b_i \in \Img \phi$ für alle $i$.
 \end{proof}
 
-\begin{bem}
-  Betrachtet man $R[X]$ als abzählbare direkte Summe der additiven Gruppe von $R$ mit sich selbst, so folgt das obige Lemma fast direkt daraus, dass dann $\psi = \bigoplus_{n \in \N} \phi$. Nur dass $\psi$ bezüglich $\cdot$ ein Monoidhomomorphismus ist, folgt dann nicht direkt, da die Multiplikation in $R[X]$ nicht komponentenweise ist.
-\end{bem}
-
-Es sei $\pi : R \twoheadrightarrow R/\mf{a}$ die kanonische Projektion. Da $\pi$ ein Ringepimorphismus ist, folgt aus Lemma \ref{lem: ringhomo polynom}, dass $\pi$ einen Ringepimorphismus $\psi: R[X] \twoheadrightarrow (R/\mf{a})[X]$ induziert. Auch folgt wegen $\Ker \pi = \mf{a}$ aus dem Lemma, dass $\Ker \psi$ genau aus den Polynomen besteht, deren Koeffizienten alle in $\mf{a}$ liegen; wie im vorherigen Aufgabenteil gezeigt, ist dies gerade $\mf{b}$. Es ist daher
+Es sei $\pi : R \twoheadrightarrow R/\mf{a}$ die kanonische Projektion. Da $\pi$ ein Ringepimorphismus ist, folgt aus Lemma \ref{lem: ringhomo polynom}, dass $\pi$ einen Ringepimorphismus $\psi: R[X] \twoheadrightarrow (R/\mf{a})[X]$ induziert. Auch folgt wegen $\Ker \pi = \mf{a}$ aus dem Lemma, dass $\Ker \psi$ genau aus den Polynomen besteht, deren Koeffizienten alle in $\mf{a}$ liegen, also $\mf{a}[X]$; wie im vorherigen Aufgabenteil gezeigt, ist dies gerade $\mf{b}$. Es ist daher
 \[
  R[X]/\mf{b} = R[X]/\Ker\psi \cong \Img\psi = (R/\mf{a})[X].
 \]
