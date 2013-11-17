@@ -166,16 +166,27 @@ Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\m
 \end{proof}
 
 \begin{bem}\label{bem: 1 ohne nullteiler eindeutig}
- Sei $R$ ein Integritätsring. Gibt es für $b \in R$ ein $a \in R$ mit $a \neq 0$ und $ab = a$ oder $ba = a$, so ist bereits $b = 1$. Insbesondere gilt für jede Ringerweiterung $R' \subseteq R$ mit $R' \neq 0$, dass $R'$ genau dann ein Einselement beinhaltet, wenn $1 \in R'$.
+ Sei $R$ ein Integritätsring und $b \in R$. Gibt es ein $a \in R$ mit $a \neq 0$ und $ab = a$ oder $ba = a$, so ist $b = 1$. Insbesondere gilt für jede Ringerweiterung $R' \subseteq R$ mit $R' \neq 0$, dass $R'$ genau dann ein Einselement hat, wenn $1 \in R'$.
  \begin{proof}
-  Da $a \neq 0$ impliziert die Nullteilerfreiheit von $R$ direkt die Injektivität der Links-, bzw. Rechtsmultiplikation mit $a$. Da $1 \cdot a = a = a \cdot 1$ ist daher $b = 1$.
+  Da $a \neq 0$ impliziert die Nullteilerfreiheit von $R$ die Injektivität der Links-, bzw. Rechtsmultiplikation mit $a$. Da $1 \cdot a = a = a \cdot 1$ ist daher $b = 1$.
  \end{proof}
 \end{bem}
 
+Nach Aufgabenstellung ist $R$ ein kommutativer Ring mit Einselement. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses $b \in R$ mit $ab = 1$ existiert.
 
-Nach Aufgabenstellung ist $R$ ein kommutativer Ring mit Einselement. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass es für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses $b \in R$ mit $ab = 1$ gibt.
+Sei $a \in R$ mit $a \neq 0$ beliebig aber fest und $\mf{a} := (a)$ das von $a$ erzeugte Ideal in $R$. Da $a \in \mf{a}$ ist $\mf{a} \neq 0$.
 
-Sei $a \in R$ mit $a \neq 0$ beliebig aber fest und $\mf{a} := (a)$ das von $a$ erzeugte Ideal in $R$. Da $a \in \mf{a}$ ist $\mf{a} \neq 0$, und es gilt bereits $\mf{a} = R$: Als Ideal ist $\mf{a}$ eine additive Untergruppe von $R$ sowie unter der Multiplikation abgeschlossen, wobei sich Assoziativität, Kommutativität und Distributivität der Multiplikation von $R$ auf $\mf{a}$ vererben. Aus der entsprechenden Eigenschaft von $R$ folgt, dass $\mf{a}$ ein Ring mit Einselement bildet. Aus Bemerkung \ref{bem: 1 ohne nullteiler eindeutig} folgt damit, dass $1 \in \mf{a}$, und daher bereits $\mf{a} = R$. Da $aR = \mf{a} = R$ gibt es insbesondere ein $b \in R$ mit $ab = 1$.
+\begin{beh}
+ Es ist $\mf{a} = R$.
+\end{beh}
+
+Aus der Behauptung folgt wegen $aR = \mf{a} = R$, dass es insbesondere ein $b \in R$ mit $ab = 1$ gibt.
+
+\begin{proof}[Beweis der Behauptung]
+ Als Ideal ist $\mf{a}$ eine Untergruppe von der additiven Gruppe von $R$, sowie unter Multiplikation abgeschlossen, wobei sich Assoziativität, Kommutativität und Distributivität der Multiplikation von $R$ auf $\mf{a}$ vererben. Aus der entsprechenden Eigenschaft von $R$ folgt, dass $\mf{a}$ ein Ring mit Einselement bildet. Aus Bemerkung \ref{bem: 1 ohne nullteiler eindeutig} folgt damit, dass $1 \in \mf{a}$, und daher bereits $\mf{a} = R$.
+\end{proof}
+
+
 
 
 
