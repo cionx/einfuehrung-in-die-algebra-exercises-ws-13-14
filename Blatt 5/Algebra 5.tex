@@ -80,16 +80,16 @@
 
 
 \subsection{}
-Nach Definition von $N_H$ ist $gH = Hg$ für alle $g \in N_H$. Da $x \in N_H$, ist $\gen{x} \subseteq N_H$ eine Untergruppe, und daher $\gen{x}H = H\gen{x}$.
+Nach Definition von $N_H$ ist $gH = Hg$ für alle $g \in N_H$. Da $x \in N_H$, ist $\gen{x} \subseteq N_H$ eine Untergruppe, also $\gen{x}H = H\gen{x}$.
 Es ist
 \[
  1 = 1 \cdot 1 \in \gen{x}H,
 \]
-und für $a,b \in \gen{x}$ mit $a = x^n h$ und $b = x^m \tilde{h}$ ist
+und für $a,b \in \gen{x}H$ mit $a = x^n h$ und $b = x^m \tilde{h}$ ist
 \[
- ab^{-1} = x^n h \tilde{h}^{-1} x^{-m} \in \gen{x} H \gen{x} = \gen{x} \gen{x} H = \gen{x} H.
+ ab^{-1} = x^n h \tilde{h}^{-1} x^{-m} \in \gen{x} H \gen{x} = \gen{x} \gen{x} H = \gen{x} H,
 \]
-Da $\gen{x}, H \subseteq N_H$ ist $\gen{x}H$ eine Untergruppe von $N_H$, also insbesondere von $G$.
+also $\gen{x}H$ eine Untergruppe. Da $\gen{x}, H \subseteq N_H$ ist $\gen{x}H$ eine Untergruppe von $N_H$, also insbesondere von $G$.
 
 
 \subsection{}
@@ -101,11 +101,11 @@ zyklisch, da $\gen{x}$ zyklisch ist, und somit insbesondere abelsch. Da $H$ aufl
 \[
  1 = H_0 \subsetneq H_1 \subsetneq \ldots \subsetneq H_n = H
 \]
-mit abelschen Faktoren. Es folgt nun, dass
+mit abelschen Faktoren. Da $\gen{x}H/H$ abelsch ist, ist daher
 \[
- 1 = H_0 \subsetneq H_1 \subsetneq \ldots \subsetneq H_n \subsetneq H_{n+1} = \gen{x}H
+ 1 = H_0 \subsetneq H_1 \subsetneq \ldots \subsetneq H_n \subsetneq H_{n+1} =: \gen{x}H
 \]
-eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren ist. Das steht aber im Widerspruch zur Maximalität von $H$, da $H$ eine echte Untergruppe von $\gen{x}H$ ist. Also ist bereits $N_H = H$.
+eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren. Das steht aber im Widerspruch zur maximalen Auflösbarkeit von $H$, da $H$ eine echte Untergruppe von $\gen{x}H$ ist. Also ist bereits $N_H = H$.
 
 
 \section{}
