@@ -117,14 +117,10 @@ eine Normalreihe von $\gen{x}H$ mit abelschen Faktoren. Das steht aber im Widers
 \subsection{}
 
 \begin{bem}\label{bem: index A_n}
- Sei $n \geq 2$. Dann ist $(\Sn_n : \mf{A}_n) = 2$. Insbesondere ist $\mf{A}_n$ normal in $\Sn_n$ (dies folgt auch aus $\mf{A}_n = \Ker \sgn$).
+ Sei $n \geq 2$. Dann ist $(\Sn_n : \mf{A}_n) = 2$. Insbesondere ist $\mf{A}_n$ normal in $\Sn_n$.
 \end{bem}
 \begin{proof}
- Sei $\tau = (1 \; 2) \in \Sn_n$ und $\varphi$ die Linkstranslation mit $\tau$. Aufgrund der Injektivität von $\varphi$ induziert $\varphi$ eine injektive Abbildung von der Menge aller gerader Permutation $\mf{A}$ in die Menge aller ungerader Permutationen $\Sn_n - \mf{A}_n$, sowie eine injektive Abbildung von $\Sn_n-\mf{A}_n$ nach $\mf{A}$. Da $\varphi$ involutiv ist, ist es auch die induzierte Abbildung, also 
- \[
-  \ord \mf{A}_n = |\Sn_n - \mf{A}_n| = \ord \Sn_n - \ord \mf{A}_n,
- \]
- da $\Sn_n$ endlich ist, und somit $\ord \Sn_n = 2 \ord \mf{A}_n$.
+ Es ist $\mf{A}_n = \Ker \sgn$ und $\Img \sgn \cong \Z/2\Z$, also $\Sn_n / \mf{A}_n \cong \Z/2\Z$, und daher \mbox{$\ord \Sn_n = 2 \ord \mf{A}_n$}.
 \end{proof}
 
 Es ist $H \mf{A}_n = \Sn_n$: Sei $\sigma \in H$ eine ungerade Permutation. Da $\mf{A}_n \subseteq H \mf{A}_n$ enthält $H\mf{A}_n$ alle geraden Permutationen. Jede ungerade Permutation $\pi \in \Sn_n$ lässt sich als
@@ -144,9 +140,9 @@ Insbesondere ist daher
 
 
 \subsection{}
-Da $\ord H > 2$ enthält $H$ ein $\pi \neq \id$ gerader Ordnung: Da $H$ nichttrivial ist, gibt es ein $\sigma \in H$ mit $\sigma \neq \id$. Ist $\sigma$ gerade, so sei $\pi := \sigma$. Ist $\sigma$ ungerade so wird zwischen zwei Fällen unterschieden: Ist $\sigma$ nicht selbstinvers, so sei $\pi := \sigma^2$. Ist $\sigma$ selbstinvers, so muss $H$ wegen $\ord H > 2$ noch ein weiteres Element $\tau \in H-\{\id,\sigma\}$ beinhalten. Wiederholt man die oberen Schritte für $\tau$, so findet man entweder ein entsprechendes Element $\pi$ oder auch $\tau$ ist selbstinvers. Sind $\sigma$ und $\tau$ beide ungerade und selbstinvers, so sei $\pi := \sigma \tau$.
+Da $\ord H > 2$ enthält $H$ ein $\pi \neq \id$ gerader Ordnung: Da $H$ nichttrivial ist, gibt es ein $\sigma \in H$ mit $\sigma \neq \id$. Ist $\sigma$ gerade, so sei $\pi := \sigma$. Ist $\sigma$ ungerade so wird zwischen zwei Fällen unterschieden: Ist $\sigma$ nicht selbstinvers, so sei $\pi := \sigma^2$. Ist $\sigma$ selbstinvers, so muss $H$ wegen $\ord H > 2$ noch ein weiteres Element $\tau \in H \smallsetminus \{\id,\sigma\}$ beinhalten. Wiederholt man die oberen Schritte für $\tau$, so findet man entweder ein entsprechendes Element $\pi$ oder auch $\tau$ ist ungerade und selbstinvers. Sind $\sigma$ und $\tau$ beide ungerade und selbstinvers, so sei $\pi := \sigma \tau$.
 
-Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\mf{A}_n$ normal in $\Sn_n$ ist, ist $H \cap \mf{A}_n$ normal in $H$. Da $H$ einfach ist, folgt, dass $H \cap \mf{A}_n = H$ ist. Also ist $H \subseteq \mf{A}_n$ eine Untergruppe.
+Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\mf{A}_n$ normal in $\Sn_n$ ist, ist $H \cap \mf{A}_n$ normal in $H$. Da $H$ einfach ist, folgt $H \cap \mf{A}_n = H$. Also ist $H \subseteq \mf{A}_n$ eine Untergruppe.
 
 
 
@@ -172,7 +168,7 @@ Es folgt, dass $H \cap \mf{A}_n \supseteq \{\id, \pi\}$ nichttrivial ist. Da $\m
  \end{proof}
 \end{bem}
 
-Nach Aufgabenstellung ist $R$ ein kommutativer Ring mit Einselement. Da $R$ mindestens zwei Elemente besitzt folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses $b \in R$ mit $ab = 1$ existiert.
+Nach Aufgabenstellung ist $R$ ein kommutativer Ring mit Einselement. Da $R$ mindestens zwei Elemente besitzt, folgt aus Bemerkung \ref{bem: 0 neq 1}, dass $0 \neq 1$. Es gilt also nur noch zu zeigen, dass für jedes $a \in R$ mit $a \neq 0$ ein multiplikativ Inverses $b \in R$ mit $ab = 1$ existiert.
 
 Sei $a \in R$ mit $a \neq 0$ beliebig aber fest und $\mf{a} := (a)$ das von $a$ erzeugte Ideal in $R$. Da $a \in \mf{a}$ ist $\mf{a} \neq 0$.
 
@@ -183,7 +179,7 @@ Sei $a \in R$ mit $a \neq 0$ beliebig aber fest und $\mf{a} := (a)$ das von $a$ 
 Aus der Behauptung folgt wegen $aR = \mf{a} = R$, dass es insbesondere ein $b \in R$ mit $ab = 1$ gibt.
 
 \begin{proof}[Beweis der Behauptung]
- Als Ideal ist $\mf{a}$ eine Untergruppe von der additiven Gruppe von $R$, sowie unter Multiplikation abgeschlossen, wobei sich Assoziativität, Kommutativität und Distributivität der Multiplikation von $R$ auf $\mf{a}$ vererben. Aus der entsprechenden Eigenschaft von $R$ folgt, dass $\mf{a}$ ein Ring mit Einselement bildet. Aus Bemerkung \ref{bem: 1 ohne nullteiler eindeutig} folgt damit, dass $1 \in \mf{a}$, und daher bereits $\mf{a} = R$.
+ Als Ideal ist $\mf{a}$ eine Untergruppe der additiven Gruppe von $R$, sowie unter Multiplikation abgeschlossen, wobei sich Assoziativität, Kommutativität und Distributivität der Multiplikation von $R$ auf $\mf{a}$ vererben. Aus der entsprechenden Eigenschaft von $R$ folgt, dass $\mf{a}$ einen Ring mit Einselement bildet. Aus Bemerkung \ref{bem: 1 ohne nullteiler eindeutig} folgt damit, dass $1 \in \mf{a}$, und daher bereits $\mf{a} = R$.
 \end{proof}
 
 
@@ -218,7 +214,7 @@ Seien $a,b \in R$ mit $a \neq b$. Es ist
 \[
  (a-b)ab = a^2 b - ab^2 = ab-ab = 0.
 \]
-Da $a \neq b$ ist $a-b \neq 0$, wegen der Nullteilerfreiheit von $R$ also $ab = 0$. Wegen der Nullteilerfreiheit ist also $a = 0$ oder $b = 0$. Aus der Beliebigkeit von $a$ und $b$ folgt, dass es neben $0$ nur ein weiters Element in $R$ gibt. Da aus Bemerkung \ref{bem: 0 neq 1} folgt, dass $0 \neq 1$, ist also $R = \{0,1\}$.
+Da $a \neq b$ ist $a-b \neq 0$, wegen der Nullteilerfreiheit von $R$ also $a = 0$ oder $b = 0$. Aus der Beliebigkeit von $a$ und $b$ folgt, dass es neben $0$ nur ein weiteres Element in $R$ geben kann. Da aus Bemerkung \ref{bem: 0 neq 1} folgt, dass $0 \neq 1$, ist also $R = \{0,1\}$.
 Betrachtet man die Verknüpfungstabellen von $R$,
 \begin{equation*}
  \begin{matrix}[|c|c|c|]\hline
@@ -244,19 +240,24 @@ so ist $R$ offenbar isomorph zu $\F{2}$.
 \section{}
 
 
+\begin{bem}
+ Im Folgenden wird davon ausgegangen, dass $R$ kommutativ ist. Dies ist zwar auf dem Aufgabenzettel nicht explizit angegeben, wurde aber in der Vorlesungspause bei Schwede nachgefragt. Ansonsten sind die in der Vorlesungen behandelten Definitionen und Sätze auch nicht (ohne Weiteres) anwend- und nutzbar.
+\end{bem}
+
+
 \subsection{}
 Es bezeichne
 \[
  \mf{a}[X] := \left\{f \in R[X] : f = \sum_{i=0}^n a_i X^i \text{ mit } n \geq 0, a_i \in \mf{a} \text{ für alle } i\right\}
 \]
-die Menge aller Polynome in $R[X]$ mit Koeffizienten in $\mf{a}$. Da $\mf{a}$ als Ideal abgeschlossen unter Addition ist, ist es auch $\mf{a}[X]$. Das von $\mf{a}$ in $R[X]$ erzeugte Ideal $\mf{b}$ hat die Form
+die Menge aller Polynome in $R[X]$ mit Koeffizienten in $\mf{a}$. Da $\mf{a}$ als Ideal eine additive Gruppe ist, ist es offenbar auch $\mf{a}[X]$. Das von $\mf{a}$ in $R[X]$ erzeugte Ideal $\mf{b}$ hat die Form
 \begin{align*}
  \mf{b} = \sum_{a \in \mf{a}} aR[X] = \sum_{a \in \mf{a}} \{af : f \in R[X] \}
 \end{align*}
 
-Sei $f \in \mf{a}[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n a_i X^i$ mit $a_i \in \mf{a}$ für alle $i$. Es ist $a_i X^i \in a_i R[X]$ für alle $i$, und daher $f \in \sum_{i=0}^n a_i R[X] \subseteq \mf{b}$. Also ist $\mf{a}[X] \subseteq \mf{b}$.
+Sei $f \in \mf{a}[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n a_i X^i$ mit $n \geq 0$ und $a_i \in \mf{a}$ für alle $i$. Es ist $a_i X^i \in a_i R[X]$ für alle $i$, und daher $f \in \sum_{i=0}^n a_i R[X] \subseteq \mf{b}$. Also ist $\mf{a}[X] \subseteq \mf{b}$.
 
-Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a a_i) X^i$ mit $a_i \in R$ für alle $i$. Da $a \in \mf{a}$ und $\mf{a}$ ein Ideal ist, ist $a a_i \in \mf{a}$ für alle $i$. Es ist daher $f \in \mf{a}[X]$. Also ist $aR[X] \subseteq \mf{a}[X]$ für alle $a \in \mf{a}$. Da $\mf{a}[X]$ abgeschlossen unter Addition ist, ist daher auch $\mf{b} = \sum_{a \in \mf{a}} aR[X] \subseteq \mf{a}[X]$.
+Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a a_i) X^i$ mit $n \geq 0$ und $a_i \in R$ für alle $i$. Da $a \in \mf{a}$ und $\mf{a}$ ein Ideal ist, ist $a a_i \in \mf{a}$ für alle $i$. Es ist daher $f \in \mf{a}[X]$. Also ist $aR[X] \subseteq \mf{a}[X]$ für alle $a \in \mf{a}$. Da $\mf{a}[X]$ abgeschlossen unter Addition ist, ist daher auch $\mf{b} = \sum_{a \in \mf{a}} aR[X] \subseteq \mf{a}[X]$.
 
 
 \subsection{}
@@ -281,7 +282,7 @@ Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a
  \[
   \psi: R[X] \rightarrow R'[X], f \mapsto \phi \circ f = \phi f
  \]
- schreiben lässt, indem $f \in R[X]$ als Abbildung $f: \N \rightarrow R$ gesehen wird. Da $\phi$ ein Ringhomomorphismus ist und die Addition in $R[X]$ komponentenweise verläuft, ist für alle $f,g \in R[X]$ 
+ schreiben lässt, indem $f \in R[X]$ als Abbildung $f: \N \rightarrow R$ verstanden wird. Da $\phi$ ein Ringhomomorphismus ist, und die Addition in $R[X]$ komponentenweise verläuft, ist für alle $f,g \in R[X]$ 
  \[
   \psi(f+g) = \phi (f+g) = \phi f + \phi g = \psi(f) + \psi(g).
  \]
@@ -305,7 +306,7 @@ Sei $a \in \mf{a}$ und $f \in aR[X]$. Dann hat $f$ die Form $f = \sum_{i=0}^n (a
  Andererseits ist $g = \sum_{i=0}^n b_i X^i \in R'[X]$ genau dann in $\Img \psi$, wenn es ein $f = \sum_{i=0}^n a_i X^i \in R[X]$ mit $\psi(f) = g$ gibt, also $\phi(a_i) = b_i$ für alle $i$, also $b_i \in \Img \phi$ für alle $i$.
 \end{proof}
 
-Es sei $\pi : R \twoheadrightarrow R/\mf{a}$ die kanonische Projektion. Da $\pi$ ein Ringepimorphismus ist, folgt aus Lemma \ref{lem: ringhomo polynom}, dass $\pi$ einen Ringepimorphismus $\psi: R[X] \twoheadrightarrow (R/\mf{a})[X]$ induziert. Auch folgt wegen $\Ker \pi = \mf{a}$ aus dem Lemma, dass $\Ker \psi$ genau aus den Polynomen besteht, deren Koeffizienten alle in $\mf{a}$ liegen, also $\mf{a}[X]$; wie im vorherigen Aufgabenteil gezeigt, ist dies gerade $\mf{b}$. Es ist daher
+Es sei $\pi : R \twoheadrightarrow R/\mf{a}$ die kanonische Projektion. Da $\pi$ ein Ringepimorphismus ist, folgt aus Lemma \ref{lem: ringhomo polynom}, dass $\pi$ einen Ringepimorphismus $\psi: R[X] \twoheadrightarrow (R/\mf{a})[X]$ induziert. Auch folgt wegen $\Ker \pi = \mf{a}$ aus dem Lemma, dass $\Ker \psi$ aus genau den Polynomen besteht, deren Koeffizienten alle in $\mf{a}$ liegen, also $\mf{a}[X]$. Wie im vorherigen Aufgabenteil gezeigt, ist $\mf{a}[X] = \mf{b}$, weshalb
 \[
  R[X]/\mf{b} = R[X]/\Ker\psi \cong \Img\psi = (R/\mf{a})[X].
 \]
