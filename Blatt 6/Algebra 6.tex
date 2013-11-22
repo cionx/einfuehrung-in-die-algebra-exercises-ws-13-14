@@ -76,6 +76,66 @@
 
 
 
+\section{}
+Es sei $n > 1$ so dass
+\begin{equation}\label{eq: a^n = a}
+ a^n = a \text{ für alle } a \in R,
+\end{equation}
+und $\mf{p}$ ein Primideal in $R$. Da $\mf{p}$ ein Primideal ist, ist $R/\mf{p}$ ein Integritätsring, sowie $R/\mf{p} \neq 0$, da $\mf{p}$ von $R$ verschieden ist. Da $R$ kommutativ ist, ist es auch $R/\mf{p}$, und es ist offensichtlich, dass die Bedingung \eqref{eq: a^n = a} auf $R/\mf{p}$ vererbt wird. Da für alle $r \in R/\mf{p}$ mit $r \neq 0$
+\[
+ r \cdot r^{n-1} = r^n = r = r \cdot 1,
+\]
+folgt, wie bereits letzte Woche gezeigt, wegen der Nullteilerfreiheit von $R/\mf{p}$, dass $r^{n-1} = 1$ für alle $r \in R/\mf{p}$. Als ist für alle $r \in R/\mf{p}$ mit $r \neq 0$
+\[
+ r r^{n-2} = r^{n-1} = 1,
+\]
+d.h. alle $r \in R/\mf{p}$ mit $r \neq 0$ sind multiplikativ invertierbar. Zusammen mit der Kommutativität von $R/\mf{p}$ und $R/\mf{p} \neq 0$ zeigt dies, dass $R/\mf{p}$ ein Körper ist. Dies ist äquivalent dazu, dass $\mf{p}$ ein maximales Ideal ist.
+
+\section{}
+Für alle $a \in \ker \varphi$ ist $1-a$ multiplikativ invertierbar: Für $n \geq 1$ mit $a^n = 0$ ergibt sich, dass
+\begin{align*}
+ (1+a+a^2+\ldots+a^{n-1})(1-a) &= 1-a^n = 1 \text{ und} \\
+ (1-a)(1+a+a^2+\ldots+a^{n-1}) &= 1-a^n = 1.
+\end{align*}
+Folglich ist
+\[
+ 1 + \ker \varphi = 1 - \ker \varphi \subseteq R^*.
+\]
+Wir bemerken auch, dass
+\[
+ x \in 1 + \ker \varphi \Leftrightarrow \varphi(x) = 1,
+\]
+denn da $1 \in \varphi^{-1}(\{1\})$ ist $1 + \ker \varphi$ als Nebenklasse von $1$ bezüglich $\ker \varphi$ die Faser $\varphi^{-1}(\{1\})$ von $1 \in S$ unter $\varphi$.
+
+Bekanntermaßen induziert $\varphi$ einen Gruppenhomomorphismus $\varphi_{|R^*} : R^* \rightarrow S^*$ der entsprechenden Einheitengruppen. Die Surjektivität von $\varphi$ vererbt sich dabei auf $\varphi_{|R^*}$: Für $s\in S^*$ gibt es $r,r' \in R$ mit $\varphi(r) = s$ und $\varphi(r') = s^{-1}$. Es ist
+\[
+ \varphi(r r') = \varphi(r) \varphi(r') = s s^{-1} = 1,
+\]
+also wie oben bemerkt $r r' \in 1 + \ker \varphi \subseteq R^*$. Es ist nun nach den obigen Beobachtungen
+\[
+ \ker \varphi_{|R^*}
+ = \{x \in R^* : \varphi(x) = 1\}
+ = R^* \cap \varphi^{-1}(\{1\})
+ = R^* \cap (1+ \ker \varphi)
+ = 1 + \ker \varphi.
+\]
+Folglich ist $1 + \ker \varphi$ ein Normalteiler von $R^*$ und
+\[
+ R^* / (1+ \ker \varphi) \cong S^*.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
