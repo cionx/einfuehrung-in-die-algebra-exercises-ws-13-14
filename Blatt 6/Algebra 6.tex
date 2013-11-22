@@ -30,6 +30,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Sn}{\mathfrak{S}}
 \newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\dt}{\,\text{d}t}
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
 \newcommand{\id}{\operatorname{id}}
@@ -123,6 +124,38 @@ Folglich ist $1 + \ker \varphi$ ein Normalteiler von $R^*$ und
 \[
  R^* / (1+ \ker \varphi) \cong S^*.
 \]
+
+
+
+
+
+\section*{Bemerkung}
+Es sei $R$ ein kommutativer Ring und $\mf{a} \subseteq R$ ein Ideal mit $\mf{a} \neq R$. Die Menge
+\[
+ \mc{I} := \{I \subseteq R : I \text{ ist ein Ideal in $R$ mit $I \neq R$ und $\mf{a} \subseteq I$} \} \subseteq \mc{P}(R).
+\]
+ist bezüglich der Teilmengenrelation $\subseteq$ partiell geordnet. Da $\mf{a} \in \mc{I}$ ist $\mc{I}$ nichtleer. Es sei $\mc{C} \subseteq \mc{I}$ eine nichtleere Kette. $\mc{C}$ besitzt ein obere Schranke in $\mc{I}$. Um dies zu zeigen, nutzen wir die folgende Bemerkung:
+
+\begin{bem}
+ Sei $G$ eine abelsche Gruppe, und $(G_i)_{i \in I}$ eine Kette von Untergruppen von $G$, d.h. für alle $i \in I$ ist $G_i$ eine Untergruppe von $G$ und für $i,j \in I$ ist $G_i \subseteq G_j$ oder $G_j \subseteq G_i$. Dann ist
+ \[
+  \sum_{i \in I} G_i = \bigcup_{i \in I} G_i.
+ \]
+\end{bem}
+\begin{proof}
+ Für alle $i \in I$ ist $G_i \subseteq \bigcup_{j \in I} G_j$, also ist auch $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$. Für $x \in \sum_{i \in I} G_i$ gibt es Indizes $i_1, \ldots, i_n \in I$ und Elemente $g_{i_1} \in G_{i_1}, \ldots, g_{i_n} \in G_{i_n}$ mit $x = \sum_{j=1}^n g_{i_j}$. Da die $G_i$ bezüglich $\subseteq$ total geordnet sind, gibt es ein $k \in \{1, \ldots, n\}$ mit $G_{i_j} \subseteq G_{i_k}$ für $j=1,\ldots,n$. Insbesondere ist $g_{i_j} \in G_{i_k}$ für $j=1,\ldots,n$, also auch $x \in G_{i_k}$. Damit ist $x \in \bigcup_{i \in I} G_i$, also $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$.
+\end{proof}
+
+Aus der Bemerkung folgt, dass
+\[
+ C := \bigcup_{I \in \mc{C}} I = \sum_{I \in \mc{C}} I
+\]
+ein Ideal in $R$ ist.
+Für alle $I \in \mc{C}$ gilt, dass $I \neq R$, also $1 \not\in I$, und daher auch $1 \not\in C$, also $C \neq R$. Auch ist $\mf{a} \subseteq I \subseteq C$ für $I \in C$. Es ist also $C \in \mc{I}$, und deshalb $C$ eine obere Schrankte für $\mc{C}$ in $\mc{I}$.
+
+Mit dem Lemma von Zorn folgt, dass es ein $M \in \mc{I}$ gibt, dass bezüglich $\subseteq$ maximal in $\mc{I}$ ist. $M$ ist ein maximales Ideal in $R$: Für jedes Ideal $M'$ mit $M \subseteq M' \subsetneq R$ ist $\mf{a} \subseteq M \subseteq M'$ und $M' \neq R$, also $M' \in \mc{I}$. Wegen der Maximalität von $M$ in $\mc{I}$ ist daher $M' = M$.
+
+
 
 
 
