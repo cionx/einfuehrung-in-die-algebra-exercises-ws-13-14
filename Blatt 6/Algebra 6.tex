@@ -11,15 +11,16 @@
 \usepackage{enumerate}
 \usepackage{leftidx}
 
+\newcounter{satze}
 \theoremstyle{definition}
-\newtheorem{beh}{Behauptung}
-\newtheorem{bem}[beh]{Bemerkung}
-\newtheorem{lem}[beh]{Lemma}
+\newtheorem{beh}[satze]{Behauptung}
+\newtheorem{bem}[satze]{Bemerkung}
+\newtheorem{lem}[satze]{Lemma}
 \newtheorem*{anm}{Anmerkung}
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
 
-\renewcommand{\thesection}{Aufgabe 5.\arabic{section}.}
+\renewcommand{\thesection}{Aufgabe 6.\arabic{section}.}
 \renewcommand{\thesubsection}{(\roman{subsection})}
 \renewcommand{\thesubsubsection}{}
 
@@ -130,6 +131,12 @@ Folglich ist $1 + \ker \varphi$ ein Normalteiler von $R^*$ und
 
 
 \section*{Bemerkung}
+
+\begin{bem} \label{bem: alle in max}
+ Ist $R$ ein kommutativer Ring, so ist jedes echte Ideal $\mf{a} \subsetneq R$ in einem maximalen Ideal von $R$ enthalten.
+\end{bem}
+
+\begin{proof}
 Es sei $R$ ein kommutativer Ring und $\mf{a} \subseteq R$ ein Ideal mit $\mf{a} \neq R$. Die Menge
 \[
  \mc{I} := \{I \subseteq R : I \text{ ist ein Ideal in $R$ mit $I \neq R$ und $\mf{a} \subseteq I$} \} \subseteq \mc{P}(R).
@@ -146,7 +153,7 @@ ist bezüglich der Teilmengenrelation $\subseteq$ partiell geordnet. Da $\mf{a} 
  Für alle $i \in I$ ist $G_i \subseteq \bigcup_{j \in I} G_j$, also ist auch $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$. Für $x \in \sum_{i \in I} G_i$ gibt es Indizes $i_1, \ldots, i_n \in I$ und Elemente $g_{i_1} \in G_{i_1}, \ldots, g_{i_n} \in G_{i_n}$ mit $x = \sum_{j=1}^n g_{i_j}$. Da die $G_i$ bezüglich $\subseteq$ total geordnet sind, gibt es ein $k \in \{1, \ldots, n\}$ mit $G_{i_j} \subseteq G_{i_k}$ für $j=1,\ldots,n$. Insbesondere ist $g_{i_j} \in G_{i_k}$ für $j=1,\ldots,n$, also auch $x \in G_{i_k}$. Damit ist $x \in \bigcup_{i \in I} G_i$, also $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$.
 \end{proof}
 
-Aus der Bemerkung folgt, dass
+Aus dieser Behauptung folgt, dass
 \[
  C := \bigcup_{I \in \mc{C}} I = \sum_{I \in \mc{C}} I
 \]
@@ -154,10 +161,32 @@ ein Ideal in $R$ ist.
 Für alle $I \in \mc{C}$ gilt, dass $I \neq R$, also $1 \not\in I$, und daher auch $1 \not\in C$, also $C \neq R$. Auch ist $\mf{a} \subseteq I \subseteq C$ für $I \in C$. Es ist also $C \in \mc{I}$, und deshalb $C$ eine obere Schrankte für $\mc{C}$ in $\mc{I}$.
 
 Mit dem Lemma von Zorn folgt, dass es ein $M \in \mc{I}$ gibt, dass bezüglich $\subseteq$ maximal in $\mc{I}$ ist. $M$ ist ein maximales Ideal in $R$: Für jedes Ideal $M'$ mit $M \subseteq M' \subsetneq R$ ist $\mf{a} \subseteq M \subseteq M'$ und $M' \neq R$, also $M' \in \mc{I}$. Wegen der Maximalität von $M$ in $\mc{I}$ ist daher $M' = M$.
+\end{proof}
 
 
 
 
+
+\section{}
+
+\begin{bem}\label{bem: einheiten und maximale ideale}
+ Für alle $a \in R$ ist $a$ genau dann eine Einheit, wenn $a$ in keinem maximalen Ideal in $R$ enthalten ist.
+\end{bem}
+\begin{proof}
+ Ist $a$ keine Einheit, so ist $(a) \neq R$; wäre nämlich $(a) = R$, so gebe es insbesondere ein $b \in R$ mit $ab=1$. Da $(a)$ ein echtes Ideal in $R$ ist, folgt aus Bemerkung \ref{bem: alle in max}, dass es ein maximales Ideal $\mf{m}$ in $R$ mit
+ \[
+  a \in (a) \subseteq \mf{m}
+ \]
+ gibt.
+
+ Ist andererseits $a$ eine Einheit mit inversen Element $a'$, so folgt für jedes Ideal $\mf{a} \subseteq R$ mit $a \in \mf{a}$, dass $1 = aa' \in \mf{a}$, also $\mf{a} = R$. Insbesondere ist $\mf{a}$ nicht maximal.
+\end{proof}
+
+Aufgrund von Bemerkung \ref{bem: einheiten und maximale ideale} reicht nun zu zeigen, dass $a \in R$ genau dann in jedem maximalen Ideal von $R$ liegt, wenn $1-ab$ für alle $b \in R$ in keinem maximalen Ideal von $R$ liegt. Dabei wird im Folgenden der Fall $R=0$ ausgeschlossen, da die Aussage in diesem Fall offenbar erfüllt ist. Da $R \neq 0$ enthält $R$ nach Bemerkung \ref{bem: alle in max} mindestens ein maximales Ideal, da $0 \subseteq R$ ein echtes Ideal ist.
+
+Angenommen, $a$ liegt in jedem maximalen Ideal von $R$. Gibt es ein maximales Ideal $\mf{m}$ von $R$, und $b \in R$ mit $1-ab \in \mf{m}$, so ist wegen $a \in \mf{m}$ auch $ab \in \mf{m}$, also $1 = 1-ab + ab \in \mf{m}$. Damit ist $\mf{m} = R$, was der Maximalität von $R$ widerspricht.
+
+Angenommen, es gibt ein maximals Ideal $\mf{m}$ von $R$ mit $a \not\in \mf{m}$. Dann ist $(a) + \mf{m}$ ein Ideal von $R$ mit $\mf{m} \subsetneq (a) + \mf{m}$. Wegen der Maximalität ist also $(a) + \mf{m} = R$. Insbesondere gibt es ein $b \in R$ und $m \in \mf{m}$ mit $ab+m = 1$. Es ist also $1-ab = m \in \mf{m}$ keine Einheit, denn sonst wäre $\mf{m} = R$, im Widerspruch zur Maximalität von $\mf{m}$.
 
 
 
