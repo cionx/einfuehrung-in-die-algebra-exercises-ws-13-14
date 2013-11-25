@@ -93,7 +93,29 @@ folgt, wie bereits letzte Woche gezeigt, wegen der Nullteilerfreiheit von $R/\mf
 \]
 d.h. alle $r \in R/\mf{p}$ mit $r \neq 0$ sind multiplikativ invertierbar. Zusammen mit der Kommutativität von $R/\mf{p}$ und $R/\mf{p} \neq 0$ zeigt dies, dass $R/\mf{p}$ ein Körper ist. Dies ist äquivalent dazu, dass $\mf{p}$ ein maximales Ideal ist.
 
+
+
+
+
 \section{}
+
+\begin{bem}\label{bem: produkt in Einheitengruppe}
+ Sei $R$ ein nicht notwendigerweise kommutativer Ring. Für $x,y \in R$ ist genau dann $xy \in R^*$, wenn $x,y \in R^*$.
+\end{bem}
+\begin{proof}
+ Sind $x,y \in R^*$ so ist auch $xy \in R^*$, da die Einheitengruppe unter Multiplikation abgeschlossen ist.
+ 
+ Sei andererseits $c := xy \in R^*$. Da $c \in R^*$ gibt es $c^{-1} \in R^*$ mit $c c^{-1} = 1$. Es ist daher
+ \[
+  x (yc^{-1}) = (xy) c^{-1} = c c^{-1} = 1,
+ \]
+ also $x \in R^*$ mit $x^{-1} = yc^{-1}$. Damit ist auch
+ \[
+  y(c^{-1} x) = (y c^{-1}) x =  x^{-1} x = 1,
+ \]
+ also auch $y \in R^*$.
+\end{proof}
+
 Für alle $a \in \ker \varphi$ ist $1-a$ multiplikativ invertierbar: Für $n \geq 1$ mit $a^n = 0$ ergibt sich, dass
 \begin{align*}
  (1+a+a^2+\ldots+a^{n-1})(1-a) &= 1-a^n = 1 \text{ und} \\
@@ -113,14 +135,14 @@ Bekanntermaßen induziert $\varphi$ einen Gruppenhomomorphismus $\varphi_{|R^*} 
 \[
  \varphi(r r') = \varphi(r) \varphi(r') = s s^{-1} = 1,
 \]
-also wie oben bemerkt $r r' \in 1 + \ker \varphi \subseteq R^*$. Es ist nun nach den obigen Beobachtungen
-\[
+also wie oben bemerkt $r r' \in 1 + \ker \varphi \subseteq R^*$. Nach Bemerkung \ref{bem: produkt in Einheitengruppe} ist daher $r \in R^*$. Es ist nun nach den obigen Beobachtungen
+\begin{align*}
  \ker \varphi_{|R^*}
- = \{x \in R^* : \varphi(x) = 1\}
- = R^* \cap \varphi^{-1}(\{1\})
- = R^* \cap (1+ \ker \varphi)
+ &= \{x \in R^* : \varphi(x) = 1\}
+ = R^* \cap \varphi^{-1}(\{1\}) \\
+ &= R^* \cap (1+ \ker \varphi)
  = 1 + \ker \varphi.
-\]
+\end{align*}
 Folglich ist $1 + \ker \varphi$ ein Normalteiler von $R^*$ und
 \[
  R^* / (1+ \ker \varphi) \cong S^*.
@@ -187,8 +209,6 @@ Aufgrund von Bemerkung \ref{bem: einheiten und maximale ideale} reicht nun zu ze
 Angenommen, $a$ liegt in jedem maximalen Ideal von $R$. Gibt es ein maximales Ideal $\mf{m}$ von $R$, und $b \in R$ mit $1-ab \in \mf{m}$, so ist wegen $a \in \mf{m}$ auch $ab \in \mf{m}$, also $1 = 1-ab + ab \in \mf{m}$. Damit ist $\mf{m} = R$, was der Maximalität von $R$ widerspricht. Also ist $1-ab \not\in \mf{m}$ für jedes $b \in R$ und maximale Ideal $\mf{m}$ von $R$.
 
 Angenommen, es gibt ein maximals Ideal $\mf{m}$ von $R$ mit $a \not\in \mf{m}$. Dann ist $(a) + \mf{m}$ ein Ideal von $R$ mit $\mf{m} \subsetneq (a) + \mf{m}$, wegen der Maximalität von $\mf{m}$ also $(a) + \mf{m} = R$. Insbesondere gibt es ein $b \in R$ und $m \in \mf{m}$ mit $ab+m = 1$. Es ist also $1-ab = m \in \mf{m}$ nach Bemerkung \ref{bem: einheiten und maximale ideale} keine Einheit.
-
-
 
 
 
