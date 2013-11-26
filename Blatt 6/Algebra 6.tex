@@ -11,11 +11,13 @@
 \usepackage{enumerate}
 \usepackage{leftidx}
 
+
+
 \newcounter{satze}
-\theoremstyle{definition}
 \newtheorem{beh}[satze]{Behauptung}
 \newtheorem{bem}[satze]{Bemerkung}
 \newtheorem{lem}[satze]{Lemma}
+\newtheorem*{defi}{Definition}
 \newtheorem*{anm}{Anmerkung}
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
@@ -189,7 +191,7 @@ Mit dem Lemma von Zorn folgt, dass es ein $M \in \mc{I}$ gibt, dass bezüglich $
 
 
 
-\section{}
+\section{}\label{sec: alternative definition J(R)}
 
 \begin{bem}\label{bem: einheiten und maximale ideale}
  Für alle $a \in R$ ist $a$ genau dann eine Einheit, wenn $a$ in keinem maximalen Ideal in $R$ enthalten ist.
@@ -209,6 +211,42 @@ Aufgrund von Bemerkung \ref{bem: einheiten und maximale ideale} reicht nun zu ze
 Angenommen, $a$ liegt in jedem maximalen Ideal von $R$. Gibt es ein maximales Ideal $\mf{m}$ von $R$, und $b \in R$ mit $1-ab \in \mf{m}$, so ist wegen $a \in \mf{m}$ auch $ab \in \mf{m}$, also $1 = 1-ab + ab \in \mf{m}$. Damit ist $\mf{m} = R$, was der Maximalität von $R$ widerspricht. Also ist $1-ab \not\in \mf{m}$ für jedes $b \in R$ und maximale Ideal $\mf{m}$ von $R$.
 
 Angenommen, es gibt ein maximals Ideal $\mf{m}$ von $R$ mit $a \not\in \mf{m}$. Dann ist $(a) + \mf{m}$ ein Ideal von $R$ mit $\mf{m} \subsetneq (a) + \mf{m}$, wegen der Maximalität von $\mf{m}$ also $(a) + \mf{m} = R$. Insbesondere gibt es ein $b \in R$ und $m \in \mf{m}$ mit $ab+m = 1$. Es ist also $1-ab = m \in \mf{m}$ nach Bemerkung \ref{bem: einheiten und maximale ideale} keine Einheit.
+
+
+
+
+
+\section{}
+
+\begin{defi}
+ Sei $R$ ein kommutativer Ring. Das \emph{Jacobson-Radikal} von $R$ ist der Schnitt über alle maximalen Ideale von $R$,
+ \[
+  J(R)
+  := \bigcap_{\substack{\mf{a} \subseteq R \\ \text{$\mf{a}$ maximales} \\ \text{Ideal}}} \mf{a}.
+ \]
+ Wie in \ref{sec: alternative definition J(R)} gezeigt, ist diese Definition äquivalent zu
+ \[
+  J(R) = \{a \in R : 1-ab \in R^* \text{ für alle } b \in R\}.
+ \]
+\end{defi}
+
+Es ist $J(R) = 0$: Aufgrund der Nullteilerfreiheit von $R$ ist für alle $a \in J(R)$ mit $a \neq 0$ die Abbildung
+\[
+ R \rightarrow R^*, b \mapsto 1-ab
+\]
+injektiv. Dies ist aber nicht möglich, da $R$ unendlich und $R^*$ endlich ist. Also gibt es kein $a \in J(R)$ mit $a \neq 0$.
+
+Angenommen $R$ enthält nur endlich viele maximale Ideale $\mf{m}_1, \ldots, \mf{m}_n$. Da maximale Ideale immer paarweise koprim sind, folgt aus dem chinesischen Restsatz, dass
+\[
+ R/\bigcap_{i=1}^n \mf{m}_i \cong \prod_{i=1}^n R/\mf{m}_i
+\]
+Dabei ist $\bigcap_{i=1}^n \mf{m}_i = J(R) = 0$. Also ergibt sich aus der obigen Gleichung, dass
+\begin{equation}\label{eq: R iso körperprodukt}
+ R \cong \prod_{i=1}^n R/\mf{m}_i.
+\end{equation}
+Da die $\mf{m}_i$ maximale Ideale von $R$ sind, sind die Faktorringe $R/\mf{m}_i$ Körper. Da $R$ unendlich ist, muss mindestens einer dieser Körper unendlich sein. Durch passende Nummerierung der $\mf{m}_i$ können wir o.B.d.A. davon ausgehen, dass $R/\mf{m}_1$ unendlich ist. Insbesondere ist auch $(R/\mf{m}_1)^* = R/\mf{m}_1 \smallsetminus \{0\}$ unendlich.
+
+Da für jede Einheit $\lambda \in R/\mf{m}_1$ das Element $(\lambda, 1, 1, \ldots, 1) \in \prod_{i=1}^n R/\mf{m}_i$ ebenfalls eine Einheit ist (das multiplikativ Inverse ist $(\lambda^{-1}, 1, 1, \ldots, 1)$), folgt aus \eqref{eq: R iso körperprodukt}, dass $R$ unendlich viele Einheiten besitzt. Dies ist ein Widerspruch zur Endlichkeit von $R^*$. Also besitzt $R$ unendlich viele maximale Ideale.
 
 
 
