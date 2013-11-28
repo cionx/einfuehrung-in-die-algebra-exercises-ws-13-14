@@ -42,6 +42,7 @@
 \newcommand{\sgn}{\operatorname{sgn}}
 \newcommand{\kchar}{\operatorname{char}}
 \newcommand{\kgV}{\operatorname{kgV}}
+\newcommand{\ggT}{\operatorname{ggT}}
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\GL}[2]{\operatorname{GL}(#1,#2)}
 \newcommand{\Img}{\operatorname{Im}}
@@ -247,6 +248,22 @@ Dabei ist $\bigcap_{i=1}^n \mf{m}_i = J(R) = 0$. Also ergibt sich aus der obigen
 Da die $\mf{m}_i$ maximale Ideale von $R$ sind, sind die Faktorringe $R/\mf{m}_i$ Körper. Da $R$ unendlich ist, muss mindestens einer dieser Körper unendlich sein. Durch passende Nummerierung der $\mf{m}_i$ können wir o.B.d.A. davon ausgehen, dass $R/\mf{m}_1$ unendlich ist. Insbesondere ist auch $(R/\mf{m}_1)^* = R/\mf{m}_1 \smallsetminus \{0\}$ unendlich.
 
 Da für jede Einheit $\lambda \in R/\mf{m}_1$ das Element $(\lambda, 1, 1, \ldots, 1) \in \prod_{i=1}^n R/\mf{m}_i$ ebenfalls eine Einheit ist (das multiplikativ Inverse ist $(\lambda^{-1}, 1, 1, \ldots, 1)$), folgt aus \eqref{eq: R iso körperprodukt}, dass $R$ unendlich viele Einheiten besitzt. Dies ist ein Widerspruch zur Endlichkeit von $R^*$. Also besitzt $R$ unendlich viele maximale Ideale.
+
+
+
+
+
+\section{}
+Da $\Z[i]$ euklidisch ist (im Folgenden auch "`toll"' genannt), gibt es in $\Z[i]$ eine, bis auf Assoziiertheit eindeutige Primfaktorzerlegung für jedes $z \in Z[i]$ mit $z \neq 0$.
+
+Wir bemerken zunächst, dass $2+i$ und $2-i$ prim in $\Z[i]$ sind: Alle $z \in \Z[i]$ mit $|z| < |2+i| = 5$, d.h. alle $z \in \Z[i]$, die als Teiler von $2+i$ in Frage kommen, sind assoziiert zu $1$, $1+i$, $2$, $2+i$ oder $2-i$ (die Einheiten in $\Z[i]$ sind gerade $1$,$i$,$-1$ und $-i$). Da $2+i$ aus diesen Repräsentanten tatsächlich nur von $1$ und $2+i$ geteilt wird, ist $2+i$ irreduzibel in $\Z[i]$. Da $\Z[i]$ toll ist, ist $2+i$ damit auch prim. Analog ergibt sich, dass auch $2-i$ prim in $\Z[i]$ ist. Da $\Z[i]$ toll ist, und $2+i$ und $2-i$ nicht assoziiert sind, ist daher jeder $\ggT$ von $2+i$ und $2-i$ zu $1$ assoziiert, d.h. $\ggT(2+i,2-i) \equiv 1$.
+
+Weiter bemerken wir, dass $5+3i = (1+i)(4-i)$. Es ergibt sich, dass $1+i$ und $4-i$ prim in $\Z[i]$ sind: Es ergibt sich analog zur obigen Argumentation, dass $1+i$ prim in $\Z[i]$ ist, da jeder mögliche Teiler von $1+i$ zu $1$ oder $1+i$ assoziiert ist. Die möglichen Teiler von $4-i$ sind assoziert zu
+\[
+ 1, 1+i, 2, 2+i, 2-i, 2+2i, 3, 3+i, 3-i, 3+2i, 3-2i, 4, 4+i \text{ oder } 4-i.
+\]
+Dabei wird $4-i$ von diesen Repräsentanten nur von $1$ und $4-i$ tatsächlich geteilt. Also ist $4-i$ irreduzibel, und daher auch prim. Da $\Z[i]$ toll ist, ist jeder Primfaktor von $\ggT(5+3i,18+8i)$ auch ein Primfaktor von $5+3i$ und von $18+8i$. Da $(1+i) \mid (18+8i)$ und $(4-i) \nmid (18+8i)$ ist $\ggT(5+3i,18+8i) \equiv 1+i$.
+
 
 
 
