@@ -90,11 +90,11 @@ und $\mf{p}$ ein Primideal in $R$. Da $\mf{p}$ ein Primideal ist, ist $R/\mf{p}$
 \[
  r \cdot r^{n-1} = r^n = r = r \cdot 1,
 \]
-folgt, wie bereits letzte Woche gezeigt, wegen der Nullteilerfreiheit von $R/\mf{p}$, dass $r^{n-1} = 1$ für alle $r \in R/\mf{p}$. Als ist für alle $r \in R/\mf{p}$ mit $r \neq 0$
+folgt, wie bereits letzte Woche gezeigt, wegen der Nullteilerfreiheit von $R/\mf{p}$, dass $r^{n-1} = 1$ für alle $r \in R/\mf{p}$. Also ist für alle $r \in R/\mf{p}$ mit $r \neq 0$
 \[
  r r^{n-2} = r^{n-1} = 1,
 \]
-d.h. alle $r \in R/\mf{p}$ mit $r \neq 0$ sind multiplikativ invertierbar. Zusammen mit der Kommutativität von $R/\mf{p}$ und $R/\mf{p} \neq 0$ zeigt dies, dass $R/\mf{p}$ ein Körper ist. Dies ist äquivalent dazu, dass $\mf{p}$ ein maximales Ideal ist.
+d.h. alle $r \in R/\mf{p}$ mit $r \neq 0$ sind multiplikativ invertierbar. Zusammen mit der Kommutativität von $R/\mf{p}$ und $R/\mf{p} \neq 0$ zeigt dies, dass $R/\mf{p}$ ein Körper ist. Dies ist äquivalent dazu, dass $\mf{p}$ ein maximales Ideal in $R$ ist.
 
 
 
@@ -175,7 +175,7 @@ ist bezüglich der Teilmengenrelation $\subseteq$ partiell geordnet. Da $\mf{a} 
  \]
 \end{bem}
 \begin{proof}
- Für alle $i \in I$ ist $G_i \subseteq \bigcup_{j \in I} G_j$, also ist auch $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$. Für $x \in \sum_{i \in I} G_i$ gibt es Indizes $i_1, \ldots, i_n \in I$ und Elemente $g_{i_1} \in G_{i_1}, \ldots, g_{i_n} \in G_{i_n}$ mit $x = \sum_{j=1}^n g_{i_j}$. Da die $G_i$ bezüglich $\subseteq$ total geordnet sind, gibt es ein $k \in \{1, \ldots, n\}$ mit $G_{i_j} \subseteq G_{i_k}$ für $j=1,\ldots,n$. Insbesondere ist $g_{i_j} \in G_{i_k}$ für $j=1,\ldots,n$, also auch $x \in G_{i_k}$. Damit ist $x \in \bigcup_{i \in I} G_i$, also $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$.
+ Für alle $i \in I$ ist $G_i \subseteq \sum_{j \in I} G_j$, also ist auch $\bigcup_{i \in I} G_i \subseteq \sum_{i \in I} G_i$. Für $x \in \sum_{i \in I} G_i$ gibt es Indizes $i_1, \ldots, i_n \in I$ und Elemente $g_{i_1} \in G_{i_1}, \ldots, g_{i_n} \in G_{i_n}$ mit $x = \sum_{j=1}^n g_{i_j}$. Da die $G_i$ bezüglich $\subseteq$ total geordnet sind, gibt es ein $k \in \{1, \ldots, n\}$ mit $G_{i_j} \subseteq G_{i_k}$ für $j=1,\ldots,n$. Insbesondere ist $g_{i_j} \in G_{i_k}$ für $j=1,\ldots,n$, also auch $x \in G_{i_k}$. Damit ist $x \in \bigcup_{i \in I} G_i$, also $\sum_{i \in I} G_i \subseteq \bigcup_{i \in I} G_i$.
 \end{proof}
 
 Aus dieser Behauptung folgt, dass
@@ -195,16 +195,16 @@ Mit dem Lemma von Zorn folgt, dass es ein $M \in \mc{I}$ gibt, dass bezüglich $
 \section{}\label{sec: alternative definition J(R)}
 
 \begin{bem}\label{bem: einheiten und maximale ideale}
- Für alle $a \in R$ ist $a$ genau dann eine Einheit, wenn $a$ in keinem maximalen Ideal in $R$ enthalten ist.
+ Für alle $a \in R$ ist $a$ genau dann eine Einheit, wenn $a$ in keinem maximalen Ideal von $R$ enthalten ist.
 \end{bem}
 \begin{proof}
- Ist $a$ keine Einheit, so ist $(a) \neq R$; wäre nämlich $(a) = R$, so gebe es insbesondere ein $b \in R$ mit $ab=1$. Da $(a)$ ein echtes Ideal in $R$ ist, folgt aus Bemerkung \ref{bem: alle in max}, dass es ein maximales Ideal $\mf{m}$ in $R$ mit
+ Ist $a$ keine Einheit, so ist $(a) \neq R$; wäre nämlich $(a) = R$, so gebe es insbesondere ein $b \in R$ mit $ab=1$. Da $(a)$ ein echtes Ideal von $R$ ist, folgt aus Bemerkung \ref{bem: alle in max}, dass es ein maximales Ideal $\mf{m}$ von $R$ mit
  \[
   a \in (a) \subseteq \mf{m}
  \]
  gibt.
 
- Ist andererseits $a$ eine Einheit mit inversen Element $a'$, so folgt für jedes Ideal $\mf{a} \subseteq R$ mit $a \in \mf{a}$, dass $1 = aa' \in \mf{a}$, also $\mf{a} = R$. Insbesondere ist $\mf{a}$ nicht maximal.
+ Ist andererseits $a$ eine Einheit, so folgt für jedes Ideal $\mf{a}$ von $R$ mit $a \in \mf{a}$, dass auch $1 = aa^{-1} \in \mf{a}$, also $\mf{a} = R$. Insbesondere ist $\mf{a}$ nicht maximal.
 \end{proof}
 
 Aufgrund von Bemerkung \ref{bem: einheiten und maximale ideale} reicht nun zu zeigen, dass $a \in R$ genau dann in jedem maximalen Ideal von $R$ liegt, wenn $1-ab$ für alle $b \in R$ in keinem maximalen Ideal von $R$ liegt. Dabei wird im Folgenden der Fall $R=0$ ausgeschlossen, da die Aussage in diesem Fall offenbar erfüllt ist. Nach Bemerkung \ref{bem: alle in max} enthält $R \neq 0$ mindestens ein maximales Ideal, da $0 \subseteq R$ ein echtes Ideal ist.
@@ -225,7 +225,7 @@ Angenommen, es gibt ein maximals Ideal $\mf{m}$ von $R$ mit $a \not\in \mf{m}$. 
   J(R)
   := \bigcap_{\substack{\mf{a} \subseteq R \\ \text{$\mf{a}$ maximales} \\ \text{Ideal}}} \mf{a}.
  \]
- Wie in \ref{sec: alternative definition J(R)} gezeigt, ist diese Definition äquivalent zu
+ Wie in \ref{sec: alternative definition J(R)} gezeigt ist diese Definition äquivalent zu
  \[
   J(R) = \{a \in R : 1-ab \in R^* \text{ für alle } b \in R\}.
  \]
@@ -239,7 +239,7 @@ injektiv. Dies ist aber nicht möglich, da $R$ unendlich und $R^*$ endlich ist. 
 
 Angenommen $R$ enthält nur endlich viele maximale Ideale $\mf{m}_1, \ldots, \mf{m}_n$. Da maximale Ideale immer paarweise koprim sind, folgt aus dem chinesischen Restsatz, dass
 \[
- R/\bigcap_{i=1}^n \mf{m}_i \cong \prod_{i=1}^n R/\mf{m}_i
+ R/\bigcap_{i=1}^n \mf{m}_i \cong \prod_{i=1}^n R/\mf{m}_i.
 \]
 Dabei ist $\bigcap_{i=1}^n \mf{m}_i = J(R) = 0$. Also ergibt sich aus der obigen Gleichung, dass
 \begin{equation}\label{eq: R iso körperprodukt}
@@ -254,7 +254,7 @@ Da für jede Einheit $\lambda \in R/\mf{m}_1$ das Element $(\lambda, 1, 1, \ldot
 
 
 \section{}
-Da $\Z[i]$ euklidisch ist (im Folgenden auch "`toll"' genannt), gibt es in $\Z[i]$ eine, bis auf Assoziiertheit eindeutige Primfaktorzerlegung für jedes $z \in Z[i]$ mit $z \neq 0$.
+Da $\Z[i]$ euklidisch ist (im Folgenden auch "`toll"' genannt), gibt es in $\Z[i]$ eine, bis auf Assoziiertheit eindeutige Primfaktorzerlegung für jedes $z \in \Z[i]$ mit $z \neq 0$.
 
 Wir bemerken zunächst, dass $2+i$ und $2-i$ prim in $\Z[i]$ sind: Alle $z \in \Z[i]$ mit $|z| < |2+i| = 5$, d.h. alle $z \in \Z[i]$, die als Teiler von $2+i$ in Frage kommen, sind assoziiert zu $1$, $1+i$, $2$, $2+i$ oder $2-i$ (die Einheiten in $\Z[i]$ sind gerade $1$,$i$,$-1$ und $-i$). Da $2+i$ aus diesen Repräsentanten tatsächlich nur von $1$ und $2+i$ geteilt wird, ist $2+i$ irreduzibel in $\Z[i]$. Da $\Z[i]$ toll ist, ist $2+i$ damit auch prim. Analog ergibt sich, dass auch $2-i$ prim in $\Z[i]$ ist. Da $\Z[i]$ toll ist, und $2+i$ und $2-i$ nicht assoziiert sind, ist daher jeder $\ggT$ von $2+i$ und $2-i$ zu $1$ assoziiert, d.h. $\ggT(2+i,2-i) \equiv 1$.
 
