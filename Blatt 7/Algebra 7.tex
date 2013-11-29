@@ -53,6 +53,9 @@
 \newcommand{\Inn}{\operatorname{Inn}}
 \newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \newcommand{\gen}[1]{\left\langle#1\right\rangle}
+\newcommand{\lb}{[\![}
+\newcommand{\rb}{]\!]}
+\newcommand{\Deg}{\operatorname{Deg}}
 
 \newenvironment{lgs}[1][c]{\left\{\setlength{\arraycolsep}{1pt}\begin{array}{#1}}{\end{array}\right.}
 
@@ -81,9 +84,96 @@
 
 
 
+\section{}
 
 
 
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+\begin{defi}
+Sei $R$ ein kommutativer Ring. Für $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ bezeichnet
+\[
+ \Deg(p) :=
+ \begin{cases}
+  \min \{i \in \N : a_i \neq 0\} & \text{falls } f \neq 0, \\
+                          \infty & \text{sonst}.
+ \end{cases}
+\]
+den Grad von $p$.
+\end{defi}
+Für einen kommutativen Ring $R$ und $p,q \in R[\![x]\!]$ ist
+\begin{equation}\label{eq: Deg Ungleichungen}
+ \Deg(p+q) \geq \min \{\Deg(p), \Deg(q)\} \text{ und }
+ \Deg(pq) \geq \Deg(p) + \Deg(q).
+\end{equation}
+Ist $R$ nullteilerfrei, so gilt sogar
+\begin{equation}\label{eq: Deg nullteilerfrei}
+ \Deg(pq) = \Deg(p) + \Deg(q).
+\end{equation}
+Die Beweise der entsprechenden Aussage laufen analog zu den Beweisen der entsprechenden Aussagen für die Gradfunktion $\deg$ von $R[X]$.
+
+
+\subsection{}
+Ist $R$ kein Integritätsring, so ist auch $R[X] \subsetneq R[\![x]\!]$ kein Integritätsring, also auch $R[\![x]\!]$ nicht. Ist $R[\![x]\!]$ kein Integritätsring, so gibt es $p, q \in R[\![x]\!]$ mit $p,q \neq 0$, also $\Deg(p), \Deg(q) < \infty$, aber $pq = 0$, also $\Deg(pq) = \infty$. Mit \eqref{eq: Deg nullteilerfrei} folgt, dass $R$ kein Integritätsring ist.
+
+
+\subsection{}
+Ist $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ invertierbar, so gibt es $q = \sum_{i=0}^\infty b_i X^i \in R[\![x]\!]$ mit $pq = 1$. Insbesondere ist daher
+\[
+ 1 = (pq)_1 = a_0 b_0,
+\]
+also $a_0$ invertierbar.
+
+Ist $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ mit $a_0$ invertierbar, so definieren wir eine Folge $(b_i)_{i \in \N}$ auf $R$ rekursiv durch
+\[
+ b_0 := a_0^{-1} \text{ und } b_i := -a_0^{-1} \sum_{j=1}^i a_j b_{n-j},
+\]
+und $q := \sum_{i=0}^\infty b_i X^i$ als die entsprechende Potenzreihe. Für $e = pq$ ergibt sich dann für alle $i \in \N$
+\[
+ e_i
+ = \sum_{j=0}^i a_j b_{i-j}
+ = \sum_{j=1}^i a_j b_{i-j} + a_0 b_i
+ = \sum_{j=1}^i a_j b_{i-j} - \sum_{j=1}^i a_j b_{n-j}
+ = 0.
+\]
+Also ist $e = 1$ und $p$ daher invertierbar mit $p^{-1} = q$. Inbesondere ergibt sich das folgende Lemma:
+
+\begin{lem} \label{lem: starkes Lemma}
+ Sei $K$ ein Körper und seien $p,q \in K[\![x]\!]$. Dann gilt:
+ \begin{enumerate}
+  \item $p$ ist genau dann invertierbar, wenn $\Deg p = 0$.
+  \item Ist $\Deg p = \Deg q$, so sind $p$ und $q$ assoziiert. Ist $\Deg p = \Deg q < \infty$, so sind $p$ und $q$ assoziiert zu $X^{\Deg p}$.
+  \item Ist $\Deg p \geq \Deg q$, so ist $q \mid p$.
+ \end{enumerate}
+\end{lem}
+\begin{proof}
+ \subsubsection*{\textit{(i)}}
+  $p = \sum_{i=0}^{\infty} a_i X^i$ ist genau dann invertierbar, wenn $a_0$ invertierbar ist, also genau dann wenn $a_0 \neq 0$, was wiederum äquivalent zu $\Deg a_0 = 0$ ist.
+ \subsubsection*{\textit{(ii)}}
+  Ist $p = q = 0$ so ist nichts zu zeigen. Ansonsten ist $p = \sum_{i=0}^\infty a_i X^i \neq 0$, also $p = X^{\Deg p} p'$ für $p' = \sum_{i=0}^\infty a_{i+\Deg p} X^i$ mit $a_{\Deg p} \neq 0$. Nach \textit{(i)} ist $p'$ invertierbar, also $p$ assoziiert zu $X^{\Deg p}$. Analog ergibt sich, dass $q$ assoziiert zu $X^{\Deg q}$ ist. Mit $\Deg p = \Deg q$ folt damit auch die Assoziiertheit von $p$ und $q$.
+ \subsubsection*{\textit{(iii)}}
+ Ist $\Deg p = \infty$, so ist $p = 0$ und nichts zu zeigen. Ansonsten ist $p = X^{\Deg p - \Deg q} p'$ wobei $p'$ assozziert zu $q$ ist, also $p = X^{\Deg p - \Deg q} c q$ für $c \in K^*$.
+\end{proof}
+
+
+\subsection{}
+$f$ ist in $\Z[X]$ nicht irreduzibel, da $f = (X+1)(X+2)$.
+
+Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j=0}^\infty b_i X^i$ so dass $pq = f$. Dann ergibt sich durch Koeffizientenvergleich, dass $a_0 b_0 = 2$. Da $a_0, b_0 \in \Z$, und $2 \in \Z$ irreduzibel ist, ist $a_0$ oder $b_0$ eine Einheit. Entsprechend ist $p$ oder $q$ eine Einheit. Also ist $f$ irreduzibel in $\Z[\![x]\!]$.
 
 
 
