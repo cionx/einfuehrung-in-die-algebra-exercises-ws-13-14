@@ -179,6 +179,21 @@ Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j
 
 
 
+\section{}
+\begin{lem}\label{lem: K[[x]] euklidisch}
+ $K[\![x]\!]$ bildet mit der Gradabbildung $\Deg$ einen euklidischen Ring.
+\end{lem}
+\begin{proof}
+ Da $K$ nullteilerfrei ist, ist $K[\![x]\!]$ ein Integritätsring. Seien $f,g \in K[\![x]\!]$ mit $g \neq 0$. Es gilt zu zeigen, dass es $q,r \in K[\![x]\!]$ gibt, so dass $f = qg + r$ mit $r = 0$ oder $\Deg r < \Deg g$. Ist $\Deg f < \Deg g$ so genügt es $q=0$ und $r=f$ zu wählen. Ist $\Deg f \geq \Deg g$, so folgt aus \ref{lem: starkes Lemma}, dass $g \mid f$, es kann also $q$ mit $f = qg$ und $r=0$ gewählt werden.
+\end{proof}
+
+Aus Lemma \ref{lem: K[[x]] euklidisch} folgt direkt, dass $K[\![x]\!]$ ein Hautidealring ist. Für jedes Ideal $(a) \neq 0$ von $K[\![x]\!]$ folgt mit Lemma \ref{lem: starkes Lemma}, dass $a$ assoziert zu $X^{\Deg a}$ ist, und da $K[\![x]\!]$ ein Integritätsring ist, daher $(a) = \left(X^{\Deg a}\right)$. Folglich sind die Ideale in $K[\![x]\!]$ gerade $0$ und $\left(X^n\right)$ für $n \in \N$. Insbesondere ist $(X)$ das eindeutige maximale Ideal in $K[\![x]\!]$, weshalb $K[\![x]\!]$ lokal ist (dies lässt sich auch direkt aus Lemma \ref{lem: starkes Lemma} folgern).
+
+
+
+
+
+
 
 
 
