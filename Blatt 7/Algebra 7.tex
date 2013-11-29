@@ -154,18 +154,18 @@ Also ist $e = 1$ und $p$ daher invertierbar mit $p^{-1} = q$. Inbesondere ergibt
 
 \begin{lem} \label{lem: starkes Lemma}
  Sei $K$ ein Körper und seien $p,q \in K[\![x]\!]$. Dann gilt:
- \begin{enumerate}
-  \item $p$ ist genau dann invertierbar, wenn $\Deg p = 0$.
+ \begin{enumerate}[(i)]
+  \item $p$ ist genau dann invertierbar, wenn $\Deg p = 0$. \label{item: körper invertierbar}
   \item Ist $\Deg p = \Deg q$, so sind $p$ und $q$ assoziiert. Ist $\Deg p = \Deg q < \infty$, so sind $p$ und $q$ assoziiert zu $X^{\Deg p}$.
   \item Ist $\Deg p \geq \Deg q$, so ist $q \mid p$.
  \end{enumerate}
 \end{lem}
 \begin{proof}
- \subsubsection*{\textit{(i)}}
+ \subsubsection*{\emph{(i)}}
   $p = \sum_{i=0}^{\infty} a_i X^i$ ist genau dann invertierbar, wenn $a_0$ invertierbar ist, also genau dann wenn $a_0 \neq 0$, was wiederum äquivalent zu $\Deg a_0 = 0$ ist.
- \subsubsection*{\textit{(ii)}}
-  Ist $p = q = 0$ so ist nichts zu zeigen. Ansonsten ist $p = \sum_{i=0}^\infty a_i X^i \neq 0$, also $p = X^{\Deg p} p'$ für $p' = \sum_{i=0}^\infty a_{i+\Deg p} X^i$ mit $a_{\Deg p} \neq 0$. Nach \textit{(i)} ist $p'$ invertierbar, also $p$ assoziiert zu $X^{\Deg p}$. Analog ergibt sich, dass $q$ assoziiert zu $X^{\Deg q}$ ist. Mit $\Deg p = \Deg q$ folt damit auch die Assoziiertheit von $p$ und $q$.
- \subsubsection*{\textit{(iii)}}
+ \subsubsection*{\emph{(ii)}}
+  Ist $p = q = 0$ so ist nichts zu zeigen. Ansonsten ist $p = \sum_{i=0}^\infty a_i X^i \neq 0$, also $p = X^{\Deg p} p'$ für $p' = \sum_{i=0}^\infty a_{i+\Deg p} X^i$ mit $a_{\Deg p} \neq 0$. Nach \emph{(\ref{item: körper invertierbar})} ist $p'$ invertierbar, also $p$ assoziiert zu $X^{\Deg p}$. Analog ergibt sich, dass $q$ assoziiert zu $X^{\Deg q}$ ist. Mit $\Deg p = \Deg q$ folgt damit auch die Assoziiertheit von $p$ und $q$.
+ \subsubsection*{\emph{(iii)}}
  Ist $\Deg p = \infty$, so ist $p = 0$ und nichts zu zeigen. Ansonsten ist $p = X^{\Deg p - \Deg q} p'$ wobei $p'$ assozziert zu $q$ ist, also $p = X^{\Deg p - \Deg q} c q$ für $c \in K^*$.
 \end{proof}
 
