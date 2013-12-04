@@ -93,6 +93,25 @@
 
 
 \section{}
+Für $x,y \in \C$ mit $xy=21$ ist $|x||y| = 21$, also muss $|x| \leq \sqrt{21}$ oder $|y| \leq \sqrt{21}$. Es genügt daher die $a+\sqrt{5}bi = z \in \Z[\sqrt{-5}]$ mit $|z| \leq \sqrt{21}$, also $a^2 + 5b^2 \leq 21$ auf Teilbarkeit zu überprüfen. Da für jeden Teiler $z \in \Z[\sqrt{-5}]$ auch $-z, \bar{z}, -\bar{z} \in \Z[\sqrt{-5}]$ Teiler von $21$ sind, genügt es auch die $a+\sqrt{5}bi \in \Z[\sqrt{-n}]$ mit $a,b \geq 0$ auf Teilbarkeit zu überprüfen.
+
+Es ergeben sich mit diesen beiden Beschränkungen die möglichen Kandidaten
+\[
+ 1, 2, 3, 4, 1+\sqrt{5}i, 1+2\sqrt{5}i, 2+\sqrt{5}i, 3+\sqrt{5}i, 4+\sqrt{5}i.
+\]
+Einfaches Hinsehen und kurzes Nachrechnen ergibt, dass von diesen Zahlen nur
+\[
+ 1, 3, 1+2\sqrt{5}i \text{ und } 4+\sqrt{5}i
+\]
+Teiler von $21$ sind. Die Teiler von $21$ in $\Z[i]$ sind also
+\begin{gather*}
+ 1, -1, 21, -21, 3, -3, 7, -7, \\
+ 1+2\sqrt{5}i, -1-2\sqrt{5}i, 1-2\sqrt{5}i, -1+2\sqrt{5}i, \\
+ 4+\sqrt{5}i, -4-\sqrt{5}i, 4-\sqrt{5}i, -4-\sqrt{5}i.
+\end{gather*}
+
+
+
 
 
 
