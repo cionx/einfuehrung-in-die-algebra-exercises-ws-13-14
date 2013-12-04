@@ -19,6 +19,7 @@
 \newtheorem{lem}[satze]{Lemma}
 \newtheorem*{defi}{Definition}
 \newtheorem*{anm}{Anmerkung}
+\theoremstyle{definition}
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
 
@@ -43,6 +44,7 @@
 \newcommand{\kchar}{\operatorname{char}}
 \newcommand{\kgV}{\operatorname{kgV}}
 \newcommand{\ggT}{\operatorname{ggT}}
+\newcommand{\nil}{\operatorname{nil}}
 \newcommand{\Id}{\operatorname{Id}}
 \newcommand{\GL}[2]{\operatorname{GL}(#1,#2)}
 \newcommand{\Img}{\operatorname{Im}}
@@ -97,6 +99,80 @@
 
 
 \section{}
+
+\begin{defi}
+ Für einen Ring $R$ bezeichnet
+ \[
+  \nil(R) := \{x \in R : x^n = 0 \text{ für ein } n \in \N\}
+ \]
+ das Nilradikal von $R$.
+\end{defi}
+
+\begin{bem}\label{bem: nilradikal}
+ Sei $R$ ein kommutativer Ring. Dann gilt
+ \begin{enumerate}[(i)]
+  \item $\nil(R)$ ist ein Ideal von $R$.
+  \item Für $e \in R^*$ und $a \in \nil(R)$ ist $e+a \in R^*$.
+ \end{enumerate}
+\end{bem}
+
+\begin{proof}
+ \subsubsection*{(i)}
+  Es ist $0 \in \nil(R)$, also $\nil(R)$ nicht leer. Für $a,b \in \nil(R)$ gibt es $n,m \in \N$ mit $a^n = b^m = 0$, also ist
+  \[
+   (a+b)^{n+m} = \sum_{k=1}^{n+m} \binom{n+m}{k} a^{n+m-k} b^k = 0
+  \]
+  und daher $a+b \in \nil(R)$. Auch ist für alle $r \in R$
+  \[
+   (ar)^n = a^n r^n = 0,
+  \]
+  also $ar \in R$. Insbesondere ist daher für alle $a \in \nil(R)$ auch $-a = (-1) \cdot a \in R$.
+ \subsubsection*{(ii)}
+  Für $e \in R^*$ und $a \in \nil(R)$ mit $a^n = 0$ ist $1-ae^{-1} \in R^*$, da $\left(ae^{-1}\right)^n = 0$ und daher
+  \[
+   \left(\sum_{k=0}^{n-1} \left(-ae^{-1}\right)^k\right) \left(1+ae^{-1}\right)
+   = 1+ (-1)^{n-1} \left(ae^{-1}\right)^n
+   = 1.
+  \]
+  Daher ist auch $e+a = e\left(1+ae^{-1}\right) \in R^*$.
+\end{proof}
+
+Da $\nil(R) \subseteq \nil(R[X])$ ist auch $\left(\nil(R)\right) \subseteq \nil(R[X])$. Dabei ist, wie in einem früheren Übungsblatt gezeigt,
+\[
+ \left(\nil(R)\right)
+ = \left\{\sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \nil(R) \text{ für alle } i\right\}.
+\]
+Nach Bemerkung \ref{bem: nilradikal} ist also das Polynom $f = \sum_{i=0}^n a_i X^i$ mit $n \geq 0$, $a_0 \in R^*$ und $a_i \in \nil(R)$ für alle $i$ invertierbar.
+
+Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \neq 0$, invertierbar, d.h. es gibt ein $g = \sum_{i=0}^m b_i X^i \in R[X]$, mit $m \geq 0$ und $b_m \neq 0$, so dass $fg = 1$. Da damit $a_0 b_0 = 1$ müssen $a_0$ und $b_0$ invertierbar sein. Ist $n > 0$, so bemerken wir:
+
+\begin{beh}\label{beh: a_n nilpotent}
+ Es ist $a_n^{k+1} b_{m-k} = 0$ für $k=0,\ldots,m$.
+\end{beh}
+\begin{proof}
+ Der Beweis verläuft per Induktion über $k$.
+ \begin{ia}Für $k=0$ gilt: Wäre $a_n b_m \neq 0$, so wäre
+  \[
+   0 = \deg(1) = \deg(fg) = \deg(f)+\deg(g) = n+m \geq n > 0.
+  \]
+ \end{ia}
+ \begin{is}
+ Sei $1 \leq k \leq n$ und gelte die Aussage für $k-1$. Da $fg = 1$ ist
+ \[
+  0 = \sum_{\mu+\nu = n+m-k} a_\mu b_\nu.
+ \]
+ Multiplikation der Gleichung mit $a_n^k$ ergibt
+ \[
+  0 = \sum_{\mu+\nu = n+m-k} a_n^k a_\mu b_\nu \underset{\text{IV.}}= a_n^{k+1} b_{m-k}.
+ \]
+ \end{is}
+\end{proof}
+Aus Behauptung \ref{beh: a_n nilpotent} folgt insbesondere, dass $a_n^{m+1} b_0 = 0$. Da $b_0$ invertierbar ist, ist $a_n$ daher nilpotent. Da nach Bemerkung \ref{bem: nilradikal} daher auch $f- a_n X^n$ invertierbar ist, ergibt sich durch Wiederholung der obigen Argumentation induktiv, dass $a_i$ für alle $1 \leq i \leq n$ nilpotent ist.
+
+
+
+
+
 
 
 
