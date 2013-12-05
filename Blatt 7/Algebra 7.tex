@@ -87,41 +87,36 @@
 
 
 \section{}
-Für $x,y \in \C$ mit $xy = 1$ muss $|x||y| = 1$, also $|x| \leq 1$ oder $|y| \leq 1$. Für $x,y \in \Z\Big[\sqrt{-n}\Big]$ mit $xy = 1$ ist also $x \in \{1,-1\}$ oder $y \in \{1,-1\}$ für $n > 1$ und $x \in \{1,-1,i,-i\}$ oder $y \in \{1,-1,i,-i\}$ für $n=1$. Es ist daher
+Für $x,y \in \C$ mit $xy = 1$ muss $|x||y| = 1$, also $|x| \leq 1$ oder $|y| \leq 1$. Die einzigen Elemente $z \in \Z\left[\sqrt{-n}\,\right]$ mit $|z| \leq 1$ sind $\{1,-1\}$ für $n>1$ und $\{1,-1,i,-i\}$ für $n=1$. Für $x,y \in \Z\left[\sqrt{-n}\,\right]$ mit $xy = 1$ ist also $x \in \{1,-1\}$ oder $y \in \{1,-1\}$ für $n > 1$ und $x \in \{1,-1,i,-i\}$ oder $y \in \{1,-1,i,-i\}$ für $n=1$. Da all diese Elemente in $\Z\left[\sqrt{-n}\,\right]$ invertierbar sind, ist daher
 \[
- \left(\Z\Big[\sqrt{-n}\Big]\right)^* =
+ \left(\Z\left[\sqrt{-n}\,\right]\right)^* =
  \begin{cases}
   \{1,-1,i,-i\} & \text{ für } n = 1, \\
-  \{1,-1\}      & \text{ für } n > 1,
+  \{1,-1\}      & \text{ für } n > 1.
  \end{cases}
 \]
-da die entsprechenden Elemente, wenn in $\Z\Big[\sqrt{-n}\Big]$ enthalten, jeweils in Paaren von multiplikativ Inversen enthalten sind.
-
 
 
 
 
 
 \section{}
-Für $x,y \in \C$ mit $xy=21$ ist $|x||y| = 21$, also muss $|x| \leq \sqrt{21}$ oder $|y| \leq \sqrt{21}$. Es genügt daher die $a+\sqrt{5}bi = z \in \Z[\sqrt{-5}]$ mit $|z| \leq \sqrt{21}$, also $a^2 + 5b^2 \leq 21$ auf Teilbarkeit zu überprüfen. Da für jeden Teiler $z \in \Z[\sqrt{-5}]$ auch $-z, \bar{z}, -\bar{z} \in \Z[\sqrt{-5}]$ Teiler von $21$ sind, genügt es auch die $a+\sqrt{5}bi \in \Z[\sqrt{-n}]$ mit $a,b \geq 0$ auf Teilbarkeit zu überprüfen.
+Für $x,y \in \C$ mit $xy=21$ ist $|x||y| = 21$, also muss $|x| \leq \sqrt{21}$ oder $|y| \leq \sqrt{21}$. Es genügt daher die $a+\sqrt{5}bi = z \in \Z[\sqrt{-5}]$ mit $|z| \leq \sqrt{21}$, also $a^2 + 5b^2 \leq 21$ auf Teilbarkeit zu überprüfen. Da für jeden Teiler $z \in \Z[\sqrt{-5}]$ auch $-z, \bar{z}, -\bar{z} \in \Z[\sqrt{-5}]$ Teiler von $21$ sind, genügt es zudem auch die $a+\sqrt{5}bi \in \Z[\sqrt{-n}]$ mit $a,b \geq 0$ auf Teilbarkeit zu überprüfen.
 
 Es ergeben sich mit diesen beiden Beschränkungen die möglichen Kandidaten
 \[
- 1, 2, 3, 4, 1+\sqrt{5}i, 1+2\sqrt{5}i, 2+\sqrt{5}i, 3+\sqrt{5}i, 4+\sqrt{5}i.
+ 1, 2, 3, 4, 1+\sqrt{5}i, 1+2\sqrt{5}i, 2+\sqrt{5}i, 3+\sqrt{5}i \text{ und } 4+\sqrt{5}i.
 \]
-Einfaches Hinsehen und kurzes Nachrechnen ergibt, dass von diesen Zahlen nur
+Einfaches Hinsehen und gegebenenfalls kurzes Nachrechnen ergibt, dass von diesen Zahlen nur
 \[
  1, 3, 1+2\sqrt{5}i \text{ und } 4+\sqrt{5}i
 \]
-Teiler von $21$ sind. Die Teiler von $21$ in $\Z[i]$ sind also
+Teiler von $21$ sind. Die Teiler von $21$ in $\Z\left[\sqrt{-n}\,\right]$, die sich nun nach den obigen Zusammenhängen ergeben, sind also
 \begin{gather*}
  1, -1, 21, -21, 3, -3, 7, -7, \\
  1+2\sqrt{5}i, -1-2\sqrt{5}i, 1-2\sqrt{5}i, -1+2\sqrt{5}i, \\
  4+\sqrt{5}i, -4-\sqrt{5}i, 4-\sqrt{5}i, -4-\sqrt{5}i.
 \end{gather*}
-
-
-
 
 
 
@@ -147,46 +142,46 @@ Teiler von $21$ sind. Die Teiler von $21$ in $\Z[i]$ sind also
 
 \begin{proof}
  \subsubsection*{(i)}
-  Es ist $0 \in \nil(R)$, also $\nil(R)$ nicht leer. Für $a,b \in \nil(R)$ gibt es $n,m \in \N$ mit $a^n = b^m = 0$, also ist
+  Es ist $0 \in \nil(R)$, also $\nil(R)$ nicht leer. Für $a,b \in \nil(R)$ gibt es $n,m \in \N$ mit $a^n = b^m = 0$, weshalb
   \[
-   (a+b)^{n+m} = \sum_{k=1}^{n+m} \binom{n+m}{k} a^{n+m-k} b^k = 0
+   (a+b)^{n+m} = \sum_{k=0}^{n+m} \binom{n+m}{k} a^{n+m-k} b^k = 0,
   \]
-  und daher $a+b \in \nil(R)$. Auch ist für alle $r \in R$
+  und deshalb $a+b \in \nil(R)$. Auch ist für alle $r \in R$
   \[
-   (ar)^n = a^n r^n = 0,
+   (ra)^n = r^n a^n = 0,
   \]
-  also $ar \in R$. Insbesondere ist daher für alle $a \in \nil(R)$ auch $-a = (-1) \cdot a \in R$.
+  also $ra \in R$. Insbesondere ist daher für alle $a \in \nil(R)$ auch $-a = (-1) \cdot a \in R$.
  \subsubsection*{(ii)}
-  Für $e \in R^*$ und $a \in \nil(R)$ mit $a^n = 0$ ist $1-ae^{-1} \in R^*$, da $\left(ae^{-1}\right)^n = 0$ und daher
+  Für $e \in R^*$ und $a \in \nil(R)$ mit $a^n = 0$ ist $1+e^{-1}a \in R^*$, da $\left(e^{-1}a\right)^n = 0$ und daher
   \[
-   \left(\sum_{k=0}^{n-1} \left(-ae^{-1}\right)^k\right) \left(1+ae^{-1}\right)
-   = 1+ (-1)^{n-1} \left(ae^{-1}\right)^n
+   \left(\sum_{k=0}^{n-1} \left(-e^{-1}a\right)^k\right) \left(1+e^{-1}a\right)
+   = 1+ (-1)^{n-1} \left(e^{-1}a\right)^n
    = 1.
   \]
-  Daher ist auch $e+a = e\left(1+ae^{-1}\right) \in R^*$.
+  Daher ist auch $e+a = e\left(1+e^{-1}a\right) \in R^*$.
 \end{proof}
 
 Da $\nil(R) \subseteq \nil(R[X])$ ist auch $\left(\nil(R)\right) \subseteq \nil(R[X])$. Dabei ist, wie in einem früheren Übungsblatt gezeigt,
 \[
  \left(\nil(R)\right)
- = \left\{\sum_{i=0}^n a_i X^i : n \geq 0, a_i \in \nil(R) \text{ für alle } i\right\}.
+ = \left\{f \in R[X] : f = \sum_{i=0}^n a_i X^i \text{ mit } n \geq 0, a_i \in \nil(R) \text{ für alle } i\right\}.
 \]
 Nach Bemerkung \ref{bem: nilradikal} ist also das Polynom $f = \sum_{i=0}^n a_i X^i$ mit $n \geq 0$, $a_0 \in R^*$ und $a_i \in \nil(R)$ für alle $i$ invertierbar.
 
-Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \neq 0$, invertierbar, d.h. es gibt ein $g = \sum_{i=0}^m b_i X^i \in R[X]$, mit $m \geq 0$ und $b_m \neq 0$, so dass $fg = 1$. Da damit $a_0 b_0 = 1$ müssen $a_0$ und $b_0$ invertierbar sein. Ist $n > 0$, so bemerken wir:
+Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \neq 0$, invertierbar, d.h. es gibt $g = \sum_{i=0}^m b_i X^i \in R[X]$, mit $m \geq 0$ und $b_m \neq 0$, so dass $fg = 1$. Da insbesondere $a_0 b_0 = 1$ müssen $a_0$ und $b_0$ in $R$ invertierbar sein. Für $n=0$ ist nichts weiter zu zeigen. Ist $n > 0$, so bemerken wir:
 
 \begin{beh}\label{beh: a_n nilpotent}
  Es ist $a_n^{k+1} b_{m-k} = 0$ für $k=0,\ldots,m$.
 \end{beh}
 \begin{proof}
  Der Beweis verläuft per Induktion über $k$.
- \begin{ia}Für $k=0$ gilt: Wäre $a_n b_m \neq 0$, so wäre
+ \begin{ia}Betrachte $k=0$. Wäre $a_n b_m \neq 0$, so wäre
   \[
    0 = \deg(1) = \deg(fg) = \deg(f)+\deg(g) = n+m \geq n > 0.
   \]
  \end{ia}
  \begin{is}
- Sei $1 \leq k \leq n$ und gelte die Aussage für $k-1$. Da $fg = 1$ ist
+ Sei $1 \leq k \leq n$ und gelte die Aussage für $k-1$. Da $fg = 1$ ergibt sich für den $n+m-k$-ten Koeffizienten des Produktes $fg$, dass
  \[
   0 = \sum_{\mu+\nu = n+m-k} a_\mu b_\nu.
  \]
@@ -196,12 +191,7 @@ Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \n
  \]
  \end{is}
 \end{proof}
-Aus Behauptung \ref{beh: a_n nilpotent} folgt insbesondere, dass $a_n^{m+1} b_0 = 0$. Da $b_0$ invertierbar ist, ist $a_n$ daher nilpotent. Da nach Bemerkung \ref{bem: nilradikal} daher auch $f- a_n X^n$ invertierbar ist, ergibt sich durch Wiederholung der obigen Argumentation induktiv, dass $a_i$ für alle $1 \leq i \leq n$ nilpotent ist.
-
-
-
-
-
+Aus Behauptung \ref{beh: a_n nilpotent} folgt insbesondere, dass $a_n^{m+1} b_0 = 0$. Da $b_0$ invertierbar ist, ist $a_n^{m+1} = 0$, also $a_n$ nilpotent. Da nach Bemerkung \ref{bem: nilradikal} daher auch $f- a_n X^n$ invertierbar ist, ergibt sich durch Wiederholung der obigen Argumentation induktiv, dass $a_i$ für alle $1 \leq i \leq n$ nilpotent ist.
 
 
 
@@ -210,44 +200,45 @@ Aus Behauptung \ref{beh: a_n nilpotent} folgt insbesondere, dass $a_n^{m+1} b_0 
 \section{}
 
 \begin{defi}
-Sei $R$ ein kommutativer Ring. Für $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ bezeichnet
+Sei $R$ ein kommutativer Ring. Für $f = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ bezeichnet
 \[
- \Deg(p) :=
+ \Deg(f) :=
  \begin{cases}
   \min \{i \in \N : a_i \neq 0\} & \text{falls } f \neq 0, \\
-                          \infty & \text{sonst}.
+                          \infty & \text{falls } f = 0
  \end{cases}
 \]
-den Grad von $p$.
+den \emph{Grad} von $f$.
 \end{defi}
-Für einen kommutativen Ring $R$ und $p,q \in R[\![x]\!]$ ist
-\begin{equation}\label{eq: Deg Ungleichungen}
- \Deg(p+q) \geq \min \{\Deg(p), \Deg(q)\} \text{ und }
- \Deg(pq) \geq \Deg(p) + \Deg(q).
-\end{equation}
-Ist $R$ darüber hinaus nullteilerfrei, so gilt sogar
-\begin{equation}\label{eq: Deg nullteilerfrei}
- \Deg(pq) = \Deg(p) + \Deg(q).
-\end{equation}
-Die Beweise der entsprechenden Aussage laufen analog zu den Beweisen der entsprechenden Aussagen für die Gradfunktion $\deg$ von $R[X]$.
+\begin{bem}\label{bem: grad potenzreihe}
+ Für einen kommutativen Ring $R$ und $f,g \in R[\![x]\!]$ ist
+ \begin{align*}
+  \Deg(f+g) &\geq \min \{\Deg(f), \Deg(g)\} \text{ und } \\
+  \Deg(fg)  &\geq \Deg(f) + \Deg(g).
+ \end{align*}
+ Ist $R$ darüber hinaus nullteilerfrei, so gilt sogar
+ \begin{equation*}
+  \Deg(fg) = \Deg(f) + \Deg(g).
+ \end{equation*}
+\end{bem}
+\begin{proof}
+ Der Beweis läuft analog zu dem der entsprechenden (Un)gleichungen der Gradfunktion $\deg$ von $R[X]$.
+\end{proof}
+
 
 
 \subsection{}
-Ist $R$ kein Integritätsring, so ist auch $R[X] \subsetneq R[\![x]\!]$ kein Integritätsring, also auch $R[\![x]\!]$ nicht. Ist $R[\![x]\!]$ kein Integritätsring, so gibt es $p, q \in R[\![x]\!]$ mit $p,q \neq 0$, also $\Deg(p), \Deg(q) < \infty$, aber $pq = 0$, also $\Deg(pq) = \infty$. Mit \eqref{eq: Deg nullteilerfrei} folgt, dass $R$ kein Integritätsring ist.
+Ist $R$ kein Integritätsring, so auch $R[\![x]\!]$ nicht, da man $R$ in kanonischer als Unterring von $R[\![x]\!]$ auffassen kann. Ist $R[\![x]\!]$ kein Integritätsring, so gibt es $f, g \in R[\![x]\!]$ mit $f,g \neq 0$, also $\Deg(f), \Deg(g) < \infty$, aber $fg = 0$, also $\Deg(fg) = \infty$. Aus Bemerkung \ref{bem: grad potenzreihe} folgt, dass $R$ kein Integritätsring ist.
 
 
 \subsection{}
-Ist $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ invertierbar, so gibt es $q = \sum_{i=0}^\infty b_i X^i \in R[\![x]\!]$ mit $pq = 1$. Insbesondere ist daher
-\[
- 1 = (pq)_1 = a_0 b_0,
-\]
-also $a_0$ invertierbar.
+Ist $f = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ invertierbar, so gibt es $g = \sum_{i=0}^\infty b_i X^i \in R[\![x]\!]$ mit $fg = 1$. Insbesondere ergibt sich für den $0$-ten Koeffizienten von $fg$, dass $1 = a_0 b_0$. Also ist $a_0$ invertierbar in $R$.
 
-Ist $p = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ mit $a_0$ invertierbar, so definieren wir eine Folge $(b_i)_{i \in \N}$ auf $R$ rekursiv durch
+Ist $f = \sum_{i=0}^\infty a_i X^i \in R[\![x]\!]$ mit $a_0$ invertierbar, so definieren wir eine Folge $(b_i)_{i \in \N}$ auf $R$ rekursiv durch
 \[
  b_0 := a_0^{-1} \text{ und } b_i := -a_0^{-1} \sum_{j=1}^i a_j b_{i-j},
 \]
-und $q := \sum_{i=0}^\infty b_i X^i$ als die entsprechende Potenzreihe. Für $e = pq$ ergibt sich dann für alle $i \in \N$
+und definieren $g := \sum_{i=0}^\infty b_i X^i$ als die entsprechende Potenzreihe. Es ergibt sich für \mbox{$fg =: e = \sum_{i=0}^\infty e_i X^i$}, dass $e_0 = a_0 b_0 = 1$ und für alle $i \geq 1$
 \[
  e_i
  = \sum_{j=0}^i a_j b_{i-j}
@@ -255,30 +246,30 @@ und $q := \sum_{i=0}^\infty b_i X^i$ als die entsprechende Potenzreihe. Für $e 
  = \sum_{j=1}^i a_j b_{i-j} - \sum_{j=1}^i a_j b_{i-j}
  = 0.
 \]
-Also ist $e = 1$ und $p$ daher invertierbar mit $p^{-1} = q$. Inbesondere ergibt sich das folgende Lemma:
+Also ist $e = 1$ und $f$ daher invertierbar mit $f^{-1} = g$. Inbesondere ergibt sich das folgende Lemma:
 
 \begin{lem} \label{lem: starkes Lemma}
- Sei $K$ ein Körper und seien $p,q \in K[\![x]\!]$. Dann gilt:
+ Sei $K$ ein Körper und seien $f,g \in K[\![x]\!]$. Dann gilt:
  \begin{enumerate}[(i)]
-  \item $p$ ist genau dann invertierbar, wenn $\Deg p = 0$. \label{item: körper invertierbar}
-  \item Ist $\Deg p = \Deg q$, so sind $p$ und $q$ assoziiert. Ist $\Deg p = \Deg q < \infty$, so sind $p$ und $q$ assoziiert zu $X^{\Deg p}$.
-  \item Ist $\Deg p \geq \Deg q$, so ist $q \mid p$.
+  \item $f$ ist genau dann invertierbar, wenn $\Deg f = 0$. \label{item: körper invertierbar}
+  \item Ist $\Deg f = \Deg g$, so sind $f$ und $g$ assoziiert. Genauer: Ist $\Deg f < \infty$, so ist $f$ assoziiert zu $X^{\Deg f}$.
+  \item Ist $\Deg f \leq \Deg g$, so ist $f \mid g$.
  \end{enumerate}
 \end{lem}
 \begin{proof}
  \subsubsection*{\emph{(i)}}
-  $p = \sum_{i=0}^{\infty} a_i X^i$ ist genau dann invertierbar, wenn $a_0$ invertierbar ist, also genau dann wenn $a_0 \neq 0$, was wiederum äquivalent zu $\Deg a_0 = 0$ ist.
+  $f = \sum_{i=0}^{\infty} a_i X^i$ ist genau dann invertierbar, wenn $a_0$ invertierbar ist, also genau dann wenn $a_0 \neq 0$, was äquivalent zu $\Deg f = 0$ ist.
  \subsubsection*{\emph{(ii)}}
-  Ist $p = q = 0$ so ist nichts zu zeigen. Ansonsten ist $p = \sum_{i=0}^\infty a_i X^i \neq 0$, also $p = X^{\Deg p} p'$ für $p' = \sum_{i=0}^\infty a_{i+\Deg p} X^i$ mit $a_{\Deg p} \neq 0$. Nach \emph{(\ref{item: körper invertierbar})} ist $p'$ invertierbar, also $p$ assoziiert zu $X^{\Deg p}$. Analog ergibt sich, dass $q$ assoziiert zu $X^{\Deg q}$ ist. Mit $\Deg p = \Deg q$ folgt damit auch die Assoziiertheit von $p$ und $q$.
+  Ist $f = g = 0$ so ist nichts zu zeigen. Ansonsten ist $f = \sum_{i=0}^\infty a_i X^i \neq 0$, also $f = X^{\Deg f} f'$ mit $f' = \sum_{i=0}^\infty a_{i+\Deg f} X^i$ und $a_{\Deg f} \neq 0$. Nach \emph{(\ref{item: körper invertierbar})} ist $f'$ invertierbar, also $f$ assoziiert zu $X^{\Deg f}$.
  \subsubsection*{\emph{(iii)}}
- Ist $\Deg p = \infty$, so ist $p = 0$ und nichts zu zeigen. Ansonsten ist $p = X^{\Deg p - \Deg q} p'$ wobei $p'$ assozziert zu $q$ ist, also $p = X^{\Deg p - \Deg q} c q$ für $c \in K^*$.
+ Ist $\Deg g = \infty$, so ist $g = 0$ und nichts zu zeigen. Ansonsten ist $g = X^{\Deg g - \Deg f} g'$, wobei $g'$ wegen $\Deg g' = \Deg f$ assozziert zu $f$ ist, also $g = X^{\Deg g - \Deg f} c f$ für $c \in K^*$.
 \end{proof}
 
 
 \subsection{}
 $f$ ist in $\Z[X]$ nicht irreduzibel, da $f = (X+1)(X+2)$.
 
-Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j=0}^\infty b_i X^i$ so dass $pq = f$. Dann ergibt sich durch Koeffizientenvergleich, dass $a_0 b_0 = 2$. Da $a_0, b_0 \in \Z$, und $2 \in \Z$ irreduzibel ist, ist $a_0$ oder $b_0$ eine Einheit. Entsprechend ist $p$ oder $q$ eine Einheit. Also ist $f$ irreduzibel in $\Z[\![x]\!]$.
+Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j=0}^\infty b_i X^i$ so dass $pq = f$. Dann ist $a_0 b_0 = 2$. Da $a_0, b_0 \in \Z$, und $2$ in $\Z$ irreduzibel ist, ist $a_0$ oder $b_0$ eine Einheit. Entsprechend ist $p$ oder $q$ nach dem vorherigen Aufgabenteil eine Einheit. Also ist $f$ irreduzibel in $\Z[\![x]\!]$.
 
 
 
@@ -289,7 +280,9 @@ Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j
  $K[\![x]\!]$ bildet mit der Gradabbildung $\Deg$ einen euklidischen Ring.
 \end{lem}
 \begin{proof}
- Da $K$ nullteilerfrei ist, ist $K[\![x]\!]$ ein Integritätsring. Seien $f,g \in K[\![x]\!]$ mit $g \neq 0$. Es gilt zu zeigen, dass es $q,r \in K[\![x]\!]$ gibt, so dass $f = qg + r$ mit $r = 0$ oder $\Deg r < \Deg g$. Ist $\Deg f < \Deg g$ so genügt es $q=0$ und $r=f$ zu wählen. Ist $\Deg f \geq \Deg g$, so folgt aus \ref{lem: starkes Lemma}, dass $g \mid f$, es kann also $q$ mit $f = qg$ und $r=0$ gewählt werden.
+ Da $K$ nullteilerfrei ist, ist $K[\![x]\!]$ ein Integritätsring. Seien $f,g \in K[\![x]\!]$ mit $g \neq 0$. Es gilt zu zeigen, dass es $q,r \in K[\![x]\!]$ gibt, so dass $f = qg + r$ mit $r = 0$ oder $\Deg r < \Deg g$.
+ 
+ Ist $\Deg f < \Deg g$ so genügt es $q=0$ und $r=f$ zu wählen. Ist $\Deg f \geq \Deg g$, so folgt aus \ref{lem: starkes Lemma}, dass $g \mid f$, es kann also $q$ mit $f = qg$ und $r=0$ gewählt werden.
 \end{proof}
 
 Aus Lemma \ref{lem: K[[x]] euklidisch} folgt direkt, dass $K[\![x]\!]$ ein Hautidealring ist. Für jedes Ideal $(a) \neq 0$ von $K[\![x]\!]$ folgt mit Lemma \ref{lem: starkes Lemma}, dass $a$ assoziert zu $X^{\Deg a}$ ist, und da $K[\![x]\!]$ ein Integritätsring ist, daher $(a) = \left(X^{\Deg a}\right)$. Folglich sind die Ideale in $K[\![x]\!]$ gerade $0$ und $\left(X^n\right)$ für $n \in \N$. Insbesondere ist $(X)$ das eindeutige maximale Ideal in $K[\![x]\!]$, weshalb $K[\![x]\!]$ lokal ist (dies lässt sich auch direkt aus Lemma \ref{lem: starkes Lemma} folgern).
