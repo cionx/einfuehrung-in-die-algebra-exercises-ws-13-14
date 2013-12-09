@@ -274,6 +274,58 @@ und inbesondere
 
 
 
+\section{}
+
+
+
+
+
+\section{}
+
+
+\begin{bem}\label{bem: def noethersch}
+ Sei $R$ ein kommutativer Ring. Dann ist $R$ genau dann noethersch, wenn jedes Ideal von $R$ endlich erzeugt ist. 
+\end{bem}
+\begin{proof}
+ Angenommen $R$ ist noethersch. Sei $I \subseteq R$ ein Ideal. Wir konstruieren eine wachsende Folge $I_0 \subseteq I_1 \subseteq \ldots$ von Idealen von $R$, mit $I_n \subseteq I$ für alle $n \in \N$, rekursiv wie folgt: Wir setzen $I_0 := 0$. Für $n \geq 1$ setzen wir $I_n := I_{n-1} + (a_n)$, falls es ein $a_n \in I \setminus I_{n-1}$ gibt, und sonst $I_n := I_{n-1}$. Da $R$ noethersch ist stabilisiert sich die Folge $(I_n)_{n \in \N}$, d.h. es gibt ein $N \in \N$ mit $I_{n+1} = I_n$ für alle $n \geq N$. Insbesondere ist $I_{N+1} = I_N$, nach Definition und von $I_{N+1}$ und $I_N \subseteq I$ also $I = I_N$. Daher ist
+ \[
+  I = I_N = (a_1) + \ldots + (a_N) = (a_1, \ldots, a_N)
+ \]
+ endlich erzeugt.
+ 
+ Angenommen, jedes Ideal in von $R$. Für eine wachsende Folge $I_0 \subseteq I_1 \subseteq \ldots$ von Idealen von $R$ setzen wir $I = \bigcup_{n \in \N} I_n = \sum_{n \in \N} I_n$. $I$ ist als Ideal von $R$ endlich erzeugt, es gibt also $a_1, \ldots, a_m \in \R$ mit $I = (a_1, \ldots, a_m)$. Nach Definition von $I$ gibt es ein $N \in \N$ mit $a_1, \ldots, a_m \in I_N$. Also ist $I = I_N$, und damit $I_{n} = I_{n+1}$ für alle $n \geq N$.
+\end{proof}
+
+
+\begin{bem}\label{bem: faktorringe noethersch}
+ Faktorringe kommutativer, noetherscher Ringe sind noethersch.
+\end{bem}
+\begin{proof}
+ Sei $R$ ein kommutativer, noetherscher Ring und $I \subseteq R$ ein Ideal. Die kanonische Projektion $\pi : R \twoheadrightarrow R/I$ induziert eine Bijektion zwischen den Idealen von $R/I$ und den Idealen von $R$, die $I$ beinhalten. Jede wachsende Folge $J_0 \subseteq J_1 \subseteq \ldots$ von Idealen von $R/I$ entspricht daher einer wachsenden Folge $I_0 \subseteq I_1 \subseteq \ldots$ von Idealen von $R$ mit $I \subseteq I_i$ für alle $i \in \N$. Da $R$ noethersch ist stabilisiert sich die Folge $(I_n)_{n \in \N}$ in $R$, also auch die Folge $(J_n)_{n \in \N}$ in $R/I$. Also ist $R/I$ noethersch.
+\end{proof}
+
+
+Wir zeigen nun, dass auch Lokalisierungen kommutativer, noetherscher Ringe wieder noethersch sind: Es sei $R$ ein kommutativer, noetherscher Ring und $S \subseteq R$ ein Untermonoid bezüglich der Multiplikation. Es sei $I \subseteq R[S^{-1}]$ ein Ideal. Wir setzen
+\[
+ J := \left\{ \frac{r}{1} \in I : r \in R \right\}.
+\]
+
+Es ist $(J)_{R[S^{-1}]} = I$, wobei $(J)_{R[S^{-1}]}$ das von $J$ in $R[S^{-1}]$ erzeugte Ideal bezeichnet. Es ist klar, dass $(J)_{R[S^{-1}]} \subseteq I$. Andererseits ist für alle $\frac{r}{s} \in I$ auch $\frac{s}{1} \frac{r}{s} = \frac{rs}{s} = \frac{r}{1} \in I$, also $\frac{r}{1} \in J$, und daher auch $\frac{r}{s} = \frac{1}{s} \frac{r}{1} \in (J)_{R[S^{-1}]}$.
+
+Es ist $J \subseteq \Img \varphi$, wobei $\varphi : R \rightarrow R[S^{-1}], r \mapsto \frac{r}{1}$. Da $R$ noethersch ist, ist es nach Bemerkung \ref{bem: faktorringe noethersch} auch $\Img \varphi \cong R / \Ker \varphi$. Es gibt also $a_1, \ldots, a_n \in \Img \varphi$ mit $(J)_{\Img \varphi} = (a_1, \ldots, a_n)_{\Img \varphi}$. Es ist daher
+\begin{align*}
+ I
+ &= (J)_{R[S^{-1}]}
+ = ((J)_{\Img \varphi})_{R[S^{-1}]} \\
+ &= ((a_1, \ldots, a_n)_{\Img \varphi})_{R[S^{-1}]}
+ = (a_1, \ldots, a_n)_{R[S^{-1}]},
+\end{align*}
+also $I$ in $R[S^{-1}]$ endlich erzeugt. Aus Bemerkung \ref{bem: def noethersch} folgt, dass $R[S^{-1}]$ noethersch ist.
+
+
+
+
+
 
 
 
