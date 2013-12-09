@@ -85,6 +85,207 @@
 
 
 
+\section{}
+
+
+\subsection{}
+Da $rs \cdot 1 = rs \cdot 1$ für alle $(r,s) \in R \times S$ mit $1 \in S$ ist $\sim$ reflexiv. Die Symmetrie von $\sim$ ergibt sich direkt aus der Symmetrie der Gleichheit. Für $(r,s), (r',s'), (r'',s'') \in R \times S$ mit $(r,s) \sim (r',s') \sim (r'', s'')$ gibt es $t, \tilde{t} \in S$ mit
+\begin{align}
+ rs't &= r'st \text{ und }         \label{eq: reflexiv sr't = s'rt} \\
+ r's''\tilde{t} &= r''s'\tilde{t}. \label{eq: reflexiv s'r''t = s''r't}
+\end{align}
+Wegen der Abgeschlossenheit von $S$ unter Multiplikation ist auch $s't\tilde{t} \in S$, und wegen der Kommutativität von $R$ daher
+\[
+ r s'' s' t \tilde{t}
+ \underset{\eqref{eq: reflexiv sr't = s'rt}}= r' s'' s t \tilde{t}
+ \underset{\eqref{eq: reflexiv s'r''t = s''r't}}= r'' s' s t \tilde{t}
+ = r'' s s' t \tilde{t}.
+\]
+Also ist $(r,s'') \sim (r'', s)$ und $\sim$ daher transitiv.
+
+
+\subsection{}
+Aus der Notation der Restklassen und der Definition von $\sim$ folgt direkt, dass für alle $(r,s), (r', s') \in R \times S$
+\begin{equation} \label{eq: Klassengleichheit}
+ \frac{r}{s} = \frac{r'}{s'} \Leftrightarrow \text{es gibt $t \in S$ mit } rs' t = r's t.
+\end{equation}
+Zunächst die Wohldefiniertheit: Seien $(r,s), (\tilde{r},\tilde{s}) \in R \times S$ mit $(r,s) \sim (\tilde{r},\tilde{s})$. Dann gibt es $t \in S$ mit $r \tilde{s} t = \tilde{r} s t$. Wegen der Kommutativität von $R$ ist daher für alle $(r', s') \in R \times S$
+\[
+ (rs'+r's) \tilde{s} s' t
+ = r s' \tilde{s} s' t + r' s \tilde{s} s' t
+ = \tilde{r} s' s s' t + r' s \tilde{s} s' t
+ = (\tilde{r} s', r' \tilde{s}) s s ' t,
+\]
+und
+\[
+ r r' \tilde{s} s' t = \tilde{r} r' s s' t.
+\]
+Da die Ausdrücke
+\[
+ \frac{rs'+r's}{ss'} \text{ und } \frac{r r'}{s s'}
+\]
+wegen der Kommutativität von $R$ symmetrisch in $(r,s)$ und $(r', s')$ sind folgt damit wegen \eqref{eq: Klassengleichheit} die Wohldefiniertheit. 
+
+Es ist klar, dass $R[S^{-1}]$ unter Addition und Multiplikation abgeschlossen ist. Die Addition ist assoziativ und kommutativ, da wegen der Kommutatvität von $R$ für alle $\frac{r}{s}, \frac{r'}{s'}, \frac{r''}{s''} \in R[S^{-1}]$
+\begin{align*}
+ \frac{r}{s} + \left( \frac{r'}{s'} + \frac{r''}{s''} \right)
+ &= \frac{r}{s} + \frac{r's''+r''s'}{s's''}
+ = \frac{rs's''+r'ss''+r''ss'}{ss's''} \\
+ &= \frac{rs'+r's}{ss'} + \frac{r''}{s''}
+ = \left(\frac{r}{s} + \frac{r'}{s'}\right) + \frac{r''}{s''},
+\end{align*}
+sowie
+\[
+ \frac{r}{s} + \frac{r'}{s'}
+ = \frac{rs'+r's}{ss'}
+ = \frac{r's+rs'}{s's}
+ = \frac{r'}{s'} + \frac{r}{s}.
+\]
+Das Element $\frac{0}{1} \in R[S^{-1}]$ ist bezüglich der Addition neutral, da für alle $\frac{r}{s} \in R[S^{-1}]$
+\[
+ \frac{r}{s} + \frac{0}{1} = \frac{r \cdot 1 + s \cdot 0}{s \cdot 1} = \frac{r}{s},
+\]
+und $\frac{r}{s} \in R[S^{-1}]$ hat als additives Inverses $\frac{-r}{s}$, da
+\[
+ \frac{r}{s} + \frac{-r}{s} = \frac{rs-rs}{s^2} = \frac{0}{s^2} = \frac{0}{1},
+\]
+denn aus der Definition von $\sim$ folgt offenbar direkt, dass $\frac{0}{s} = \frac{0}{1}$ für alle $s \in S$, und wegen der Abgeschlossenheit von $S$ bezüglich der Multiplikation ist $s^2 \in S$. Also ist $R[S^{-1}]$ bezüglich der Addition eine abelsche Gruppe.
+
+Da Multiplikation ist assoziativ und kommutativ, da für alle $\frac{r}{s}, \frac{r'}{s'}, \frac{r''}{s''} \in R[S^{-1}]$
+\[
+ \frac{r}{s} \left( \frac{r'}{s'} \frac{r''}{s''} \right)
+ = \frac{r}{s} \frac{r' r''}{s' s''}
+ = \frac{r r' r''}{s s' s''}
+ = \frac{r r'}{s s'} \frac{r''}{s''}
+ = \left( \frac{r}{s} \frac{r'}{s'} \right) \frac{r''}{s''},
+\]
+und wegen der Kommutativität von $R$
+\[
+ \frac{r}{s} \frac{r'}{s'}
+ = \frac{r r'}{s s'}
+ = \frac{r' r}{s' s}
+ = \frac{r'}{s'} \frac{r}{s}.
+\]
+Das Element $\frac{1}{1} \in R[S^{-1}]$ ist das multiplikativ Neutrale in $R[S^{-1}]$, da für alle $\frac{r}{s} \in R[S^{-1}]$
+\[
+ \frac{1}{1} \frac{r}{s} = \frac{r}{s} \frac{1}{1} = \frac{r \cdot 1}{s \cdot 1} = \frac{r}{s}.
+\]
+Dies zeigt, dass $R[S^{-1}]$ bezüglich der Multiplikation ein abelsches Monoid ist.
+
+Zum Nachweis des Distributivgesetzes bemerken wir zunächst:
+
+\begin{bem}\label{bem: s als einheiten}
+ Für alle $\frac{r}{s} \in R[S^{-1}]$ und $t \in S$ gilt nach \eqref{eq: Klassengleichheit} die Kürzungsregel
+ \[
+  \frac{rt}{st} = \frac{r}{s},
+ \]
+ denn wegen der Kommutativität von $R$ ist $rts \cdot 1 = rst \cdot 1$ mit $1 \in S$. Insbesondere gilt für alle $s \in S$
+ \[
+  \frac{s}{1} \cdot \frac{1}{s} = \frac{s}{s} = \frac{1}{1}.
+ \]
+\end{bem}
+
+Mit der obigen Bemerkung erhalten wir, dass für alle $\frac{r}{s}, \frac{r'}{s'}, \frac{r''}{s''} \in R[S^{-1}]$
+\begin{align*}
+ \frac{r}{s} \left( \frac{r'}{s'} + \frac{r''}{s''} \right)
+ &= \frac{r}{s} \frac{r's'' + r''s'}{s's''}
+ = \frac{rr's''+rr''s'}{ss's''} \\
+ &= \frac{rr'ss'+rr''ss'}{s^2s's''}
+ = \frac{rr'}{ss'} + \frac{rr''}{ss''}
+ = \frac{r}{s} \frac{r'}{s'} + \frac{r}{s} \frac{r''}{s''}.
+\end{align*}
+Dies zeigt, dass $R[S^{-1}]$ ein kommutativer Ring (mit Einselement) ist.
+
+
+\subsection{}
+Da für alle $r,r' \in R$
+\[
+ \varphi(r+r')
+ = \frac{r'+r}{1}
+ = \frac{r \cdot 1 + r' \cdot 1}{1^2}
+ = \frac{r}{1} + \frac{r'}{1}
+ = \varphi(r) + \varphi(r'),
+\]
+und
+\[
+ \varphi(rr')
+ = \frac{rr'}{1}
+ = \frac{rr'}{1^2}
+ = \frac{r}{1} \frac{r'}{1}
+ = \varphi(r)\varphi(r')
+\]
+sowie
+\[
+ \varphi(1_R)
+ = \frac{1}{1}
+ = 1_{R[S^{-1}]}
+\]
+ist $\varphi$ ein Ringhomomorphismus. Aus Bemerkung \ref{bem: s als einheiten} folgt, dass $\varphi(S) \subseteq (R[S^{-1}])^*$.
+
+Wir bemerken auch direkt, dass $\varphi$ nicht zwangsweise injektiv ist: Ist $R \neq 0$ und $0 \in S$, etwa $S = R$ oder $S = \{0,1\}$, so ist offenbar $R[S^{-1}] \cong 0$, also $\varphi = 0$ und wegen $R \neq 0$ damit nicht injektiv.
+
+Für einen Homomorphismus $\psi_S : R[S^{-1}] \rightarrow R'$ mit $\psi = \psi_S \circ \varphi$ muss für alle $r \in R$ und $s \in S$
+\[
+ \psi_S\left(\frac{r}{1}\right)
+ = \psi_S( \varphi(r) )
+ = \psi(r)
+\]
+und daher
+\[
+ \psi_S\left(\frac{1}{s}\right)
+ = \psi_S\left( \left (\frac{s}{1} \right)^{-1} \right)
+ = \psi_S\left( \frac{s}{1} \right)^{-1}
+ = \psi_S(s)^{-1},
+\]
+da $\psi_S$ durch Einschränkung einen Gruppenhomomorphismus von $(R[S^{-1}])^*$ nach $(R')^*$ induziert. Also ist $\psi_S$ durch
+\[
+ \psi_S\left(\frac{r}{s}\right)
+ = \psi_S\left(\frac{r}{1} \frac{1}{s}\right)
+ = \psi_S\left(\frac{r}{1}\right) \psi_S\left(\frac{1}{s}\right)
+ = \psi(r)\psi(s)^{-1}
+\]
+für alle $\frac{r}{s} \in R[S^{-1}]$ eindeutig bestimmt. Definiert man $\psi_S$ auf diese Art, so handelt es sich bei $\psi_S$ um einen Ringhomomorphismus, denn für alle $\frac{r}{s}, \frac{r'}{s'} \in R[S^-1]$ ist
+\begin{align*}
+ \psi_S\left( \frac{r}{s} + \frac{r'}{s'} \right)
+ &= \psi_S\left( \frac{rs' + r's}{ss'} \right)
+ = \psi(rs' + r's)\psi(ss)^{-1} \\
+ &= \left( \psi(r)\psi(s') + \psi(r')\psi(s) \right) \psi(s)^{-1}\psi(s')^{-1} \psi \\
+ &= \psi(r)\psi(s)^{-1} + \psi(r')\psi(s')^{-1}
+ = \psi_S\left(\frac{r}{s}\right) + \psi_S\left(\frac{r'}{s'}\right),
+\end{align*}
+sowie
+\begin{align*}
+ \psi_S\left(\frac{r}{s} \frac{r'}{s'}\right)
+ &= \psi_S\left(\frac{rr'}{ss'}\right)
+ = \psi(rr')\psi(ss')^{-1} \\
+ &= \psi(r)\psi(r')\psi(s)^{-1}\psi(s')^{-1} \\
+ &= \psi(r)\psi(s)^{-1} \psi(r')\psi(s')^{-1}
+ = \psi_S\left(\frac{r}{s}\right) \psi_S\left(\frac{r'}{s'}\right),
+\end{align*}
+und inbesondere
+\[
+ \psi_S\left(1_{R[S^{-1}]}\right)
+ = \psi_S\left(\frac{1}{1}\right)
+ = \psi(1) \psi(1)^{-1}
+ = 1_{R'}.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
