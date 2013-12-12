@@ -36,7 +36,7 @@
 \newcommand{\mf}[1]{\mathfrak{#1}}
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\dt}{\,\text{d}t}
-\newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\F}{\mathbb{F}}
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\ord}{\operatorname{ord}}
 \newcommand{\inn}{\operatorname{inn}}
@@ -324,6 +324,92 @@ also $I$ in $R[S^{-1}]$ endlich erzeugt. Aus Bemerkung \ref{bem: def noethersch}
 
 
 
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Gebe es $f,g \in \Q[X]$ mit $f,g \not\in (\Q[X])^* = \Q^*$ und $fg = X^3-2$, so muss $\deg f = 1$ oder $\deg g = 1$, da dann $1 \leq \deg f, \deg g \leq 3$ und $\deg f + \deg g = 3$. Also müsste $X^3-2$ dann eine rationale Nullstelle besitzen. Die einzige reelle Nullstelle des Polynomes ist jedoch $\sqrt[3]{2} \not\in \Q$, weshalb dies nicht möglich ist.
+
+
+\subsection{}
+Betrachten wir die Primzahl $p = 3 \in \Z$, so ergibt sich durch Reduktion der Koeffizienten bezüglich $p$ aus $X^3 +39X^2 -4X +8 \in \Z[X]$ das Polynom
+\[
+ X^3 -X +2 \in \F_3[X].
+\]
+Dieses hat keine Nullstellen in $\F_3$, es ergibt sich also analog zur obigen Argumentation, dass es irreduzibel (in $\F_3[X]$) ist. Nach dem Reduktionskriterium ist daher auch $X^3 +39X^2 -4X +8 \in \Q[X]$ irreduzibel.
+
+
+
+\subsection{}
+Es ist bekannt, dass $f = X^6+X^3+1 \in \Z[X]$ genau dann irreduzibel ist, wenn $f(X+1)$ irreduzibel ist. Da
+\begin{align*}
+ f(X+1) &= (X+1)^6+(X+1)^3+1 \\
+        &= X^6 + 6X^5 + 15X^4 + 21X^3 + 18X + 9X + 3
+\end{align*}
+ergibt sich dies aus dem Eisensteinkriterium, indem man die Primzahl $p = 3$ betrachtet. ($f(X+1)$ ist als normiertes Polynom offenbar primitiv.) Inbesondere ergibt sich damit auch, dass $f$ irreduzibel in $\Q[X]$ ist.
+
+
+\subsection{}
+Für die Primzahl $7 \in \Z$ ergibt sich durch Reduktion der Koeffizienten aus $X^7 + 21X^5 + 35X^2 +34X -8 \in \Z[X]$ das Polynom
+\[
+ X^7 -X -1 \in \F_7[X].
+\]
+Wie die folgende Bemerkung zeigen wird, ist dieses irreduzibel in $\F_7[X]$, und daher das ursprüngliche Polynom nach dem Reduktionskriterium in $\Q[X]$ irreduzibel.
+
+\begin{bem}
+ Sei $p > 0$ eine Primzahl. Dann ist das Polynom $f = X^p -X -1 \in \F_p[X]$ irreduzibel.
+\end{bem}
+\begin{proof}
+ Wir nehmen an, dass $f$ reduzibel in $\F_p[X]$ ist. Wir wählen als Repräsentantensystem $P$ der Primelemente von $\F_p[X]$ die normierten Primelemente. Da $\F_p$ ein Körper ist, ist $\F_p[X]$ ein faktorieller Ring, es gibt also eindeutig bestimmte $\varepsilon \in \F_p$ und $g_1, \ldots, g_n \in P$, $n \geq 2$, mit
+ \begin{equation}\label{eq: primfaktorzerlegung}
+  f = \varepsilon g_1 \cdots g_n.
+ \end{equation}
+ Da $f$ und $g_1, \ldots, g_n$ normiert sind, ist dabei $\varepsilon = 1$.
+ Wir bemerken, dass $f$ bezüglich der Abbildung
+ \[
+  \tau : \F_p[X] \rightarrow \F_p[X], h \mapsto h(X+1)
+ \]
+ invariant ist, da
+ \[
+  \tau(f)
+  = (X+1)^p -(X+1) -1
+  = \left( \sum_{k=0}^p \binom{p}{k} X^k \right) -X
+  = X^p -X -1
+  = f.
+ \]
+ Dabei setzen wir
+ \[
+  \binom{p}{p} = 1.
+ \]
+ Es ist klar, dass $\tau$ ein Ringautomorphismus ist. Insbesondere ist
+ \[
+  f = \tau(f) = \tau(g_1 \cdots g_n) = \tau(g_1) \cdots \tau(g_n).
+ \]
+ Da die Darstellung \eqref{eq: primfaktorzerlegung} bis auf Assoziiertheit und Reihenfolge der Faktoren eindeutig ist, gibt es daher für alle $i=1,\ldots,n$ je $\varepsilon_i \in \F_p$ und $\sigma \in \mf{S}_n$ mit
+ \[
+  \tau(g_i) = \varepsilon_i g_{\sigma(i)} \text{ für alle } i=1,\ldots,n.
+ \]
+ Da $(X+p)^n = X^n$ für alle $n \in \N$ ist $\tau^p = \id$. Es ist daher insbesondere $\sigma^p = 1$. Folglich ist $\ord \sigma \mid p$, also $\ord \sigma = 1$ oder $\ord \sigma = p$.
+ 
+ Ist $\ord \sigma = p$, so muss $\sigma$ in Zykelschreibweise einen Zykel der Ordnung $p$ haben, also mindestens $p$ Element miteinander kommutieren, d.h. $n \geq p$. Da $\deg(g_i) \geq 1$ für alle $i=1,\ldots,n$ und $\sum_{i=1}^n \deg(g_i) = \deg(X^p-X-1) = p$ muss $n=p$ und $\deg(g_i) = 1$ für alle $1=1,\ldots,n$. Folglich besitzt $f$ mindestens eine Nullstelle; dies ist jedoch nicht der Fall, da $f(x) = -1 \neq 0$ für alle $x \in \F_p$.
+ Ist $\ord \sigma = 1$, so sind die $g_i$ bis auf Assoziiertheit invariant unter $\tau$. Da dann
+ \[
+  \tau^p(g_i) = \varepsilon_i^p g_i = 1 g_i
+ \]
+ muss $\varepsilon_i^p = 1$, nach dem kleinen Fermatschen Satz also $\varepsilon = 1$ und damit $\tau(g_i) = g_i$ für $i=1,\ldots,n$. Da $g_1$ invariant unter $\tau$ ist, ist
+ \[
+  g_1(x) = g_1(0) \text{ für alle } x \in \F_p[X].
+ \]
+ Folglich ist $g_1-g_1(0) = 0$. Da jedoch $\deg(g_1-g_1(0)) = \deg(g_1)$ und $0 < \deg(g_1) < \deg(X^p-X-1)=p$ ist dies ein Widerspruch dazu, dass $g_1-g_1(0)$ höchstens $\deg(g_1-g_1(0))$ viele Nullstellen haben kann.
+\end{proof}
 
 
 
