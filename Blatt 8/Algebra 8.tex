@@ -327,6 +327,72 @@ also $I$ in $R[S^{-1}]$ endlich erzeugt. Aus Bemerkung \ref{bem: def noethersch}
 
 
 \section{}
+Ich werde im Folgenden Summen der Form $f = \sum_{i,j \in \N} a_{ij} X_1^i X_2^j$ für $f \in \Z[X_1, X_2]$, bzw. $f \in \Q[X_1, X_2]$ nutzen, ohne jedes Mal explizit anzugeben, dass fast alle $a_{ij}$ gleich null sind.
+
+
+\subsection{}
+
+\subsubsection{$\Z[X_1, X_2]$}
+Das Ideal ist in $\Z[X_1, X_2]$ nicht maximal, da
+\[
+ (X_1, X_2, 2) = \left\{\sum_{i,j \in \N} a_{ij} X_1^i X_2^j : a_{0,0} \text{ ist gerade }\right\}
+\]
+ein größeres echtes Ideal von $\Z[X_1, X_2]$ ist. Es ist jedoch ein Primideal: Für $f,g \not\in (X_1, X_2)$ mit $f = \sum_{i,j \in \N} a_{ij} X^i_1 X^j_2$ und $g = \sum_{i,j \in \N} b_{ij} X^i_1 X^j_2$ ist $f,g \neq 0$ und $a_{0,0}, b_{0,0} = 0$. Da $\Z[X_1, X_2]$ ein Integritätsring ist, ist $0 \neq fg = \sum_{i,j \in \N} c_{ij} X^i_1 X^j_2$, und wegen $c_{0,0} = a_{0,0} b_{0,0} = 0$ also $fg \not\in (X_1, X_2)$.
+
+\subsubsection{$\Q[X_1, X_2]$}
+Das Ideal ist maximal in $\Q[X_1, X_2]$. Für $f \not\in (X_1, X_2)$ muss $f=\sum_{i,j \in \N} a_{ij} X^i_1 X^j_2$ mit $a_{0,0} \neq 0$. Dann ist aber $a_{0,0} \in (X_1, X_2, f)$, also, da $a_{0,0} \in \Q^* = (\Q[X_1, X_2])^*$, bereits $(X_1, X_2, f) = \Q[X_1, X_2]$. Als maximales Ideal ist $(X_1, X_2)$ insbesondere ein Primideal.
+
+
+\subsection{}
+
+\subsubsection{$\Z[X_1, X_2]$}
+Das Ideal ist nicht maximal in $\Z[X_1, X_2]$, da $(X_1+X_2, X_1) = (X_1, X_2)$ ein größeres echtes Ideal von $\Z[X_1, X_2]$ ist. $X_1+X_2$ ist irreduzibel in $\Z[X_1, X_2]$: Für $f,g \in \Z[X_1, X_2]$ mit $fg = X_1 + X_2$ muss $1 = \deg(X_1 + X_2) = \deg(f) + \deg(g)$, also o.B.d.A. $\deg(f) = 0$ und $\deg(g) = 1$. Also ist $f = c \in \Z\setminus\{0\}$ und $g = \frac{1}{c}X_1 + \frac{1}{c}X_2$. Da $\frac{1}{c} \in \Z$ muss $c=1$ oder $c=-1$, also $c \in \Z^* = (\Z[X_1, X_2])^*$. Da $\Z[X_1, X_2]$ nach dem Satz von Gauß faktoriell ist, ist $X_1+X_2$ daher prim in $\Z[X_1, X_2]$, also $(X_1+X_2)$ ein Primideal in $\Z[X_1, X_2]$.
+
+\subsubsection{$\Q[X_1, X_2]$}
+Es ergibt sich analog zur Argumentation für $\Z[X_1, X_2]$, dass das Ideal prim aber nicht maximal in $\Q[X_1, X_2]$ ist. Dabei ergibt sich $f \in (\Q[X_1, X_2])^*$ bereits durch $\deg(f) = 0$.
+
+
+\subsection{}
+
+\subsubsection{$\Z[X_1, X_2]$}
+Das Ideal ist maximal, und damit auch prim, in $\Z[X_1, X_2]$: Für $f \not\in (X_1, X_2, 2)$ mit $f = \sum_{i,j \in \N} a_{i,j} X^i_1 X^j_2$ muss $a_{0,0}$ ungerade sein. Es ist daher $f+1 \in (X_1, X_2, 2)$, und somit $1 \in (X_1, X_2, 2, f)$, also bereits $(X_1, X_2, 2, f) = \Z[X_1, X_2]$.
+
+\subsubsection{$\Q[X_1, X_2]$}
+Da $(X_1, X_2, 2) \ni 2 \in \Q^* = (\Q[X_1, X_2])^*$ ist bereits $(X_1, X_2, 2) = \Q[X_1, X_2]$, also das Ideal weder prim noch maximal in $\Q[X_1, X_2]$.
+
+
+\subsection{}
+Es sei im Folgenden $R = \Z$ oder $R = \Q$, der Beweis läuft unabhängig von der Wahl des Ringes. Es ist
+\[
+ A := (X_1 + X_2^2, X_1^2 + X_2)_{R[X_1, X_2]}
+\]
+kein Primideal, und damit auch kein maximales Ideal, von $R[X_1, X_2]$: Wir nehmen an, dass $A$ prim ist. Es ist
+\[
+ X_1^2 (X_1 + X_2^2) = X_1^3 + X_1^2 X_2^2 \in A \text{ und }
+ X_2^2 (X_1^2 + X_2) = X_1^2 X_2^2 + X_2^3 \in A,
+\]
+also auch $X_1^3 - X_2^3 \in A$. Da
+\[
+ X_1^3 - X_2^3 = (X_1^2 + X_1 X_2 + X_2^2)(X_1 - X_2)
+\]
+muss nach Annahme $X_1^2 + X_1 X_2 + X_2^2 \in A$ oder $X_1 - X_2 \in A$. Da $X_1+X_2^2$ und $X_1^2+X_2$ bei $(-1,-1)$ eine Nullstellle haben, muss $f(-1,-1) = 0$ für alle $f \in A$. Da dies für $X_1^2 + X_1 X_2 + X_2^2$ nicht der Fall ist, muss also $X_1 - X_2 \in A$.
+
+Es gibt also $f,g \in R[X_1, X_2]$ mit $f \cdot (X_1^2+X_2) + g \cdot (X_1+X_2^2) = X_1 - X_2$. Durch den Einsetzhomomorphismus ergibt sich, dass für alle $x \in R$ mit $x > 0$
+\[
+ 0 = f(x)(x+x^2)+g(x)(x^2+x) = (f+g)(x)\underbrace{(x+x^2)}_{\neq 0}.
+\]
+Es muss also $f+g$ unendlich viele Nullstellen haben, also $f+g=0$ und daher $f=-g$. Also ist
+\[
+ f\cdot (X_1^2 +X_2 -X_1- X_2^2) = X_1 - X_2.
+\]
+Insbesondere ist, da $R$ ein Integritätsring ist,
+\[
+ \deg(f) \deg(X_1^2 +X_2 -X_1- X_2^2) = \deg(X_1 - X_2),
+\]
+also $2 \deg(f) = 1$, was offenbar nicht möglich ist. Also ist $A$ nicht prim.
+
+
+
 
 
 
