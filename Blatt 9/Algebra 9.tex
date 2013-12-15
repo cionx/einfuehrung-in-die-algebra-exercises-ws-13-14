@@ -86,6 +86,53 @@
 
 
 \section{}
+Die Multiplikation $\Z \times \Q \rightarrow \Q$ von $\Q$ als $\Z$-Modul ist offenbar die Einschränkung der Multiplikation $\Q \times \Q \rightarrow \Q$ des Körpers $\Q$. Die Torsionsfreiheit von $\Q$ als $\Z$-Modul folgt daher direkt aus der Nullteilerfreiheit von $\Q$ als Köper.
+
+$\Q$ ist als $\Z$-Modul nicht endlich erzeugt: Sei $P \subseteq \N$ die Menge aller Primzahlen. Für $q \in \Q$ gibt es bekanntermaßen eindeutige $\nu_p(q) \in \Z$, für $p \in P$, und ein eindeutiges $\varepsilon(q) \in \{-1,1\}$ mit $q = \varepsilon(q) \prod_{p \in P} p^{\nu_p(q)}$. Aus der Definition der Addition auf $\Q$ folgt, dass für alle $r,s \in \Q \smallsetminus \{0\}$ und $n,m \in \Z$
+\begin{align*}
+  &\,n r + m s \\
+ =&\, n \varepsilon(r)\prod_{p \in P} p^{\nu_p(r)} + m \varepsilon(s)\prod_{p \in P} p^{\nu_p(s)} \\
+ =&\,  \left( n \varepsilon(s) \prod_{\substack{p \in P \\ \nu_p(s) > 0}} p^{\nu_p(s)}
+            + m \varepsilon(r) \prod_{\substack{p \in P \\ \nu_p(r) > 0}} p^{\nu_p(r)}
+     \right)
+     \prod_{\substack{p \in P \\ \nu_p(r) < 0}} p^{\nu_p(r)} \prod_{\substack{p \in P \\ \nu_p(s) < 0}} p^{\nu_p(s)}.
+\end{align*}
+Inbesondere ist daher für jedes $p_0 \in P$
+\begin{align*}
+  &\, \nu_{p_0}( n r + m s ) \\
+ =&\, \nu_{p_0} \left( \left( n \varepsilon(s) \prod_{\substack{p \in P \\ \nu_p(s) > 0}} p^{\nu_p(s)}
+                            + m \varepsilon(r) \prod_{\substack{p \in P \\ \nu_p(r) > 0}} p^{\nu_p(r)}
+               \right)
+               \prod_{\substack{p \in P \\ \nu_p(r) < 0}} p^{\nu_p(r)} \prod_{\substack{p \in P \\ \nu_p(s) < 0}} p^{\nu_p(s)} \right) \\
+ =&\, \underbrace{\nu_{p_0}\left(n \varepsilon(s) \prod_{\substack{p \in P \\ \nu_p(s) > 0}} p^{\nu_p(s)}
+                               + m \varepsilon(r) \prod_{\substack{p \in P \\ \nu_p(r) > 0}} p^{\nu_p(r)}\right) }_{\geq 0}
+   +\nu_{p_0}\left(\prod_{\substack{p \in P \\ \nu_p(r) < 0}} p^{\nu_p(r)} \prod_{\substack{p \in P \\ \nu_p(s) < 0}} p^{\nu_p(s)}\right) \\
+ \geq&\, \nu_{p_0}\left(\prod_{\substack{p \in P \\ \nu_p(r) < 0}} p^{\nu_p(r)} \prod_{\substack{p \in P \\ \nu_p(s) < 0}} p^{\nu_p(s)}\right) \geq -|\nu_{p_0}(r)|-|\nu_{p_0}(s)|
+\end{align*}
+Induktiv ergibt sich, dass für alle $q_1, \ldots, q_t \in \Q$, $n_1, \ldots, n_t \in \Z$ und $p \in P$
+\[
+ \nu_p( n_1 q_1 + \ldots + n_t q_t ) \geq -\sum_{i=1}^t \nu_p(q_i).
+\]
+Inbesondere lässt sich deshalb $p^{-1-\sum_{i=1}^t \nu_p(q_i)}$ für $p \in P$ nicht als $\Z$-Linearkombination von $q_1, \ldots, q_t$ darstellen. Es hat deshalb $\Q$ als $\Z$-Modul kein endliches Erzeugendensystem.
+
+$\Q$ ist als $\Z$-Modul nicht frei: Für $\frac{p}{q}, \frac{r}{s} \in \Q$ besitzt
+\[
+ rq \frac{p}{q} = pr = ps \frac{r}{s}
+\]
+zwei unterschiedliche Linearkombinationen. Daher ist jede Familie von mindestens zwei rationalen Zahlen linear abhängig, insbesondere also jedes Erzeugendensystem von $\Q$ als $\Z$-Modul, da ein solches unendlich ist.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -185,24 +232,6 @@ Dies ist kein Torsionsmodul: Für $(1_{\Z/p\Z})_{p \in P} \in \prod_{p \in P} \Z
  n \cdot (1_{\Z/p\Z})_{p \in P} = (n \cdot 1_{\Z/p\Z})_{p \in P} = 0
 \]
 muss $n \mid p$ für alle $p \in P$, also $n = 0$. Deshalb ist $\prod_{p \in P} T(\Z/p\Z)$ nicht isomorph zum Torsionsmodul $T(\prod_{p \in P} \Z/p\Z)$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
