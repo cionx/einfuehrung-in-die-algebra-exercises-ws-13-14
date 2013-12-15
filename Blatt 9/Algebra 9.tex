@@ -10,8 +10,7 @@
 \usepackage{nicefrac}
 \usepackage{enumerate}
 \usepackage{leftidx}
-
-
+\usepackage{tikz}
 
 \newcounter{satze}
 \newtheorem{beh}[satze]{Behauptung}
@@ -81,6 +80,97 @@
 
 \begin{document}
 \maketitle
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
+Für die kurze exakte Sequenz
+\begin{center}
+ \begin{tikzpicture}
+  \node (0_1) {$0$};
+  \node (M) [right of = 0_1] {$M$};
+  \node (N) [right of = M] {$N$};
+  \node (P) [right of = N] {$P$};
+  \node (0_2) [right of = P] {$0$};
+  \draw[->] (0_1) to (M);
+  \draw[->] (M) to node[above] {$f$} (N);
+  \draw[->] (N) to node[above] {$g$} (P);
+  \draw[->] (P) to (0_2);
+ \end{tikzpicture}
+\end{center}
+ist $f$ injektiv, also $M \cong \Img f \subseteq N$, und $g$ surjektiv, also $P \cong N / \ker g = N / \Img f$. Da die Länge eines Moduls invariant unter Isomorphie ist, können wir daher o.B.d.A. davon ausgehen, dass $M \subseteq N$ ein Untermodul ist und $P = N/M$. Es gilt also zu zeigen, dass
+\[
+ l_A(N) = l_A(M) + l_A(N/M).
+\]
+
+Es bezeichne $\pi : N \rightarrow N/M$ die kanonische Projektion. Offenbar induziert $\pi$ ein Bijektion zwischen den Untermodulen von $N$, die $M$ beinhalten, und den Untermodulen von $N/M$. Daher ergibt sich aus jeder Kette von $M$
+\[
+ 0 = M_0 \subsetneq M_1 \subsetneq \ldots \subsetneq M_r = M
+\]
+der Länge $r$ und Kette von $N/M$
+\[
+ 0 = P_0 \subsetneq P_1 \subsetneq \ldots \subsetneq P_s = N/M
+\]
+der Länge $s$ eine Kette von $N$
+\[
+ 0 = M_0 \subsetneq \ldots \subsetneq M_r = \pi^{-1}(P_0) \subsetneq \ldots \subsetneq \pi^{-1}(P_r) = N
+\]
+der Länge $r+s$. Daher ist
+\[
+ l_A(N) \geq l_A(M) + l_A(N/M).
+\]
+
+Andererseits ergibt sich aus einer Kette
+\[
+ 0 = N_0 \subsetneq N_1 \subsetneq \ldots \subsetneq N_t = N
+\]
+der Länge $t$ von $N$ eine Kette
+\[
+ 0 = M \cap N_0 \subsetneq M \cap N_1 \subseteq \ldots \subseteq M \cap N_t = M
+\]
+von $M$ und eine Kette
+\[
+ 0 = \pi(N_0) \subseteq \pi(N_1) \subseteq \ldots \subseteq \pi(N_t) = N
+\]
+von $N$. Da $\ker \pi = N$ und $N_i \subsetneq N_{i+1}$ für alle $i=0, \ldots, t-1$ ist $M \cap N_i \subsetneq M \cap N_{i+1}$ oder $\pi(N_i) \subsetneq \pi(N_{i+1})$ für alle $i=0, \ldots, t-1$. Deshalb ist
+\[
+ l_A(N) \leq l_A(M) + l_A(N/M).
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\section{}
 
 
 
