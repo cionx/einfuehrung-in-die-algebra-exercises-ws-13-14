@@ -155,15 +155,6 @@ von $N$. Da $\ker \pi = N$ und $N_i \subsetneq N_{i+1}$ für alle $i=0, \ldots, 
 
 
 
-
-
-
-
-
-
-
-
-
 \section{}
 
 
@@ -171,6 +162,42 @@ von $N$. Da $\ker \pi = N$ und $N_i \subsetneq N_{i+1}$ für alle $i=0, \ldots, 
 
 
 \section{}
+
+
+\subsection{}
+Es bezeichne $T(\bigoplus_{i \in I} M_i)$ den Torsionsuntermodul von $\bigoplus_{i \in I} M_i$ und für alle $i \in I$ bezeichne $T(M_i) = T_i$ den Torsionsuntermodul von $M_i$. Es ist $\bigoplus_{i \in I} T_i \subseteq \bigoplus_{i \in I} M_i$ und
+\[
+ T\left( \bigoplus_{i \in I} M_i \right) = \bigoplus_{i \in I} T(M_i) = \bigoplus_{i \in I} T_i.
+\]
+
+Für $(m_i)_{i \in I} \in T\left( \bigoplus_{i \in I} M_i \right)$ gibt ein $r \in R \smallsetminus \{0\}$ mit $r(m_i)_{i \in I} = (rm_{i})_{i \in I} = 0$, also $rm_i = 0$ für alle $i \in I$. Daher ist $m_i \in T_i$ für alle $i \in I$. Da $m_i = 0$ für fast alle $i \in I$ ist $(m_i)_{i \in I} \in \bigoplus_{i \in I} T_i$.
+
+Für $(m_i)_{i \in I} \in \bigoplus T_i$ ist $m_i = 0$ für fast alle $i \in I$. Es seien $i_1, \ldots, i_n \in I$ genau die Indizes mit $m_{i_j} \neq 0$. Da $m_{i_j} \in T_{i_j}$ für alle $j=1,\ldots,n$ gibt es für alle $j=1,\ldots,n$ ein $r_j \in R \smallsetminus \{0\}$ mit $r_j m_{i_j} \neq 0$. Da $R$ kommutativ ist, ist daher $(r_1 \cdots r_n) m_i = 0$ für alle $i \in I$, also $(r_1 \cdots r_n) (m_i)_{i \in I} = 0$. Da $R$ ein Integritätsring ist, ist $r_1 \cdots r_n \neq 0$, da $r_j \neq 0$ für alle $j=1,\ldots,n$. Daher ist $(m_i)_{i \in I} \in T(\bigoplus_{i \in I} M_i)$.
+
+
+\subsection{}
+Es bezeichne $P \subsetneq \N$ die Menge aller Primzahlen. Für alle $p \in P$ ist $\Z/p\Z$ eine abelsche Gruppe, die wir in naheliegender Weise als $\Z$-Modul auffassen. Jedes $x \in \Z/p\Z$ mit $x \neq 0$ hat Ordnung $p$, weshalb $n \cdot x = 0 \Leftrightarrow p \mid n$ für alle $n \in \Z$. Da jedes $\Z/p\Z$ ein Torsionsmodul ist, ist
+\[
+ \prod_{p \in P} T(\Z/p\Z) = \prod_{p \in P} \Z/p\Z.
+\]
+Dies ist kein Torsionsmodul: Für $(1_{\Z/p\Z})_{p \in P} \in \prod_{p \in P} \Z/p\Z$ und $n \in \Z$ mit
+\[
+ n \cdot (1_{\Z/p\Z})_{p \in P} = (n \cdot 1_{\Z/p\Z})_{p \in P} = 0
+\]
+muss $n \mid p$ für alle $p \in P$, also $n = 0$. Deshalb ist $\prod_{p \in P} T(\Z/p\Z)$ nicht isomorph zum Torsionsmodul $T(\prod_{p \in P} \Z/p\Z)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
