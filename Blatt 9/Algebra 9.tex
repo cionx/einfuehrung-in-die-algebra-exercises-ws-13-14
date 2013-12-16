@@ -111,6 +111,336 @@ zwei unterschiedliche Linearkombinationen. Daher ist jede Familie von mindestens
 \section{}
 
 
+\subsection{}
+Es handelt sich bei $\sim$ um eine Äquivalenzrelation: Für  alle $(m,s) \in M \times S$ ist \mbox{$1 \cdot ms = 1 \cdot ms$} mit $1 \in S$ und deshalb $(m,s) \sim (m,s)$. Also ist $\sim$ reflexiv. Ist $(m,s) \tilde (m', s')$ für $(m,s), (m',s') \in M \times S$, so gibt es ein $t \in S$ mit $ts'm = tsm'$. Da damit auch $tsm' = ts'm$ ist dann $(m',s') \sim (m,s)$. Also ist $\sim$ symmetrisch. Ist $(m,s) \tilde (m',s') \tilde (m'', s'')$, so gibt es $t, \tilde{t} \in S$ mit $ts'm = tsm'$ und $\tilde{t}s'm'' = \tilde{t}s''m'$. Da $S$ unter der Multiplikation abgeschlossen ist, ist auch $t\tilde{t}s' \in S$. Da wegen der Kommutativität von $R$
+\[
+ t\tilde{t}s' \cdot s''m
+ = \tilde{t}s'' \cdot ts'm
+ = \tilde{t}s'' \cdot tsm'
+ = ts \cdot \tilde{t}s''m'
+ = ts \cdot \tilde{t}s'm''
+ = t\tilde{t}s' \cdot sm''
+\]
+ist $(m,s) \sim (m'',s'')$. Daher ist $\sim$ transitiv.
+
+Die Addition ist wohldefiniert: Für $\frac{m'}{s'}, \frac{\tilde{m}}{\tilde{s}} \in M[S^{-1}]$ mit $\frac{m'}{s'} = \frac{\tilde{m}}{\tilde{s}}$ gibt es ein $t \in S$ mit $t\tilde{s}m' = ts'\tilde{m}$. Wegen der Kommutativität von $R$ ist dann für alle $(m,s) \in M \times S$
+\[
+ ts\tilde{s}(s'm + sm')
+ = ts\tilde{s}s'm + ts^2\tilde{s}m'
+ = ts\tilde{s}s'm + ts^2s'\tilde{m}
+ = tss'(\tilde{s}m+s\tilde{m}),
+\]
+und daher $\frac{s'm+sm'}{ss'} = \frac{\tilde{s}m+s\tilde{m}}{s\tilde{s}}$. Da der Ausdruck $\frac{sm'+s'm}{ss'}$ wegen der Kommutativität von $R$ symmetrisch in $(m,s)$ und $(m',s')$ ist, folgt damit die Wohldefiniertheit der Addition.
+
+Auch die Multiplikation ist wohldefiniert:Für $\frac{r}{s},\frac{\tilde{r}}{\tilde{s}} \in R[S^{-1}]$ mit $\frac{r}{s} = \frac{\tilde{r}}{\tilde{s}}$ gibt es ein $t \in S$ mit $tr\tilde{s} = t\tilde{r}s$, weshalb wegen der Kommutativität von $R$ für alle $(m',s') \in M \times S$
+\[
+ t \tilde{s}s' rm' = t ss' \tilde{r}m',
+\]
+also $\frac{rm'}{ss'} = \frac{\tilde{r}m'}{\tilde{s}s'}$. Für $\frac{m'}{s'}, \frac{\tilde{m}}{\tilde{s}} \in M[S^{-1}]$ mit $\frac{m'}{s'} = \frac{\tilde{m}}{\tilde{s}}$ gibt es ein $t \in S$ mit $t\tilde{s}m' = ts'\tilde{m}$, weshalb wegen der Kommutativität von $R$ für alle $(r,s) \in R \times S$
+\[
+ t s\tilde{s} rm' = t ss' r\tilde{m},
+\]
+also $\frac{rm'}{ss'} = \frac{r\tilde{m}}{s\tilde{s}}$. Dies zeigt die Wohldefiniertheit der Multiplikation.
+
+$M[S^{-1}]$ bildet bezüglich der Addition ein abelsche Gruppe: Die Addition ist assoziativ, da für alle $\frac{m}{s}, \frac{m'}{s'}, \frac{m''}{s''} \in M[S^{-1}]$
+\begin{align*}
+ \frac{m}{s} + \left( \frac{m'}{s'} + \frac{m''}{s''} \right)
+ &= \frac{m}{s} + \frac{s''m' + s'm''}{s's''}
+ = \frac{s's''m + ss''m' + ss'm''}{ss's''} \\
+ &= \frac{s'm + sm'}{ss'} + \frac{m''}{s''}
+ = \left( \frac{m}{s} + \frac{m'}{s'} \right) + \frac{m''}{s''},
+\end{align*}
+und kommutativ, da für alle $\frac{m}{s}, \frac{m'}{s'} \in M[S^{-1}]$
+\[
+ \frac{m}{s} + \frac{m'}{s'}
+ = \frac{ms' + m's}{ss'}
+ = \frac{m's + ms'}{s's}
+ = \frac{m'}{s'} + \frac{m}{s}.
+\]
+Das Element $\frac{0}{1} \in M[S^{-1}]$ ist bezüglich der Addition neutral, da für alle $\frac{m}{s} \in M[S^{-1}]$
+\[
+ \frac{m}{s} + \frac{0}{1} = \frac{1 \cdot m + s \cdot 0}{s \cdot 1} = \frac{m}{s}.
+\]
+Dabei ist klar, dass $\frac{0}{1} = \frac{0}{s}$ für alle $s \in S$. Jedes Element $\frac{m}{s} \in M[S^{-1}]$ hat $\frac{-m}{s} \in M[S^{-1}]$ als additiv inverses Element, da
+\[
+ \frac{m}{s} + \frac{-m}{s} = \frac{sm - sm}{s^2} = \frac{0}{s^2} = \frac{0}{1}.
+\]
+Dies zeigt, dass $M[S^{-1}]$ bezüglich der Addition eine abelsche Gruppe bildet.
+
+Durch die definierte Multiplikation wird $M[S^{-1}]$ zu einem $R[S^{-1}]$-Modul: Seien im Folgenden $\frac{r}{s}, \frac{\tilde{r}}{\tilde{s}} \in R[S^{-1}]$ und $\frac{m'}{s'}, \frac{m''}{s''} \in M[S^{-1}]$  beliebig aber fest. Es ist
+\[
+ 1_{R[S^{-1}]} \,\frac{m'}{s'}
+ = \frac{1_R}{1_R} \, \frac{m'}{s'}
+ = \frac{1_R \, m'}{1_R \, s'}
+ = \frac{m'}{s'}.
+\]
+Daher gilt für alle $\hat{s} \in S$ die Kürzungsregel
+\[
+ \frac{\hat{s}m'}{\hat{s}s'}
+ = \frac{\hat{s}}{\hat{s}} \, \frac{m'}{s'}
+ = 1_{R[S^{-1}]} \, \frac{m'}{s'}
+ = \frac{m'}{s'}.
+\]
+Es ist daher
+\begin{align*}
+ \frac{r}{s} \left( \frac{m'}{s'} + \frac{m''}{s''} \right)
+ &= \frac{r}{s} \frac{s''m' + s'm''}{s's''}
+ = \frac{rs''m' + rs'm''}{ss's''} \\
+ &= \frac{rss''m' + rss'm''}{s^2s's''}
+ = \frac{rm'}{ss'} + \frac{rm''}{ss''}
+ = \frac{r}{s} \, \frac{m'}{s'} + \frac{r}{s} \, \frac{m''}{s''}.
+\end{align*}
+Auch ist deshalb
+\begin{align*}
+ \left(\frac{r}{s} + \frac{\tilde{r}}{\tilde{s}}\right) \frac{m'}{s'}
+ &= \frac{r\tilde{s}+\tilde{r}s}{s\tilde{s}} \, \frac{m'}{s'}
+ = \frac{r\tilde{s}m' + \tilde{r}sm'}{s\tilde{s}s'} \\
+ &= \frac{r\tilde{s}s'm' + \tilde{r}ss'm'}{s\tilde{s}(s')^2}
+ = \frac{rm'}{ss'} + \frac{\tilde{r}m'}{\tilde{s}s'}
+ = \frac{r}{s} \, \frac{m'}{s'} + \frac{\tilde{r}}{\tilde{s}} \frac{m'}{s'}.
+\end{align*}
+Da auch
+\[
+ \frac{r}{s} \left(\frac{\tilde{r}}{\tilde{s}} \, \frac{m'}{s'}\right)
+ = \frac{r}{s} \, \frac{\tilde{r} m'}{\tilde{s} s'}
+ = \frac{r \tilde{r} m'}{s \tilde{s} s'}
+ = \frac{r \tilde{r}}{s \tilde{s}} \, \frac{m'}{s'}
+ = \left( \frac{r}{s} \, \frac{\tilde{r}}{\tilde{s}} \right) \frac{m'}{s'}
+\]
+ist $M[S^{-1}]$ bezüglich der definierten Multiplikation ein $R[S^{-1}]$-Modul.
+
+
+\subsection{}
+Da für jedes $s \in S$ die Abbildung $n \mapsto s n$ in $N$ bijektiv ist, gibt es für alle $n' \in N$ und $s \in S$ ein eindeutiges $n \in N$ mit $sn = n'$, für das wir im Folgenden $\frac{n'}{s}$ schreiben werden. Für alle $n \in N$ und $s \in S$ ist nach Definition ist $s \frac{n}{s} = n$.
+
+\begin{beh}
+ Es gelten die folgenden Rechenregeln:
+ \begin{enumerate}[(i)]
+  \item Für alle $n, n' \in N$ und $s, s' \in S$ ist $\frac{n}{s} = \frac{n'}{s'}$ genau dann wenn $s'n = sn'$. \label{enum: brüche gleich}
+  \item Für alle $n, n' \in N$ und $s \in S$ ist $\frac{n+n'}{s} = \frac{n}{s} + \frac{n'}{s}$. \label{enum: zähler auseinander}
+  \item Für alle $n, n' \in N$ und $s, s' \in S$ ist $\frac{n}{s} + \frac{n'}{s'} = \frac{s'n + sn'}{ss'}$. \label{enum: brüche addieren}
+  \item Für alle $n \in N$, $s \in S$, und $r \in R$ ist $r\, \frac{n}{s} = \frac{rn}{s}$. \label{enum: zähler multiplizieren}
+ \end{enumerate}
+\end{beh}
+\begin{proof}
+ \subsubsection*{\emph{(\ref{enum: brüche gleich})}}
+ Ist $\frac{n}{s} = \frac{n'}{s'}$, so ist
+ \[
+  s'n = s's\frac{n}{s} = s's\frac{n'}{s'} = ss'\frac{n'}{s'} = sn'.
+ \]
+ Gilt andererseits $sn' = s'n$, so ist
+ \[
+  s's \, \frac{n}{s} = s'n = sn' = ss'\frac{n'}{s'} = s's \, \frac{n'}{s'},
+ \]
+ wegen der Injektivität der Multiplikation mit $s's \in S$ also $\frac{n}{s} = \frac{n'}{s'}$.
+ \subsubsection*{\emph{(\ref{enum: zähler auseinander})}}
+ Es ist
+ \[
+  s\left( \frac{n}{s} + \frac{n'}{s} \right)
+  = s \, \frac{n}{s} + s \, \frac{n'}{s}
+  = n + n',
+ \]
+ also $\frac{n+n'}{s} = \frac{n}{s} + \frac{n'}{s}$.
+ \subsubsection*{\emph{}(\ref{enum: brüche addieren})}
+ Es ist
+ \[
+  ss' \left( \frac{n}{s} + \frac{n'}{s'} \right)
+  = s' s \frac{n}{s} + s s' \frac{n'}{s'}
+  = s' n + s n',
+ \]
+ also $\frac{s' n + s n'}{ss'} = \frac{n}{s} + \frac{n'}{s'}$.
+ \subsubsection*{\emph{(\ref{enum: zähler multiplizieren})}}
+ Es ist
+ \[
+  s r \, \frac{n}{s}
+  = r s \, \frac{n}{s}
+  = rn,
+ \]
+ also $r \, \frac{n}{s} = \frac{rn}{s}$.
+\end{proof}
+
+Gibt es eine entsprechende Abbildung $\psi$, so ist ist für alle $\frac{m}{1} \in M[S^{-1}]$
+\[
+ \psi\left(\frac{m}{1}\right)
+ = \psi(\varphi(m))
+ = \varphi'(m),
+\]
+und damit auch für alle $\frac{m}{s} \in M[S^{-1}]$
+\[
+ s \, \psi\left( \frac{m}{s} \right)
+ = \psi\left( s \, \frac{m}{s} \right)
+ = \psi\left( \frac{sm}{s} \right)
+ = \psi\left( \frac{m}{1} \right)
+ = \varphi'(m),
+\]
+also $\psi\left(\frac{m}{s}\right) = \frac{\varphi'(m)}{s}$. $\psi$ ist also eindeutig.
+
+Sei nun $\psi$ so definert. $\psi$ ist dann wohldefiniert: Für $\frac{m}{s}, \frac{m'}{s'} \in M[S^{-1}]$ mit $\frac{m}{s} = \frac{m'}{s'}$ gibt es ein $t \in S$ mit $ts'm = tsm'$. Es ist daher
+\[
+ t s' \varphi'(m) = \varphi'(t s' m) = \varphi(tsm') = ts \varphi'(m'),
+\]
+also $s' \varphi'(m) = s \varphi'(m')$ und deshalb $\frac{\varphi'(m)}{s} = \frac{\varphi'(m')}{s'}$. Es gilt zu zeigen, dass $\psi$ ein $R$-Modulhomomorphismus ist. Dies ist der Fall, da für alle $\frac{m}{s}, \frac{m'}{s'} \in M[S^{-1}]$ ist
+\begin{align*}
+ \psi\left( \frac{m}{s} + \frac{m'}{s'} \right)
+ &= \psi\left( \frac{s'm + sm'}{ss'} \right)
+ = \frac{ \varphi'(s'm + sm') }{ss'} \\
+ &= \frac{ s'\varphi'(m) + s\varphi'(m') }{ss'}
+ = \frac{\varphi'(m)}{s} + \frac{\varphi'(m')}{s'}
+ = \psi\left(\frac{m}{s}\right) + \psi\left(\frac{m'}{s'}\right)
+\end{align*}
+und für alle $r \in R$ und $\frac{m}{s} \in M[S^{-1}]$
+\[
+ \psi\left(r \, \frac{m}{s}\right)
+ = \psi\left(\frac{rm}{s}\right)
+ = \frac{\varphi'(rm)}{s}
+ = \frac{r\varphi'(m)}{s}
+ = r \, \frac{\varphi'(m)}{s}
+ = r \, \psi\left(\frac{m}{s}\right).
+\]
+
+
+\subsection{}
+Es sei $\varphi_M : M \rightarrow M[S^{-1}], m \mapsto \frac{m}{1}$, $\varphi_N$ und $\varphi_P$ seien analog definiert. Zusammen mit der exakten Sequenz
+\begin{center}
+ \begin{tikzpicture}
+  \node (M) {$M$};
+  \node (N) [right of = M] {$N$};
+  \node (P) [right of = N] {$P$};
+  \draw[->] (M) to node[above] {$f$} (N);
+  \draw[->] (N) to node[above] {$g$} (P);
+ \end{tikzpicture}
+\end{center}
+ergibt sich damit das folgende Diagram, in welcher die obere Zeile exakt ist.
+\begin{center}
+ \begin{tikzpicture}[node distance=2.6cm]
+  \node (M) {$M$};
+  \node (N) [right of = M] {$N$};
+  \node (P) [right of = N] {$P$};
+  \node (MS) [below of = M] {$M[S^{-1}]$};
+  \node (NS) [below of = N] {$N[S^{-1}]$};
+  \node (PS) [below of = P] {$P[S^{-1}]$};
+  \draw[->] (M) to node[left] {$\varphi_M$} (MS);
+  \draw[->] (N) to node[left] {$\varphi_N$} (NS);
+  \draw[->] (P) to node[left] {$\varphi_P$} (PS);
+  \draw[->] (M) to node[above] {$f$} (N);
+  \draw[->] (N) to node[above] {$g$} (P);
+ \end{tikzpicture}
+\end{center}
+Wir bemerken, dass für alle $s \in S$ die Abbildung $\tau_s: M[S^{-1}] \rightarrow M[S^{-1}]$, $\frac{m'}{s'} \mapsto s \frac{m'}{s'} = \frac{sm'}{s'}$ auf dem $R$-Modul $M[S^{-1}]$ bijektiv ist, denn für die Abbildung $\tau_{1/s} : M[S^{-1}] \rightarrow M[S^{-1}], \frac{m'}{s'} \mapsto \frac{1}{s} \, \frac{m'}{s'} = \frac{m'}{ss'}$ ist $\tau_s \tau_{1/s} = \tau_{1/s} \tau_s = \id_{M[S^{-1}]}$. Analoges gilt für $N[S^{-1}]$ und $P[S^{-1}]$.
+
+Nach dem vorherigen Aufgabenteil gibt es für den $R$-Modulhomomorphismus $\varphi_N f : M \rightarrow N[S^{-1}]$ einen eindeutigen $R$-Modulhomomorphismus $\bar{f} : M[S^{-1}] \rightarrow N[S^{-1}]$ mit $\bar{f} \varphi_M = \varphi_N f$. Analog gibt es einen eindeutigen $R$-Modulhomomorphismus $\bar{g} : N[S^{-1}] \rightarrow P[S^{-1}]$ mit $\bar{g} \varphi_N = \varphi_P g$. Das bedeutet, dass diese beiden Homomorphismen die beiden eindeutigen sind, für die das folgende Diagram kommutiert:
+\begin{center}
+ \begin{tikzpicture}[node distance=2.6cm]
+  \node (M) {$M$};
+  \node (N) [right of = M] {$N$};
+  \node (P) [right of = N] {$P$};
+  \node (MS) [below of = M] {$M[S^{-1}]$};
+  \node (NS) [below of = N] {$N[S^{-1}]$};
+  \node (PS) [below of = P] {$P[S^{-1}]$};
+  \draw[->] (M) to node[left] {$\varphi_M$} (MS);
+  \draw[->] (N) to node[left] {$\varphi_N$} (NS);
+  \draw[->] (P) to node[left] {$\varphi_P$} (PS);
+  \draw[->] (M) to node[above] {$f$} (N);
+  \draw[->] (N) to node[above] {$g$} (P);
+  \draw[->] (MS) to node[below] {$\exists!\, \bar{f}$} (NS);
+  \draw[->] (NS) to node[below] {$\exists!\, \bar{g}$} (PS);
+ \end{tikzpicture}
+\end{center}
+
+Aus dem bisherigen Aufgabenteil ergibt sich auch direkt, dass $\bar{f}\left(\frac{m}{s}\right) = \frac{f(s)}{s}$ für alle $\frac{m}{s} \in M[S^{-1}]$, und $\bar{g}\left(\frac{n}{s}\right) = \frac{g(n)}{s}$ für alle $\frac{n}{s} \in N[S^{-1}]$. (Man beachte etwa, dass $\varphi' = \varphi_N f$ und für das Element $n = \frac{n'}{s'} \in N[S^{-1}]$ und $s \in S$ die Notation aus dem vorherigen Aufgabenteil $\frac{n}{s}$ das Element $\frac{n'}{ss'}$ beschreibt.)
+
+Die $R$-Modulhomomorphismen $\bar{f}$ und $\bar{g}$ sind auch $R[S^{-1}]$-Modulhomomorphismen. Für alle $\frac{r}{s} \in R[S^{-1}]$ und $\frac{m'}{s'} \in M[S^{-1}]$ ist
+\[
+ \bar{f}\left( \frac{r}{s} \, \frac{m'}{s'} \right)
+ = \bar{f}\left( \frac{rm'}{ss'} \right)
+ = \frac{f(rm')}{ss'}
+ = \frac{r f(m')}{ss'}
+ = \frac{r}{s} \, \frac{f(m')}{s'}
+ = \frac{r}{s} \, \bar{f}\left( \frac{m'}{s'} \right).
+\]
+Für $\bar{g}$ läuft der Beweis analog.
+
+Aus der Exaktheit der $R$-Modulhomomorphismen
+\begin{center}
+ \begin{tikzpicture}
+  \node (M) {$M$};
+  \node (N) [right of = M] {$N$};
+  \node (P) [right of = N] {$P$};
+  \draw[->] (M) to node[above] {$f$} (N);
+  \draw[->] (N) to node[above] {$g$} (P);
+ \end{tikzpicture}
+\end{center}
+folgt die Exaktheit der $R[S^{-1}]$-Modulhomomorphismen
+\begin{center}
+ \begin{tikzpicture}[node distance = 2cm]
+  \node (MS) {$M[S^{-1}]$};
+  \node (NS) [right of = MS] {$N[S^{-1}]$};
+  \node (PS) [right of = NS] {$P[S^{-1}].$};
+  \draw[->] (MS) to node[above] {$\bar{f}$} (NS);
+  \draw[->] (NS) to node[above] {$\bar{g}$} (PS);
+ \end{tikzpicture}
+\end{center}
+
+Für alle $\frac{m}{s} \in M[S^{-1}]$ ist
+\[
+ (\bar{g} \bar{f})\left( \frac{m}{s} \right)
+ = \frac{gf(m)}{s}
+ = \frac{0}{s}
+ = \frac{0}{1},
+\]
+da $gf = 0$, also $\Img \bar{f} \subseteq \Ker \bar{g}$.
+
+Für alle $\frac{n}{s} \in N[S^{-1}]$ ist
+\[
+ \bar{g}\left(\frac{n}{s}\right) = \frac{0}{1}
+ \Leftrightarrow \frac{g(n)}{s} = \frac{0}{1}
+ \Leftrightarrow \exists\, t \in S : tg(n) = 0.
+\]
+Für ein solches $t$ ist
+\[
+ tg(n) = 0 
+ \Leftrightarrow g(tn) = 0
+ \Leftrightarrow tn \in \Ker g = \Img f
+ \Leftrightarrow \exists\, m \in M : f(m) = tn.
+\]
+Also gibt es für $\frac{n}{s} \in \Ker \bar{g}$ ein $t \in S$ und $m \in M$ mit $f(m) = tn$, weshalb
+\[
+ \bar{f}\left( \frac{m}{ts} \right)
+ = \frac{f(m)}{ts}
+ = \frac{tn}{ts}
+ = \frac{n}{s}.
+\]
+Also ist $\Ker \bar{g} \subseteq \Img \bar{f}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
 
 
 
