@@ -104,6 +104,56 @@ Da das Polynom $f = X^3 - 2$ irreduzibel in $\Q[X]$ ist, nicht jedoch in $\R[X]$
 
 
 
+\section{}
+
+
+\subsection{}
+Da $\alpha$ und $\beta$ algebraisch über $K$ sind, ist die Körpererweiterung $K(\alpha,\beta)/K$ algebraisch und $K(\alpha, \beta) = K[\alpha, \beta]$. Insbesondere ist daher $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugenden\-system von $K(\alpha,\beta)$.
+
+Sei nun $x_1, \ldots, x_m \in K(\alpha)$ eine $K$-Basis von $K(\alpha)$ und $y_1, \ldots, y_n \in K(\beta)$ eine $K$-Basis von $K(\beta)$. Es ist $(x_i y_j)_{i=1,\ldots,m, j=1,\ldots,n}$ ein $K$-Erzeugendensystem von $K(\alpha,\beta)$, und damit insbesondere
+\[
+ K[(\alpha,\beta) : K] = \dim_K(K(\alpha,\beta)) \leq mn
+\]
+Für alle $k,l \in \N$ gibt es nämlich (eindeutige) $\lambda^k_1, \ldots, \lambda^k_m \in K$ mit $\alpha^k = \sum_{i=1}^m \lambda^k_i x_i$ und $\mu^l_1, \ldots, \mu^l_n \in K$ mit $\beta^l = \sum_{j=1}^n \mu^l_j y_j$, weshalb
+\[
+ \alpha^k \beta^l
+ = \left( \sum_{i=1}^m \lambda^k_i x_i \right)\left( \sum_{j=1}^n \mu^l_j y_j \right)
+ = \sum_{i=1}^m \sum_{j=1}^n \lambda^k_i \mu^l_j x_i y_j.
+\]
+da $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugendensystem von $K(\alpha,\beta)$ ist, ist es daher auch $(x_i y_j)_{i,j}$. 
+
+
+\subsection{}
+Aus der Kette von Körpererweiterungen
+\[
+ K \subseteq K(\alpha) \subseteq K(\alpha,\beta)
+\]
+ergibt sich durch den Gradsatz, dass
+\begin{gather*}
+ [K(\alpha, \beta) : K]
+ = [K(\alpha, \beta) : K(\alpha)] \cdot [K(\alpha) : K],
+\shortintertext{also}
+ m = [K(\alpha) : K] \mid [K(\alpha,\beta) : K]
+\end{gather*}
+Analog ergibt sich, dass auch $n \mid [K(\alpha, \beta) : K]$. Folglich ist auch
+\[
+ \kgV(m,n) \mid [K(\alpha, \beta)].
+\]
+Dabei ist $\kgV(m,n) = mn$, da $m$ und $n$ teilerfremd sind. Mit $[K(\alpha,\beta) : K] \geq 1$ ergibt sich damit, dass $mn \leq [K(\alpha, \beta) : K]$. Da auch $[K(\alpha,\beta) : K] \leq mn$ ist also
+\[
+ [K(\alpha,\beta) : K] = mn.
+\]
+
+
+
+
+
+
+
+
+
+
+
 
 
 
