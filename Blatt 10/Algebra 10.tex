@@ -86,7 +86,92 @@
 
 
 
-\addtocounter{section}{3}
+\addtocounter{section}{1}
+
+
+
+
+
+\section{}
+
+
+\begin{bem}\label{bem: elemente der ordnung p}
+ Sei $p \in \N$ eine Primzahl und $k \in \N, k \geq 1$. Dann gibt es in $\Z/p^k\Z$ genau $p$ Elemente $g \in \Z/p^k\Z$ mit $pg = 0$.
+\end{bem}
+\begin{proof}
+ Es bezeichne $\pi : \Z \rightarrow \Z/p^k\Z$ die kanonische Projektion und $\bar{n} = \pi(n)$ für alle $n \in \Z$. Für alle $n \in \Z$ ist
+ \begin{align*}
+  p \cdot \bar{n} = 0
+  &\Leftrightarrow \overline{np} = 0
+  \Leftrightarrow np \in \Ker \pi = p^k\Z
+  \Leftrightarrow n \in p^{k-1}\Z \\
+  &\Leftrightarrow \bar{n} \in \{0,\overline{p^{k-1}},\ldots,(p-1)\overline{p^{k-1}}\}.
+ \end{align*}
+\end{proof}
+
+
+\begin{bem}\label{bem: Ordnung im Produkt}
+ Seien $G_1, \ldots, G_n$ Gruppen. Für $(g_1, \ldots, g_n) \in G_1 \times \cdots \times G_n$ ist
+ \[
+  \ord (g_1, \ldots, g_n) = \kgV(\ord g_1, \ldots, \ord g_n).
+ \]
+\end{bem}
+\begin{proof}
+ Wir schreiben $k = \kgV(\ord g_1, \ldots, g_n)$ und $l = \ord (g_1, \ldots, g_n)$. Es ist offenbar
+ \[
+  (g_1, \ldots, g_n)^k = (g_1^k, \ldots, g_n^k) = (0, \ldots, 0),
+ \]
+ also $l \mid k$. Da
+ \[
+  (0, \ldots, 0) = (g_1, \ldots, g_n)^l = (g_1^l, \ldots, g_n^l)
+ \]
+ ist $\ord g_i \mid l$ für alle $i = 1, \ldots, n$, also auch $k \mid l$.
+\end{proof}
+
+Es bezeichne $P \subsetneq \N$ die Menge der Primzahlen.
+Sei $G$ eine abelsche Gruppe mit $\ord G = 15625 = 5^6$. Aus dem Hauptsatz über endlich erzeugte abelsche Gruppen folgt, dass
+\[
+ G \cong \Z^d \oplus \bigoplus_{p \in P} \bigoplus_{n \geq 1} (\Z/p^n\Z)^{\nu(p,n)},
+\]
+wobei die $\nu(p,n)$ eindeutig bestimmt sind und $\nu(p,n) = 0$ für fast alle $(p,n) \in P \times (\N\setminus\{0\})$. Da $G$ endlich ist, ist in diesem Fall $d = 0$, und da $\ord G = 5^6$ ist $\nu(p,n) = 0$ für alle $p \in P$, $p \neq 0$, und $\sum_{n \geq 1} n \cdot \nu(5,n) = 6$. Übersichtlich ausgedrückt ist also
+\[
+ G \cong (\Z/5\Z)^{\nu_1} \times \cdots \times (\Z/5^6\Z)^{\nu_6}
+\]
+mit eindeutig bestimmten $\nu_1, \ldots, \nu_6 \in \N$ und $\nu_1 + 2 \nu_2 + \ldots + 6 \nu_6 = 6$. Da wir nur die Zahl der Isomorphieklassen ermitteln wollen, können wir im Folgenden o.B.d.A. davon ausgehen, dass $G$ von der obigen Form ist. Für
+\[
+ (g_1, \ldots, g_n) \in (\Z/5\Z)^{\nu_1} \times \cdots \times (\Z/5^6\Z)^{\nu_6}
+\]
+ist wegen Bemerkung \ref{bem: Ordnung im Produkt} genau dann
+\[
+ 5 = \ord (g_1, \ldots, g_n) = \kgV(\ord g_1, \ldots, \ord g_n),
+\]
+wenn $\ord g_1, \ldots, \ord g_n \in \{1,5\}$ und $\ord g_i = 5$ für (mindestens) ein $i \in \{1, \ldots, n\}$. (Denn man bemerke, dass $\ord g_i = 5^k$ für ein $k \in \N$ für alle $i=1,\ldots,n$.)
+Da es genau $124$ Elemente der Ordnung $5$ in $G$ gibt, gibt es genau $125 = 5^3$ Elemente der Ordnung $1$ oder $5$ in $G$; dies sind genau die Element $(g_1, \ldots, g_n) \in G$ mit $\ord g_i \in \{1,5\}$ für alle $i=1,\ldots,n$. Aus Bemerkung \ref{bem: Ordnung im Produkt} folgt damit, dass
+\[
+ G = \Z/5^{\mu_1}\Z \times \Z/5^{\mu_2}\Z \times \Z/5^{\mu_3}\Z,
+\]
+mit $\mu_1, \mu_2, \mu_3 \geq 1$ und $\mu_1 + \mu_2 + \mu_3 = 6$. Die Isomorphieklassen dieser Gruppen entsprechen offenbar gerade den Partitionen von $6$ in drei natürliche, positive Zahlen. Diese sind $(1,1,4)$, $(1,2,3)$ und $(2,2,2)$, d.h. $G$ ist isomorph zu einer der drei Gruppen
+\[
+ (\Z/5\Z)^2 \times \Z/5^4\Z \text{ oder } \Z/5\Z \times \Z/5^2\Z, \Z/5^3\Z \text{ oder } (\Z/2\Z)^3,
+\]
+die zueinander paarweise nicht isomorph sind. Offenbar erfüllt auch jede dieser drei Gruppen die geforderten Bedingungen. Also gibt es genau drei Isomorphieklassen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\addtocounter{section}{1}
 
 
 
