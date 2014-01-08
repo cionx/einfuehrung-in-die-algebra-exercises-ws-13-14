@@ -160,18 +160,38 @@ die zueinander paarweise nicht isomorph sind. Offenbar erfüllt auch jede dieser
 
 
 
+\section{}
+
+
+\subsection{}
+Es ist $\kchar K = p$: Ist $P \cong \F_q$ der Primkörper von $K$, so besitzt $K$ als endlichdimensionaler $P$-Vektorraum genau $q^m$, $m \geq 1$, Elemente. Wegen $p^n = q^m$ muss $p = q$ und $n = m$. Also ist $P \cong \F_p$ und daher $\kchar K = \kchar P = p$.
+
+Da $\kchar K = p$ ist für alle $\alpha, \beta \in K$
+\[
+ \sigma(\alpha + \beta) = (\alpha + \beta)^p = \alpha^p + \beta^p = \sigma(\alpha) + \sigma(\beta).
+\]
+Auch ist $\sigma(1) = 1^p = 1$ und
+\[
+ \sigma(\alpha\beta) = (\alpha\beta)^p = \alpha^p \beta^p = \sigma(\alpha) \sigma(\beta).
+\]
+Also ist $\sigma$ ein Ringendomorphismus. Da $K$ ein Körper ist, ist $\sigma : K \rightarrow K$ injektiv. Da $K$ endlich ist, ist $\sigma$ damit auch surjektiv. Also ist $\sigma$ ein Körperautomorphismus.
+
+
+\subsection{}
+Da $K$ genau $p^n$ Elemente hat, ist $\alpha^{(p^n)} = \alpha$ für alle $\alpha \in K$ (denn $K^*$ hat $p^n-1$ Elemente, und $0$ ist ein Fixpunkt von $\sigma$). Es ist also $\sigma^n = \id_K$ und daher $\ord \sigma \mid n$.
+
+Für $t \geq 1$ mit
+\[
+ \alpha = \sigma^t(\alpha) = \alpha^{(p^t)} \text{ für alle } \alpha \in K
+\]
+ist jedes $\alpha \in K$ eine Nullstelle des Polynoms $X^{(p^t)} -1 \in K[X]$, weshalb
+\[
+ p^n \geq \deg \left( X^{(p^t)}-1 \right) = p^t,
+\]
+also $n \geq t$. Insbesondere ist $n \geq \ord \sigma$. Also ist $\ord \sigma = n$.
 
 
 
-
-
-
-
-
-
-
-
-\addtocounter{section}{1}
 
 
 
