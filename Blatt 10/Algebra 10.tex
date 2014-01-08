@@ -87,7 +87,7 @@
 
 
 \section{}
-Da ich in den Ferien keine Lust auf Algebra hatte und mich daher nicht mit Elementarteilertheorie beschäftigt habe, habe ich nur die anderen Aufgaben bearbeitet.
+Da ich in der vorlesungsfreien Zeit keine Lust auf Algebra hatte, und mich daher nicht mit Elementarteilertheorie beschäftigt habe, habe ich nur die anderen Aufgaben bearbeitet.
 
 
 
@@ -100,13 +100,13 @@ Da ich in den Ferien keine Lust auf Algebra hatte und mich daher nicht mit Eleme
  Sei $p \in \N$ eine Primzahl und $k \in \N, k \geq 1$. Dann gibt es in $\Z/p^k\Z$ genau $p$ Elemente $g \in \Z/p^k\Z$ mit $pg = 0$.
 \end{bem}
 \begin{proof}
- Es bezeichne $\pi : \Z \rightarrow \Z/p^k\Z$ die kanonische Projektion und $\bar{n} = \pi(n)$ für alle $n \in \Z$. Für alle $n \in \Z$ ist
+ Es bezeichne $\pi : \Z \rightarrow \Z/p^k\Z$ die kanonische Projektion und $\bar{n} = \pi(n)$ die Restklasse von $n \in \Z$. Für alle $n \in \Z$ ist
  \begin{align*}
   p \cdot \bar{n} = 0
-  &\Leftrightarrow \overline{np} = 0
-  \Leftrightarrow np \in \Ker \pi = p^k\Z
+  &\Leftrightarrow \overline{pn} = 0
+  \Leftrightarrow pn \in \Ker \pi = p^k\Z
   \Leftrightarrow n \in p^{k-1}\Z \\
-  &\Leftrightarrow \bar{n} \in \{0,\overline{p^{k-1}},\ldots,(p-1)\overline{p^{k-1}}\}.
+  &\Leftrightarrow \bar{n} \in \gen{\overline{p^{k-1}}} =  \{0,\overline{p^{k-1}},\ldots,(p-1)\overline{p^{k-1}}\}.
  \end{align*}
 \end{proof}
 
@@ -114,11 +114,11 @@ Da ich in den Ferien keine Lust auf Algebra hatte und mich daher nicht mit Eleme
 \begin{bem}\label{bem: Ordnung im Produkt}
  Seien $G_1, \ldots, G_n$ Gruppen. Für $(g_1, \ldots, g_n) \in G_1 \times \cdots \times G_n$ ist
  \[
-  \ord (g_1, \ldots, g_n) = \kgV(\ord g_1, \ldots, \ord g_n).
+  \ord\, (g_1, \ldots, g_n) = \kgV(\ord g_1, \ldots, \ord g_n).
  \]
 \end{bem}
 \begin{proof}
- Wir schreiben $k = \kgV(\ord g_1, \ldots, g_n)$ und $l = \ord (g_1, \ldots, g_n)$. Es ist offenbar
+ Wir schreiben $k = \kgV(\ord g_1, \ldots, g_n)$ und $l = \ord\, (g_1, \ldots, g_n)$. Es ist offenbar
  \[
   (g_1, \ldots, g_n)^k = (g_1^k, \ldots, g_n^k) = (0, \ldots, 0),
  \]
@@ -130,15 +130,15 @@ Da ich in den Ferien keine Lust auf Algebra hatte und mich daher nicht mit Eleme
 \end{proof}
 
 Es bezeichne $P \subsetneq \N$ die Menge der Primzahlen.
-Sei $G$ eine abelsche Gruppe mit $\ord G = 15625 = 5^6$. Aus dem Hauptsatz über endlich erzeugte abelsche Gruppen folgt, dass
+Sei $G$ eine abelsche Gruppe mit $\ord G = 15625 = 5^6$, so dass genau $124$ Elemente der Ordnung $5$ in $G$ gibt. Aus dem Hauptsatz über endlich erzeugte abelsche Gruppen folgt, dass
 \[
  G \cong \Z^d \oplus \bigoplus_{p \in P} \bigoplus_{n \geq 1} (\Z/p^n\Z)^{\nu(p,n)},
 \]
-wobei die $\nu(p,n)$ eindeutig bestimmt sind und $\nu(p,n) = 0$ für fast alle $(p,n) \in P \times (\N\setminus\{0\})$. Da $G$ endlich ist, ist in diesem Fall $d = 0$, und da $\ord G = 5^6$ ist $\nu(p,n) = 0$ für alle $p \in P$, $p \neq 0$, und $\sum_{n \geq 1} n \cdot \nu(5,n) = 6$. Übersichtlich ausgedrückt ist also
+wobei die $\nu(p,n)$ eindeutig bestimmt sind und $\nu(p,n) = 0$ für fast alle $(p,n) \in P \times (\N\setminus\{0\})$. Da $G$ endlich ist, ist $d = 0$, und da $\ord G = 5^6$ ist $\nu(p,n) = 0$ für alle $p \in P$, $p \neq 5$, und $\sum_{n \geq 1} n \cdot \nu(5,n) = 6$. Übersichtlich ausgedrückt ist also
 \[
  G \cong (\Z/5\Z)^{\nu_1} \times \cdots \times (\Z/5^6\Z)^{\nu_6}
 \]
-mit eindeutig bestimmten $\nu_1, \ldots, \nu_6 \in \N$ und $\nu_1 + 2 \nu_2 + \ldots + 6 \nu_6 = 6$. Da wir nur die Zahl der Isomorphieklassen ermitteln wollen, können wir im Folgenden o.B.d.A. davon ausgehen, dass $G$ von der obigen Form ist. Für
+mit eindeutig bestimmten $\nu_1, \ldots, \nu_6 \in \N$ und $\nu_1 + 2 \nu_2 + \ldots + 6 \nu_6 = 6$. Für
 \[
  (g_1, \ldots, g_n) \in (\Z/5\Z)^{\nu_1} \times \cdots \times (\Z/5^6\Z)^{\nu_6}
 \]
@@ -146,12 +146,12 @@ ist wegen Bemerkung \ref{bem: Ordnung im Produkt} genau dann
 \[
  5 = \ord (g_1, \ldots, g_n) = \kgV(\ord g_1, \ldots, \ord g_n),
 \]
-wenn $\ord g_1, \ldots, \ord g_n \in \{1,5\}$ und $\ord g_i = 5$ für (mindestens) ein $i \in \{1, \ldots, n\}$. (Denn man bemerke, dass $\ord g_i = 5^k$ für ein $k \in \N$ für alle $i=1,\ldots,n$.)
-Da es genau $124$ Elemente der Ordnung $5$ in $G$ gibt, gibt es genau $125 = 5^3$ Elemente der Ordnung $1$ oder $5$ in $G$; dies sind genau die Element $(g_1, \ldots, g_n) \in G$ mit $\ord g_i \in \{1,5\}$ für alle $i=1,\ldots,n$. Aus Bemerkung \ref{bem: Ordnung im Produkt} folgt damit, dass
+wenn $\ord g_1, \ldots, \ord g_n \in \{1,5\}$ und $\ord g_i = 5$ für (mindestens) ein $i \in \{1, \ldots, n\}$. (Man bemerke, dass $\ord g_i = 5^k$ für ein $k \in \N$ für alle $i=1,\ldots,n$.)
+Da es genau $124$ Elemente der Ordnung $5$ in $G$ gibt, gibt es genau $125 = 5^3$ Elemente der Ordnung $1$ oder $5$ in $G$; diese entsprechen gerade den Elementen $(g_1, \ldots, g_n)$ mit $\ord g_i \in \{1,5\}$ für alle $i=1,\ldots,n$. Aus Bemerkung \ref{bem: Ordnung im Produkt} folgt damit, dass
 \[
- G = \Z/5^{\mu_1}\Z \times \Z/5^{\mu_2}\Z \times \Z/5^{\mu_3}\Z,
+ G \cong \Z/5^{\mu_1}\Z \times \Z/5^{\mu_2}\Z \times \Z/5^{\mu_3}\Z,
 \]
-mit $\mu_1, \mu_2, \mu_3 \geq 1$ und $\mu_1 + \mu_2 + \mu_3 = 6$. Die Isomorphieklassen dieser Gruppen entsprechen offenbar gerade den Partitionen von $6$ in drei natürliche, positive Zahlen. Diese sind $(1,1,4)$, $(1,2,3)$ und $(2,2,2)$, d.h. $G$ ist isomorph zu einer der drei Gruppen
+mit $\mu_1, \mu_2, \mu_3 \geq 1$ und $\mu_1 + \mu_2 + \mu_3 = 6$. Die Isomorphieklassen dieser Gruppen entsprechen offenbar gerade den Partitionen von $6$ in drei natürliche, positive Zahlen. Diese Partitionen sind $(1,1,4)$, $(1,2,3)$ und $(2,2,2)$, d.h. $G$ ist isomorph zu einer der drei Gruppen
 \[
  (\Z/5\Z)^2 \times \Z/5^4\Z \text{ oder } \Z/5\Z \times \Z/5^2\Z, \Z/5^3\Z \text{ oder } (\Z/2\Z)^3,
 \]
@@ -165,13 +165,13 @@ die zueinander paarweise nicht isomorph sind. Offenbar erfüllt auch jede dieser
 
 
 \subsection{}
-Es ist $\kchar K = p$: Ist $P \cong \F_q$ der Primkörper von $K$, so besitzt $K$ als endlichdimensionaler $P$-Vektorraum genau $q^m$, $m \geq 1$, Elemente. Wegen $p^n = q^m$ muss $p = q$ und $n = m$. Also ist $P \cong \F_p$ und daher $\kchar K = \kchar P = p$.
+Es ist $\kchar K = p$: Ist $P \cong \F_q$, mit $q$ prim, der Primkörper von $K$, so besitzt $K$ als endlichdimensionaler $P$-Vektorraum genau $q^m$, $m \geq 1$, Elemente. Wegen $p^n = q^m$ muss $p = q$ und $n = m$. Also ist $P \cong \F_p$ und daher $\kchar K = p$.
 
 Da $\kchar K = p$ ist für alle $\alpha, \beta \in K$
 \[
  \sigma(\alpha + \beta) = (\alpha + \beta)^p = \alpha^p + \beta^p = \sigma(\alpha) + \sigma(\beta).
 \]
-Auch ist $\sigma(1) = 1^p = 1$ und
+Auch ist $\sigma(1) = 1^p = 1$ und für alle $\alpha, \beta \in K$
 \[
  \sigma(\alpha\beta) = (\alpha\beta)^p = \alpha^p \beta^p = \sigma(\alpha) \sigma(\beta).
 \]
@@ -185,11 +185,11 @@ Für $t \geq 1$ mit
 \[
  \alpha = \sigma^t(\alpha) = \alpha^{(p^t)} \text{ für alle } \alpha \in K
 \]
-ist jedes $\alpha \in K$ eine Nullstelle des Polynoms $X^{(p^t)} -1 \in K[X]$, weshalb
+ist jedes $\alpha \in K$ eine Nullstelle des Polynoms $X^{(p^t)} -X \in K[X]$, weshalb
 \[
- p^n \geq \deg \left( X^{(p^t)}-1 \right) = p^t,
+ p^n \leq \deg \left( X^{(p^t)}-X \right) = p^t,
 \]
-also $n \geq t$. Insbesondere ist $n \geq \ord \sigma$. Also ist $\ord \sigma = n$.
+also $n \leq t$. Insbesondere ist $n \leq \ord \sigma$. Zusammen mit $\ord \sigma \mid n$ ist daher $\ord \sigma = n$.
 
 
 
@@ -202,7 +202,7 @@ Für einen beliebigen Körper $K$ und beliebiges $g \in K[X]$ mit $\deg g \geq 1
  \Leftrightarrow (g) \text{ ist maximal }
  \Leftrightarrow g \text{ ist irreduzibel}.
 \]
-Da das Polynom $f = X^3 - 2$ irreduzibel in $\Q[X]$ ist, nicht jedoch in $\R[X]$, ist $\Q[X]/(f)$ ein Körper, $\R[X]/(f)$ jedoch nicht.
+Da das Polynom $f = X^3 - 2$ irreduzibel in $\Q[X]$ ist, nicht jedoch in $\R[X]$, ist damit $\Q[X]/(f)$ ein Körper, $\R[X]/(f)$ jedoch nicht.
 
 
 
@@ -212,11 +212,11 @@ Da das Polynom $f = X^3 - 2$ irreduzibel in $\Q[X]$ ist, nicht jedoch in $\R[X]$
 
 
 \subsection{}
-Da $\alpha$ und $\beta$ algebraisch über $K$ sind, ist die Körpererweiterung $K(\alpha,\beta)/K$ algebraisch und $K(\alpha, \beta) = K[\alpha, \beta]$. Insbesondere ist daher $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugenden\-system von $K(\alpha,\beta)$.
+Da $\alpha$ und $\beta$ algebraisch über $K$ sind, ist die Körpererweiterung $K(\alpha,\beta)/K$ algebraisch und $K(\alpha, \beta) = K[\alpha, \beta]$ (bekannt aus der Vorlesung). Insbesondere ist daher $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugenden\-system von $K(\alpha,\beta)$.
 
 Sei nun $x_1, \ldots, x_m \in K(\alpha)$ eine $K$-Basis von $K(\alpha)$ und $y_1, \ldots, y_n \in K(\beta)$ eine $K$-Basis von $K(\beta)$. Es ist $(x_i y_j)_{i=1,\ldots,m, j=1,\ldots,n}$ ein $K$-Erzeugendensystem von $K(\alpha,\beta)$, und damit insbesondere
 \[
- K[(\alpha,\beta) : K] = \dim_K(K(\alpha,\beta)) \leq mn
+ K[(\alpha,\beta) : K] = \dim_K K(\alpha,\beta) \leq mn
 \]
 Für alle $k,l \in \N$ gibt es nämlich (eindeutige) $\lambda^k_1, \ldots, \lambda^k_m \in K$ mit $\alpha^k = \sum_{i=1}^m \lambda^k_i x_i$ und $\mu^l_1, \ldots, \mu^l_n \in K$ mit $\beta^l = \sum_{j=1}^n \mu^l_j y_j$, weshalb
 \[
@@ -224,7 +224,7 @@ Für alle $k,l \in \N$ gibt es nämlich (eindeutige) $\lambda^k_1, \ldots, \lamb
  = \left( \sum_{i=1}^m \lambda^k_i x_i \right)\left( \sum_{j=1}^n \mu^l_j y_j \right)
  = \sum_{i=1}^m \sum_{j=1}^n \lambda^k_i \mu^l_j x_i y_j.
 \]
-da $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugendensystem von $K(\alpha,\beta)$ ist, ist es daher auch $(x_i y_j)_{i,j}$. 
+Da $(\alpha^k \beta^l)_{k,l \in \N}$ ein $K$-Erzeugendensystem von $K(\alpha,\beta)$ ist, ist es daher auch $(x_i y_j)_{i,j}$. 
 
 
 \subsection{}
@@ -241,7 +241,7 @@ ergibt sich durch den Gradsatz, dass
 \end{gather*}
 Analog ergibt sich, dass auch $n \mid [K(\alpha, \beta) : K]$. Folglich ist auch
 \[
- \kgV(m,n) \mid [K(\alpha, \beta)].
+ \kgV(m,n) \mid [K(\alpha, \beta) : K].
 \]
 Dabei ist $\kgV(m,n) = mn$, da $m$ und $n$ teilerfremd sind. Mit $[K(\alpha,\beta) : K] \geq 1$ ergibt sich damit, dass $mn \leq [K(\alpha, \beta) : K]$. Da auch $[K(\alpha,\beta) : K] \leq mn$ ist also
 \[
