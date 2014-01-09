@@ -117,7 +117,55 @@ Wäre nämlich $f$ nicht das Minimalpolynom von $z$ über $\Q$, so wäre $f$ weg
 
 
 
-\addtocounter{section}{1}
+\section{}
+$f$ ist normiert und nach dem Eisensteinkriterium mit der Primzahl $p = 3$ auch irreduzibel. Folglich ist $f$ bereits das Minimalpolynom von $x$. Deshalb ist $\Q[X]/(f) \cong \Q(x)$, wobei ein entsprechender Körperisomorphismus durch
+\[
+ \varphi: \Q[X]/(f) \rightarrow \Q(x) \text{ mit }
+ \varphi(\bar{q}) = q \text{ für alle } q \in \Q \text{ und }
+ \varphi(\bar{X}) = x
+\]
+gegeben ist. Da $\deg f = 3$ ist $\bar{1}, \bar{X}, \bar{X}^2$ eine $\Q$-Basis von $\Q/(f)$. Also ist $1, x, x^2$ als Bild dieser Basis unter $\varphi$ eine $\Q$-Basis von $\Q(x)$.
+
+Da $x$ eine Nullstelle von $f$ ist, ist
+\[
+ 0 = f(x) = x^3 -6x^2 +9x +3.
+\]
+Es ist daher
+\begin{align*}
+  &\, 105x^2 -261x -81 \\
+ =&\, 105x^2 -261x -81 + (x^2 +6x +27)(x^3 -6x^2 +9x +3) \\
+ =&\, x^5
+\shortintertext{und}
+  &\, 69x^2 -153x -47 \\
+ =&\, 69x^2 -153x -47 + (3x +16)(x^3 -6x^2 +9x +3) \\
+ =&\, 3x^4 -2x^3 +1.
+\end{align*}
+Da offenbar $x \neq 0$ ist $1/(2x) \in \Q(\alpha)$ existent, und da
+\begin{align*}
+ 2x \left(-\frac{1}{8}x^2 +\frac{3}{4}x -\frac{9}{8}\right)
+ &= -\frac{1}{4} x^3 +\frac{3}{2} x^2 -\frac{9}{4} x \\
+ &= -\frac{1}{4} (x^3 - 6x^2 + 9x + 4) +1
+ = 1
+\end{align*}
+ist
+\[
+ \frac{1}{2x} = -\frac{1}{8}x^2 + \frac{3}{4}x -\frac{9}{8}.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -150,21 +198,6 @@ Sei $K$ ein algebraisch abgeschlossener Körper. Da jedes Polynom aus $K[X]$ in 
  \{f \in K[X] : f \text{ ist normiert und irreduzibel}\} = \{X-\lambda \in K[X] : \lambda \in K\}.
 \]
 Da die linke Menge nach Lemma \ref{lem: unendlich viele irreduzible Polynome} unendlich ist, ist es auch die rechte. Es muss also $K$ unendlich sein.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
