@@ -117,6 +117,48 @@ Wäre nämlich $f$ nicht das Minimalpolynom von $z$ über $\Q$, so wäre $f$ weg
 
 
 
+\addtocounter{section}{1}
+
+
+
+
+
+\section{}
+
+
+\begin{lem}\label{lem: unendlich viele irreduzible Polynome}
+ Für einen Körper $K$ gibt es unendlich viele normierte, irreduzible Polynome in $K[X]$.
+\end{lem}
+\begin{proof}
+ Der Beweis läuft analog zum klassischen Beweises des Satzes von Euklid. Angenommen, die Menge
+ \[
+  P := \{g \in K[X] : g \text{ ist normiert und irreduzibel}\}
+ \]
+ ist endlich. Wir wissen, dass $P$ ein Repräsentantensystem der Primelemente in $K[X]$ ist, und dass sich jedes Element $f \in K[X]$ eindeutig als Produkt
+ \[
+  f = \varepsilon g_1 \cdots g_n
+ \]
+ mit $\varepsilon \in K$ und $g_1, \ldots, g_n \in P$ schreiben lässt. Es sei
+ \[
+  f := \prod_{g \in P} g.
+ \]
+ Da $\deg g \geq 1$ für alle $g \in P$ ist $g \nmid 1$ für alle $g \in P$, also $g \nmid (f+1)$ für alle $g \in P$. Also ist $f+1 \in P$. Deshalb ist $(f+1) \nmid (f+1)$. Dies ist offenbar ein Widerspruch.
+\end{proof}
+
+Sei $K$ ein algebraisch abgeschlossener Körper. Da jedes Polynom aus $K[X]$ in Linearfaktoren zerfällt ist
+\[
+ \{f \in K[X] : f \text{ ist normiert und irreduzibel}\} = \{X-\lambda \in K[X] : \lambda \in K\}.
+\]
+Da die linke Menge nach Lemma \ref{lem: unendlich viele irreduzible Polynome} unendlich ist, ist es auch die rechte. Es muss also $K$ unendlich sein.
+
+
+
+
+
+
+
+
+
 
 
 
