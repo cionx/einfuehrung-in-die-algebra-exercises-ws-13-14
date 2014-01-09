@@ -86,5 +86,46 @@
 
 
 
+\section{}
+Es bezeichne $f \in \Q[X]$ das Minimalpolynom von $z = \sqrt{3}+i \in \C$ über $\Q$. Dieses existiert, denn $\sqrt{3}$ und $i$ sind algebraisch über $\Q$, also auch $z$.
+
+Da $z$ eine Nullstelle von $f$ ist, und $z \not\in \R$, ist auch $\bar{z} \neq z$ eine Nullstelle von $f$. Folglich hat $f$ in $\C[X]$ die beiden Linearfaktoren $X-z, X-\bar{z} \in \C[X]$ und es ist $\deg f \geq 2$. Da
+\[
+ (X-z)(X-\bar{z}) = X^2 -(z+\bar{z})X + |z|^2 = X^2 -2\sqrt{3}X + 4 \not\in \Q[X]
+\]
+ist sogar $\deg f > 2$.
+
+Es ist auch $\deg f > 3$: Wäre $\deg f = 3$, so hätte $f$ zusätzlich zu $z$ und $\bar{z}$ noch eine reelle Nullstelle (denn jedes Polynom ungeraden Gerades in $\R[X]$, und damit auch in $\Q[X] \subseteq \R[X]$, hat eine reelle Nullstelle), es gäbe also ein $\alpha \in \R$ mit
+\begin{align*}
+ f &= (X-z)(X-\bar{z})(X-\alpha) = (X^2 -2\sqrt{3}X + 4)(X-\alpha) \\
+   &= X^3 - (2\sqrt{3}+\alpha)X^2 + (4+2\sqrt{3}\alpha)X -4\alpha \in \Q[X].
+\end{align*}
+Da $4\alpha \in \Q$ wäre bereits $\alpha \in \Q$ und wegen $2\sqrt{3} + \alpha \in \Q$ damit auch $\sqrt{3} \in \Q$. Dies ist offenbar ein Widerspruch. Also muss $\deg f > 3$.
+
+Da $z$ eine Nullstelle des Polynoms
+\[
+ (X-z)(X-\bar{z})(X+z)(X+\bar{z})
+ = X^4 -4X^2 + 16 \in \Q[X]
+\]
+ist, folgt aus dem obigen Beobachtungen, dass
+\[
+ f = X^4 -4X^2 + 16.
+\]
+Wäre nämlich $f$ nicht das Minimalpolynom von $z$ über $\Q$, so wäre $f$ wegen der offensichtlichen Normiertheit reduzibel. Dann gebe es ein normiertes Polynom $g \in \Q[X]$ vom Grad $1 \leq \deg g \leq 3$ mit $g \mid f$ und $g(z) = 0$, was den obigen Beobachtungen widerspricht.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
