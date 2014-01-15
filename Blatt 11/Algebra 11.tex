@@ -16,6 +16,7 @@
 \newtheorem{beh}[satze]{Behauptung}
 \newtheorem{bem}[satze]{Bemerkung}
 \newtheorem{lem}[satze]{Lemma}
+\newtheorem{kor}[satze]{Korollar}
 \newtheorem*{defi}{Definition}
 \newtheorem*{anm}{Anmerkung}
 \theoremstyle{definition}
@@ -87,22 +88,22 @@
 
 
 \section{}
-Es bezeichne $f \in \Q[X]$ das Minimalpolynom von $z = \sqrt{3}+i \in \C$ über $\Q$. Dieses existiert, denn $\sqrt{3}$ und $i$ sind algebraisch über $\Q$, also auch $z$.
+Es bezeichne $f \in \Q[X]$ das Minimalpolynom von $z = \sqrt{3}+i \in \C$ über $\Q$. Dieses existiert, denn $\sqrt{3}$ und $i$ sind algebraisch über $\Q$, also $z$.
 
-Da $z$ eine Nullstelle von $f$ ist, und $z \not\in \R$, ist auch $\bar{z} \neq z$ eine Nullstelle von $f$. Folglich hat $f$ in $\C[X]$ die beiden Linearfaktoren $X-z, X-\bar{z} \in \C[X]$ und es ist $\deg f \geq 2$. Da
+Da $z$ eine Nullstelle von $f$ ist, und $f \in \Q[X] \subseteq \R[X]$, ist auch $\bar{z}$ eine Nullstelle von $f$. Da $z \not\in \R$ ist dabei $\bar{z} \neq z$. Folglich hat $f$ in $\C[X]$ die beiden Linearfaktoren $X-z, X-\bar{z} \in \C[X]$. Inbesondere ist $\deg f \geq 2$. Da
 \[
  (X-z)(X-\bar{z}) = X^2 -(z+\bar{z})X + |z|^2 = X^2 -2\sqrt{3}X + 4 \not\in \Q[X]
 \]
 ist sogar $\deg f > 2$.
 
-Es ist auch $\deg f > 3$: Wäre $\deg f = 3$, so hätte $f$ zusätzlich zu $z$ und $\bar{z}$ noch eine reelle Nullstelle (denn jedes Polynom ungeraden Gerades in $\R[X]$, und damit auch in $\Q[X] \subseteq \R[X]$, hat eine reelle Nullstelle), es gäbe also ein $\alpha \in \R$ mit
+Es ist auch $\deg f > 3$: Wäre $\deg f = 3$, so hätte $f$ zusätzlich zu $z$ und $\bar{z}$ noch eine reelle Nullstelle (denn jedes Polynom ungeraden Gerades in $\R[X]$, und damit auch in $\Q[X] \subseteq \R[X]$, hat eine reelle Nullstelle). Da $f$ normiert ist gäbe es also ein $\alpha \in \R$ mit
 \begin{align*}
  f &= (X-z)(X-\bar{z})(X-\alpha) = (X^2 -2\sqrt{3}X + 4)(X-\alpha) \\
-   &= X^3 - (2\sqrt{3}+\alpha)X^2 + (4+2\sqrt{3}\alpha)X -4\alpha \in \Q[X].
+   &= X^3 - (2\sqrt{3}+\alpha)X^2 + (4+2\sqrt{3}\,\alpha)X -4\alpha \in \Q[X].
 \end{align*}
-Da $4\alpha \in \Q$ wäre bereits $\alpha \in \Q$ und wegen $2\sqrt{3} + \alpha \in \Q$ damit auch $\sqrt{3} \in \Q$. Dies ist offenbar ein Widerspruch. Also muss $\deg f > 3$.
+Es wäre daher $4\alpha \in \Q$, also bereits $\alpha \in \Q$, und wegen $2\sqrt{3} + \alpha \in \Q$ damit auch $\sqrt{3} \in \Q$. Da dies nicht gilt, ist $\deg f > 3$.
 
-Da $z$ eine Nullstelle des Polynoms
+Da $z$ eine Nullstelle des normierten Polynoms
 \[
  (X-z)(X-\bar{z})(X+z)(X+\bar{z})
  = X^4 -4X^2 + 16 \in \Q[X]
@@ -111,7 +112,7 @@ ist, folgt aus dem obigen Beobachtungen, dass
 \[
  f = X^4 -4X^2 + 16.
 \]
-Wäre nämlich $f$ nicht das Minimalpolynom von $z$ über $\Q$, so wäre $f$ wegen der offensichtlichen Normiertheit reduzibel. Dann gebe es ein normiertes Polynom $g \in \Q[X]$ vom Grad $1 \leq \deg g \leq 3$ mit $g \mid f$ und $g(z) = 0$, was den obigen Beobachtungen widerspricht.
+Wäre nämlich $X^4 -4X^2 + 16$ nicht das Minimalpolynom von $z$ über $\Q$, so müsste $X^4 -4X^2 + 16$ reduzibel sein. Dann gebe es ein normiertes Polynom $g \in \Q[X]$ vom Grad $1 \leq \deg g \leq 3$ mit $g \mid f$ und $g(z) = 0$, was den obigen Beobachtungen widerspricht.
 
 
 
@@ -122,9 +123,9 @@ $f$ ist normiert und nach dem Eisensteinkriterium mit der Primzahl $p = 3$ auch 
 \[
  \varphi: \Q[X]/(f) \rightarrow \Q(x) \text{ mit }
  \varphi(\bar{q}) = q \text{ für alle } q \in \Q \text{ und }
- \varphi(\bar{X}) = x
+ \varphi\left(\overline{X}\right) = x
 \]
-gegeben ist. Da $\deg f = 3$ ist $\bar{1}, \bar{X}, \bar{X}^2$ eine $\Q$-Basis von $\Q/(f)$. Also ist $1, x, x^2$ als Bild dieser Basis unter $\varphi$ eine $\Q$-Basis von $\Q(x)$.
+gegeben ist. Da $\deg f = 3$ ist $\bar{1}, \overline{X}, \overline{X}^2$ eine $\Q$-Basis von $\Q/(f)$. Also ist $1, x, x^2$ als Bild dieser Basis unter $\varphi$ eine $\Q$-Basis von $\Q(x)$.
 
 Da $x$ eine Nullstelle von $f$ ist, ist
 \[
@@ -140,30 +141,17 @@ Es ist daher
  =&\, 69x^2 -153x -47 + (3x +16)(x^3 -6x^2 +9x +3) \\
  =&\, 3x^4 -2x^3 +1.
 \end{align*}
-Da offenbar $x \neq 0$ ist $1/(2x) \in \Q(\alpha)$ existent, und da
+Da offenbar $x \neq -2$ existiert das Element $1/(x+2) \in \Q(\alpha)$. Da
 \begin{align*}
- 2x \left(-\frac{1}{8}x^2 +\frac{3}{4}x -\frac{9}{8}\right)
- &= -\frac{1}{4} x^3 +\frac{3}{2} x^2 -\frac{9}{4} x \\
- &= -\frac{1}{4} (x^3 - 6x^2 + 9x + 4) +1
- = 1
+ (x+2) \left( \frac{1}{47} x^2 -\frac{8}{47} x +\frac{25}{47} \right)
+ &= \frac{1}{47} x^3 -\frac{6}{47} x^2 +\frac{9}{47} x +\frac{50}{47} \\
+ &= \frac{1}{47} \left( x^3 -6x^2 +9x +3 \right) +1
+  = 1
 \end{align*}
 ist
 \[
- \frac{1}{2x} = -\frac{1}{8}x^2 + \frac{3}{4}x -\frac{9}{8}.
+ \frac{1}{x+2} = \frac{1}{47} x^2 -\frac{8}{47} x +\frac{25}{47}.
 \]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -172,17 +160,25 @@ ist
 
 
 \section{}
+Sei $K$ ein endlicher Körper. Für das Polynom
+\[
+ f := 1 + \prod_{\lambda \in K} (X-\lambda) \in K[X]
+\]
+ist $f(x) = 1$ für alle $x \in K$. Es halt also $f$ keine Nullstelle in $K$, weshalb $K$ nicht algebraisch abgeschlossen ist. Es gibt daher keinen endlichen, algebraisch abgeschlossenen Körper.
+
+
+Die Aussage folgt auch aus dem folgenden Lemma:
 
 
 \begin{lem}\label{lem: unendlich viele irreduzible Polynome}
  Für einen Körper $K$ gibt es unendlich viele normierte, irreduzible Polynome in $K[X]$.
 \end{lem}
 \begin{proof}
- Der Beweis läuft analog zum klassischen Beweises des Satzes von Euklid. Angenommen, die Menge
+ Der Beweis läuft analog zum klassischen Beweis des Satzes von Euklid. Angenommen, die Menge
  \[
   P := \{g \in K[X] : g \text{ ist normiert und irreduzibel}\}
  \]
- ist endlich. Wir wissen, dass $P$ ein Repräsentantensystem der Primelemente in $K[X]$ ist, und dass sich jedes Element $f \in K[X]$ eindeutig als Produkt
+ ist endlich. Wir wissen, dass $P$ ein Repräsentantensystem der Primelemente in $K[X]$ ist, und sich jedes Element $f \in K[X], f \neq 0$ eindeutig als Produkt
  \[
   f = \varepsilon g_1 \cdots g_n
  \]
@@ -190,14 +186,19 @@ ist
  \[
   f := \prod_{g \in P} g.
  \]
- Da $\deg g \geq 1$ für alle $g \in P$ ist $g \nmid 1$ für alle $g \in P$, also $g \nmid (f+1)$ für alle $g \in P$. Also ist $f+1 \in P$. Deshalb ist $(f+1) \nmid (f+1)$. Dies ist offenbar ein Widerspruch.
+ Für alle $g \in P$ ist $g \mid f$ und $g \nmid 1$, also $g \nmid (f+1)$. Da offenbar $f+1 \neq 0$ steht dies im Widerspruch zur Existenz einer Primfaktorzerlegung von $f+1$.
 \end{proof}
 
-Sei $K$ ein algebraisch abgeschlossener Körper. Da jedes Polynom aus $K[X]$ in Linearfaktoren zerfällt ist
-\[
- \{f \in K[X] : f \text{ ist normiert und irreduzibel}\} = \{X-\lambda \in K[X] : \lambda \in K\}.
-\]
-Da die linke Menge nach Lemma \ref{lem: unendlich viele irreduzible Polynome} unendlich ist, ist es auch die rechte. Es muss also $K$ unendlich sein.
+\begin{kor}
+ Jeder algebraisch abgeschlossene Körper besitzt unendlich viele Elemente.
+\end{kor}
+\begin{proof}
+ Sei $K$ ein algebraisch abgeschlossener Körper. Da jedes Polynom aus $K[X]$ in Linearfaktoren zerfällt ist
+ \[
+  \{f \in K[X] : f \text{ ist normiert und irreduzibel}\} = \{X-\lambda \in K[X] : \lambda \in K\}.
+ \]
+ Da die linke Menge nach Lemma \ref{lem: unendlich viele irreduzible Polynome} unendlich ist, ist es auch die rechte. Es muss also $K$ unendlich sein.
+\end{proof}
 
 
 
