@@ -125,8 +125,12 @@ und daher $n_1 = n_2 = 1$. Da
 \end{proof}
 
 \begin{bem}\label{bem:primschnitt}
- Sind $p$ und $q$ verschiedene Primzahlen und ist $G$ ein $p$-Gruppe und $H$ eine $q$-Gruppe, so ist $G \cap H = \{1\}$: Nach dem Satz von Lagrange ist $\ord G \cap H$ ein Teiler von $\ord G$ und $\ord H$, aus der Teilerfremdheit von $p$ und $q$ folgt daher, dass $\ord G \cap H = 1$, also $G \cap H = \{1\}$.
+ Sind $p$ und $q$ verschiedene Primzahlen und sind $G$ und $H$ Untergruppen einer Gruppe, so dass $G$ eine $p$-Gruppe und $H$ eine $q$-Gruppe ist, so ist $G \cap H = \{1\}$.
 \end{bem}
+\begin{proof}
+ Nach dem Satz von Lagrange ist $\ord G\ \cap\ H$ ein Teiler von $\ord G$ und $\ord H$, aus der Teilerfremdheit von $p$ und $q$ folgt daher, dass $\ord G\ \cap\ H = 1$, also $G\ \cap\ H = \{1\}$.
+\end{proof}
+
 
 Es sei $G$ eine Gruppe der Ordnung $\ord G = 5929 = 11^2 \cdot 7^2$. Es sei $s$ die Anzahl der $11$-Sylowgruppen in $G$. Nach den Sylowsätzen ist
 \[
@@ -229,12 +233,12 @@ Angenommen, $G$ besitzt keine normale $p$-Sylowgruppe. Dann muss $s_2 \geq 3$, $
 \begin{itemize}
  \item Die $2$-Sylowgruppen haben Ordung $2^2=4$, die $3$-Sylowgruppen Ordnung $3$ und die $11$-Sylowgruppen Ordnung $11$.
  \item Sylowgruppen zu verschiedenen Primzahlen haben nach Bemerkung \ref{bem:primschnitt} triviale Schnitte.
- \item $p$-Sylowgruppen gleicher Primzahlen haben für $p = 2$ oder $p = 3$ ebenfalls nur trivale Schnitte, da für zwei solche $p$-Sylowgruppen $S_p$ und $S'_p$ für den Schnitt $S_p \cap S'_p$ die Ordnung $\ord S_p \cap S'_p$ ein Teiler von $\ord S_p = \ord S'_p = p$ ist, also im Falle $\ord S_p \cap S'_p \neq 1$ bereits $\ord S_p \cap S'_p = p$ und damit $S_p = S_p \cap S'_p = S'_p$.
+ \item $p$-Sylowgruppen gleicher Primzahlen haben für $p = 11$ oder $p = 3$ ebenfalls nur trivale Schnitte, da für zwei verschiedene solche $p$-Sylowgruppen $S_p$ und $S'_p$ für den Schnitt $S_p \cap S'_p$ die Ordnung $\ord S_p \cap S'_p$ ein Teiler von $\ord S_p = \ord S'_p = p$ ist, also im Falle $\ord S_p \cap S'_p \neq 1$ bereits $\ord S_p \cap S'_p = p$ und damit $S_p = S_p \cap S'_p = S'_p$.
  \item Der Schnitt zweier verschiedener $2$-Sylowgruppen ist entweder trivial oder von Ordnung $2$. Drei solche Gruppen verfügen zusammen über mindestens $5$ verschiedene Elemente.
 \end{itemize}
 Zusammen ergibt sich damit, dass $G$ mindestens
 \[
- 12 \cdot 11 - 12 + 4 \cdot 3 - 3 + 5 = 135
+ 12 \cdot 11 - 12 + 4 \cdot 3 - 4 + 5 = 133
 \]
 verschiedene Elemente hat. Da aber $\ord = 132$ kann dies nicht sein. Also ist $s_p = 1$ für ein $p \in \{2,3,11\}$, weshalb $G$ ein normale $p$-Sylowgruppe besitzt.
 
