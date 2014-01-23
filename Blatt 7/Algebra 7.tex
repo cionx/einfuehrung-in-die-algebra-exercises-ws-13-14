@@ -166,7 +166,7 @@ Da $\nil(R) \subseteq \nil(R[X])$ ist auch $\left(\nil(R)\right) \subseteq \nil(
  \left(\nil(R)\right)
  = \left\{f \in R[X] : f = \sum_{i=0}^n a_i X^i \text{ mit } n \geq 0, a_i \in \nil(R) \text{ für alle } i\right\}.
 \]
-Nach Bemerkung \ref{bem: nilradikal} ist also das Polynom $f = \sum_{i=0}^n a_i X^i$ mit $n \geq 0$, $a_0 \in R^*$ und $a_i \in \nil(R)$ für alle $i$ invertierbar.
+Nach Bemerkung \ref{bem: nilradikal} ist also das Polynom $f = \sum_{i=0}^n a_i X^i$ mit $n \geq 0$, $a_0 \in R^*$ und $a_i \in \nil(R)$ für alle $i > 0$ invertierbar.
 
 Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \neq 0$, invertierbar, d.h. es gibt $g = \sum_{i=0}^m b_i X^i \in R[X]$, mit $m \geq 0$ und $b_m \neq 0$, so dass $fg = 1$. Da insbesondere $a_0 b_0 = 1$ müssen $a_0$ und $b_0$ in $R$ invertierbar sein. Für $n=0$ ist nichts weiter zu zeigen. Ist $n > 0$, so bemerken wir:
 
@@ -177,11 +177,11 @@ Sei andererseits $f = \sum_{i=0}^n a_i X^i \in R[X]$, mit $n \geq 0$ und $a_n \n
  Der Beweis verläuft per Induktion über $k$.
  \begin{ia}Betrachte $k=0$. Wäre $a_n b_m \neq 0$, so wäre
   \[
-   0 = \deg(1) = \deg(fg) = \deg(f)+\deg(g) = n+m \geq n > 0.
+   0 = \deg(1) = \deg(fg) = n+m \geq n > 0.
   \]
  \end{ia}
  \begin{is}
- Sei $1 \leq k \leq n$ und gelte die Aussage für $k-1$. Da $fg = 1$ ergibt sich für den $n+m-k$-ten Koeffizienten des Produktes $fg$, dass
+ Sei $1 \leq k \leq n$ und gelte die Aussage für $0,\ldots,k-1$. Da $fg = 1$ ergibt sich für den $n+m-k$-ten Koeffizienten des Produktes $fg$, dass
  \[
   0 = \sum_{\mu+\nu = n+m-k} a_\mu b_\nu.
  \]
@@ -228,7 +228,7 @@ den \emph{Grad} von $f$.
 
 
 \subsection{}
-Ist $R$ kein Integritätsring, so auch $R[\![x]\!]$ nicht, da man $R$ in kanonischer als Unterring von $R[\![x]\!]$ auffassen kann. Ist $R[\![x]\!]$ kein Integritätsring, so gibt es $f, g \in R[\![x]\!]$ mit $f,g \neq 0$, also $\Deg(f), \Deg(g) < \infty$, aber $fg = 0$, also $\Deg(fg) = \infty$. Aus Bemerkung \ref{bem: grad potenzreihe} folgt, dass $R$ kein Integritätsring ist.
+Ist $R$ kein Integritätsring, so auch $R[\![x]\!]$ nicht, da man $R$ in kanonischer Weise als Unterring von $R[\![x]\!]$ auffassen kann. Ist $R[\![x]\!]$ kein Integritätsring, so gibt es $f, g \in R[\![x]\!]$ mit $f,g \neq 0$, also $\Deg(f), \Deg(g) < \infty$, aber $fg = 0$, also $\Deg(fg) = \infty$. Aus Bemerkung \ref{bem: grad potenzreihe} folgt, dass $R$ kein Integritätsring ist.
 
 
 \subsection{}
@@ -269,7 +269,7 @@ Also ist $e = 1$ und $f$ daher invertierbar mit $f^{-1} = g$. Inbesondere ergibt
 \subsection{}
 $f$ ist in $\Z[X]$ nicht irreduzibel, da $f = (X+1)(X+2)$.
 
-Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j=0}^\infty b_i X^i$ so dass $pq = f$. Dann ist $a_0 b_0 = 2$. Da $a_0, b_0 \in \Z$, und $2$ in $\Z$ irreduzibel ist, ist $a_0$ oder $b_0$ eine Einheit. Entsprechend ist $p$ oder $q$ nach dem vorherigen Aufgabenteil eine Einheit. Also ist $f$ irreduzibel in $\Z[\![x]\!]$.
+Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j=0}^\infty b_i X^i$ so dass $pq = f$. Dann ist $a_0 b_0 = 2$. Da $a_0, b_0 \in \Z$, und $2$ in $\Z$ irreduzibel ist, ist $a_0$ oder $b_0$ eine Einheit in $\Z$. Entsprechend ist $p$ oder $q$ nach dem vorherigen Aufgabenteil eine Einheit. Also ist $f$ irreduzibel in $\Z[\![x]\!]$.
 
 
 
@@ -282,10 +282,10 @@ Seien $p,q \in \Z[\![x]\!]$ mit $p = \sum_{i=0}^\infty a_i X^i$ und $q = \sum_{j
 \begin{proof}
  Da $K$ nullteilerfrei ist, ist $K[\![x]\!]$ ein Integritätsring. Seien $f,g \in K[\![x]\!]$ mit $g \neq 0$. Es gilt zu zeigen, dass es $q,r \in K[\![x]\!]$ gibt, so dass $f = qg + r$ mit $r = 0$ oder $\Deg r < \Deg g$.
  
- Ist $\Deg f < \Deg g$ so genügt es $q=0$ und $r=f$ zu wählen. Ist $\Deg f \geq \Deg g$, so folgt aus \ref{lem: starkes Lemma}, dass $g \mid f$, es kann also $q$ mit $f = qg$ und $r=0$ gewählt werden.
+ Ist $\Deg f < \Deg g$ so genügt es $q=0$ und $r=f$ zu wählen. Ist $\Deg f \geq \Deg g$, so folgt aus Lemma \ref{lem: starkes Lemma}, dass $g \mid f$, es kann also $q$ mit $f = qg$ und $r=0$ gewählt werden.
 \end{proof}
 
-Aus Lemma \ref{lem: K[[x]] euklidisch} folgt direkt, dass $K[\![x]\!]$ ein Hautidealring ist. Für jedes Ideal $(a) \neq 0$ von $K[\![x]\!]$ folgt mit Lemma \ref{lem: starkes Lemma}, dass $a$ assoziert zu $X^{\Deg a}$ ist, und da $K[\![x]\!]$ ein Integritätsring ist, daher $(a) = \left(X^{\Deg a}\right)$. Folglich sind die Ideale in $K[\![x]\!]$ gerade $0$ und $\left(X^n\right)$ für $n \in \N$. Insbesondere ist $(X)$ das eindeutige maximale Ideal in $K[\![x]\!]$, weshalb $K[\![x]\!]$ lokal ist (dies lässt sich auch direkt aus Lemma \ref{lem: starkes Lemma} folgern).
+Aus Lemma \ref{lem: K[[x]] euklidisch} folgt direkt, dass $K[\![x]\!]$ ein Hauptidealring ist. Für jedes Ideal $(a) \neq 0$ von $K[\![x]\!]$ folgt mit Lemma \ref{lem: starkes Lemma}, dass $a$ assoziert zu $X^{\Deg a}$ ist, und da $K[\![x]\!]$ ein Integritätsring ist, daher $(a) = \left(X^{\Deg a}\right)$. Folglich sind die Ideale in $K[\![x]\!]$ gerade $0$ und $\left(X^n\right)$ für $n \in \N$. Insbesondere ist $(X)$ das eindeutige maximale Ideal in $K[\![x]\!]$, weshalb $K[\![x]\!]$ lokal ist (dies lässt sich auch direkt aus Lemma \ref{lem: starkes Lemma} folgern).
 
 
 
