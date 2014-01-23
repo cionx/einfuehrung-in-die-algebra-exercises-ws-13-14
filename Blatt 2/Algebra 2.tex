@@ -74,7 +74,7 @@ Auf $X'$ sei eine $G$-Aktion definiert als
 \[
  G \times X' \rightarrow X', (g,H(\tilde{g},x)) \mapsto g * H(\tilde{g},x) := H(g \tilde{g}, x),
 \]
-wobei $H(\tilde{g},x) \in X'$ die Bahn von $(\tilde{g},x) \in G \times X$ bezeichnet. Es handelt sich bei $*$ um ein $G$-Aktion, da für alle $H(g,x) \in X'$
+wobei $H(\tilde{g},x) \in X'$ die Bahn von $(\tilde{g},x) \in G \times X$ bezeichnet. [\emph{Korrektur: Es fehlt der Nachweis der Wohldefiniertheit, d.h. die Unabhängigkeit vom Repräsentanten der Bahn.}] Es handelt sich bei $*$ um ein $G$-Aktion, da für alle $H(g,x) \in X'$
 \[
  1 * H(g,x) = H(1 \cdot g, x) = H(g,x)
 \]
@@ -101,7 +101,7 @@ wobei die Multiplikation die in der Aufgabe gegebene $H$-Aktion auf $G \times X$
 
 Es gilt nun zu zeigen, dass $f \mapsto f \circ \Phi$ eine Bijektion zwischen der Menge der $G$-Abbildungen von $X'$ nach $Y$ und der Menge der $H$-Abbildungen von $X$ nach $Y$ definiert.
 
-Es gilt zunächst die Wohldefiniertheit der induzierten Abbildung zu überprüfen, d.h. dass für eine $G$-Abbildung $f : X' \rightarrow Y$ die Komposition $f \circ \Phi$ eine $H$-Abbildung von $X$ nach $Y$ ist. Dies ist aber der Fall, da offenbar $f \circ \Phi : X \rightarrow Y$, und für alle $h \in H$ und $x \in X$.
+Es gilt zunächst die Wohldefiniertheit der induzierten Abbildung zu überprüfen, d.h. dass für eine $G$-Abbildung $f : X' \rightarrow Y$ die Komposition $f \circ \Phi$ eine $H$-Abbildung von $X$ nach $Y$ ist. Dies ist aber der Fall, da offenbar $f \circ \Phi : X \rightarrow Y$, und für alle $h \in H$ und $x \in X$,
 \begin{align*}
  (f \circ \Phi)(hx)
  &= f( H(1,hx) )
@@ -111,7 +111,7 @@ Es gilt zunächst die Wohldefiniertheit der induzierten Abbildung zu überprüfe
  = h (f \circ \Phi)(x).
 \end{align*}
 
-Die Injektivität ergibt sich daraus, dass für $G$-Abbildungen $f, f' : X \rightarrow Y$ mit $f \circ \Phi = f' \circ \Phi$ für alle $H(g,x) \in X'$
+Die Injektivität ergibt sich daraus, dass für $G$-Abbildungen $f, f' : X' \rightarrow Y$ mit $f \circ \Phi = f' \circ \Phi$ für alle $H(g,x) \in X'$ gilt
 \begin{align*}
  f( H(g,x) )
  &= f( g * H(1,x) )
@@ -145,7 +145,7 @@ Angenommen, es ist $\ord Z = 1$, also $Z = \{1\}$, aber die Anzahl der Konjugati
 \[
  \ord G = \ord Z + \sum_{i=1}^n (G : Z_{x_i}) \geq 1 + \frac{\ord G}{p} p = 1 + \ord G,
 \]
-also $0 = 1$, was offensichtlich falsch ist. Also muss, wenn die Anzahl den Konjugationsklassen in $G$ echt größer als $\frac{\ord G}{p}$ ist, $\ord Z \geq 2$.
+also $0 \geq 1$, was offensichtlich falsch ist. Also muss, wenn die Anzahl den Konjugationsklassen in $G$ echt größer als $\frac{\ord G}{p}$ ist, $\ord Z \geq 2$.
 
 
 
@@ -175,11 +175,11 @@ Es gibt also in jedem möglichen Fall paarweise verschiedene $i_1, i_2, i_3 \in 
 \section{}
 
 \subsection{}
-Es sei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen auf $X$. Für $i=1,\ldots,n$ gilt: Da $(G : G_{x_i})$ ein Teiler von $\ord G = p^k$ ist, ist $(G : G_{x_i}) = p^{l_i}$ für ein $l_i \in \{0, 1, \ldots, k\}$. Durch passende Durchnummerierung der $x_i$ kann davon ausgegangen werden, dass es ein $j \in \{1,\ldots,n\}$ gibt, so dass $(G : G_{x_i}) = 1$, also $l_i = 0$, für $i=1,\ldots,j$, und $(G : G_{x_i}) \geq p$, also $l_i \geq 1$ für $i > j$. Insbesondere sind $x_1, \ldots, x_j$ die Fixpunkte von $G$ (vergleiche anfänglich Bemerkung in \textbf{Aufgabe 2.3}).
+Es sei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen auf $X$. Für $i=1,\ldots,n$ gilt: Da $(G : G_{x_i})$ ein Teiler von $\ord G = p^k$ ist, ist $(G : G_{x_i}) = p^{l_i}$ für ein $l_i \in \{0, 1, \ldots, k\}$. Durch passende Durchnummerierung der $x_i$ kann davon ausgegangen werden, dass es ein $j \in \{0,\ldots,n\}$ gibt, so dass $(G : G_{x_i}) = 1$, also $l_i = 0$, für $i=1,\ldots,j$, und $(G : G_{x_i}) \geq p$, also $l_i \geq 1$ für $i > j$. Insbesondere sind $x_1, \ldots, x_j$ die Fixpunkte von $G$ (vergleiche anfänglich Bemerkung in \textbf{Aufgabe 2.3}).
 
 Nach der Bahnengleichung ist nun
 \[
- \ord X
+ |X|
  = \sum_{i=1}^n (G : G_{x_i})
  = j + \sum_{i=j+1}^n p^{l_i}
  = j + p \sum_{i=j+1}^n \underbrace{p^{l_i - 1}}_{\in \N},
@@ -192,19 +192,13 @@ Zunächst gilt es zu bemerken, dass die zu zeigende Aussage für $N = \{1\}$ nic
 
 Da $N$ ein Normalteiler ist, ist $gNg^{-1} = N$ für alle $g \in G$. Also ist $h \in Gh \subseteq N$ für alle $h \in N$, wobei $Gh = \{ghg^{-1} : g \in G\}$ die Bahn von $h$ unter der Konjugationsaktion ist. Es folgt, dass $N$ die disjunkte Vereinigung von Bahnen ist. Angenommen $N \cap Z = \{1\}$. Da $Z = \{g \in G : Gg = \{g\}\}$ ist dann $1$ das einzige Element $h \in N$ mit $Gh = \{h\}$. Nach der Klassengleichung ist daher
 \[
- \ord N = 1 + \sum_{i=1}^n (G : Z_{x_i}),
+ \ord N = 1 + \sum_{i=1}^n \underbrace{(G : Z_{x_i})}_{\neq 1},
 \]
-wobei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen in $N-\{1\}$ ist. Da $\ord N$ sowie jedes $(G : Z_{x_i})$ als Teiler von $\ord G = p^k$ eine Potenz von $p$ ist, ergibt sich, dass
+wobei $x_1, \ldots, x_n$ ein Repräsentantensystem der Bahnen in $N-\{1\}$ ist. Da jedes $(G : Z_{x_i})$ als Teiler von $\ord G = p^k$ eine $p$-Potenz ist, und $(G : Z_{x_i}) \neq 1$ für alle $i=1,\ldots, n$, folgt aus der obigen Gleichung, dass
 \[
- p^n = 1 + n_1 p + \ldots + n_m p^m
+ \ord N \equiv 1 \mod p.
 \]
-für passende $n,m, n_1, \ldots, n_m \in \N$, wobei $n \geq 1$ wegen der Annahme $N \neq \{1\}$. Es folgt, dass
-\[
- 1 = p^n - n_m p^m - \ldots - n_1 p = p ( p^{n-1} - n_m p^{m-1} - \ldots - n_1 ).
-\]
-Also ist $p$ ein Teiler von $1$, was offensichtlich nicht stimmt. Daher muss $N \cap Z \supsetneq \{1\}$.
-
-
+Da jedoch $\ord N$ ebenfalls ein von $1$ verschiedener Teiler von $\ord G = p^k$ ist, muss $\ord N \equiv 0 \bmod p$. Wegen dieses Widerspruches muss $N \cap Z \supsetneq \{1\}$.
 
 
 
@@ -212,7 +206,7 @@ Also ist $p$ ein Teiler von $1$, was offensichtlich nicht stimmt. Daher muss $N 
 
 
 \section{}
-Da das Zentrum $Z$ von $G$ ein Teiler von $\ord G = p^3$ ist, muss $\ord Z \in \{1, p, p^2, p^3\}$. Es ergibt sich jedoch, dass $\ord Z = p$ sein muss:
+Da die Ordnung des Zentrums $Z$ von $G$ ein Teiler von $\ord G = p^3$ ist, muss $\ord Z \in \{1, p, p^2, p^3\}$. Es ergibt sich jedoch, dass $\ord Z = p$ sein muss:
 
 Da $Z$ abelsch ist, $G$ jedoch nicht, muss $Z \neq G$ und somit $\ord Z \neq p^3$.
 
