@@ -10,6 +10,7 @@
 \usepackage{nicefrac}
 \usepackage{enumerate}
 \usepackage{leftidx}
+\usepackage{tikz}
 
 \theoremstyle{definition}
 \newtheorem{beh}{Behauptung}
@@ -78,10 +79,10 @@ Sei $G$ eine Gruppe der Ordnung $8$. Gibt es ein $g \in G$ mit $\ord g = 8$, so 
 
 Zunächst wird der Fall untersucht, dass $G$ abelsch ist ($G$ wird hierfür additiv geschrieben): Durch eine Reihe von Fallunterscheidungen finden wir eine Untergruppe $H \subseteq G$ der Ordnung $4$ und ein Element $g \in G-H$ der Ordnung 2:
 
-Da $G$ eine $2$-Gruppe der Ordnung $8$ ist, gibt es, wie aus der Vorlesung bekannt, eine Untergruppe $H' \subseteq G$ mit $\ord H' = 4$. Sei $g' \in G-H$. Ist $\ord g' = 2$, so sei $H := H'$ und $g := g'$.
-Ist $\ord g' = 4$, so wird zwischen zwei Fällen unterschieden: Ist $2g' \not\in H'$, so sei $H := H'$ und $g := 2g'$. Ist $\ord g = 4$, so wird erneut zwischen zwei Fällen unterschieden: Bekanntermaßen ist entweder $H' \cong \Z/4\Z$ oder $H' \cong (\Z/2\Z)^2$. Ist $H' \cong \Z/4\Z$, so ist $H' = \gen{a}$ für ein $a \in H'$. Da $2g' \in H$ mit $\ord 2g' = 2$ muss $2g' = 2a$. Es sei in diesem Fall $H := H'$ und $g := a+g'$. Ist $H' \cong (\Z/2\Z)^2$, so gibt es neben $2g'$ noch ein weiteres $a \in H'$ mit $\ord a = 2$. Es sei dann $H := \gen{g'}$ und $g := a$.
+Da $G$ eine $2$-Gruppe der Ordnung $8$ ist, gibt es, wie aus der Vorlesung bekannt, eine Untergruppe $H' \subseteq G$ mit $\ord H' = 4$. Sei $g' \in G \smallsetminus H'$. Ist $\ord g' = 2$, so sei $H := H'$ und $g := g'$.
+Ist $\ord g' = 4$, so wird zwischen zwei Fällen unterschieden: Ist $2g' \not\in H'$, so sei $H := H'$ und $g := 2g'$. Ist $2g' \in H'$, so wird erneut zwischen zwei Fällen unterschieden: Bekanntermaßen ist entweder $H' \cong \Z/4\Z$ oder $H' \cong (\Z/2\Z)^2$. Ist $H' \cong \Z/4\Z$, so ist $H' = \gen{a}$ für ein $a \in H'$. Da $2g' \in H$ mit $\ord 2g' = 2$ muss $2g' = 2a$. Es sei in diesem Fall $H := H'$ und $g := a+g'$. Ist $H' \cong (\Z/2\Z)^2$, so gibt es neben $2g'$ noch ein weiteres $a \in H'$ mit $\ord a = 2$. Es sei dann $H := \gen{g'}$ und $g := a$.
 
-Es ist nun $\ord G = \ord H \cdot \ord \gen{g}$ sowie $H \cap \gen{g} = 1$, wobei $1$ die triviale Gruppe bezeichnet. Da $G$ kommutativ ist, sind $H$ und $\gen{g}$ beide normal in $G$. Es ist daher (wie bereits letzte Woche gezeigt)
+Es ist nun $\ord G = \ord H \cdot \ord \gen{g}$ sowie $H \cap \gen{g} = 0$, wobei $0$ die triviale Gruppe bezeichnet (additiv geschrieben). Da $G$ kommutativ ist, sind $H$ und $\gen{g}$ beide normal in $G$. Es ist daher (wie bereits letzte Woche gezeigt)
 \[
  G \cong H \times \gen{g} \cong H \times \Z/2\Z.
 \]
@@ -94,7 +95,7 @@ Es wird nun der Fall untersucht, dass $G$ nicht abelsch ist: Da $G$ nicht abelsc
 \[
  G = \{1, b, a, ab, a^2, a^2 b, a^3, a^3 b\}.
 \]
-Insbesondere kommutieren $a$ und $b$ nicht miteinander, da $G$ sonst abelsch wäre. Da $\gen{a}$ normal in G ist, ist $bab^{-1} \in \gen{a}$. Da $\ord bab^{-1}  = \ord a$ muss $bab^{-1} = a$ oder $bab^{-1} = a^3$. Da aber $bab^{-1} = a \Leftrightarrow ba = ab$ muss $bab^{-1} = a^3$, also $ba = a^3 b$. Für $b+\gen{a} \in G/\!\gen{a}$ ist $b+\gen{a} \neq 1+\gen{a}$, da $b \not\in \gen{a}$, wegen $\ord G/\!\gen{a} = 2$ jedoch $b^2 + \gen{a} = (b+\gen{a})^2 = 1+\gen{a}$, also $b^2 \in \gen{a}$. Da $\ord b = 2$ oder $\ord b = 4$ ist $\ord b^2 = 1$ oder $\ord b^2 = 2$. Also muss $b^2 = 1$ oder $b^2 = a^2$. Es wird nun zwischen diesen beiden Fällen unterschieden:
+Insbesondere kommutieren $a$ und $b$ nicht miteinander, da $G$ sonst abelsch wäre. Da $\gen{a}$ normal in G ist, ist $bab^{-1} \in \gen{a}$. Da $\ord bab^{-1}  = \ord a$ muss $bab^{-1} = a$ oder $bab^{-1} = a^3$. Da aber $bab^{-1} = a \Leftrightarrow ba = ab$ muss $bab^{-1} = a^3$, also $ba = a^3 b$. Für $b\gen{a} \in G/\!\gen{a}$ ist $b+\gen{a} \neq 1+\gen{a}$, da $b \not\in \gen{a}$, wegen $\ord G/\!\gen{a} = 2$ jedoch $b^2 + \gen{a} = (b+\gen{a})^2 = 1+\gen{a}$, also $b^2 \in \gen{a}$. Da $\ord b = 2$ oder $\ord b = 4$ ist $\ord b^2 = 1$ oder $\ord b^2 = 2$. Also muss $b^2 = 1$ oder $b^2 = a^2$. Es wird nun zwischen diesen beiden Fällen unterschieden:
 
 Ist $b^2 = 1$, so ist die $G$ durch die Eigenschaften
 \begin{equation}\label{eq: isomorphie1}
@@ -262,7 +263,7 @@ Für $m \in \N$ seien $a_m, b_m \in \{1,\ldots,n\}$ so dass $\varphi(\tau_m) = \
  Es ist $\bigcap_{m=2}^n \{a_m, b_m\} \neq \emptyset$.
 \end{beh}
 \begin{proof}
- Für $n \in \{2,3\}$ ist nichts zu zeigen. Sei daher $n \geq 4$. Angenommen, die Behauptung gilt nicht. Sei $m_0 := \min \left\{k \in \{2,\ldots,n\right\} : \bigcap_{m=2}^k \{a_m,b_m\}\}$. Da $\tau_2$ und $\tau_3$ nicht fremd sind, ist $m_0 \geq 4$. Wegen der Minimalität von $m_0$ gibt es ein \mbox{$a \in \{1,\ldots,n\}$}, so dass $a \in \{a_m,b_m\}$ für alle $m \in \{2,\ldots,m_0-1\}$. Da die $\tau_m$ paarweise verschieden sind gibt es auch $c_2, \ldots, c_{m_0-1} \in \{1,\ldots,n\}$ mit $\{a_m, b_m\} = \{a, c_m\}$ für alle $m \in \{2, \ldots, m_0 -1\}$. Nach Definition von $m_0$ muss $a \not \in \{a_{m_0}, b_{m_0}\}$. Da jedoch $\tau_{m_0}$ nicht fremd zu $\tau_2$ und $\tau_3$ ist, muss $c_2, c_3 \in \{a_{m_0},b_{m_0}\}$, da $c_2$ und $c_3$ verschieden sind, ist also $\{a_{m_0}, b_{m_0}\} = \{c_2, c_3\}$.
+ Für $n \in \{2,3\}$ ist nichts zu zeigen. Sei daher $n \geq 4$. Angenommen, die Behauptung gilt nicht. Sei $m_0 := \min \left\{k \in \{2,\ldots,n\right\} : \bigcap_{m=2}^k \{a_m,b_m\} = \emptyset\}$. Da $\tau_2$ und $\tau_3$ nicht fremd sind, ist $m_0 \geq 4$. Wegen der Minimalität von $m_0$ gibt es ein \mbox{$a \in \{1,\ldots,n\}$}, so dass $a \in \{a_m,b_m\}$ für alle $m \in \{2,\ldots,m_0-1\}$. Da die $\tau_m$ paarweise verschieden sind gibt es auch $c_2, \ldots, c_{m_0-1} \in \{1,\ldots,n\}$ mit $\{a_m, b_m\} = \{a, c_m\}$ für alle $m \in \{2, \ldots, m_0 -1\}$. Nach Definition von $m_0$ muss $a \not \in \{a_{m_0}, b_{m_0}\}$. Da jedoch $\tau_{m_0}$ nicht fremd zu $\tau_2$ und $\tau_3$ ist, muss $c_2, c_3 \in \{a_{m_0},b_{m_0}\}$, da $c_2$ und $c_3$ verschieden sind, ist also $\{a_{m_0}, b_{m_0}\} = \{c_2, c_3\}$.
  Es ist daher
  \begin{align*}
   \varphi(\tau_{m_0})
@@ -331,6 +332,19 @@ Es gilt noch zu zeigen, dass $G_n$ normal in $G$ ist, dass also für $g \in G_n$
  (hgh^{-1})^n = h(g^n)h^{-1} \in [G,G],
 \]
 also auch $hgh^{-1} \in G_n$.
+
+\emph{Die kürzere Lösung der ganzen Aufgabe besteht darin, in $G_n$ den Kern des Gruppenhomomorphismus
+\begin{center}
+\begin{tikzpicture}[node distance = 2 cm]
+ \node (G) {$G$};
+ \node[right of = G] (Gab1) {$G/[G,G]$};
+ \node[right of = Gab1] (Gab2) {$G/[G,G]$};
+ \draw[->>] (G) to node[anchor=south] {can.} (Gab1);
+ \draw[->] (Gab1) to (Gab2);
+\end{tikzpicture}\\
+\end{center}
+mit $g \mapsto [g] \mapsto [g]^n = [g^n]$ zu erkennen. Das die zweite Abbildung ein Gruppenhomomorphismus ist, folgt daraus, dass $G/[G,G]$ abelsch ist.
+}
 
 
 
