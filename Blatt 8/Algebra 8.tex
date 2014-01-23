@@ -101,7 +101,7 @@ Wegen der Abgeschlossenheit von $S$ unter Multiplikation ist auch $s't\tilde{t} 
  \underset{\eqref{eq: reflexiv s'r''t = s''r't}}= r'' s' s t \tilde{t}
  = r'' s s' t \tilde{t}.
 \]
-Also ist $(r,s'') \sim (r'', s)$ und $\sim$ daher transitiv.
+Also ist $(r,s) \sim (r'', s'')$ und $\sim$ daher transitiv.
 
 
 \subsection{}
@@ -114,7 +114,7 @@ Zunächst die Wohldefiniertheit: Seien $(r,s), (\tilde{r},\tilde{s}) \in R \time
  (rs'+r's) \tilde{s} s' t
  = r s' \tilde{s} s' t + r' s \tilde{s} s' t
  = \tilde{r} s' s s' t + r' s \tilde{s} s' t
- = (\tilde{r} s', r' \tilde{s}) s s ' t,
+ = (\tilde{r} s' + r' \tilde{s}) s s ' t,
 \]
 und
 \[
@@ -190,7 +190,7 @@ Mit der obigen Bemerkung erhalten wir, dass für alle $\frac{r}{s}, \frac{r'}{s'
  \frac{r}{s} \left( \frac{r'}{s'} + \frac{r''}{s''} \right)
  &= \frac{r}{s} \frac{r's'' + r''s'}{s's''}
  = \frac{rr's''+rr''s'}{ss's''} \\
- &= \frac{rr'ss'+rr''ss'}{s^2s's''}
+ &= \frac{rr'ss''+rr''ss'}{s^2s's''}
  = \frac{rr'}{ss'} + \frac{rr''}{ss''}
  = \frac{r}{s} \frac{r'}{s'} + \frac{r}{s} \frac{r''}{s''}.
 \end{align*}
@@ -244,12 +244,12 @@ da $\psi_S$ durch Einschränkung einen Gruppenhomomorphismus von $(R[S^{-1}])^*$
  = \psi_S\left(\frac{r}{1}\right) \psi_S\left(\frac{1}{s}\right)
  = \psi(r)\psi(s)^{-1}
 \]
-für alle $\frac{r}{s} \in R[S^{-1}]$ eindeutig bestimmt. Definiert man $\psi_S$ auf diese Art, so handelt es sich bei $\psi_S$ um einen Ringhomomorphismus, denn für alle $\frac{r}{s}, \frac{r'}{s'} \in R[S^-1]$ ist
+für alle $\frac{r}{s} \in R[S^{-1}]$ eindeutig bestimmt. Definiert man $\psi_S$ auf diese Art (\emph{Korrektur: Es fehlt der Nachweis der Wohldefiniertheit von $\psi_S$}), so handelt es sich bei $\psi_S$ um einen Ringhomomorphismus, denn für alle $\frac{r}{s}, \frac{r'}{s'} \in R[S^-1]$ ist
 \begin{align*}
  \psi_S\left( \frac{r}{s} + \frac{r'}{s'} \right)
  &= \psi_S\left( \frac{rs' + r's}{ss'} \right)
- = \psi(rs' + r's)\psi(ss)^{-1} \\
- &= \left( \psi(r)\psi(s') + \psi(r')\psi(s) \right) \psi(s)^{-1}\psi(s')^{-1} \psi \\
+ = \psi(rs' + r's)\psi(ss')^{-1} \\
+ &= \left( \psi(r)\psi(s') + \psi(r')\psi(s) \right) \psi(s)^{-1}\psi(s')^{-1} \\
  &= \psi(r)\psi(s)^{-1} + \psi(r')\psi(s')^{-1}
  = \psi_S\left(\frac{r}{s}\right) + \psi_S\left(\frac{r'}{s'}\right),
 \end{align*}
@@ -275,7 +275,7 @@ und inbesondere
 
 
 \section{}
-Da ich diese Aufgabe sehr hässlich aufzuschreiben finde, gibt es hier nur kurze Skizze eines Beweises:
+Da ich diese Aufgabe sehr hässlich aufzuschreiben finde, gibt es hier nur kurze Skizze eines Beweises (\emph{Korrektur: hässlich, sollte ignoriert werden}):
 
 Zunächst bemerkt man, dass ein Unterring $R \subseteq \Q$ von der Menge
 \[
@@ -320,12 +320,12 @@ erzeugten Unterring von $\Q$. Die Injektivität der Abbildung ergibt sich direkt
 
 Wir zeigen nun, dass auch Lokalisierungen kommutativer, noetherscher Ringe wieder noethersch sind: Es sei $R$ ein kommutativer, noetherscher Ring und $S \subseteq R$ ein Untermonoid bezüglich der Multiplikation. Es sei $I \subseteq R[S^{-1}]$ ein Ideal. Wir setzen
 \[
- J := \left\{ \frac{r}{1} \in I : r \in R \right\}.
+ J := \left\{ \frac{r}{1} \in I : r \in R \right\} = I \cap \varphi(R).
 \]
 
 Es ist $(J)_{R[S^{-1}]} = I$, wobei $(J)_{R[S^{-1}]}$ das von $J$ in $R[S^{-1}]$ erzeugte Ideal bezeichnet. Es ist klar, dass $(J)_{R[S^{-1}]} \subseteq I$. Andererseits ist für alle $\frac{r}{s} \in I$ auch $\frac{s}{1} \frac{r}{s} = \frac{rs}{s} = \frac{r}{1} \in I$, also $\frac{r}{1} \in J$, und daher auch $\frac{r}{s} = \frac{1}{s} \frac{r}{1} \in (J)_{R[S^{-1}]}$.
 
-Es ist $J \subseteq \Img \varphi$, wobei $\varphi : R \rightarrow R[S^{-1}], r \mapsto \frac{r}{1}$. Da $R$ noethersch ist, ist es nach Bemerkung \ref{bem: faktorringe noethersch} auch $\Img \varphi \cong R / \Ker \varphi$. Es gibt also $a_1, \ldots, a_n \in \Img \varphi$ mit $(J)_{\Img \varphi} = (a_1, \ldots, a_n)_{\Img \varphi}$. Es ist daher
+Es ist $J \subseteq \Img \varphi$, wobei $\varphi : R \rightarrow R[S^{-1}], r \mapsto \frac{r}{1}$. Da $R$ noethersch ist, ist es nach Bemerkung \ref{bem: faktorringe noethersch} auch $\Img \varphi \cong R / \Ker \varphi$. Es gibt also nach Bemerkung \ref{bem: def noethersch} Elemente $a_1, \ldots, a_n \in \Img \varphi$ mit $(J)_{\Img \varphi} = (a_1, \ldots, a_n)_{\Img \varphi}$. Es ist daher
 \begin{align*}
  I
  &= (J)_{R[S^{-1}]}
@@ -340,6 +340,7 @@ also $I$ in $R[S^{-1}]$ endlich erzeugt. Aus Bemerkung \ref{bem: def noethersch}
 
 
 \section{}
+\emph{Korrektur: Die Aufgabe wurde extrem hässlich gelöst.}
 Ich werde im Folgenden Summen der Form $f = \sum_{i,j \in \N} a_{ij} X_1^i X_2^j$ für $f \in \Z[X_1, X_2]$, bzw. $f \in \Q[X_1, X_2]$ nutzen, ohne jedes Mal explizit anzugeben, dass fast alle $a_{ij}$ gleich null sind.
 
 
@@ -375,6 +376,7 @@ Da $(X_1, X_2, 2) \ni 2 \in \Q^* = (\Q[X_1, X_2])^*$ ist bereits $(X_1, X_2, 2) 
 
 
 \subsection{}
+\emph{Korrektur: Hier wurde totaler Blödsinn angestellt.}
 Es sei im Folgenden $R = \Z$ oder $R = \Q$, der Beweis läuft unabhängig von der Wahl des Ringes. Es ist
 \[
  A := (X_1 + X_2^2, X_1^2 + X_2)_{R[X_1, X_2]}
@@ -415,7 +417,7 @@ also $2 \deg(f) = 1$, was offenbar nicht möglich ist. Also ist $A$ nicht prim.
 
 
 \subsection{}
-Gebe es $f,g \in \Q[X]$ mit $f,g \not\in (\Q[X])^* = \Q^*$ und $fg = X^3-2$, so muss $\deg f = 1$ oder $\deg g = 1$, da dann $1 \leq \deg f, \deg g \leq 3$ und $\deg f + \deg g = 3$. Also müsste $X^3-2$ dann eine rationale Nullstelle besitzen. Die einzige reelle Nullstelle des Polynomes ist jedoch $\sqrt[3]{2} \not\in \Q$, weshalb dies nicht möglich ist.
+Gäbe es $f,g \in \Q[X]$ mit $f,g \not\in (\Q[X])^* = \Q^*$ und $fg = X^3-2$, so muss $\deg f = 1$ oder $\deg g = 1$, da dann $1 \leq \deg f, \deg g \leq 3$ und $\deg f + \deg g = 3$. Also müsste $X^3-2$ dann eine rationale Nullstelle besitzen. Die einzige reelle Nullstelle des Polynomes ist jedoch $\sqrt[3]{2} \not\in \Q$, weshalb dies nicht möglich ist.
 
 
 \subsection{}
@@ -468,7 +470,7 @@ Wie die folgende Bemerkung zeigen wird, ist dieses irreduzibel in $\F_7[X]$, und
  \[
   \binom{p}{p} = 1.
  \]
- Es ist klar, dass $\tau$ ein Ringautomorphismus ist. Insbesondere ist
+ Es ist klar, dass $\tau$ ein Ringautomorphismus ist (Umkehrabbildung $h \mapsto h(X-1)$). Insbesondere ist
  \[
   f = \tau(f) = \tau(g_1 \cdots g_n) = \tau(g_1) \cdots \tau(g_n).
  \]
@@ -476,18 +478,17 @@ Wie die folgende Bemerkung zeigen wird, ist dieses irreduzibel in $\F_7[X]$, und
  \[
   \tau(g_i) = \varepsilon_i g_{\sigma(i)} \text{ für alle } i=1,\ldots,n.
  \]
+ Da $\tau(h)$ offenbar genau dann normiert ist, wenn $h$ normiert ist, folgt aus der Normiertheit der $g_i$, dass dabei $\varepsilon_i = 1$ für alle $i=1,\ldots,n$.
+ 
  Da $(X+p)^n = X^n$ für alle $n \in \N$ ist $\tau^p = \id$. Es ist daher insbesondere $\sigma^p = 1$. Folglich ist $\ord \sigma \mid p$, also $\ord \sigma = 1$ oder $\ord \sigma = p$.
  
  Ist $\ord \sigma = p$, so muss $\sigma$ in Zykelschreibweise einen Zykel der Ordnung $p$ haben, also mindestens $p$ Element miteinander kommutieren, d.h. $n \geq p$. Da $\deg(g_i) \geq 1$ für alle $i=1,\ldots,n$ und $\sum_{i=1}^n \deg(g_i) = \deg(X^p-X-1) = p$ muss $n=p$ und $\deg(g_i) = 1$ für alle $1=1,\ldots,n$. Folglich besitzt $f$ mindestens eine Nullstelle; dies ist jedoch nicht der Fall, da $f(x) = -1 \neq 0$ für alle $x \in \F_p$.
- Ist $\ord \sigma = 1$, so sind die $g_i$ bis auf Assoziiertheit invariant unter $\tau$. Da dann
- \[
-  \tau^p(g_i) = \varepsilon_i^p g_i = 1 g_i
- \]
- muss $\varepsilon_i^p = 1$, nach dem kleinen Fermatschen Satz also $\varepsilon = 1$ und damit $\tau(g_i) = g_i$ für $i=1,\ldots,n$. Da $g_1$ invariant unter $\tau$ ist, ist
+ 
+ Ist $\ord \sigma = 1$, so sind die $g_i$ bis auf Assoziiertheit invariant unter $\tau$. Es ist also $\tau(g_i) = g_i$ für alle $i=1,\ldots,n$. Da $g_1$ invariant unter $\tau$ ist, ist
  \[
   g_1(x) = g_1(0) \text{ für alle } x \in \F_p[X].
  \]
- Folglich ist $g_1-g_1(0) = 0$. Da jedoch $\deg(g_1-g_1(0)) = \deg(g_1)$ und $0 < \deg(g_1) < \deg(X^p-X-1)=p$ ist dies ein Widerspruch dazu, dass $g_1-g_1(0)$ höchstens $\deg(g_1-g_1(0))$ viele Nullstellen haben kann.
+ Folglich ist $(g_1-g_1(0))(x) = 0$ für alle $x \in \F_p$. Da jedoch $\deg(g_1-g_1(0)) = \deg(g_1)$ und $0 < \deg(g_1) < \deg(X^p-X-1)=p$ ist dies ein Widerspruch dazu, dass $g_1-g_1(0)$ höchstens $\deg(g_1-g_1(0))$ viele Nullstellen haben kann.
 \end{proof}
 
 
